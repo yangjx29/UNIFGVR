@@ -1,0 +1,5 @@
+./datasets/dogs_120/images_discovery_all_3/093.Tibetan_Mastiff/093.Tibetan_Mastiff_n02108551_1968.jpg
+./datasets/dogs_120/images_discovery_all_3/095.Great_Dane/095.Great_Dane_n02109047_17629.jpg
+./datasets/dogs_120/images_discovery_all_3/034.Norfolk_Terrier/034.Norfolk_Terrier_n02094114_3248.jpg
+./datasets/dogs_120/images_discovery_all_3/049.Tibetan_Terrier/049.Tibetan_Terrier_n02097474_3976.jpg
+./datasets/dogs_120/images_discovery_all_3/003.Pekinese/003.Pekinese_n02086079_869.jpg

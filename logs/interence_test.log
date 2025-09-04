@@ -1,0 +1,210 @@
+/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: '/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torchvision/image.so: undefined symbol: _ZN3c1017RegisterOperatorsD1Ev'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:03<00:13,  3.42s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:06<00:10,  3.40s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:10<00:06,  3.40s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:13<00:03,  3.39s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:14<00:00,  2.51s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:14<00:00,  2.91s/it]
+local_model_path: /home/Dataset/Models/Qwen/Qwen2.5-VL-7B-Instruct
+Type of gallary: <class 'list'>, gallary keys: Not a dict
+gallery:{'Black-and-tan Coonhound': array([ 0.00139764,  0.0148494 , -0.01951577, ..., -0.00654099,
+       -0.02502342, -0.02137824], dtype=float32), 'Boston Bull': array([-0.02643216, -0.00131728, -0.01440009, ...,  0.01129664,
+        0.005404  , -0.00118467], dtype=float32), 'Dandi Dinmont': array([-0.00599377,  0.00323112, -0.00914451, ..., -0.00463823,
+       -0.04028545, -0.01617393], dtype=float32), 'Maltese Dog': array([ 0.0026971 ,  0.01349578, -0.01731182, ...,  0.02045399,
+       -0.06028572, -0.0319027 ], dtype=float32), 'Basset Hound': array([ 0.00368855, -0.00265802, -0.00945181, ...,  0.00779952,
+       -0.0579332 , -0.05643509], dtype=float32), 'French Bulldog': array([-0.02569921, -0.02479469, -0.01453994, ...,  0.02276672,
+        0.06495337, -0.04082463], dtype=float32), 'Afghan Hound': array([-0.00921026, -0.02888288,  0.01631743, ...,  0.05633118,
+       -0.00931474, -0.00589726], dtype=float32), 'American Staffordshire Terrier': array([-0.01540344,  0.00757393, -0.02444799, ..., -0.02004866,
+       -0.02739296, -0.01085224], dtype=float32), 'Norwich Terrier': array([ 0.02224386,  0.02044834, -0.01534348, ...,  0.02393961,
+       -0.01064239, -0.01949642], dtype=float32), 'Miniature Pinscher': array([-0.03281626,  0.03227576, -0.02702304, ..., -0.01469841,
+       -0.0332912 , -0.01325521], dtype=float32), 'Dhole': array([ 0.00196884, -0.02225381,  0.01541496, ...,  0.00360832,
+       -0.03354676, -0.02290836], dtype=float32), 'Schipperke': array([ 0.04917263,  0.00099149,  0.00273737, ...,  0.00810839,
+       -0.0072878 ,  0.00181833], dtype=float32), 'Staffordshire Bullterrier': array([-0.00599702, -0.00176829, -0.02504401, ...,  0.00257674,
+       -0.02672736, -0.01490485], dtype=float32), 'Komondor': array([ 0.03374193, -0.00080406,  0.00786778, ...,  0.02834436,
+       -0.03553068,  0.00689025], dtype=float32), 'Shetland Sheepdog': array([ 0.00891326,  0.03019842,  0.02754562, ...,  0.03635557,
+       -0.08809391, -0.025835  ], dtype=float32), 'Pembroke': array([ 0.02760581,  0.03285471,  0.00128846, ..., -0.03207229,
+       -0.03592878, -0.01393522], dtype=float32), 'Chesapeake Bay Retriever': array([ 0.04357559,  0.03013701, -0.01804098, ..., -0.00610557,
+       -0.04131082, -0.0139916 ], dtype=float32), 'Pekinese': array([-0.01056319,  0.01602184, -0.00803643, ...,  0.02115136,
+       -0.03291852, -0.04281212], dtype=float32), 'Saluki': array([ 0.03802559,  0.02912762,  0.02613713, ...,  0.0005801 ,
+       -0.07754491, -0.00336737], dtype=float32), 'Pug': array([-0.02680034, -0.02715279, -0.01946066, ..., -0.029518  ,
+        0.04014752, -0.01264887], dtype=float32), 'Irish Setter': array([ 0.02855104,  0.03227575,  0.00625295, ..., -0.01802831,
+       -0.00648548, -0.02348965], dtype=float32), 'English Springer Spaniel': array([ 0.00137824,  0.02941429,  0.00569312, ..., -0.02371463,
+       -0.06809688, -0.01182573], dtype=float32), 'Labrador Retriever': array([ 0.00345468, -0.02992147,  0.00415399, ...,  0.0265169 ,
+        0.01783406,  0.0189208 ], dtype=float32), 'Toy Terrier': array([-0.0127685 , -0.01370924, -0.02238355, ...,  0.00637949,
+       -0.01691505, -0.0449375 ], dtype=float32), 'German Shepard': array([-0.00630612,  0.03177203, -0.02697921, ...,  0.09182349,
+       -0.0800765 , -0.01258063], dtype=float32), 'Scotch Terrier': array([-0.0065221 ,  0.01329591, -0.03998372, ...,  0.00874447,
+       -0.02199466, -0.04173822], dtype=float32), 'EntleBucher': array([ 0.01248099,  0.03967691,  0.00081245, ...,  0.04399139,
+       -0.10393697, -0.02959803], dtype=float32), 'German Short-haired Pointer': array([-0.01820105, -0.01654081, -0.0038199 , ..., -0.0075218 ,
+       -0.0660862 , -0.02033894], dtype=float32), 'Standard Schnauzer': array([ 0.02436222,  0.00461427, -0.03307124, ..., -0.01441626,
+       -0.02612565,  0.00540138], dtype=float32), 'Miniature Schnauzer': array([-1.90065503e-02,  1.31380875e-05, -7.39950594e-03, ...,
+       -1.93711277e-02, -5.20875379e-02, -4.35971916e-02], dtype=float32), 'Shih-Tzu': array([ 0.00427014, -0.01948793, -0.00580643, ..., -0.01903799,
+       -0.00362623, -0.02652187], dtype=float32), 'Brittany': array([ 0.00634957,  0.00863617,  0.01000747, ...,  0.00547881,
+       -0.04931813, -0.05420136], dtype=float32), 'Lhasa': array([ 0.0149754 ,  0.01865763,  0.00756134, ...,  0.01515654,
+       -0.0688125 , -0.00954945], dtype=float32), 'Australian Terrier': array([-0.02170097,  0.01597562, -0.00478094, ..., -0.00048201,
+       -0.04325216, -0.03025566], dtype=float32), 'Sealyham Terrier': array([ 0.01609854,  0.0083389 , -0.03191838, ...,  0.03458925,
+       -0.02664331, -0.03916752], dtype=float32), 'Welsh Springer Spaniel': array([ 0.01864389,  0.01924075,  0.03406133, ..., -0.01386469,
+       -0.06299422, -0.04148526], dtype=float32), 'Cocker Spaniel': array([ 0.00162562,  0.01712255,  0.00666564, ..., -0.0076005 ,
+       -0.03453723,  0.00042654], dtype=float32), 'Appenzeller': array([-0.03544274,  0.02886581, -0.0232953 , ..., -0.01393116,
+       -0.02696329, -0.04525081], dtype=float32), 'Redbone': array([ 0.01024987, -0.00162922, -0.01065755, ..., -0.02937268,
+       -0.04357604, -0.02036818], dtype=float32), 'African Hunting Dog': array([ 0.02112727, -0.0419491 , -0.00299384, ...,  0.05146946,
+       -0.01864593,  0.0113558 ], dtype=float32), 'Toy Poodle': array([ 0.03890289,  0.03400467, -0.01689709, ...,  0.00515048,
+       -0.03287455, -0.04007415], dtype=float32), 'Weimaraner': array([ 0.01816472,  0.03932032, -0.01029556, ...,  0.06207442,
+       -0.0103215 ,  0.01073148], dtype=float32), 'Cairn': array([-0.01524569,  0.01057392, -0.02790889, ...,  0.03143668,
+       -0.01368305,  0.00247789], dtype=float32), 'Dingo': array([-0.00998339,  0.02064127,  0.02059172, ..., -0.01562219,
+       -0.05246227, -0.02997161], dtype=float32), 'Norfolk Terrier': array([-0.00963248,  0.00347251,  0.00131917, ...,  0.00523045,
+       -0.02989043, -0.02955388], dtype=float32), 'Miniature Poodle': array([ 0.02633837,  0.00950195, -0.00836302, ...,  0.00454468,
+       -0.01829941,  0.00417206], dtype=float32), 'Doberman': array([-0.00873964, -0.02039947, -0.04528786, ...,  0.01428042,
+       -0.03956296, -0.02364738], dtype=float32), 'Mexican Hairless': array([ 5.0151786e-03,  7.9901926e-03,  8.2664767e-05, ...,
+        2.4574732e-02, -1.7043132e-02,  7.3263654e-03], dtype=float32), 'Groenendael': array([ 0.00487933,  0.01591273, -0.01448902, ..., -0.02880952,
+       -0.03283123, -0.01470761], dtype=float32), 'Bloodhound': array([ 0.02785174, -0.00184533, -0.00698254, ..., -0.00958568,
+       -0.04222185, -0.02031059], dtype=float32), 'Bernese Mountain Dog': array([ 0.00715406,  0.04011292, -0.03808379, ..., -0.01539901,
+       -0.06079579, -0.02459422], dtype=float32), 'Great Dane': array([-0.01059004, -0.01971286,  0.00393013, ...,  0.05875761,
+        0.00933083,  0.03387107], dtype=float32), 'Airedale': array([ 0.01121104,  0.04451523, -0.03702134, ...,  0.03736333,
+       -0.03611158, -0.04575914], dtype=float32), 'Pomeranian': array([-0.01448207,  0.02686789,  0.03024386, ...,  0.00403604,
+       -0.03323226,  0.00967922], dtype=float32), 'Bouvier des Flandres': array([ 0.0043353 , -0.0144614 , -0.00642953, ..., -0.01264887,
+       -0.04456336, -0.00997628], dtype=float32), 'Irish Wolfhound': array([-0.00680971,  0.00747272, -0.01985511, ...,  0.00085795,
+       -0.06384914,  0.00333103], dtype=float32), 'Greater Swiss Mountain Dog': array([ 0.00248487,  0.02109169,  0.01045511, ...,  0.05149407,
+       -0.08066812, -0.02516572], dtype=float32), 'Siberian Husky': array([-0.01847631,  0.04096513,  0.04564369, ...,  0.03932964,
+       -0.02080711, -0.00017358], dtype=float32), 'Briard': array([ 0.01272755, -0.04261872, -0.02117426, ..., -0.02557244,
+       -0.0336732 , -0.01865917], dtype=float32), 'Irish Terrier': array([ 0.02327866, -0.00588176, -0.00555066, ..., -0.00133646,
+       -0.03433024, -0.04838214], dtype=float32), 'Bluetick': array([-0.01233771,  0.03044574, -0.02332139, ..., -0.00951396,
+       -0.02341868, -0.00948754], dtype=float32), 'English Setter': array([ 0.01275386,  0.01672965, -0.00862243, ..., -0.00116605,
+       -0.07495768, -0.01961679], dtype=float32), 'Italian Greyhound': array([-0.0069288 ,  0.02228332,  0.01435886, ...,  0.05402327,
+       -0.00420166,  0.04974791], dtype=float32), 'Cardigan': array([-0.01342073, -0.00673253, -0.0108688 , ..., -0.00014809,
+       -0.03344689, -0.0211013 ], dtype=float32), 'Gordon Setter': array([ 0.00775431,  0.03320711, -0.02895809, ...,  0.04065592,
+       -0.06721538, -0.05363251], dtype=float32), 'Rottweiler': array([ 0.03613298,  0.02291804, -0.0647613 , ..., -0.00096264,
+       -0.05756168, -0.02890743], dtype=float32), 'Borzoi': array([ 0.01204512,  0.02882821, -0.01218093, ..., -0.00832176,
+       -0.06649329,  0.01524192], dtype=float32), 'Rhodesian Ridgeback': array([ 0.00655908, -0.0309373 ,  0.01729198, ...,  0.02903689,
+       -0.04778449, -0.03574078], dtype=float32), 'Silky Terrier': array([ 0.00549469, -0.02575965,  0.00742525, ..., -0.01814142,
+        0.00122346, -0.01015463], dtype=float32), 'Malamute': array([-0.01278063,  0.00510677, -0.00702118, ..., -0.00481074,
+       -0.04404506, -0.00676804], dtype=float32), 'Irish Water Spaniel': array([ 0.00304556,  0.01142243, -0.01496824, ..., -0.01435754,
+       -0.03612962, -0.00805014], dtype=float32), 'Affenpinscher': array([ 0.05257133,  0.00126625, -0.03078975, ...,  0.00275617,
+       -0.00889796, -0.02258233], dtype=float32), 'Old English Sheepdog': array([ 0.01221447,  0.02252595,  0.00519661, ...,  0.04108866,
+       -0.00827381, -0.05806086], dtype=float32), 'Samoyed': array([ 0.03293195,  0.03067232,  0.01216627, ..., -0.01987098,
+       -0.07003764, -0.04111208], dtype=float32), 'Ibizian Hound': array([ 0.01790456,  0.020334  ,  0.02944205, ...,  0.05627733,
+       -0.06761616, -0.07451534], dtype=float32), 'Chihuaha': array([ 0.01477721,  0.02987434, -0.01915948, ..., -0.01443021,
+       -0.01462406, -0.02536177], dtype=float32), 'Norwegian Elkhound': array([ 0.02396348, -0.01524887, -0.01230223, ..., -0.01478845,
+       -0.04424744, -0.01248374], dtype=float32), 'Yorkshire Terrier': array([ 0.00834501, -0.02893463, -0.00536127, ..., -0.00888433,
+       -0.03228926, -0.04540871], dtype=float32), 'Wirehaired Fox Terrier': array([-0.00091042,  0.02355321,  0.0011466 , ...,  0.00665415,
+       -0.07936461, -0.07115377], dtype=float32), 'Beagle': array([-0.0040775 , -0.00885302, -0.00257986, ...,  0.02298284,
+       -0.05087664, -0.0078382 ], dtype=float32), 'Keeshond': array([ 0.02953737,  0.01953657,  0.01874384, ...,  0.04177266,
+       -0.05342296,  0.03741059], dtype=float32), 'Walker Hound': array([-0.01017325, -0.01193166,  0.04439916, ..., -0.01301787,
+       -0.0506733 , -0.02148755], dtype=float32), 'Basenji': array([-0.00513701,  0.03654149,  0.01665236, ..., -0.01476235,
+       -0.03003622, -0.00801583], dtype=float32), 'Great Pyrenees': array([-0.00041708, -0.01087527, -0.00639591, ...,  0.03619133,
+       -0.01808427, -0.04489563], dtype=float32), 'Giant Schnauzer': array([-0.04122363, -0.01932532, -0.02677471, ..., -0.0014554 ,
+       -0.03910771, -0.02082365], dtype=float32), 'Papillon': array([ 0.01205514,  0.02142768, -0.03034082, ...,  0.01444631,
+       -0.03025896, -0.0164179 ], dtype=float32), 'Otterhound': array([ 0.01382553,  0.0275218 ,  0.00490858, ...,  0.01180448,
+        0.01839956, -0.01205818], dtype=float32), 'Border Terrier': array([ 0.01236707,  0.00398584, -0.0106954 , ..., -0.01573612,
+       -0.02453792, -0.03094965], dtype=float32), 'Bedlington Terrier': array([ 0.05943764,  0.0157115 , -0.03110246, ...,  0.00204744,
+       -0.05113098,  0.00397163], dtype=float32), 'Soft-coated Wheaten Terrier': array([-0.00111174,  0.00648553, -0.00084833, ...,  0.0224849 ,
+       -0.06159823, -0.04640266], dtype=float32), 'Kuvasz': array([ 0.01235217,  0.05290818,  0.00608658, ..., -0.01565144,
+       -0.0583321 , -0.03237149], dtype=float32), 'Brabancon Griffon': array([ 0.01761076, -0.0003062 ,  0.00198187, ..., -0.00127824,
+        0.02064098, -0.03834003], dtype=float32), 'Vizsla': array([ 0.00647232,  0.00956618,  0.01690583, ..., -0.01708765,
+       -0.03757399, -0.03568521], dtype=float32), 'Scottish Deerhound': array([ 0.04062049,  0.00344671,  0.00146453, ...,  0.01693956,
+       -0.07107501, -0.00630377], dtype=float32), 'Collie': array([ 0.00891231,  0.01845637, -0.00975467, ...,  0.00402604,
+       -0.05834086, -0.02221888], dtype=float32), 'Saint Bernard': array([ 0.0155705 ,  0.03965827, -0.02073009, ...,  0.05479898,
+        0.01285114, -0.04201204], dtype=float32), 'Blenheim Spaniel': array([ 0.00237212,  0.04457859,  0.0315989 , ..., -0.0139139 ,
+       -0.06410765, -0.05203678], dtype=float32), 'Lakeland Terrier': array([-0.0093563 , -0.01425995, -0.0393234 , ..., -0.00172658,
+       -0.05589633, -0.0252078 ], dtype=float32), 'Bull Mastiff': array([-0.00937076, -0.00367979, -0.03155122, ...,  0.01158549,
+       -0.00170815, -0.01501651], dtype=float32), 'Newfoundland': array([-0.01114985,  0.01444372, -0.02505847, ..., -0.01128736,
+       -0.05670703, -0.01767397], dtype=float32), 'Kelpie': array([ 0.00775415,  0.00918406,  0.00127387, ..., -0.0191543 ,
+       -0.03136067, -0.03948512], dtype=float32), 'Malinois': array([-0.02607041,  0.01926609, -0.01011207, ...,  0.00356736,
+       -0.05032044,  0.0045099 ], dtype=float32), 'West Highland White Terrier': array([-0.03502848, -0.03281139,  0.02610274, ..., -0.00612674,
+       -0.05507844, -0.07248475], dtype=float32), 'Sussex Spaniel': array([ 0.02038802,  0.03268411, -0.00598761, ..., -0.01910893,
+       -0.04774771, -0.01370053], dtype=float32), 'Boxer': array([-0.01437314,  0.04188474, -0.0191203 , ..., -0.00179322,
+        0.00517847,  0.00997665], dtype=float32), 'Chow': array([ 0.03435007,  0.02109283, -0.00614157, ..., -0.01801682,
+       -0.04849622, -0.02376015], dtype=float32), 'Tibetan Terrier': array([ 0.01243189,  0.02500087, -0.00435751, ..., -0.02633718,
+       -0.04088617, -0.01914256], dtype=float32), 'Golden Retriever': array([ 0.02656239,  0.02291404,  0.00070797, ...,  0.05948697,
+       -0.01066614,  0.01319799], dtype=float32), 'Eskimo Dog': array([-0.0001962 ,  0.0286643 ,  0.01900708, ..., -0.01722076,
+       -0.0640531 , -0.04155757], dtype=float32), 'Japanese Spaniel': array([ 0.01016681,  0.05269944,  0.01457442, ...,  0.03383258,
+       -0.01788449, -0.01208108], dtype=float32), 'Standard Poodle': array([ 0.03019504, -0.00147198, -0.01401809, ...,  0.07111809,
+       -0.0298539 ,  0.00141532], dtype=float32), 'Clumber': array([ 0.02647661,  0.01535801,  0.008062  , ...,  0.01354349,
+       -0.01176151, -0.05240977], dtype=float32), 'English Foxhound': array([ 0.00059184,  0.02898872,  0.00329112, ...,  0.0050124 ,
+       -0.05496507, -0.01489616], dtype=float32), 'Leonberg': array([ 0.00338126,  0.01899588, -0.01445843, ..., -0.02714739,
+       -0.06159965, -0.00282794], dtype=float32), 'Whippet': array([ 0.00554247,  0.00858757,  0.01442951, ..., -0.01795302,
+       -0.07601805,  0.01382007], dtype=float32), 'Kerry Blue Terrier': array([ 0.02043573, -0.00850177, -0.03495205, ..., -0.01008888,
+       -0.04957556, -0.00381726], dtype=float32), 'Curly-coater Retriever': array([ 0.03129755,  0.0096105 ,  0.00812433, ...,  0.00197384,
+       -0.05113143, -0.01766353], dtype=float32), 'Flat-coated Retriever': array([ 0.01632473,  0.01964375, -0.01606293, ...,  0.05082708,
+       -0.01193253, -0.00018757], dtype=float32), 'Tibetan Mastiff': array([ 0.01511061, -0.00271036, -0.00165212, ..., -0.00775772,
+       -0.00410457, -0.02716563], dtype=float32)}
+ref_path: ['']
+len ref path: 1
+MLLMBot prompt: We provide 1 images from different categories within the 3 that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+tese here gpu: cuda:0
+test MLLM answer after decode: ['black and white fur, small pointed ears, short snout']
+trimmed_reply: ['black and white fur, small pointed ears, short snout']
+MLLMBot prompt: Describe the visual attributes of the black and white fur in the dog category.
+tese here gpu: cuda:0
+test MLLM answer after decode: ["The dog in the picture has a predominantly black and white coat. The black fur is concentrated on its head, ears, and back, while the white fur covers its chest, belly, and legs. The contrast between the two colors creates a striking appearance. The dog's fur appears soft and well-groomed, with some longer hair around the face and ears, giving it a fluffy look. The eyes are dark, and the overall expression seems calm and attentive."]
+prompt: Describe the visual attributes of the black and white fur in the dog category. 
+ description: The dog in the picture has a predominantly black and white coat. The black fur is concentrated on its head, ears, and back, while the white fur covers its chest, belly, and legs. The contrast between the two colors creates a striking appearance. The dog's fur appears soft and well-groomed, with some longer hair around the face and ears, giving it a fluffy look. The eyes are dark, and the overall expression seems calm and attentive.
+MLLMBot prompt: Describe the visual attributes of the small pointed ears in the dog category.
+tese here gpu: cuda:0
+test MLLM answer after decode: ["The small pointed ears of the dog in the picture are characteristic of the Chihuahua breed. They are upright and have a triangular shape, which is typical for this breed. The ears are relatively large compared to the size of the dog's head, adding to its distinctive appearance. The fur on the ears appears soft and slightly fluffy, matching the overall coat texture of the dog."]
+prompt: Describe the visual attributes of the small pointed ears in the dog category. 
+ description: The small pointed ears of the dog in the picture are characteristic of the Chihuahua breed. They are upright and have a triangular shape, which is typical for this breed. The ears are relatively large compared to the size of the dog's head, adding to its distinctive appearance. The fur on the ears appears soft and slightly fluffy, matching the overall coat texture of the dog.
+MLLMBot prompt: Describe the visual attributes of the short snout in the dog category.
+tese here gpu: cuda:0
+test MLLM answer after decode: ["The dog in the picture has a short snout, which is characteristic of many small breeds. The snout appears to be relatively flat and broad, with a black nose that contrasts against the white fur around it. The dog's eyes are dark and expressive, and its ears are upright and pointed, adding to its alert appearance. The fur is short and smooth, with a mix of black and white coloring. The overall expression on the dog's face suggests curiosity or attentiveness."]
+prompt: Describe the visual attributes of the short snout in the dog category. 
+ description: The dog in the picture has a short snout, which is characteristic of many small breeds. The snout appears to be relatively flat and broad, with a black nose that contrasts against the white fur around it. The dog's eyes are dark and expressive, and its ears are upright and pointed, adding to its alert appearance. The fur is short and smooth, with a mix of black and white coloring. The overall expression on the dog's face suggests curiosity or attentiveness.
+MLLMBot prompt: Summarize the information you get about the dog from the attribute description:
+Region: black and white fur
+Description: The dog in the picture has a predominantly black and white coat. The black fur is concentrated on its head, ears, and back, while the white fur covers its chest, belly, and legs. The contrast between the two colors creates a striking appearance. The dog's fur appears soft and well-groomed, with some longer hair around the face and ears, giving it a fluffy look. The eyes are dark, and the overall expression seems calm and attentive.
+Region: small pointed ears
+Description: The small pointed ears of the dog in the picture are characteristic of the Chihuahua breed. They are upright and have a triangular shape, which is typical for this breed. The ears are relatively large compared to the size of the dog's head, adding to its distinctive appearance. The fur on the ears appears soft and slightly fluffy, matching the overall coat texture of the dog.
+Region: short snout
+Description: The dog in the picture has a short snout, which is characteristic of many small breeds. The snout appears to be relatively flat and broad, with a black nose that contrasts against the white fur around it. The dog's eyes are dark and expressive, and its ears are upright and pointed, adding to its alert appearance. The fur is short and smooth, with a mix of black and white coloring. The overall expression on the dog's face suggests curiosity or attentiveness.
+Output a concise structured description.
+tese here gpu: cuda:0
+test MLLM answer after decode: ["The dog in the picture is a small breed with a predominantly black and white coat. It has a short, broad snout with a black nose contrasting against the white fur around it. The dog's small, upright, and pointed ears are characteristic of the Chihuahua breed, contributing to its distinctive appearance. The fur is soft, well-groomed, and fluffy, particularly around the face and ears. The dog's dark, expressive eyes and calm yet attentive expression suggest curiosity and attentiveness."]
+summarize_attributes: the dog in the picture is a small breed with a predominantly black and white coat. it has a short, broad snout with a black nose contrasting against the white fur around it. the dog's small, upright, and pointed ears are characteristic of the chihuahua breed, contributing to its distinctive appearance. the fur is soft, well-groomed, and fluffy, particularly around the face and ears. the dog's dark, expressive eyes and calm yet attentive expression suggest curiosity and attentiveness.
+构造的gallery_feats矩阵: [[ 0.00139764  0.0148494  -0.01951577 ... -0.00654099 -0.02502342
+  -0.02137824]
+ [-0.02643216 -0.00131728 -0.01440009 ...  0.01129664  0.005404
+  -0.00118467]
+ [-0.00599377  0.00323112 -0.00914451 ... -0.00463823 -0.04028545
+  -0.01617393]
+ ...
+ [ 0.03129755  0.0096105   0.00812433 ...  0.00197384 -0.05113143
+  -0.01766353]
+ [ 0.01632473  0.01964375 -0.01606293 ...  0.05082708 -0.01193253
+  -0.00018757]
+ [ 0.01511061 -0.00271036 -0.00165212 ... -0.00775772 -0.00410457
+  -0.02716563]]
+shape:(119, 1024)
+cos_sims shape: (119,), cos_sims: [1.6540217 1.6805274 1.5745327 1.3222364 1.4564948 1.4942882 0.8188002
+ 1.6680201 1.3051809 1.7509217 1.3862665 1.6222603 1.6236498 1.4035828
+ 1.4851489 1.7286264 1.6364094 1.5287476 1.4677114 1.4225738 1.4244155
+ 1.5805204 1.1607752 1.5590078 1.1731969 1.2983319 1.4280548 1.6202693
+ 1.4280725 1.7028716 1.6945359 1.4214879 1.2858402 1.5853995 1.2344908
+ 1.6405033 1.0963681 1.4782369 1.6995748 1.3472656 1.5179225 1.0063659
+ 1.236079  1.5511088 1.5734696 1.351594  1.6122607 1.4123379 1.7063655
+ 1.5837191 1.6288083 1.3758335 1.3273709 1.5601081 1.5214165 1.434245
+ 1.221329  1.3145535 1.647679  1.32876   1.5963739 1.6602312 1.3070922
+ 1.5486028 1.3169307 1.5384865 1.4070846 1.2293576 1.4024343 1.6813424
+ 1.3333309 1.6658454 1.1446819 1.5829326 1.2761488 1.5887766 1.6596361
+ 1.4495505 1.4110402 1.573121  1.4600041 1.5750555 1.7266655 1.2829118
+ 1.584223  1.3792273 1.038886  1.4982429 1.3001461 1.3391653 1.6143887
+ 1.5677061 1.4714776 1.2765706 1.5197029 1.1831144 1.3756363 1.4965816
+ 1.5670248 1.6593175 1.5379982 1.2302679 1.4119549 1.6369014 1.5436656
+ 1.5868332 1.6923102 1.1406307 1.65726   1.6139041 1.3375788 1.3175008
+ 1.5096853 1.5361215 1.3104749 1.5392008 1.3375114 1.2189926 1.5634348]
+affinities shape: (119,), affinities: [1.3868166 1.405318  1.3327792 1.1748239 1.256396  1.2803637 0.9133831
+ 1.3965572 1.1648479 1.4556621 1.2130444 1.3649669 1.3659155 1.2235928
+ 1.2745261 1.4395248 1.3746575 1.3026149 1.2634622 1.2352668 1.2364047
+ 1.3367752 1.0837071 1.3224735 1.0904588 1.1608655 1.2386565 1.3636087
+ 1.2386676 1.4211065 1.4151958 1.2345963 1.1536376 1.3400403 1.1243953
+ 1.3774743 1.0493637 1.270129  1.4187658 1.1896187 1.2955837 1.003188
+ 1.1252885 1.3172607 1.332071  1.1921959 1.3581594 1.2289609 1.4235913
+ 1.338915  1.369443  1.2067331 1.1778437 1.3232013 1.297849  1.2424963
+ 1.11702   1.1703194 1.3824254 1.1786622 1.3474137 1.391129  1.1659615
+ 1.3156112 1.1717113 1.3089736 1.2257371 1.1215131 1.2228903 1.4058908
+ 1.181359  1.3950396 1.0750219 1.3383884 1.148061  1.3423051 1.390715
+ 1.2520413 1.2281636 1.3318388 1.2586026 1.3331276 1.4381143 1.1519498
+ 1.3392524 1.2087824 1.0196333 1.2828977 1.1619191 1.1848103 1.3596052
+ 1.3282378 1.2658437 1.148303  1.2967374 1.0958794 1.2066141 1.2818326
+ 1.3277854 1.3904935 1.3086541 1.1220237 1.2287254 1.3749958 1.3123676
+ 1.3410014 1.4136218 1.0728465 1.3890637 1.3592758 1.1838708 1.1720454
+ 1.2902586 1.3074266 1.1679353 1.3094411 1.1838309 1.115716  1.325404 ]
+predicted_category:Miniature Pinscher, affinity_scores:{'Black-and-tan Coonhound': 1.3868166, 'Boston Bull': 1.405318, 'Dandi Dinmont': 1.3327792, 'Maltese Dog': 1.1748239, 'Basset Hound': 1.256396, 'French Bulldog': 1.2803637, 'Afghan Hound': 0.9133831, 'American Staffordshire Terrier': 1.3965572, 'Norwich Terrier': 1.1648479, 'Miniature Pinscher': 1.4556621, 'Dhole': 1.2130444, 'Schipperke': 1.3649669, 'Staffordshire Bullterrier': 1.3659155, 'Komondor': 1.2235928, 'Shetland Sheepdog': 1.2745261, 'Pembroke': 1.4395248, 'Chesapeake Bay Retriever': 1.3746575, 'Pekinese': 1.3026149, 'Saluki': 1.2634622, 'Pug': 1.2352668, 'Irish Setter': 1.2364047, 'English Springer Spaniel': 1.3367752, 'Labrador Retriever': 1.0837071, 'Toy Terrier': 1.3224735, 'German Shepard': 1.0904588, 'Scotch Terrier': 1.1608655, 'EntleBucher': 1.2386565, 'German Short-haired Pointer': 1.3636087, 'Standard Schnauzer': 1.2386676, 'Miniature Schnauzer': 1.4211065, 'Shih-Tzu': 1.4151958, 'Brittany': 1.2345963, 'Lhasa': 1.1536376, 'Australian Terrier': 1.3400403, 'Sealyham Terrier': 1.1243953, 'Welsh Springer Spaniel': 1.3774743, 'Cocker Spaniel': 1.0493637, 'Appenzeller': 1.270129, 'Redbone': 1.4187658, 'African Hunting Dog': 1.1896187, 'Toy Poodle': 1.2955837, 'Weimaraner': 1.003188, 'Cairn': 1.1252885, 'Dingo': 1.3172607, 'Norfolk Terrier': 1.332071, 'Miniature Poodle': 1.1921959, 'Doberman': 1.3581594, 'Mexican Hairless': 1.2289609, 'Groenendael': 1.4235913, 'Bloodhound': 1.338915, 'Bernese Mountain Dog': 1.369443, 'Great Dane': 1.2067331, 'Airedale': 1.1778437, 'Pomeranian': 1.3232013, 'Bouvier des Flandres': 1.297849, 'Irish Wolfhound': 1.2424963, 'Greater Swiss Mountain Dog': 1.11702, 'Siberian Husky': 1.1703194, 'Briard': 1.3824254, 'Irish Terrier': 1.1786622, 'Bluetick': 1.3474137, 'English Setter': 1.391129, 'Italian Greyhound': 1.1659615, 'Cardigan': 1.3156112, 'Gordon Setter': 1.1717113, 'Rottweiler': 1.3089736, 'Borzoi': 1.2257371, 'Rhodesian Ridgeback': 1.1215131, 'Silky Terrier': 1.2228903, 'Malamute': 1.4058908, 'Irish Water Spaniel': 1.181359, 'Affenpinscher': 1.3950396, 'Old English Sheepdog': 1.0750219, 'Samoyed': 1.3383884, 'Ibizian Hound': 1.148061, 'Chihuaha': 1.3423051, 'Norwegian Elkhound': 1.390715, 'Yorkshire Terrier': 1.2520413, 'Wirehaired Fox Terrier': 1.2281636, 'Beagle': 1.3318388, 'Keeshond': 1.2586026, 'Walker Hound': 1.3331276, 'Basenji': 1.4381143, 'Great Pyrenees': 1.1519498, 'Giant Schnauzer': 1.3392524, 'Papillon': 1.2087824, 'Otterhound': 1.0196333, 'Border Terrier': 1.2828977, 'Bedlington Terrier': 1.1619191, 'Soft-coated Wheaten Terrier': 1.1848103, 'Kuvasz': 1.3596052, 'Brabancon Griffon': 1.3282378, 'Vizsla': 1.2658437, 'Scottish Deerhound': 1.148303, 'Collie': 1.2967374, 'Saint Bernard': 1.0958794, 'Blenheim Spaniel': 1.2066141, 'Lakeland Terrier': 1.2818326, 'Bull Mastiff': 1.3277854, 'Newfoundland': 1.3904935, 'Kelpie': 1.3086541, 'Malinois': 1.1220237, 'West Highland White Terrier': 1.2287254, 'Sussex Spaniel': 1.3749958, 'Boxer': 1.3123676, 'Chow': 1.3410014, 'Tibetan Terrier': 1.4136218, 'Golden Retriever': 1.0728465, 'Eskimo Dog': 1.3890637, 'Japanese Spaniel': 1.3592758, 'Standard Poodle': 1.1838708, 'Clumber': 1.1720454, 'English Foxhound': 1.2902586, 'Leonberg': 1.3074266, 'Whippet': 1.1679353, 'Kerry Blue Terrier': 1.3094411, 'Curly-coater Retriever': 1.1838309, 'Flat-coated Retriever': 1.115716, 'Tibetan Mastiff': 1.325404}
+Predicted category for query: ('Miniature Pinscher', {'Black-and-tan Coonhound': 1.3868166, 'Boston Bull': 1.405318, 'Dandi Dinmont': 1.3327792, 'Maltese Dog': 1.1748239, 'Basset Hound': 1.256396, 'French Bulldog': 1.2803637, 'Afghan Hound': 0.9133831, 'American Staffordshire Terrier': 1.3965572, 'Norwich Terrier': 1.1648479, 'Miniature Pinscher': 1.4556621, 'Dhole': 1.2130444, 'Schipperke': 1.3649669, 'Staffordshire Bullterrier': 1.3659155, 'Komondor': 1.2235928, 'Shetland Sheepdog': 1.2745261, 'Pembroke': 1.4395248, 'Chesapeake Bay Retriever': 1.3746575, 'Pekinese': 1.3026149, 'Saluki': 1.2634622, 'Pug': 1.2352668, 'Irish Setter': 1.2364047, 'English Springer Spaniel': 1.3367752, 'Labrador Retriever': 1.0837071, 'Toy Terrier': 1.3224735, 'German Shepard': 1.0904588, 'Scotch Terrier': 1.1608655, 'EntleBucher': 1.2386565, 'German Short-haired Pointer': 1.3636087, 'Standard Schnauzer': 1.2386676, 'Miniature Schnauzer': 1.4211065, 'Shih-Tzu': 1.4151958, 'Brittany': 1.2345963, 'Lhasa': 1.1536376, 'Australian Terrier': 1.3400403, 'Sealyham Terrier': 1.1243953, 'Welsh Springer Spaniel': 1.3774743, 'Cocker Spaniel': 1.0493637, 'Appenzeller': 1.270129, 'Redbone': 1.4187658, 'African Hunting Dog': 1.1896187, 'Toy Poodle': 1.2955837, 'Weimaraner': 1.003188, 'Cairn': 1.1252885, 'Dingo': 1.3172607, 'Norfolk Terrier': 1.332071, 'Miniature Poodle': 1.1921959, 'Doberman': 1.3581594, 'Mexican Hairless': 1.2289609, 'Groenendael': 1.4235913, 'Bloodhound': 1.338915, 'Bernese Mountain Dog': 1.369443, 'Great Dane': 1.2067331, 'Airedale': 1.1778437, 'Pomeranian': 1.3232013, 'Bouvier des Flandres': 1.297849, 'Irish Wolfhound': 1.2424963, 'Greater Swiss Mountain Dog': 1.11702, 'Siberian Husky': 1.1703194, 'Briard': 1.3824254, 'Irish Terrier': 1.1786622, 'Bluetick': 1.3474137, 'English Setter': 1.391129, 'Italian Greyhound': 1.1659615, 'Cardigan': 1.3156112, 'Gordon Setter': 1.1717113, 'Rottweiler': 1.3089736, 'Borzoi': 1.2257371, 'Rhodesian Ridgeback': 1.1215131, 'Silky Terrier': 1.2228903, 'Malamute': 1.4058908, 'Irish Water Spaniel': 1.181359, 'Affenpinscher': 1.3950396, 'Old English Sheepdog': 1.0750219, 'Samoyed': 1.3383884, 'Ibizian Hound': 1.148061, 'Chihuaha': 1.3423051, 'Norwegian Elkhound': 1.390715, 'Yorkshire Terrier': 1.2520413, 'Wirehaired Fox Terrier': 1.2281636, 'Beagle': 1.3318388, 'Keeshond': 1.2586026, 'Walker Hound': 1.3331276, 'Basenji': 1.4381143, 'Great Pyrenees': 1.1519498, 'Giant Schnauzer': 1.3392524, 'Papillon': 1.2087824, 'Otterhound': 1.0196333, 'Border Terrier': 1.2828977, 'Bedlington Terrier': 1.1619191, 'Soft-coated Wheaten Terrier': 1.1848103, 'Kuvasz': 1.3596052, 'Brabancon Griffon': 1.3282378, 'Vizsla': 1.2658437, 'Scottish Deerhound': 1.148303, 'Collie': 1.2967374, 'Saint Bernard': 1.0958794, 'Blenheim Spaniel': 1.2066141, 'Lakeland Terrier': 1.2818326, 'Bull Mastiff': 1.3277854, 'Newfoundland': 1.3904935, 'Kelpie': 1.3086541, 'Malinois': 1.1220237, 'West Highland White Terrier': 1.2287254, 'Sussex Spaniel': 1.3749958, 'Boxer': 1.3123676, 'Chow': 1.3410014, 'Tibetan Terrier': 1.4136218, 'Golden Retriever': 1.0728465, 'Eskimo Dog': 1.3890637, 'Japanese Spaniel': 1.3592758, 'Standard Poodle': 1.1838708, 'Clumber': 1.1720454, 'English Foxhound': 1.2902586, 'Leonberg': 1.3074266, 'Whippet': 1.1679353, 'Kerry Blue Terrier': 1.3094411, 'Curly-coater Retriever': 1.1838309, 'Flat-coated Retriever': 1.115716, 'Tibetan Mastiff': 1.325404})

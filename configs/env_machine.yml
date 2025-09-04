@@ -1,0 +1,6 @@
+# Server
+host: xiao
+num_workers: 16
+
+data_root: ./datasets
+expt_root: ./experiments
