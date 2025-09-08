@@ -68,7 +68,7 @@ class MLLMBot:
         return self.model_name
 
     def __call_qwen2_5(self, raw_image, prompt):
-        print(f"MLLMBot prompt: {prompt}")
+        # print(f"MLLMBot prompt: {prompt}")
 
         if isinstance(raw_image, Image.Image):
             raw_image = [raw_image]
@@ -101,7 +101,6 @@ class MLLMBot:
                 return_tensors="pt"
             )
         else:
-            print(f'tese here gpu: {self.device}')
             inputs = self.qwen2_5_processor(
                 text=[text],    
                 images=image_inputs,  
@@ -120,7 +119,7 @@ class MLLMBot:
             skip_special_tokens=True,
             clean_up_tokenization_spaces=False
         )
-        print(f"test MLLM answer after decode: {reply}")
+        # print(f"test MLLM answer after decode: {reply}")
         return reply
 
     def answer_chat_log(self, raw_image, chat_log, n_qwen2_5_context=-1):

@@ -331,7 +331,7 @@ def build_gallery(cfg, mllm_bot, captioner, retrieval, kshot=5,region_num=3, sup
 
 if __name__ == "__main__":
     """
-    CUDA_VISIBLE_DEVICES=2 python discovering.py --mode=build_gallery --config_file_env=./configs/env_machine.yml --config_file_expt=./configs/expts/dog120_all.yml --kshot=5 --region_num=3 --superclass=dog  --gallery_out=./experiments/dog120/gallery/dog120_gallery.json 2>&1 | tee ./logs/build_gallery_dog.log
+    CUDA_VISIBLE_DEVICES=0 python discovering.py --mode=build_gallery --config_file_env=./configs/env_machine.yml --config_file_expt=./configs/expts/dog120_all.yml --kshot=5 --region_num=3 --superclass=dog  --gallery_out=./experiments/dog120/gallery/dog120_gallery_concat.json --fusion_method=concat 2>&1 | tee ./logs/build_gallery_dog_concat.log
     """
     parser = argparse.ArgumentParser(description='Discovery', formatter_class=argparse.ArgumentDefaultsHelpFormatter) 
 
@@ -359,7 +359,7 @@ if __name__ == "__main__":
     parser.add_argument('--region_num', type=int, default=None, help='region selelct per class when building gallery (override cfg)')
     parser.add_argument('--superclass', type=str, default=None, help='superclass for CDV prompts (override cfg)')
     parser.add_argument('--gallery_out', type=str, default=None, help='path to save built gallery json')
-
+    parser.add_argument('--fusion_method', type=str, default='concat', help='fusion method')
 
     args = parser.parse_args()  
     print(colored(args, 'blue'))  
@@ -486,7 +486,6 @@ if __name__ == "__main__":
         """
         构建多模态类别模板库(gallery)
         训练样本来源优先级:cfg['path_train_samples']
-        输出默认 cfg['path_gallery']，可用 --gallery_out 覆盖
         """
         if cfg['host'] in ["xiao"]:
             mllm_bot = MLLMBot(model_tag=cfg['model_size_mllm'], model_name=cfg['model_size_mllm'], device='cuda', device_id=cfg['device_id'], bit8=False) 
@@ -494,7 +493,8 @@ if __name__ == "__main__":
             mllm_bot = MLLMBot(model_tag=cfg['model_size_mllm'], model_name=cfg['model_size_mllm'], device='cpu')
 
         captioner = CDVCaptioner(cfg=cfg)
-        retrieval = MultimodalRetrieval()
+        # fusion_method = "weighted"
+        retrieval = MultimodalRetrieval(fusion_method=args.fusion_method)
         data_discovery = DATA_DISCOVERY[cfg['dataset_name']](cfg, folder_suffix=expt_id_suffix)
         if args.superclass is None:
             superclass_results = main_identify(cfg, mllm_bot, data_discovery)  # 调用主要识别函数

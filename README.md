@@ -28,9 +28,9 @@ UniFGVR/
 ```
 
 ## 环境依赖
-- Python 3.8+
-- PyTorch（GPU/CPU 皆可）
-- Transformers, Pillow, NumPy, scikit-learn, tqdm, termcolor（可选：decord）
+- Python 3.10
+- PyTorch
+- Transformers, Pillow, NumPy, scikit-learn, tqdm, termcolor
 
 安装示例：
 参考 FineR
@@ -70,6 +70,7 @@ python discovering.py \
   --config_file_expt=./configs/expts/dog120_all.yml \
   --kshot=5 --region_num=3 --superclass=dog \
   --gallery_out=./experiments/dog120/gallery/dog120_gallery.json \
+  --fusion_method=concat
   2>&1 | tee ./logs/build_gallery_dog.log
 ```
 
@@ -84,7 +85,23 @@ python discovering.py \
 
 ### 2) 检索与评估
 
-- 加载已构建的 gallery 并进行 FGVC 检索/评估(我只写了个简单示例)：
+- 加载已构建的 gallery 并进行 FGVC 检索/评估：
 ```bash
 python retrieval/multimodal_retrieval.py 2>&1 | tee ./logs/inference_dog.log
 ```
+
+- 测试RAG功能（Top-5候选 + MLLM推理）：
+```bash
+python test_rag.py
+```
+
+#### RAG检索流程
+1. **多模态相似度计算**：计算查询图像与所有类别模板的余弦相似度
+2. **Top-5候选选择**：选择相似度最高的5个类别作为候选
+3. **MLLM推理**：构造RAG prompt，让MLLM基于候选类别和图像进行最终推理
+4. **结果提取**：从MLLM输出中提取最终预测类别
+
+相比简单的Top-1方法，RAG方法能够：
+- 利用MLLM的视觉理解能力进行更准确的判断
+- 在相似类别间进行更细致的区分
+- 提供更好的可解释性（可以看到Top-5候选和最终推理过程）

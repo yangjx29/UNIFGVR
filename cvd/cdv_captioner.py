@@ -168,22 +168,26 @@ class CDVCaptioner:
         image = Image.open(target_image_path).convert("RGB")
         descriptions = []
         
-        for region in regions:
-            prompt = f"Describe the visual attributes of the {region} in the {superclass} category."
+        for region in regions:    
+            if label is not None:
+                # 构建阶段
+                prompt = f"Given an image, describe the visual attributes of {region} in the given {superclass} category, whose specific category is {label}."
+            else:
+                prompt = f"Given an image, describe the visual attributes of {region} in the {superclass} category."
             reply, output = mllm_bot.describe_attribute(image, prompt)
             description = ", ".join(output)
             descriptions.append(description)
             print(f'prompt: {prompt} \n description: {description}')
         
-        # 构建JSON格式的结果
-        result_data = {
-            "img_path": target_image_path,
-            "label": label if label is not None else "unknown",
-            "label_id": label_id if label_id is not None else -1,
-            "regions": regions,
-            "descriptions": descriptions,
-            "superclass": superclass
-        }
+        # # 构建JSON格式的结果
+        # result_data = {
+        #     "img_path": target_image_path,
+        #     "label": label if label is not None else "unknown",
+        #     "label_id": label_id if label_id is not None else -1,
+        #     "regions": regions,
+        #     "descriptions": descriptions,
+        #     "superclass": superclass
+        # }
         # save_path_descriptions = self.cfg['path_descriptions']
         # dump_json(save_path_descriptions, result_data)
         # print(f"Saved descriptions to: {save_path_descriptions}")
@@ -191,7 +195,7 @@ class CDVCaptioner:
         return descriptions
 
     # TODO Attribute Feature Summarization
-    def summarize_attributes(self, mllm_bot, target_image_path, descriptions, superclass, regions):
+    def summarize_attributes(self, mllm_bot, target_image_path, descriptions, superclass, regions, label=None, label_id=None):
         """
         Summarize attributes into a structured description using MLLM.
         
@@ -207,17 +211,35 @@ class CDVCaptioner:
         image = Image.open(target_image_path).convert("RGB")
         
         # Combine regions and descriptions for prompt
-        attr_info = "\n".join([f"Region: {r}\nDescription: {d}" for r, d in zip(regions, descriptions)])
+        attr_info = "\n".join([f"**Region**: {r}\nDescription: {d}" for r, d in zip(regions, descriptions)])
         
-        # Prompt template from paper (formula 3)
-        prompt = (
-            f"Summarize the information you get about the {superclass} from the attribute description:\n{attr_info}\n"
-            "Output a concise structured description."
-        )
-        
+        if label is not None:
+            # 构建流程
+            prompt = (
+                f"Summarize the information you get about the {label} from the attribute description:\n{attr_info}\n"
+                f"Output a structured description."
+            )
+        else:
+            # 测试流程
+            prompt = (
+                f"Summarize the information you get about the {superclass} from the attribute description:\n{attr_info}\n"
+                "Output a concise structured description."
+            )
         reply, output = mllm_bot.describe_attribute(image, prompt)
         output = ", ".join(output)
         output = output.lower()
+        if label is not None:
+            result_data = {
+                "img_path": target_image_path,
+                "label": label if label is not None else "unknown",
+                "label_id": label_id if label_id is not None else -1,
+                "regions": regions,
+                "descriptions": descriptions,
+                "superclass": superclass
+            }
+            save_path_descriptions = self.cfg['path_descriptions']
+            dump_json(save_path_descriptions, result_data)
+            print(f"Saved descriptions to: {save_path_descriptions}")
         print(f'summarize_attributes: {output}')
         return output.strip()
 
@@ -262,7 +284,7 @@ class CDVCaptioner:
         descriptions = self.describe_attributes(mllm_bot, target_image_path, regions, superclass, label, label_id)
         
         # Step 4: Summarize
-        final_description = self.summarize_attributes(mllm_bot, target_image_path, descriptions, superclass, regions)
+        final_description = self.summarize_attributes(mllm_bot, target_image_path, descriptions, superclass, regions, label, label_id)
         
         return final_description
 
@@ -270,7 +292,7 @@ class CDVCaptioner:
 if __name__ == "__main__":
     # Assume config or paths are set
     captioner = CDVCaptioner()
-    mllm_bot = MLLMBot(model_tag="blip2", device='cuda')
+    mllm_bot = MLLMBot(model_tag="qwen", device='cuda')
     # Dummy train_samples dict
     train_samples = {"cat1": ["path/to/img1.jpg", "path/to/img2.jpg"], "cat2": ["path/to/img3.jpg"]}
     description = captioner.generate_description(mllm_bot, "path/to/target.jpg", train_samples, superclass="dog", t=5, s=3)
