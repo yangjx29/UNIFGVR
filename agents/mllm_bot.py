@@ -3,6 +3,8 @@ from os import path
 from transformers import Qwen2_5_VLForConditionalGeneration, AutoTokenizer, AutoProcessor
 from qwen_vl_utils import process_vision_info
 from PIL import Image
+from agents.CFG import CFGLogits 
+from agents.attention import qwen_modify  
 
 QWEN = {
     'Qwen2.5-VL-8B': 'Qwen/Qwen2.5-VL-7B-Instruct'
@@ -63,6 +65,73 @@ class MLLMBot:
             
         print(f'local_model_path: {local_model_path}')
         
+        # TODO超参数
+        self.pai_enable_attn = True   # 阶段一：是否增强图像注意力
+        self.pai_alpha = 0.2           # 阶段一：增强系数 α
+        self.pai_layers = (14, 28)     # 阶段一：层先验（深层更有效）
+        self.pai_enable_cfg = False    # 阶段二：是否开启CFG logits精炼
+        self.pai_gamma = 1.1           # 阶段二：γ 指导强度
+        
+    # # TODO 这里应该需要考虑chunk切分
+    # def _resolve_img_token_span(self, messages, inputs):
+    #     """返回(img_start_idx, img_end_idx)。
+    #     启发式：缺少显式 image special token 时，近似把末尾 256 个 token 当作图像区域。
+    #     若序列过短或无法解析，则返回 (None, None) 跳过注入。
+    #     """
+    #     try:
+    #         input_ids = inputs.input_ids
+    #         if input_ids is None:
+    #             print(f'input_ids is None')
+    #             return None, None
+    #         seq_len = input_ids.shape[1]
+    #         img_tokens = 256
+    #         print(f'input_ids:{input_ids.shape}\nseq_len:{seq_len}')
+    #         if seq_len <= img_tokens:
+    #             print(f'seq_len <= img_tokens')
+    #             return None, None
+    #         img_start = seq_len - img_tokens
+    #         img_end = seq_len
+    #         print(f'img_start:{img_start}, img_end:{img_end}')
+    #         return img_start, img_end
+    #     except Exception as e:
+    #         print(f"error return None None:{e}")
+    #         return None, None
+
+
+    def _resolve_img_token_span(self, messages, inputs):
+        try:
+            input_ids = inputs.input_ids
+            if input_ids is None:
+                print(f'input_ids is None')
+                return None, None
+            seq_len = input_ids.shape[1]
+            # tokenizer 里有 special token 的映射
+            tokenizer = self.qwen2_5_processor.tokenizer
+            # img_start_token_id = tokenizer.convert_tokens_to_ids("<img_start>")
+            # img_end_token_id   = tokenizer.convert_tokens_to_ids("<img_end>")
+            vision_start_id = tokenizer.convert_tokens_to_ids('<|vision_start|>')
+            image_pad_id = tokenizer.convert_tokens_to_ids('<|image_pad|>')
+            vision_end_id = tokenizer.convert_tokens_to_ids('<|vision_end|>')
+            print(f'input_ids:{input_ids.shape}\nseq_len:{seq_len}')
+            input_ids_list = input_ids[0].tolist()
+            if vision_start_id in input_ids_list and vision_end_id in input_ids_list:
+                img_start = input_ids_list.index(vision_start_id)
+                img_end   = input_ids_list.index(vision_end_id) + 1  # 包含 img_end
+                print(f"找到 image token span: img_start={img_start}, img_end={img_end}")
+                return img_start, img_end
+            else:
+                print("未找到 image token span")
+                return None, None
+        except Exception as e:
+            print(f"error return None None:{e}")
+            return None, None
+
+    def _inject_qwen_pai_attention(self, img_start_idx, img_end_idx):
+        if img_start_idx is None or img_end_idx is None:
+            print('[ATTN] skip injection for Qwen (img span unresolved).')
+            return
+        print(f'[ATTN] inject Qwen attention layers {self.pai_layers} alpha={self.pai_alpha} span=({img_start_idx},{img_end_idx})')
+        qwen_modify(self.qwen2_5, self.pai_layers[0], self.pai_layers[1], True, self.pai_alpha, False, img_start_idx, img_end_idx)
 
     def get_name(self):
         return self.model_name
@@ -108,7 +177,55 @@ class MLLMBot:
                 padding=True,
                 return_tensors="pt"
             ).to(self.device,torch.float16)
-        generated_ids = self.qwen2_5.generate(**inputs, max_new_tokens=128)
+        # generated_ids = self.qwen2_5.generate(**inputs, max_new_tokens=128)
+
+
+        # TODO阶段一 注意力增强 这里看看怎么取出图片id
+        if self.pai_enable_attn:
+            img_start_idx, img_end_idx = self._resolve_img_token_span(messages, inputs)
+            self._inject_qwen_pai_attention(img_start_idx, img_end_idx)
+
+        # TODO阶段二 CFG logits 精炼（在generate中注入LogitsProcessor）
+        logits_processors = None
+        if self.pai_enable_cfg:
+            try:
+                # 构造无图输入：移除images，仅保留文本
+                uncond_messages = [
+                    {"role": "user", "content": [{"type": "text", "text": prompt}]}
+                ]
+                uncond_text = self.qwen2_5_processor.apply_chat_template(
+                    uncond_messages, tokenize=False, add_generation_prompt=True
+                )
+                if self.device == 'cpu':
+                    uncond_inputs = self.qwen2_5_processor(
+                        text=[uncond_text], images=None, videos=None, padding=True, return_tensors="pt"
+                    )
+                else:
+                    uncond_inputs = self.qwen2_5_processor(
+                        text=[uncond_text], images=None, videos=None, padding=True, return_tensors="pt"
+                    ).to(self.device, torch.float16)
+
+                logits_processors = [
+                    CFGLogits(
+                        guidance_scale=self.pai_gamma,
+                        uncond_inputs={
+                            'input_ids': uncond_inputs.input_ids,
+                            'attention_mask': getattr(uncond_inputs, 'attention_mask', None)
+                        },
+                        model=self.qwen2_5,
+                        image=None,
+                        input_type="inputs_ids",
+                    )
+                ]
+            except Exception as e:
+                print(f'[PAI][CFG] fallback without CFG due to: {e}')
+                logits_processors = None
+
+        generated_ids = self.qwen2_5.generate(
+            **inputs,
+            max_new_tokens=256,
+            logits_processor=logits_processors
+        )
         generated_ids_trimmed = [
             out_ids[len(in_ids) :] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
         ]

@@ -452,7 +452,7 @@ class MultimodalRetrieval:
 # Example usage (for testing)
 if __name__ == "__main__":
     """
-    CUDA_VISIBLE_DEVICES=3 python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_rag_tok5_concat.log
+    CUDA_VISIBLE_DEVICES=0 python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_rag_tok5_concat_add_token_weighted_10_28layer_image.log
     """
     # Initialize modules
     fusion_method="concat"

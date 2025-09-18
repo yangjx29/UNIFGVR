@@ -1,0 +1,6 @@
+local_model_path: /home/Dataset/Models/Qwen/Qwen2.5-VL-7B-Instruct
+input_ids:torch.Size([1, 296])
+seq_len:296
+找到 image token span: img_start=14, img_end=286
+[ATTN] inject Qwen attention layers (20, 28) alpha=0.2 span=(14,286)
+output_text: ["The image shows a small dog peeking out from inside a purple backpack. The dog appears to be a Chihuahua, characterized by its small size and distinctive facial features, including a black and white coat with a white muzzle and chest area. The dog's head is partially covered by the purple fabric of the backpack, which has a zipper and a handle visible in the background. The dog looks curious or attentive, with its eyes wide open. The background includes part of what seems to be a reflective, metallic object, possibly a mirror or a piece of equipment, adding an interesting contrast to the scene."]

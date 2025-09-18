@@ -34,17 +34,28 @@ processor = AutoProcessor.from_pretrained("/home/Dataset/Models/Qwen/Qwen2.5-VL-
 #         ],
 #     }
 # ]
+# messages = [
+#     {
+#         "role": "user",
+#         "content": [
+#             {"type": "image", "image": Image.open("/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_3/000.Chihuaha/000.Chihuaha_n02085620_7613.jpg").convert("RGB")},
+#             {"type": "image", "image": Image.open("/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_3/118.Dhole/118.Dhole_n02115913_564.jpg").convert("RGB")},
+#             {"type": "text", "text": "Identify the similarities between these images."},
+#         ],
+#     }
+# ]
 messages = [
     {
         "role": "user",
         "content": [
-            {"type": "image", "image": Image.open("/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_3/000.Chihuaha/000.Chihuaha_n02085620_7613.jpg").convert("RGB")},
-            {"type": "image", "image": Image.open("/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_3/118.Dhole/118.Dhole_n02115913_564.jpg").convert("RGB")},
-            {"type": "text", "text": "Identify the similarities between these images."},
+            {
+                "type": "image",
+                "image": "/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_3/000.Chihuaha/000.Chihuaha_n02085620_7613.jpg",
+            },
+            {"type": "text", "text": "Describe this specifically."},
         ],
     }
 ]
-
 # Preparation for inference
 text = processor.apply_chat_template(
     messages, tokenize=False, add_generation_prompt=True
@@ -69,5 +80,5 @@ output_text = processor.batch_decode(
 )
 print(f'output_text: {output_text}')
 """
-CUDA_VISIBLE_DEVICES=2 python testqwen.py | tee ./logs/testqwen.log
+CUDA_VISIBLE_DEVICES=0 python testqwen.py | tee ./logs/testqwen.log
 """
