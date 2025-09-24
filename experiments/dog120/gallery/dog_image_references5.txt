@@ -1,5 +1,5 @@
-./datasets/dogs_120/images_discovery_all_3/093.Tibetan_Mastiff/093.Tibetan_Mastiff_n02108551_1968.jpg
-./datasets/dogs_120/images_discovery_all_3/095.Great_Dane/095.Great_Dane_n02109047_17629.jpg
-./datasets/dogs_120/images_discovery_all_3/034.Norfolk_Terrier/034.Norfolk_Terrier_n02094114_3248.jpg
-./datasets/dogs_120/images_discovery_all_3/049.Tibetan_Terrier/049.Tibetan_Terrier_n02097474_3976.jpg
-./datasets/dogs_120/images_discovery_all_3/003.Pekinese/003.Pekinese_n02086079_869.jpg
+./datasets/dogs_120/images_discovery_all_3/014.Black_and_tan_Coonhound/014.Black_and_tan_Coonhound_n02089078_1275.jpg
+./datasets/dogs_120/images_discovery_all_3/010.Basset_Hound/010.Basset_Hound_n02088238_9025.jpg
+./datasets/dogs_120/images_discovery_all_3/017.Redbone/017.Redbone_n02090379_2453.jpg
+./datasets/dogs_120/images_discovery_all_3/092.Bull_Mastiff/092.Bull_Mastiff_n02108422_2949.jpg
+./datasets/dogs_120/images_discovery_all_3/069.Sussex_Spaniel/069.Sussex_Spaniel_n02102480_6569.jpg

@@ -1,0 +1,340 @@
+/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/transformers/utils/hub.py:111: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: '/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torchvision/image.so: undefined symbol: _ZN3c1017RegisterOperatorsD1Ev'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]Fetching 1 files: 100%|██████████| 1/1 [00:00<00:00, 4563.99it/s]
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]Fetching 1 files: 100%|██████████| 1/1 [00:00<00:00, 8719.97it/s]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:03<00:13,  3.46s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:06<00:10,  3.45s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:10<00:06,  3.42s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:13<00:03,  3.42s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:14<00:00,  2.54s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:14<00:00,  2.94s/it]
+local_model_path: /home/Dataset/Models/Qwen/Qwen2.5-VL-7B-Instruct
+test sample:{'014.Black and tan Coonhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/014.Black_and_tan_Coonhound/014.Black_and_tan_Coonhound_n02089078_1275.jpg'], '044.Boston Bull': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/044.Boston_Bull/044.Boston_Bull_n02096585_5260.jpg'], '043.Dandi Dinmont': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/043.Dandi_Dinmont/043.Dandi_Dinmont_n02096437_730.jpg'], '002.Maltese Dog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/002.Maltese_Dog/002.Maltese_Dog_n02085936_16355.jpg'], '010.Basset Hound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/010.Basset_Hound/010.Basset_Hound_n02088238_7181.jpg'], '094.French Bulldog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/094.French_Bulldog/094.French_Bulldog_n02108915_7608.jpg'], '009.Afghan Hound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/009.Afghan_Hound/009.Afghan_Hound_n02088094_6035.jpg'], '029.American Staffordshire Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/029.American_Staffordshire_Terrier/029.American_Staffordshire_Terrier_n02093428_3353.jpg'], '035.Norwich Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/035.Norwich_Terrier/035.Norwich_Terrier_n02094258_2911.jpg'], '086.Miniature Pinscher': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/086.Miniature_Pinscher/086.Miniature_Pinscher_n02107312_3227.jpg'], '118.Dhole': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/118.Dhole/118.Dhole_n02115913_1142.jpg'], '072.Schipperke': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/072.Schipperke/072.Schipperke_n02104365_6140.jpg'], '028.Staffordshire Bullterrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/028.Staffordshire_Bullterrier/028.Staffordshire_Bullterrier_n02093256_11732.jpg'], '077.Komondor': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/077.Komondor/077.Komondor_n02105505_3933.jpg'], '079.Shetland Sheepdog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/079.Shetland_Sheepdog/079.Shetland_Sheepdog_n02105855_5719.jpg'], '111.Pembroke': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/111.Pembroke/111.Pembroke_n02113023_6140.jpg'], '058.Chesapeake Bay Retriever': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/058.Chesapeake_Bay_Retriever/058.Chesapeake_Bay_Retriever_n02099849_513.jpg'], '003.Pekinese': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/003.Pekinese/003.Pekinese_n02086079_8902.jpg'], '025.Saluki': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/025.Saluki/025.Saluki_n02091831_11021.jpg'], '102.Pug': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/102.Pug/102.Pug_n02110958_1975.jpg'], '062.Irish Setter': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/062.Irish_Setter/062.Irish_Setter_n02100877_5286.jpg'], '066.English Springer Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/066.English_Springer_Spaniel/066.English_Springer_Spaniel_n02102040_5096.jpg'], '057.Labrador Retriever': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/057.Labrador_Retriever/057.Labrador_Retriever_n02099712_3613.jpg'], '007.Toy Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/007.Toy_Terrier/007.Toy_Terrier_n02087046_4402.jpg'], '084.German Shepard': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/084.German_Shepard/084.German_Shepard_n02106662_9625.jpg'], '048.Scotch Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/048.Scotch_Terrier/048.Scotch_Terrier_n02097298_2443.jpg'], '090.EntleBucher': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/090.EntleBucher/090.EntleBucher_n02108000_716.jpg'], '059.German Short haired Pointer': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/059.German_Short_haired_Pointer/059.German_Short_haired_Pointer_n02100236_4198.jpg'], '047.Standard Schnauzer': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/047.Standard_Schnauzer/047.Standard_Schnauzer_n02097209_2194.jpg'], '045.Miniature Schnauzer': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/045.Miniature_Schnauzer/045.Miniature_Schnauzer_n02097047_724.jpg'], '004.Shih Tzu': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/004.Shih_Tzu/004.Shih_Tzu_n02086240_1011.jpg'], '064.Brittany': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/064.Brittany/064.Brittany_n02101388_4229.jpg'], '053.Lhasa': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/053.Lhasa/053.Lhasa_n02098413_3033.jpg'], '042.Australian Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/042.Australian_Terrier/042.Australian_Terrier_n02096294_3554.jpg'], '039.Sealyham Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/039.Sealyham_Terrier/039.Sealyham_Terrier_n02095889_610.jpg'], '067.Welsh Springer Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/067.Welsh_Springer_Spaniel/067.Welsh_Springer_Spaniel_n02102177_1128.jpg'], '068.Cocker Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/068.Cocker_Spaniel/068.Cocker_Spaniel_n02102318_6612.jpg'], '089.Appenzeller': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/089.Appenzeller/089.Appenzeller_n02107908_7236.jpg'], '017.Redbone': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/017.Redbone/017.Redbone_n02090379_3996.jpg'], '119.African Hunting Dog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/119.African_Hunting_Dog/119.African_Hunting_Dog_n02116738_8653.jpg'], '113.Toy Poodle': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/113.Toy_Poodle/113.Toy_Poodle_n02113624_665.jpg'], '027.Weimaraner': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/027.Weimaraner/027.Weimaraner_n02092339_4003.jpg'], '041.Cairn': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/041.Cairn/041.Cairn_n02096177_5206.jpg'], '117.Dingo': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/117.Dingo/117.Dingo_n02115641_925.jpg'], '034.Norfolk Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/034.Norfolk_Terrier/034.Norfolk_Terrier_n02094114_99.jpg'], '114.Miniature Poodle': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/114.Miniature_Poodle/114.Miniature_Poodle_n02113712_2274.jpg'], '085.Doberman': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/085.Doberman/085.Doberman_n02107142_4763.jpg'], '116.Mexican Hairless': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/116.Mexican_Hairless/116.Mexican_Hairless_n02113978_2888.jpg'], '073.Groenendael': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/073.Groenendael/073.Groenendael_n02105056_7068.jpg'], '012.Bloodhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/012.Bloodhound/012.Bloodhound_n02088466_4731.jpg'], '088.Bernese Mountain Dog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/088.Bernese_Mountain_Dog/088.Bernese_Mountain_Dog_n02107683_6301.jpg'], '095.Great Dane': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/095.Great_Dane/095.Great_Dane_n02109047_34175.jpg'], '040.Airedale': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/040.Airedale/040.Airedale_n02096051_8826.jpg'], '107.Pomeranian': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/107.Pomeranian/107.Pomeranian_n02112018_1577.jpg'], '082.Bouvier des Flandres': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/082.Bouvier_des_Flandres/082.Bouvier_des_Flandres_n02106382_1151.jpg'], '019.Irish Wolfhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/019.Irish_Wolfhound/019.Irish_Wolfhound_n02090721_537.jpg'], '087.Greater Swiss Mountain Dog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/087.Greater_Swiss_Mountain_Dog/087.Greater_Swiss_Mountain_Dog_n02107574_2436.jpg'], '099.Siberian Husky': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/099.Siberian_Husky/099.Siberian_Husky_n02110185_12380.jpg'], '075.Briard': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/075.Briard/075.Briard_n02105251_2591.jpg'], '033.Irish Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/033.Irish_Terrier/033.Irish_Terrier_n02093991_1276.jpg'], '013.Bluetick': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/013.Bluetick/013.Bluetick_n02088632_4058.jpg'], '061.English Setter': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/061.English_Setter/061.English_Setter_n02100735_3595.jpg'], '020.Italian Greyhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/020.Italian_Greyhound/020.Italian_Greyhound_n02091032_490.jpg'], '112.Cardigan': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/112.Cardigan/112.Cardigan_n02113186_5833.jpg'], '063.Gordon Setter': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/063.Gordon_Setter/063.Gordon_Setter_n02101006_2540.jpg'], '083.Rottweiler': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/083.Rottweiler/083.Rottweiler_n02106550_2197.jpg'], '018.Borzoi': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/018.Borzoi/018.Borzoi_n02090622_6976.jpg'], '008.Rhodesian Ridgeback': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/008.Rhodesian_Ridgeback/008.Rhodesian_Ridgeback_n02087394_3795.jpg'], '050.Silky Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/050.Silky_Terrier/050.Silky_Terrier_n02097658_2329.jpg'], '098.Malamute': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/098.Malamute/098.Malamute_n02110063_12514.jpg'], '070.Irish Water Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/070.Irish_Water_Spaniel/070.Irish_Water_Spaniel_n02102973_2642.jpg'], '100.Affenpinscher': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/100.Affenpinscher/100.Affenpinscher_n02110627_10439.jpg'], '078.Old English Sheepdog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/078.Old_English_Sheepdog/078.Old_English_Sheepdog_n02105641_3531.jpg'], '106.Samoyed': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/106.Samoyed/106.Samoyed_n02111889_6592.jpg'], '022.Ibizian Hound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/022.Ibizian_Hound/022.Ibizian_Hound_n02091244_5818.jpg'], '000.Chihuaha': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/000.Chihuaha/000.Chihuaha_n02085620_3488.jpg'], '023.Norwegian Elkhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/023.Norwegian_Elkhound/023.Norwegian_Elkhound_n02091467_4362.jpg'], '036.Yorkshire Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/036.Yorkshire_Terrier/036.Yorkshire_Terrier_n02094433_730.jpg'], '037.Wirehaired Fox Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/037.Wirehaired_Fox_Terrier/037.Wirehaired_Fox_Terrier_n02095314_3512.jpg'], '011.Beagle': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/011.Beagle/011.Beagle_n02088364_4052.jpg'], '109.Keeshond': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/109.Keeshond/109.Keeshond_n02112350_7087.jpg'], '015.Walker Hound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/015.Walker_Hound/015.Walker_Hound_n02089867_24.jpg'], '101.Basenji': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/101.Basenji/101.Basenji_n02110806_4876.jpg'], '105.Great Pyrenees': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/105.Great_Pyrenees/105.Great_Pyrenees_n02111500_5052.jpg'], '046.Giant Schnauzer': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/046.Giant_Schnauzer/046.Giant_Schnauzer_n02097130_5907.jpg'], '006.Papillon': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/006.Papillon/006.Papillon_n02086910_4388.jpg'], '024.Otterhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/024.Otterhound/024.Otterhound_n02091635_2068.jpg'], '031.Border Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/031.Border_Terrier/031.Border_Terrier_n02093754_7403.jpg'], '030.Bedlington Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/030.Bedlington_Terrier/030.Bedlington_Terrier_n02093647_79.jpg'], '051.Soft coated Wheaten Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/051.Soft_coated_Wheaten_Terrier/051.Soft_coated_Wheaten_Terrier_n02098105_838.jpg'], '071.Kuvasz': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/071.Kuvasz/071.Kuvasz_n02104029_662.jpg'], '110.Brabancon Griffon': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/110.Brabancon_Griffon/110.Brabancon_Griffon_n02112706_1554.jpg'], '060.Vizsla': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/060.Vizsla/060.Vizsla_n02100583_6521.jpg'], '026.Scottish Deerhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/026.Scottish_Deerhound/026.Scottish_Deerhound_n02092002_1727.jpg'], '080.Collie': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/080.Collie/080.Collie_n02106030_10057.jpg'], '096.Saint Bernard': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/096.Saint_Bernard/096.Saint_Bernard_n02109525_18948.jpg'], '081.Border Collie': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/081.Border_Collie/081.Border_Collie_n02106166_3882.jpg'], '005.Blenheim Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/005.Blenheim_Spaniel/005.Blenheim_Spaniel_n02086646_3986.jpg'], '038.Lakeland Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/038.Lakeland_Terrier/038.Lakeland_Terrier_n02095570_4782.jpg'], '092.Bull Mastiff': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/092.Bull_Mastiff/092.Bull_Mastiff_n02108422_5221.jpg'], '104.Newfoundland': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/104.Newfoundland/104.Newfoundland_n02111277_8856.jpg'], '076.Kelpie': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/076.Kelpie/076.Kelpie_n02105412_5288.jpg'], '074.Malinois': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/074.Malinois/074.Malinois_n02105162_6106.jpg'], '052.West Highland White Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/052.West_Highland_White_Terrier/052.West_Highland_White_Terrier_n02098286_1632.jpg'], '069.Sussex Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/069.Sussex_Spaniel/069.Sussex_Spaniel_n02102480_5703.jpg'], '091.Boxer': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/091.Boxer/091.Boxer_n02108089_14719.jpg'], '108.Chow': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/108.Chow/108.Chow_n02112137_14448.jpg'], '049.Tibetan Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/049.Tibetan_Terrier/049.Tibetan_Terrier_n02097474_5841.jpg'], '056.Golden Retriever': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/056.Golden_Retriever/056.Golden_Retriever_n02099601_3360.jpg'], '097.Eskimo Dog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/097.Eskimo_Dog/097.Eskimo_Dog_n02109961_9973.jpg'], '001.Japanese Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/001.Japanese_Spaniel/001.Japanese_Spaniel_n02085782_1691.jpg'], '115.Standard Poodle': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/115.Standard_Poodle/115.Standard_Poodle_n02113799_1537.jpg'], '065.Clumber': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/065.Clumber/065.Clumber_n02101556_4514.jpg'], '016.English Foxhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/016.English_Foxhound/016.English_Foxhound_n02089973_1907.jpg'], '103.Leonberg': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/103.Leonberg/103.Leonberg_n02111129_1197.jpg'], '021.Whippet': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/021.Whippet/021.Whippet_n02091134_15784.jpg'], '032.Kerry Blue Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/032.Kerry_Blue_Terrier/032.Kerry_Blue_Terrier_n02093859_393.jpg'], '055.Curly coater Retriever': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/055.Curly_coater_Retriever/055.Curly_coater_Retriever_n02099429_618.jpg'], '054.Flat coated Retriever': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/054.Flat_coated_Retriever/054.Flat_coated_Retriever_n02099267_5540.jpg'], '093.Tibetan Mastiff': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/093.Tibetan_Mastiff/093.Tibetan_Mastiff_n02108551_7523.jpg']}
+匹配成功,correct:1,total:0
+succ:1.0
+predicted_cat:Black-and-tan Coonhound, true_cat:Black and tan Coonhound
+匹配成功,correct:2,total:1
+succ:1.0
+predicted_cat:Boston Bull, true_cat:Boston Bull
+succ:0.6666666666666666
+predicted_cat:Shih-Tzu, true_cat:Dandi Dinmont
+succ:0.5
+predicted_cat:Shih-Tzu, true_cat:Maltese Dog
+匹配成功,correct:3,total:4
+succ:0.6
+predicted_cat:Basset Hound, true_cat:Basset Hound
+匹配成功,correct:4,total:5
+succ:0.6666666666666666
+predicted_cat:French Bulldog, true_cat:French Bulldog
+匹配成功,correct:5,total:6
+succ:0.7142857142857143
+predicted_cat:Afghan Hound, true_cat:Afghan Hound
+匹配成功,correct:6,total:7
+succ:0.75
+predicted_cat:Staffordshire Bullterrier, true_cat:American Staffordshire Terrier
+匹配成功,correct:7,total:8
+succ:0.7777777777777778
+predicted_cat:Toy Terrier, true_cat:Norwich Terrier
+succ:0.7
+predicted_cat:Toy Terrier, true_cat:Miniature Pinscher
+匹配成功,correct:8,total:10
+succ:0.7272727272727273
+predicted_cat:Dhole, true_cat:Dhole
+succ:0.6666666666666666
+predicted_cat:Toy Terrier, true_cat:Schipperke
+匹配成功,correct:9,total:12
+succ:0.6923076923076923
+predicted_cat:Staffordshire Bullterrier, true_cat:Staffordshire Bullterrier
+匹配成功,correct:10,total:13
+succ:0.7142857142857143
+predicted_cat:Komondor, true_cat:Komondor
+匹配成功,correct:11,total:14
+succ:0.7333333333333333
+predicted_cat:Shetland Sheepdog, true_cat:Shetland Sheepdog
+succ:0.6875
+predicted_cat:Cardigan, true_cat:Pembroke
+匹配成功,correct:12,total:16
+succ:0.7058823529411765
+predicted_cat:Labrador Retriever, true_cat:Chesapeake Bay Retriever
+匹配成功,correct:13,total:17
+succ:0.7222222222222222
+predicted_cat:Pekinese, true_cat:Pekinese
+succ:0.6842105263157895
+predicted_cat:Afghan Hound, true_cat:Saluki
+匹配成功,correct:14,total:19
+succ:0.7
+predicted_cat:Pug, true_cat:Pug
+匹配成功,correct:15,total:20
+succ:0.7142857142857143
+predicted_cat:Irish Setter, true_cat:Irish Setter
+匹配成功,correct:16,total:21
+succ:0.7272727272727273
+predicted_cat:English Springer Spaniel, true_cat:English Springer Spaniel
+匹配成功,correct:17,total:22
+succ:0.7391304347826086
+predicted_cat:Labrador Retriever, true_cat:Labrador Retriever
+匹配成功,correct:18,total:23
+succ:0.75
+predicted_cat:Toy Terrier, true_cat:Toy Terrier
+匹配成功,correct:19,total:24
+succ:0.76
+predicted_cat:German Shepard, true_cat:German Shepard
+匹配成功,correct:20,total:25
+succ:0.7692307692307693
+predicted_cat:Scottish Terrier, true_cat:Scotch Terrier
+succ:0.7407407407407407
+predicted_cat:Beagle, true_cat:EntleBucher
+匹配成功,correct:21,total:27
+succ:0.75
+predicted_cat:German Short-haired Pointer, true_cat:German Short haired Pointer
+匹配成功,correct:22,total:28
+succ:0.7586206896551724
+predicted_cat:Standard Schnauzer, true_cat:Standard Schnauzer
+匹配成功,correct:23,total:29
+succ:0.7666666666666667
+predicted_cat:Standard Schnauzer, true_cat:Miniature Schnauzer
+匹配成功,correct:24,total:30
+succ:0.7741935483870968
+predicted_cat:Shih-Tzu, true_cat:Shih Tzu
+succ:0.75
+predicted_cat:Blenheim Spaniel, true_cat:Brittany
+succ:0.7272727272727273
+predicted_cat:Shih-Tzu, true_cat:Lhasa
+匹配成功,correct:25,total:33
+succ:0.7352941176470589
+predicted_cat:Yorkshire Terrier, true_cat:Australian Terrier
+匹配成功,correct:26,total:34
+succ:0.7428571428571429
+predicted_cat:Sealyham Terrier, true_cat:Sealyham Terrier
+匹配成功,correct:27,total:35
+succ:0.75
+predicted_cat:Welsh Springer Spaniel, true_cat:Welsh Springer Spaniel
+succ:0.7297297297297297
+predicted_cat:Cairn, true_cat:Cocker Spaniel
+succ:0.7105263157894737
+predicted_cat:Black-and-tan Coonhound, true_cat:Appenzeller
+succ:0.6923076923076923
+predicted_cat:Rhodesian Ridgeback, true_cat:Redbone
+匹配成功,correct:28,total:39
+succ:0.7
+predicted_cat:African Hunting Dog, true_cat:African Hunting Dog
+匹配成功,correct:29,total:40
+succ:0.7073170731707317
+predicted_cat:Toy Poodle, true_cat:Toy Poodle
+匹配成功,correct:30,total:41
+succ:0.7142857142857143
+predicted_cat:Weimaraner, true_cat:Weimaraner
+succ:0.6976744186046512
+predicted_cat:Toy Terrier, true_cat:Cairn
+匹配成功,correct:31,total:43
+succ:0.7045454545454546
+predicted_cat:Dingo, true_cat:Dingo
+匹配成功,correct:32,total:44
+succ:0.7111111111111111
+predicted_cat:Norfolk Terrier, true_cat:Norfolk Terrier
+匹配成功,correct:33,total:45
+succ:0.717391304347826
+predicted_cat:Standard Poodle, true_cat:Miniature Poodle
+匹配成功,correct:34,total:46
+succ:0.723404255319149
+predicted_cat:Doberman, true_cat:Doberman
+succ:0.7083333333333334
+predicted_cat:Italian Greyhound, true_cat:Mexican Hairless
+匹配成功,correct:35,total:48
+succ:0.7142857142857143
+predicted_cat:Groenendael, true_cat:Groenendael
+succ:0.7
+predicted_cat:Rhodesian Ridgeback, true_cat:Bloodhound
+匹配成功,correct:36,total:50
+succ:0.7058823529411765
+predicted_cat:Bernese Mountain Dog, true_cat:Bernese Mountain Dog
+匹配成功,correct:37,total:51
+succ:0.7115384615384616
+predicted_cat:Weimaraner, true_cat:Great Dane
+匹配成功,correct:38,total:52
+succ:0.7169811320754716
+predicted_cat:Airedale, true_cat:Airedale
+匹配成功,correct:39,total:53
+succ:0.7222222222222222
+predicted_cat:Pomeranian, true_cat:Pomeranian
+succ:0.7090909090909091
+predicted_cat:Schipperke, true_cat:Bouvier des Flandres
+匹配成功,correct:40,total:55
+succ:0.7142857142857143
+predicted_cat:Irish Wolfhound, true_cat:Irish Wolfhound
+匹配成功,correct:41,total:56
+succ:0.7192982456140351
+predicted_cat:Bernese Mountain Dog, true_cat:Greater Swiss Mountain Dog
+匹配成功,correct:42,total:57
+succ:0.7241379310344828
+predicted_cat:Siberian Husky, true_cat:Siberian Husky
+succ:0.711864406779661
+predicted_cat:Afghan Hound, true_cat:Briard
+匹配成功,correct:43,total:59
+succ:0.7166666666666667
+predicted_cat:Irish Terrier, true_cat:Irish Terrier
+succ:0.7049180327868853
+predicted_cat:Beagle, true_cat:Bluetick
+匹配成功,correct:44,total:61
+succ:0.7096774193548387
+predicted_cat:English Setter, true_cat:English Setter
+匹配成功,correct:45,total:62
+succ:0.7142857142857143
+predicted_cat:Italian Greyhound, true_cat:Italian Greyhound
+匹配成功,correct:46,total:63
+succ:0.71875
+predicted_cat:Cardigan, true_cat:Cardigan
+匹配成功,correct:47,total:64
+succ:0.7230769230769231
+predicted_cat:Gordon Setter, true_cat:Gordon Setter
+匹配成功,correct:48,total:65
+succ:0.7272727272727273
+predicted_cat:Rottweiler, true_cat:Rottweiler
+匹配成功,correct:49,total:66
+succ:0.7313432835820896
+predicted_cat:Borzoi, true_cat:Borzoi
+匹配成功,correct:50,total:67
+succ:0.7352941176470589
+predicted_cat:Rhodesian Ridgeback, true_cat:Rhodesian Ridgeback
+匹配成功,correct:51,total:68
+succ:0.7391304347826086
+predicted_cat:Australian Terrier, true_cat:Silky Terrier
+succ:0.7285714285714285
+predicted_cat:Siberian Husky, true_cat:Malamute
+succ:0.7183098591549296
+predicted_cat:Standard Poodle, true_cat:Irish Water Spaniel
+succ:0.7083333333333334
+predicted_cat:Shih-Tzu, true_cat:Affenpinscher
+匹配成功,correct:52,total:72
+succ:0.7123287671232876
+predicted_cat:Old English Sheepdog, true_cat:Old English Sheepdog
+匹配成功,correct:53,total:73
+succ:0.7162162162162162
+predicted_cat:Samoyed, true_cat:Samoyed
+匹配成功,correct:54,total:74
+succ:0.72
+predicted_cat:Basset Hound, true_cat:Ibizian Hound
+匹配成功,correct:55,total:75
+succ:0.7236842105263158
+predicted_cat:Chihuahua, true_cat:Chihuaha
+匹配成功,correct:56,total:76
+succ:0.7272727272727273
+predicted_cat:Norwegian Elkhound, true_cat:Norwegian Elkhound
+匹配成功,correct:57,total:77
+succ:0.7307692307692307
+predicted_cat:Yorkshire Terrier, true_cat:Yorkshire Terrier
+匹配成功,correct:58,total:78
+succ:0.7341772151898734
+predicted_cat:Sealyham Terrier, true_cat:Wirehaired Fox Terrier
+匹配成功,correct:59,total:79
+succ:0.7375
+predicted_cat:Beagle, true_cat:Beagle
+匹配成功,correct:60,total:80
+succ:0.7407407407407407
+predicted_cat:Keeshond, true_cat:Keeshond
+succ:0.7317073170731707
+predicted_cat:Beagle, true_cat:Walker Hound
+匹配成功,correct:61,total:82
+succ:0.7349397590361446
+predicted_cat:Basset Hound, true_cat:Basenji
+succ:0.7261904761904762
+predicted_cat:Kuvasz, true_cat:Great Pyrenees
+匹配成功,correct:62,total:84
+succ:0.7294117647058823
+predicted_cat:Miniature Schnauzer, true_cat:Giant Schnauzer
+succ:0.7209302325581395
+predicted_cat:Japanese Spaniel, true_cat:Papillon
+succ:0.7126436781609196
+predicted_cat:Soft-coated Wheaten Terrier, true_cat:Otterhound
+匹配成功,correct:63,total:87
+succ:0.7159090909090909
+predicted_cat:Border Terrier, true_cat:Border Terrier
+succ:0.7078651685393258
+predicted_cat:Toy Poodle, true_cat:Bedlington Terrier
+匹配成功,correct:64,total:89
+succ:0.7111111111111111
+predicted_cat:Soft-coated Wheaten Terrier, true_cat:Soft coated Wheaten Terrier
+succ:0.7032967032967034
+predicted_cat:Great Pyrenees, true_cat:Kuvasz
+匹配成功,correct:65,total:91
+succ:0.7065217391304348
+predicted_cat:Brabancon Griffon, true_cat:Brabancon Griffon
+匹配成功,correct:66,total:92
+succ:0.7096774193548387
+predicted_cat:Vizsla, true_cat:Vizsla
+匹配成功,correct:67,total:93
+succ:0.7127659574468085
+predicted_cat:Scottish Deerhound, true_cat:Scottish Deerhound
+匹配成功,correct:68,total:94
+succ:0.7157894736842105
+predicted_cat:Collie, true_cat:Collie
+匹配成功,correct:69,total:95
+succ:0.71875
+predicted_cat:Saint Bernard, true_cat:Saint Bernard
+匹配成功,correct:70,total:96
+succ:0.7216494845360825
+predicted_cat:Border Collie, true_cat:Border Collie
+匹配成功,correct:71,total:97
+succ:0.7244897959183674
+predicted_cat:Blenheim Spaniel, true_cat:Blenheim Spaniel
+succ:0.7171717171717171
+predicted_cat:Irish Water Spaniel, true_cat:Lakeland Terrier
+succ:0.71
+predicted_cat:Staffordshire Bullterrier, true_cat:Bull Mastiff
+匹配成功,correct:72,total:100
+succ:0.7128712871287128
+predicted_cat:Newfoundland, true_cat:Newfoundland
+匹配成功,correct:73,total:101
+succ:0.7156862745098039
+predicted_cat:Kelpie, true_cat:Kelpie
+匹配成功,correct:74,total:102
+succ:0.7184466019417476
+predicted_cat:Malinois, true_cat:Malinois
+匹配成功,correct:75,total:103
+succ:0.7211538461538461
+predicted_cat:West Highland White Terrier, true_cat:West Highland White Terrier
+匹配成功,correct:76,total:104
+succ:0.7238095238095238
+predicted_cat:Cocker Spaniel, true_cat:Sussex Spaniel
+匹配成功,correct:77,total:105
+succ:0.7264150943396226
+predicted_cat:Boxer, true_cat:Boxer
+匹配成功,correct:78,total:106
+succ:0.7289719626168224
+predicted_cat:Chow, true_cat:Chow
+匹配成功,correct:79,total:107
+succ:0.7314814814814815
+predicted_cat:West Highland White Terrier, true_cat:Tibetan Terrier
+匹配成功,correct:80,total:108
+succ:0.7339449541284404
+predicted_cat:Golden Retriever, true_cat:Golden Retriever
+succ:0.7272727272727273
+predicted_cat:Siberian Husky, true_cat:Eskimo Dog
+匹配成功,correct:81,total:110
+succ:0.7297297297297297
+predicted_cat:Japanese Spaniel, true_cat:Japanese Spaniel
+匹配成功,correct:82,total:111
+succ:0.7321428571428571
+predicted_cat:Standard Poodle, true_cat:Standard Poodle
+匹配成功,correct:83,total:112
+succ:0.7345132743362832
+predicted_cat:Clumber, true_cat:Clumber
+succ:0.7280701754385965
+predicted_cat:Beagle, true_cat:English Foxhound
+匹配成功,correct:84,total:114
+succ:0.7304347826086957
+predicted_cat:Leonberg, true_cat:Leonberg
+succ:0.7241379310344828
+predicted_cat:Italian Greyhound, true_cat:Whippet
+匹配成功,correct:85,total:116
+succ:0.7264957264957265
+predicted_cat:Irish Terrier, true_cat:Kerry Blue Terrier
+匹配成功,correct:86,total:117
+succ:0.7288135593220338
+predicted_cat:Curly-coated Retriever, true_cat:Curly coater Retriever
+匹配成功,correct:87,total:118
+succ:0.7310924369747899
+predicted_cat:Flat-coated Retriever, true_cat:Flat coated Retriever
+succ:0.725
+predicted_cat:Bernese Mountain Dog, true_cat:Tibetan Mastiff
+accuracy with direct:0.725

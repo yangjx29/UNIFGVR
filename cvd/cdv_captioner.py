@@ -20,7 +20,7 @@ import random
 import re
 import json
 from utils.fileios import dump_json, load_json, dump_txt 
-
+from utils.util import *
 class CDVCaptioner:
     def __init__(self, image_encoder_name="/home/Dataset/Models/Clip/clip-vit-base-patch32", device="cuda" if torch.cuda.is_available() else "cpu", cfg = None):
         """
@@ -132,7 +132,60 @@ class CDVCaptioner:
         
         # 应该是一起输入让qwenqu判断
         reply, trimmed_reply = mllm_bot.describe_attribute(images, prompt)
-        print(f'trimmed_reply: {trimmed_reply}')
+        print(f'prompt in discover regions:{prompt}\ndiscover_regions: {trimmed_reply}')
+        if isinstance(outputs, str):
+            trimmed_reply = trimmed_reply.lower().strip()
+            outputs = trimmed_reply
+            regions = ", ".join(outputs)
+        else:
+            for target_reference in trimmed_reply:
+                output_string = target_reference.lower().strip() 
+                feats = output_string.split(",")
+                for f in feats:
+                    outputs.append(f.strip())
+        regions = outputs[:s]  # Take top s
+        # save_path_regions = self.cfg['path_regions'] + str(t)
+        # dump_json(save_path_regions, regions)
+        # print(f"save_path_regions: {save_path_regions}\n")
+        return regions # eg,.white fur
+
+    def discover_regions_inference(self, mllm_bot, target_image_path, ref_paths, superclass, s=3):
+        """
+        Discover s discriminative regions using MLLM.
+        prompt: {IMAGERY} We provide {t} images from different categories within the {SUPERCLASS} that share similar visual features, and use them as references to generate {s} discriminative visual regions for distinguishing the target image's category.
+        Args:
+            target_image_path (str): Path to the target image.
+            ref_paths (list): List of reference image paths.
+            superclass (str): Superclass (e.g., 'dog').
+            s (int): Number of regions to generate.
+        
+        Returns:
+            list: List of s region names (e.g., ['white fur', 'upright ears']).
+        """
+        # string to list
+        ref_paths = ref_paths.split("\n")
+        t = len(ref_paths)
+        print(f'ref_path: {ref_paths}\nlen ref path: {t}')
+        
+        # Prepare images: target + references
+        if t == 1:
+            # 测试阶段
+            images = [Image.open(target_image_path).convert("RGB")]
+        else:
+            images = [Image.open(target_image_path).convert("RGB")] + [Image.open(p).convert("RGB") for p in ref_paths]
+        
+        # Prompt template from paper (formula 1)
+        prompt = (
+            f"We provide an image from {superclass}, "
+            f"please generate {s} visual regions that are discriminative compared to other subclasses (e.g., descriptive phrases like white fur, thin straight legs) to distinguish the target image's category. Output the regions as a comma-delimited list."
+        )
+        
+        # Call MLLM (LLaVA supports list of images)
+        outputs = []
+        
+        # 应该是一起输入让qwenqu判断
+        reply, trimmed_reply = mllm_bot.describe_attribute(images, prompt)
+        print(f'prompt in discover regions:{prompt}\ndiscover_regions: {trimmed_reply}')
         if isinstance(outputs, str):
             trimmed_reply = trimmed_reply.lower().strip()
             outputs = trimmed_reply
@@ -247,7 +300,7 @@ class CDVCaptioner:
     def generate_description_inference(self, mllm_bot, target_image_path, superclass, t=5, s=3):
         # Step 1: Discover regions
         ref_path = ""
-        regions = self.discover_regions(mllm_bot, target_image_path, ref_path, s)
+        regions = self.discover_regions_inference(mllm_bot, target_image_path, ref_path, superclass, s)
         
         # Step 2: Describe attributes
         descriptions = self.describe_attributes(mllm_bot, target_image_path, regions, superclass)

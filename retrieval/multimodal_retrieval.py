@@ -1,5 +1,12 @@
 import os
 import sys
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.dirname(current_dir)
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
+# 直接导入UniFGVR目录下的utils模块
+sys.path.insert(0, '/data/yjx/MLLM/UniFGVR')
 import numpy as np
 from PIL import Image
 import torch
@@ -11,7 +18,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 # 添加项目根目录到Python路径
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+from utils.util import is_similar
 from cvd.cdv_captioner import CDVCaptioner
 from agents.mllm_bot import MLLMBot
 import json
@@ -346,7 +353,6 @@ class MultimodalRetrieval:
         
         print(f'predicted_category:{predicted_category}')
         return predicted_category, affinity_scores
-
     def evaluate_fgvc(self, mllm_bot, test_samples, gallery, cdv_captioner, superclass, use_rag=True, topk = 1):
         """
         Evaluate FGVC on a set of test samples.
@@ -367,11 +373,15 @@ class MultimodalRetrieval:
         for true_cat, paths in test_samples.items():
             for path in paths:
                 predicted_cat, _ = self.fgvc_via_multimodal_retrieval(mllm_bot, path, gallery, cdv_captioner, superclass, use_rag,topk)
-                if predicted_cat == true_cat or predicted_cat in true_cat or true_cat in predicted_cat:
+                # if predicted_cat == true_cat or predicted_cat in true_cat or true_cat in predicted_cat:
+                #     correct += 1
+                #     print(f'匹配成功,correct:{correct},total:{total}')
+                if is_similar(predicted_cat,true_cat):
                     correct += 1
-                    print(f'匹配成功')
+                    print(f'匹配成功,correct:{correct},total:{total}')
                 total += 1
-                print(f'predicted_cat:{predicted_cat}\ttrue_cat:{true_cat}')
+                print(f'succ:{correct / total if total > 0 else 0.0}')
+                print(f'predicted_cat:{predicted_cat}, true_cat:{true_cat}')
         
         accuracy = correct / total if total > 0 else 0.0
         return accuracy
@@ -452,13 +462,15 @@ class MultimodalRetrieval:
 # Example usage (for testing)
 if __name__ == "__main__":
     """
-    CUDA_VISIBLE_DEVICES=0 python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_rag_tok5_concat_add_token_weighted_10_28layer_image.log
+    CUDA_VISIBLE_DEVICES=1 python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_rag_tok5_concat_add_token_weighted_10_28layer_image_qufen0.2_duibi_newquanzhong.log
+    CUDA_VISIBLE_DEVICES=0 nohup python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_rag_tok5_concat_add_token_weighted_10_28layer_image_qufen.log &
+    CUDA_VISIBLE_DEVICES=0 python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_mllm_direct_withatten_after.log
     """
     # Initialize modules
     fusion_method="concat"
     captioner = CDVCaptioner()
     retrieval = MultimodalRetrieval(image_encoder_name="/home/Dataset/Models/Clip/clip-vit-base-patch32", text_encoder_name="/home/Dataset/Models/Clip/clip-vit-base-patch32", fusion_method=fusion_method, device="cuda" if torch.cuda.is_available() else "cpu")
-    mllm_bot = MLLMBot(model_tag="Qwen2.5-VL-8B", model_name="Qwen2.5-VL-8B", device="cuda" if torch.cuda.is_available() else "cpu")
+    mllm_bot = MLLMBot(model_tag="Qwen2.5-VL-7B", model_name="Qwen2.5-VL-7B", pai_enable_attn=True, device="cuda" if torch.cuda.is_available() else "cpu")
     
     # Dummy train_samples 
     # train_samples = {
@@ -476,7 +488,7 @@ if __name__ == "__main__":
     # predicted = retrieval.fgvc_via_multimodal_retrieval(mllm_bot, query_path, gallery, captioner, "dog")
     # print(f"Predicted category for query: {predicted}")
     # query_path = "/data/yjx/MLLM/UniFGVR/datasets/dogs_120/Images/n02085620-Chihuahua/n02085620_1558.jpg" #chihuahua
-    gallery = retrieval.load_gallery_from_json('/data/yjx/MLLM/UniFGVR/experiments/dog120/gallery/dog120_gallery_concat.json') 
+    gallery = retrieval.load_gallery_from_json('/data/yjx/MLLM/UniFGVR/experiments/dog120/gallery/dog120_gallery_concat_old.json') 
     test_samples = {}
     # 构建test samples
     # img_root = "/data/yjx/MLLM/UniFGVR/datasets/dogs_120/Images"
@@ -502,3 +514,27 @@ if __name__ == "__main__":
     # 对比：使用简单Top-1方法
     accuracy_top1 = retrieval.evaluate_fgvc(mllm_bot, test_samples, gallery, captioner, "dog", use_rag=False)
     print(f"accuracy with Top-1: {accuracy_top1}")
+    # 直接用MLLM
+    # superclass = 'dog'
+    # from data import DATA_STATS, PROMPTERS, DATA_DISCOVERY  
+    # cname_sheet = DATA_STATS[superclass]['class_names']
+    # prompt=f'Look carefully at the dog in the picture and tell me which category it belongs to in {cname_sheet}. The answer only needs the specific category name of {cname_sheet}, no extra explanation is needed.'
+    
+    # total=0
+    # accuracy_dirct=0
+    # correct=0
+    # for true_cat, paths in test_samples.items():
+    #     for path in paths:
+    #         image = Image.open(path).convert("RGB")
+    #         _, predicted_cat = mllm_bot.describe_attribute(image, prompt)
+    #         true_cat=true_cat.split('.')[1]
+    #         predicted_cat=predicted_cat[0]
+    #         if is_similar(predicted_cat,true_cat, threshold=0.5):
+    #             correct += 1
+    #             print(f'匹配成功,correct:{correct},total:{total}')
+    #         total += 1
+    #         print(f'succ:{correct / total if total > 0 else 0.0}')
+    #         print(f'predicted_cat:{predicted_cat}, true_cat:{true_cat}')
+        
+    #     accuracy_dirct = correct / total if total > 0 else 0.0
+    # print(f'accuracy with direct:{accuracy_dirct}')

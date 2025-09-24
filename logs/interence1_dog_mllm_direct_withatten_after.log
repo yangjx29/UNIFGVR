@@ -1,0 +1,2747 @@
+/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: '/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torchvision/image.so: undefined symbol: _ZN3c1017RegisterOperatorsD1Ev'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.52, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]Fetching 1 files: 100%|██████████| 1/1 [00:00<00:00, 17189.77it/s]
+Fetching 1 files:   0%|          | 0/1 [00:00<?, ?it/s]Fetching 1 files: 100%|██████████| 1/1 [00:00<00:00, 639.08it/s]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:03<00:13,  3.41s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:06<00:10,  3.39s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:10<00:06,  3.38s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:13<00:03,  3.38s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:14<00:00,  2.51s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:14<00:00,  2.90s/it]
+local_model_path: /home/Dataset/Models/Qwen/Qwen2.5-VL-7B-Instruct
+test sample:{'014.Black and tan Coonhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/014.Black_and_tan_Coonhound/014.Black_and_tan_Coonhound_n02089078_1275.jpg'], '044.Boston Bull': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/044.Boston_Bull/044.Boston_Bull_n02096585_5260.jpg'], '043.Dandi Dinmont': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/043.Dandi_Dinmont/043.Dandi_Dinmont_n02096437_730.jpg'], '002.Maltese Dog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/002.Maltese_Dog/002.Maltese_Dog_n02085936_16355.jpg'], '010.Basset Hound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/010.Basset_Hound/010.Basset_Hound_n02088238_7181.jpg'], '094.French Bulldog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/094.French_Bulldog/094.French_Bulldog_n02108915_7608.jpg'], '009.Afghan Hound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/009.Afghan_Hound/009.Afghan_Hound_n02088094_6035.jpg'], '029.American Staffordshire Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/029.American_Staffordshire_Terrier/029.American_Staffordshire_Terrier_n02093428_3353.jpg'], '035.Norwich Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/035.Norwich_Terrier/035.Norwich_Terrier_n02094258_2911.jpg'], '086.Miniature Pinscher': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/086.Miniature_Pinscher/086.Miniature_Pinscher_n02107312_3227.jpg'], '118.Dhole': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/118.Dhole/118.Dhole_n02115913_1142.jpg'], '072.Schipperke': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/072.Schipperke/072.Schipperke_n02104365_6140.jpg'], '028.Staffordshire Bullterrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/028.Staffordshire_Bullterrier/028.Staffordshire_Bullterrier_n02093256_11732.jpg'], '077.Komondor': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/077.Komondor/077.Komondor_n02105505_3933.jpg'], '079.Shetland Sheepdog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/079.Shetland_Sheepdog/079.Shetland_Sheepdog_n02105855_5719.jpg'], '111.Pembroke': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/111.Pembroke/111.Pembroke_n02113023_6140.jpg'], '058.Chesapeake Bay Retriever': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/058.Chesapeake_Bay_Retriever/058.Chesapeake_Bay_Retriever_n02099849_513.jpg'], '003.Pekinese': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/003.Pekinese/003.Pekinese_n02086079_8902.jpg'], '025.Saluki': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/025.Saluki/025.Saluki_n02091831_11021.jpg'], '102.Pug': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/102.Pug/102.Pug_n02110958_1975.jpg'], '062.Irish Setter': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/062.Irish_Setter/062.Irish_Setter_n02100877_5286.jpg'], '066.English Springer Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/066.English_Springer_Spaniel/066.English_Springer_Spaniel_n02102040_5096.jpg'], '057.Labrador Retriever': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/057.Labrador_Retriever/057.Labrador_Retriever_n02099712_3613.jpg'], '007.Toy Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/007.Toy_Terrier/007.Toy_Terrier_n02087046_4402.jpg'], '084.German Shepard': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/084.German_Shepard/084.German_Shepard_n02106662_9625.jpg'], '048.Scotch Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/048.Scotch_Terrier/048.Scotch_Terrier_n02097298_2443.jpg'], '090.EntleBucher': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/090.EntleBucher/090.EntleBucher_n02108000_716.jpg'], '059.German Short haired Pointer': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/059.German_Short_haired_Pointer/059.German_Short_haired_Pointer_n02100236_4198.jpg'], '047.Standard Schnauzer': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/047.Standard_Schnauzer/047.Standard_Schnauzer_n02097209_2194.jpg'], '045.Miniature Schnauzer': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/045.Miniature_Schnauzer/045.Miniature_Schnauzer_n02097047_724.jpg'], '004.Shih Tzu': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/004.Shih_Tzu/004.Shih_Tzu_n02086240_1011.jpg'], '064.Brittany': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/064.Brittany/064.Brittany_n02101388_4229.jpg'], '053.Lhasa': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/053.Lhasa/053.Lhasa_n02098413_3033.jpg'], '042.Australian Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/042.Australian_Terrier/042.Australian_Terrier_n02096294_3554.jpg'], '039.Sealyham Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/039.Sealyham_Terrier/039.Sealyham_Terrier_n02095889_610.jpg'], '067.Welsh Springer Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/067.Welsh_Springer_Spaniel/067.Welsh_Springer_Spaniel_n02102177_1128.jpg'], '068.Cocker Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/068.Cocker_Spaniel/068.Cocker_Spaniel_n02102318_6612.jpg'], '089.Appenzeller': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/089.Appenzeller/089.Appenzeller_n02107908_7236.jpg'], '017.Redbone': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/017.Redbone/017.Redbone_n02090379_3996.jpg'], '119.African Hunting Dog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/119.African_Hunting_Dog/119.African_Hunting_Dog_n02116738_8653.jpg'], '113.Toy Poodle': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/113.Toy_Poodle/113.Toy_Poodle_n02113624_665.jpg'], '027.Weimaraner': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/027.Weimaraner/027.Weimaraner_n02092339_4003.jpg'], '041.Cairn': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/041.Cairn/041.Cairn_n02096177_5206.jpg'], '117.Dingo': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/117.Dingo/117.Dingo_n02115641_925.jpg'], '034.Norfolk Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/034.Norfolk_Terrier/034.Norfolk_Terrier_n02094114_99.jpg'], '114.Miniature Poodle': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/114.Miniature_Poodle/114.Miniature_Poodle_n02113712_2274.jpg'], '085.Doberman': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/085.Doberman/085.Doberman_n02107142_4763.jpg'], '116.Mexican Hairless': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/116.Mexican_Hairless/116.Mexican_Hairless_n02113978_2888.jpg'], '073.Groenendael': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/073.Groenendael/073.Groenendael_n02105056_7068.jpg'], '012.Bloodhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/012.Bloodhound/012.Bloodhound_n02088466_4731.jpg'], '088.Bernese Mountain Dog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/088.Bernese_Mountain_Dog/088.Bernese_Mountain_Dog_n02107683_6301.jpg'], '095.Great Dane': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/095.Great_Dane/095.Great_Dane_n02109047_34175.jpg'], '040.Airedale': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/040.Airedale/040.Airedale_n02096051_8826.jpg'], '107.Pomeranian': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/107.Pomeranian/107.Pomeranian_n02112018_1577.jpg'], '082.Bouvier des Flandres': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/082.Bouvier_des_Flandres/082.Bouvier_des_Flandres_n02106382_1151.jpg'], '019.Irish Wolfhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/019.Irish_Wolfhound/019.Irish_Wolfhound_n02090721_537.jpg'], '087.Greater Swiss Mountain Dog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/087.Greater_Swiss_Mountain_Dog/087.Greater_Swiss_Mountain_Dog_n02107574_2436.jpg'], '099.Siberian Husky': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/099.Siberian_Husky/099.Siberian_Husky_n02110185_12380.jpg'], '075.Briard': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/075.Briard/075.Briard_n02105251_2591.jpg'], '033.Irish Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/033.Irish_Terrier/033.Irish_Terrier_n02093991_1276.jpg'], '013.Bluetick': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/013.Bluetick/013.Bluetick_n02088632_4058.jpg'], '061.English Setter': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/061.English_Setter/061.English_Setter_n02100735_3595.jpg'], '020.Italian Greyhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/020.Italian_Greyhound/020.Italian_Greyhound_n02091032_490.jpg'], '112.Cardigan': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/112.Cardigan/112.Cardigan_n02113186_5833.jpg'], '063.Gordon Setter': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/063.Gordon_Setter/063.Gordon_Setter_n02101006_2540.jpg'], '083.Rottweiler': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/083.Rottweiler/083.Rottweiler_n02106550_2197.jpg'], '018.Borzoi': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/018.Borzoi/018.Borzoi_n02090622_6976.jpg'], '008.Rhodesian Ridgeback': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/008.Rhodesian_Ridgeback/008.Rhodesian_Ridgeback_n02087394_3795.jpg'], '050.Silky Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/050.Silky_Terrier/050.Silky_Terrier_n02097658_2329.jpg'], '098.Malamute': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/098.Malamute/098.Malamute_n02110063_12514.jpg'], '070.Irish Water Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/070.Irish_Water_Spaniel/070.Irish_Water_Spaniel_n02102973_2642.jpg'], '100.Affenpinscher': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/100.Affenpinscher/100.Affenpinscher_n02110627_10439.jpg'], '078.Old English Sheepdog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/078.Old_English_Sheepdog/078.Old_English_Sheepdog_n02105641_3531.jpg'], '106.Samoyed': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/106.Samoyed/106.Samoyed_n02111889_6592.jpg'], '022.Ibizian Hound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/022.Ibizian_Hound/022.Ibizian_Hound_n02091244_5818.jpg'], '000.Chihuaha': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/000.Chihuaha/000.Chihuaha_n02085620_3488.jpg'], '023.Norwegian Elkhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/023.Norwegian_Elkhound/023.Norwegian_Elkhound_n02091467_4362.jpg'], '036.Yorkshire Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/036.Yorkshire_Terrier/036.Yorkshire_Terrier_n02094433_730.jpg'], '037.Wirehaired Fox Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/037.Wirehaired_Fox_Terrier/037.Wirehaired_Fox_Terrier_n02095314_3512.jpg'], '011.Beagle': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/011.Beagle/011.Beagle_n02088364_4052.jpg'], '109.Keeshond': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/109.Keeshond/109.Keeshond_n02112350_7087.jpg'], '015.Walker Hound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/015.Walker_Hound/015.Walker_Hound_n02089867_24.jpg'], '101.Basenji': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/101.Basenji/101.Basenji_n02110806_4876.jpg'], '105.Great Pyrenees': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/105.Great_Pyrenees/105.Great_Pyrenees_n02111500_5052.jpg'], '046.Giant Schnauzer': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/046.Giant_Schnauzer/046.Giant_Schnauzer_n02097130_5907.jpg'], '006.Papillon': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/006.Papillon/006.Papillon_n02086910_4388.jpg'], '024.Otterhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/024.Otterhound/024.Otterhound_n02091635_2068.jpg'], '031.Border Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/031.Border_Terrier/031.Border_Terrier_n02093754_7403.jpg'], '030.Bedlington Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/030.Bedlington_Terrier/030.Bedlington_Terrier_n02093647_79.jpg'], '051.Soft coated Wheaten Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/051.Soft_coated_Wheaten_Terrier/051.Soft_coated_Wheaten_Terrier_n02098105_838.jpg'], '071.Kuvasz': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/071.Kuvasz/071.Kuvasz_n02104029_662.jpg'], '110.Brabancon Griffon': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/110.Brabancon_Griffon/110.Brabancon_Griffon_n02112706_1554.jpg'], '060.Vizsla': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/060.Vizsla/060.Vizsla_n02100583_6521.jpg'], '026.Scottish Deerhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/026.Scottish_Deerhound/026.Scottish_Deerhound_n02092002_1727.jpg'], '080.Collie': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/080.Collie/080.Collie_n02106030_10057.jpg'], '096.Saint Bernard': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/096.Saint_Bernard/096.Saint_Bernard_n02109525_18948.jpg'], '081.Border Collie': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/081.Border_Collie/081.Border_Collie_n02106166_3882.jpg'], '005.Blenheim Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/005.Blenheim_Spaniel/005.Blenheim_Spaniel_n02086646_3986.jpg'], '038.Lakeland Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/038.Lakeland_Terrier/038.Lakeland_Terrier_n02095570_4782.jpg'], '092.Bull Mastiff': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/092.Bull_Mastiff/092.Bull_Mastiff_n02108422_5221.jpg'], '104.Newfoundland': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/104.Newfoundland/104.Newfoundland_n02111277_8856.jpg'], '076.Kelpie': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/076.Kelpie/076.Kelpie_n02105412_5288.jpg'], '074.Malinois': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/074.Malinois/074.Malinois_n02105162_6106.jpg'], '052.West Highland White Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/052.West_Highland_White_Terrier/052.West_Highland_White_Terrier_n02098286_1632.jpg'], '069.Sussex Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/069.Sussex_Spaniel/069.Sussex_Spaniel_n02102480_5703.jpg'], '091.Boxer': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/091.Boxer/091.Boxer_n02108089_14719.jpg'], '108.Chow': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/108.Chow/108.Chow_n02112137_14448.jpg'], '049.Tibetan Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/049.Tibetan_Terrier/049.Tibetan_Terrier_n02097474_5841.jpg'], '056.Golden Retriever': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/056.Golden_Retriever/056.Golden_Retriever_n02099601_3360.jpg'], '097.Eskimo Dog': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/097.Eskimo_Dog/097.Eskimo_Dog_n02109961_9973.jpg'], '001.Japanese Spaniel': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/001.Japanese_Spaniel/001.Japanese_Spaniel_n02085782_1691.jpg'], '115.Standard Poodle': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/115.Standard_Poodle/115.Standard_Poodle_n02113799_1537.jpg'], '065.Clumber': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/065.Clumber/065.Clumber_n02101556_4514.jpg'], '016.English Foxhound': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/016.English_Foxhound/016.English_Foxhound_n02089973_1907.jpg'], '103.Leonberg': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/103.Leonberg/103.Leonberg_n02111129_1197.jpg'], '021.Whippet': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/021.Whippet/021.Whippet_n02091134_15784.jpg'], '032.Kerry Blue Terrier': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/032.Kerry_Blue_Terrier/032.Kerry_Blue_Terrier_n02093859_393.jpg'], '055.Curly coater Retriever': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/055.Curly_coater_Retriever/055.Curly_coater_Retriever_n02099429_618.jpg'], '054.Flat coated Retriever': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/054.Flat_coated_Retriever/054.Flat_coated_Retriever_n02099267_5540.jpg'], '093.Tibetan Mastiff': ['/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1/093.Tibetan_Mastiff/093.Tibetan_Mastiff_n02108551_7523.jpg']}
+att_shape:[10, 13]
+att_flat:130
+image_token_weights:130
+选取值大于1的token
+图像token位置范围: (15, 145)
+重要stoken数量: 21
+最高注意力权重: 6.4546
+平均注意力权重: 2.8422
+input_ids:torch.Size([1, 1551])
+seq_len:1551
+找到 image token span: img_start=14, img_end=146
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,146)
+匹配成功,correct:1,total:0
+succ:1.0
+predicted_cat:Black-and-tan Coonhound, true_cat:Black and tan Coonhound
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 19
+最高注意力权重: 3.8877
+平均注意力权重: 1.9173
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:2,total:1
+succ:1.0
+predicted_cat:Boston Bull, true_cat:Boston Bull
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 32
+最高注意力权重: 7.7542
+平均注意力权重: 2.8161
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.6666666666666666
+predicted_cat:Shih-Tzu, true_cat:Dandi Dinmont
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 27
+最高注意力权重: 5.4592
+平均注意力权重: 2.1544
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.5
+predicted_cat:Shih-Tzu, true_cat:Maltese Dog
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 20
+最高注意力权重: 3.2910
+平均注意力权重: 1.8193
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:3,total:4
+succ:0.6
+predicted_cat:Basset Hound, true_cat:Basset Hound
+att_shape:[15, 18]
+att_flat:270
+image_token_weights:270
+选取值大于1的token
+图像token位置范围: (15, 285)
+重要stoken数量: 17
+最高注意力权重: 3.3039
+平均注意力权重: 1.7786
+input_ids:torch.Size([1, 1691])
+seq_len:1691
+找到 image token span: img_start=14, img_end=286
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,286)
+匹配成功,correct:4,total:5
+succ:0.6666666666666666
+predicted_cat:French Bulldog, true_cat:French Bulldog
+att_shape:[18, 15]
+att_flat:270
+image_token_weights:270
+选取值大于1的token
+图像token位置范围: (15, 285)
+重要stoken数量: 32
+最高注意力权重: 3.5719
+平均注意力权重: 1.6982
+input_ids:torch.Size([1, 1691])
+seq_len:1691
+找到 image token span: img_start=14, img_end=286
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,286)
+匹配成功,correct:5,total:6
+succ:0.7142857142857143
+predicted_cat:Afghan Hound, true_cat:Afghan Hound
+att_shape:[13, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 41
+最高注意力权重: 21.0705
+平均注意力权重: 4.0787
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:6,total:7
+succ:0.75
+predicted_cat:Staffordshire Bullterrier, true_cat:American Staffordshire Terrier
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 30
+最高注意力权重: 30.4057
+平均注意力权重: 8.6224
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:7,total:8
+succ:0.7777777777777778
+predicted_cat:Toy Terrier, true_cat:Norwich Terrier
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 47
+最高注意力权重: 2.7859
+平均注意力权重: 1.6739
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.7
+predicted_cat:Toy Terrier, true_cat:Miniature Pinscher
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 25
+最高注意力权重: 2.9795
+平均注意力权重: 1.6049
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:8,total:10
+succ:0.7272727272727273
+predicted_cat:Dhole, true_cat:Dhole
+att_shape:[18, 12]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 57
+最高注意力权重: 9.4692
+平均注意力权重: 2.6215
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.6666666666666666
+predicted_cat:Toy Terrier, true_cat:Schipperke
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 35
+最高注意力权重: 3.1550
+平均注意力权重: 1.7068
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:9,total:12
+succ:0.6923076923076923
+predicted_cat:Staffordshire Bullterrier, true_cat:Staffordshire Bullterrier
+att_shape:[13, 15]
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=241
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=241
+att_flat:195
+image_token_weights:195
+选取值大于1的token
+图像token位置范围: (15, 210)
+重要stoken数量: 65
+最高注意力权重: 16.6176
+平均注意力权重: 2.9888
+input_ids:torch.Size([1, 1616])
+seq_len:1616
+找到 image token span: img_start=14, img_end=211
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,211)
+匹配成功,correct:10,total:13
+succ:0.7142857142857143
+predicted_cat:Komondor, true_cat:Komondor
+att_shape:[15, 18]
+att_flat:270
+image_token_weights:270
+选取值大于1的token
+图像token位置范围: (15, 285)
+重要stoken数量: 48
+最高注意力权重: 4.8702
+平均注意力权重: 2.7154
+input_ids:torch.Size([1, 1691])
+seq_len:1691
+找到 image token span: img_start=14, img_end=286
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,286)
+匹配成功,correct:11,total:14
+succ:0.7333333333333333
+predicted_cat:Shetland Sheepdog, true_cat:Shetland Sheepdog
+att_shape:[13, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 80
+最高注意力权重: 14.1345
+平均注意力权重: 3.1713
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.6875
+predicted_cat:Cardigan, true_cat:Pembroke
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 37
+最高注意力权重: 21.5667
+平均注意力权重: 4.7994
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:12,total:16
+succ:0.7058823529411765
+predicted_cat:Labrador Retriever, true_cat:Chesapeake Bay Retriever
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 40
+最高注意力权重: 4.1067
+平均注意力权重: 1.8900
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:13,total:17
+succ:0.7222222222222222
+predicted_cat:Pekinese, true_cat:Pekinese
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 31
+最高注意力权重: 14.0936
+平均注意力权重: 2.3168
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.6842105263157895
+predicted_cat:Afghan Hound, true_cat:Saluki
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 14
+最高注意力权重: 1.7302
+平均注意力权重: 1.2592
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:14,total:19
+succ:0.7
+predicted_cat:Pug, true_cat:Pug
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 49
+最高注意力权重: 11.3884
+平均注意力权重: 3.2550
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:15,total:20
+succ:0.7142857142857143
+predicted_cat:Irish Setter, true_cat:Irish Setter
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 30
+最高注意力权重: 3.0527
+平均注意力权重: 1.8963
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:16,total:21
+succ:0.7272727272727273
+predicted_cat:English Springer Spaniel, true_cat:English Springer Spaniel
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 44
+最高注意力权重: 9.3539
+平均注意力权重: 2.5488
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:17,total:22
+succ:0.7391304347826086
+predicted_cat:Labrador Retriever, true_cat:Labrador Retriever
+att_shape:[18, 16]
+att_flat:288
+image_token_weights:288
+选取值大于1的token
+图像token位置范围: (15, 303)
+重要stoken数量: 24
+最高注意力权重: 4.6169
+平均注意力权重: 1.5437
+input_ids:torch.Size([1, 1709])
+seq_len:1709
+找到 image token span: img_start=14, img_end=304
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,304)
+匹配成功,correct:18,total:23
+succ:0.75
+predicted_cat:Toy Terrier, true_cat:Toy Terrier
+att_shape:[13, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 30
+最高注意力权重: 17.0881
+平均注意力权重: 2.5064
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:19,total:24
+succ:0.76
+predicted_cat:German Shepherd, true_cat:German Shepard
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 13
+最高注意力权重: 2.0780
+平均注意力权重: 1.2620
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:20,total:25
+succ:0.7692307692307693
+predicted_cat:Scottish Terrier, true_cat:Scotch Terrier
+att_shape:[15, 21]
+att_flat:315
+image_token_weights:315
+选取值大于1的token
+图像token位置范围: (15, 330)
+重要stoken数量: 75
+最高注意力权重: 13.8199
+平均注意力权重: 3.7317
+input_ids:torch.Size([1, 1736])
+seq_len:1736
+找到 image token span: img_start=14, img_end=331
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,331)
+succ:0.7407407407407407
+predicted_cat:Bernese Mountain Dog, true_cat:EntleBucher
+att_shape:[22, 21]
+att_flat:462
+image_token_weights:462
+选取值大于1的token
+图像token位置范围: (15, 477)
+重要stoken数量: 120
+最高注意力权重: 22.1305
+平均注意力权重: 4.2878
+input_ids:torch.Size([1, 1883])
+seq_len:1883
+找到 image token span: img_start=14, img_end=478
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,478)
+匹配成功,correct:21,total:27
+succ:0.75
+predicted_cat:German Shorthaired Pointer, true_cat:German Short haired Pointer
+att_shape:[16, 20]
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+[ATTN] Image tokens out of kv range: img_range=(14, 478), kv_len=366
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=366
+att_flat:320
+image_token_weights:320
+选取值大于1的token
+图像token位置范围: (15, 335)
+重要stoken数量: 91
+最高注意力权重: 21.5500
+平均注意力权重: 3.4281
+input_ids:torch.Size([1, 1741])
+seq_len:1741
+找到 image token span: img_start=14, img_end=336
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,336)
+匹配成功,correct:22,total:28
+succ:0.7586206896551724
+predicted_cat:Standard Schnauzer, true_cat:Standard Schnauzer
+att_shape:[13, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 336), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 63
+最高注意力权重: 12.8072
+平均注意力权重: 2.8649
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:23,total:29
+succ:0.7666666666666667
+predicted_cat:Standard Schnauzer, true_cat:Miniature Schnauzer
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 16
+最高注意力权重: 1.9557
+平均注意力权重: 1.4691
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:24,total:30
+succ:0.7741935483870968
+predicted_cat:Shih-Tzu, true_cat:Shih Tzu
+att_shape:[12, 13]
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+att_flat:156
+image_token_weights:156
+选取值大于1的token
+图像token位置范围: (15, 171)
+重要stoken数量: 47
+最高注意力权重: 10.9138
+平均注意力权重: 3.7296
+input_ids:torch.Size([1, 1577])
+seq_len:1577
+找到 image token span: img_start=14, img_end=172
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,172)
+succ:0.75
+predicted_cat:Blenheim Spaniel, true_cat:Brittany
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 32
+最高注意力权重: 3.2925
+平均注意力权重: 1.5589
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.7272727272727273
+predicted_cat:Shih-Tzu, true_cat:Lhasa
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 31
+最高注意力权重: 4.0351
+平均注意力权重: 1.7691
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:25,total:33
+succ:0.7352941176470589
+predicted_cat:Yorkshire Terrier, true_cat:Australian Terrier
+att_shape:[9, 9]
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=127
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=127
+att_flat:81
+image_token_weights:81
+选取值大于1的token
+图像token位置范围: (15, 96)
+重要stoken数量: 26
+最高注意力权重: 8.1258
+平均注意力权重: 2.5760
+input_ids:torch.Size([1, 1502])
+seq_len:1502
+找到 image token span: img_start=14, img_end=97
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,97)
+匹配成功,correct:26,total:34
+succ:0.7428571428571429
+predicted_cat:West Highland White Terrier, true_cat:Sealyham Terrier
+att_shape:[19, 29]
+att_flat:551
+image_token_weights:551
+选取值大于1的token
+图像token位置范围: (15, 566)
+重要stoken数量: 118
+最高注意力权重: 22.3762
+平均注意力权重: 3.5510
+input_ids:torch.Size([1, 1972])
+seq_len:1972
+找到 image token span: img_start=14, img_end=567
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,567)
+匹配成功,correct:27,total:35
+succ:0.75
+predicted_cat:Welsh Springer Spaniel, true_cat:Welsh Springer Spaniel
+att_shape:[12, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 567), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 65
+最高注意力权重: 53.1715
+平均注意力权重: 6.2784
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.7297297297297297
+predicted_cat:Cairn, true_cat:Cocker Spaniel
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 67
+最高注意力权重: 8.1718
+平均注意力权重: 2.3528
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.7105263157894737
+predicted_cat:Black-and-tan Coonhound, true_cat:Appenzeller
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 20
+最高注意力权重: 2.3406
+平均注意力权重: 1.5759
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.6923076923076923
+predicted_cat:Rhodesian Ridgeback, true_cat:Redbone
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 18
+最高注意力权重: 1.7316
+平均注意力权重: 1.3371
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:28,total:39
+succ:0.7
+predicted_cat:African Hunting Dog, true_cat:African Hunting Dog
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 36
+最高注意力权重: 3.9884
+平均注意力权重: 1.7428
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:29,total:40
+succ:0.7073170731707317
+predicted_cat:Toy Poodle, true_cat:Toy Poodle
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 15
+最高注意力权重: 2.0820
+平均注意力权重: 1.3607
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:30,total:41
+succ:0.7142857142857143
+predicted_cat:Weimaraner, true_cat:Weimaraner
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 36
+最高注意力权重: 4.6184
+平均注意力权重: 2.2316
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.6976744186046512
+predicted_cat:Toy Terrier, true_cat:Cairn
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 24
+最高注意力权重: 3.2291
+平均注意力权重: 1.8321
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:31,total:43
+succ:0.7045454545454546
+predicted_cat:Dingo, true_cat:Dingo
+att_shape:[16, 14]
+att_flat:224
+image_token_weights:224
+选取值大于1的token
+图像token位置范围: (15, 239)
+重要stoken数量: 40
+最高注意力权重: 3.8216
+平均注意力权重: 2.0665
+input_ids:torch.Size([1, 1645])
+seq_len:1645
+找到 image token span: img_start=14, img_end=240
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,240)
+匹配成功,correct:32,total:44
+succ:0.7111111111111111
+predicted_cat:Norfolk Terrier, true_cat:Norfolk Terrier
+att_shape:[17, 18]
+att_flat:306
+image_token_weights:306
+选取值大于1的token
+图像token位置范围: (15, 321)
+重要stoken数量: 41
+最高注意力权重: 2.3723
+平均注意力权重: 1.5978
+input_ids:torch.Size([1, 1727])
+seq_len:1727
+找到 image token span: img_start=14, img_end=322
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,322)
+匹配成功,correct:33,total:45
+succ:0.717391304347826
+predicted_cat:Toy Poodle, true_cat:Miniature Poodle
+att_shape:[13, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 322), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 41
+最高注意力权重: 9.6052
+平均注意力权重: 2.1078
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:34,total:46
+succ:0.723404255319149
+predicted_cat:Doberman, true_cat:Doberman
+att_shape:[13, 12]
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=202
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=202
+att_flat:156
+image_token_weights:156
+选取值大于1的token
+图像token位置范围: (15, 171)
+重要stoken数量: 50
+最高注意力权重: 28.2031
+平均注意力权重: 4.8083
+input_ids:torch.Size([1, 1577])
+seq_len:1577
+找到 image token span: img_start=14, img_end=172
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,172)
+succ:0.7083333333333334
+predicted_cat:Weimaraner, true_cat:Mexican Hairless
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 52
+最高注意力权重: 6.2142
+平均注意力权重: 2.5132
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:35,total:48
+succ:0.7142857142857143
+predicted_cat:Groenendael, true_cat:Groenendael
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 48
+最高注意力权重: 43.9355
+平均注意力权重: 4.8242
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.7
+predicted_cat:Rhodesian Ridgeback, true_cat:Bloodhound
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 39
+最高注意力权重: 10.4957
+平均注意力权重: 2.8509
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:36,total:50
+succ:0.7058823529411765
+predicted_cat:Bernese Mountain Dog, true_cat:Bernese Mountain Dog
+att_shape:[29, 23]
+att_flat:667
+image_token_weights:667
+选取值大于1的token
+图像token位置范围: (15, 682)
+重要stoken数量: 169
+最高注意力权重: 10.6507
+平均注意力权重: 2.6352
+input_ids:torch.Size([1, 2088])
+seq_len:2088
+找到 image token span: img_start=14, img_end=683
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,683)
+匹配成功,correct:37,total:51
+succ:0.7115384615384616
+predicted_cat:Weimaraner, true_cat:Great Dane
+att_shape:[13, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 683), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 36
+最高注意力权重: 11.1732
+平均注意力权重: 2.2420
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:38,total:52
+succ:0.7169811320754716
+predicted_cat:Airedale, true_cat:Airedale
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 40
+最高注意力权重: 9.2356
+平均注意力权重: 2.9552
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:39,total:53
+succ:0.7222222222222222
+predicted_cat:Pomeranian, true_cat:Pomeranian
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 50
+最高注意力权重: 17.6452
+平均注意力权重: 4.3859
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.7090909090909091
+predicted_cat:Schipperke, true_cat:Bouvier des Flandres
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 42
+最高注意力权重: 10.1079
+平均注意力权重: 2.2582
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:40,total:55
+succ:0.7142857142857143
+predicted_cat:Irish Wolfhound, true_cat:Irish Wolfhound
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 50
+最高注意力权重: 15.2343
+平均注意力权重: 3.5534
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:41,total:56
+succ:0.7192982456140351
+predicted_cat:Bernese Mountain Dog, true_cat:Greater Swiss Mountain Dog
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 15
+最高注意力权重: 3.5463
+平均注意力权重: 1.5033
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:42,total:57
+succ:0.7241379310344828
+predicted_cat:Siberian Husky, true_cat:Siberian Husky
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 23
+最高注意力权重: 4.3838
+平均注意力权重: 1.9477
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.711864406779661
+predicted_cat:Afghan Hound, true_cat:Briard
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 35
+最高注意力权重: 13.8960
+平均注意力权重: 2.7632
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.7
+predicted_cat:Soft-coated Wheaten Terrier, true_cat:Irish Terrier
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 37
+最高注意力权重: 5.8469
+平均注意力权重: 2.4557
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.6885245901639344
+predicted_cat:Beagle, true_cat:Bluetick
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 49
+最高注意力权重: 19.1074
+平均注意力权重: 3.3729
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:43,total:61
+succ:0.6935483870967742
+predicted_cat:English Setter, true_cat:English Setter
+att_shape:[18, 12]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 34
+最高注意力权重: 6.8845
+平均注意力权重: 2.0533
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.6825396825396826
+predicted_cat:Whippet, true_cat:Italian Greyhound
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 49
+最高注意力权重: 4.0538
+平均注意力权重: 1.9478
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:44,total:63
+succ:0.6875
+predicted_cat:Cardigan, true_cat:Cardigan
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 36
+最高注意力权重: 4.1805
+平均注意力权重: 2.0614
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:45,total:64
+succ:0.6923076923076923
+predicted_cat:Gordon Setter, true_cat:Gordon Setter
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 9
+最高注意力权重: 2.0233
+平均注意力权重: 1.2840
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:46,total:65
+succ:0.696969696969697
+predicted_cat:Rottweiler, true_cat:Rottweiler
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 38
+最高注意力权重: 6.8173
+平均注意力权重: 2.2352
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:47,total:66
+succ:0.7014925373134329
+predicted_cat:Borzoi, true_cat:Borzoi
+att_shape:[18, 12]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 15
+最高注意力权重: 1.9548
+平均注意力权重: 1.4562
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:48,total:67
+succ:0.7058823529411765
+predicted_cat:Rhodesian Ridgeback, true_cat:Rhodesian Ridgeback
+att_shape:[14, 18]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 35
+最高注意力权重: 6.3632
+平均注意力权重: 2.5336
+input_ids:torch.Size([1, 1673])
+seq_len:1673
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,268)
+匹配成功,correct:49,total:68
+succ:0.7101449275362319
+predicted_cat:Toy Terrier, true_cat:Silky Terrier
+att_shape:[12, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 50
+最高注意力权重: 14.9954
+平均注意力权重: 2.6439
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.7
+predicted_cat:Siberian Husky, true_cat:Malamute
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 71
+最高注意力权重: 18.7334
+平均注意力权重: 4.2308
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.6901408450704225
+predicted_cat:Standard Poodle, true_cat:Irish Water Spaniel
+att_shape:[12, 16]
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=238
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=238
+att_flat:192
+image_token_weights:192
+选取值大于1的token
+图像token位置范围: (15, 207)
+重要stoken数量: 38
+最高注意力权重: 5.9447
+平均注意力权重: 2.3754
+input_ids:torch.Size([1, 1613])
+seq_len:1613
+找到 image token span: img_start=14, img_end=208
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,208)
+succ:0.6805555555555556
+predicted_cat:Shih-Tzu, true_cat:Affenpinscher
+att_shape:[18, 14]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 54
+最高注意力权重: 6.3642
+平均注意力权重: 2.4740
+input_ids:torch.Size([1, 1673])
+seq_len:1673
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,268)
+匹配成功,correct:50,total:72
+succ:0.684931506849315
+predicted_cat:Old English Sheepdog, true_cat:Old English Sheepdog
+att_shape:[18, 12]
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 33
+最高注意力权重: 24.8252
+平均注意力权重: 4.5307
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:51,total:73
+succ:0.6891891891891891
+predicted_cat:Samoyed, true_cat:Samoyed
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 41
+最高注意力权重: 16.5439
+平均注意力权重: 4.1489
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:52,total:74
+succ:0.6933333333333334
+predicted_cat:Basset Hound, true_cat:Ibizian Hound
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 19
+最高注意力权重: 2.4621
+平均注意力权重: 1.4481
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:53,total:75
+succ:0.6973684210526315
+predicted_cat:Chihuahua, true_cat:Chihuaha
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 13
+最高注意力权重: 2.9970
+平均注意力权重: 1.5755
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:54,total:76
+succ:0.7012987012987013
+predicted_cat:Norwegian Elkhound, true_cat:Norwegian Elkhound
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 25
+最高注意力权重: 3.5184
+平均注意力权重: 1.5745
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:55,total:77
+succ:0.7051282051282052
+predicted_cat:Yorkshire Terrier, true_cat:Yorkshire Terrier
+att_shape:[11, 14]
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=200
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=200
+att_flat:154
+image_token_weights:154
+选取值大于1的token
+图像token位置范围: (15, 169)
+重要stoken数量: 52
+最高注意力权重: 15.6519
+平均注意力权重: 3.9209
+input_ids:torch.Size([1, 1575])
+seq_len:1575
+找到 image token span: img_start=14, img_end=170
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,170)
+匹配成功,correct:56,total:78
+succ:0.7088607594936709
+predicted_cat:Sealyham Terrier, true_cat:Wirehaired Fox Terrier
+att_shape:[22, 29]
+att_flat:638
+image_token_weights:638
+选取值大于1的token
+图像token位置范围: (15, 653)
+重要stoken数量: 99
+最高注意力权重: 7.3446
+平均注意力权重: 2.0851
+input_ids:torch.Size([1, 2059])
+seq_len:2059
+找到 image token span: img_start=14, img_end=654
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,654)
+匹配成功,correct:57,total:79
+succ:0.7125
+predicted_cat:Beagle, true_cat:Beagle
+att_shape:[12, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 42
+最高注意力权重: 4.7650
+平均注意力权重: 2.0161
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:58,total:80
+succ:0.7160493827160493
+predicted_cat:Keeshond, true_cat:Keeshond
+att_shape:[18, 10]
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=226
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=226
+att_flat:180
+image_token_weights:180
+选取值大于1的token
+图像token位置范围: (15, 195)
+重要stoken数量: 67
+最高注意力权重: 10.5841
+平均注意力权重: 3.3256
+input_ids:torch.Size([1, 1601])
+seq_len:1601
+找到 image token span: img_start=14, img_end=196
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,196)
+succ:0.7073170731707317
+predicted_cat:Beagle, true_cat:Walker Hound
+att_shape:[15, 18]
+att_flat:270
+image_token_weights:270
+选取值大于1的token
+图像token位置范围: (15, 285)
+重要stoken数量: 44
+最高注意力权重: 6.8222
+平均注意力权重: 2.4304
+input_ids:torch.Size([1, 1691])
+seq_len:1691
+找到 image token span: img_start=14, img_end=286
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,286)
+匹配成功,correct:59,total:82
+succ:0.7108433734939759
+predicted_cat:Basset Hound, true_cat:Basenji
+att_shape:[13, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 61
+最高注意力权重: 33.9192
+平均注意力权重: 4.4702
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.7023809523809523
+predicted_cat:Kuvasz, true_cat:Great Pyrenees
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 33
+最高注意力权重: 4.4424
+平均注意力权重: 2.0961
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:60,total:84
+succ:0.7058823529411765
+predicted_cat:Miniature Schnauzer, true_cat:Giant Schnauzer
+att_shape:[18, 14]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 39
+最高注意力权重: 2.5160
+平均注意力权重: 1.5494
+input_ids:torch.Size([1, 1673])
+seq_len:1673
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,268)
+succ:0.6976744186046512
+predicted_cat:Japanese Spaniel, true_cat:Papillon
+att_shape:[27, 18]
+att_flat:486
+image_token_weights:486
+选取值大于1的token
+图像token位置范围: (15, 501)
+重要stoken数量: 110
+最高注意力权重: 41.0198
+平均注意力权重: 5.2210
+input_ids:torch.Size([1, 1907])
+seq_len:1907
+找到 image token span: img_start=14, img_end=502
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,502)
+succ:0.6896551724137931
+predicted_cat:Soft-coated Wheaten Terrier, true_cat:Otterhound
+att_shape:[13, 18]
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+[ATTN] Image tokens out of kv range: img_range=(14, 502), kv_len=280
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=280
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 32
+最高注意力权重: 10.7653
+平均注意力权重: 2.2540
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:61,total:87
+succ:0.6931818181818182
+predicted_cat:Border Terrier, true_cat:Border Terrier
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 45
+最高注意力权重: 7.5665
+平均注意力权重: 2.9079
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.6853932584269663
+predicted_cat:Toy Poodle, true_cat:Bedlington Terrier
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 57
+最高注意力权重: 37.8609
+平均注意力权重: 5.5892
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:62,total:89
+succ:0.6888888888888889
+predicted_cat:Soft-coated Wheaten Terrier, true_cat:Soft coated Wheaten Terrier
+att_shape:[18, 16]
+att_flat:288
+image_token_weights:288
+选取值大于1的token
+图像token位置范围: (15, 303)
+重要stoken数量: 58
+最高注意力权重: 9.3294
+平均注意力权重: 2.7582
+input_ids:torch.Size([1, 1709])
+seq_len:1709
+找到 image token span: img_start=14, img_end=304
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,304)
+succ:0.6813186813186813
+predicted_cat:Great Pyrenees, true_cat:Kuvasz
+att_shape:[10, 12]
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+[ATTN] Image tokens out of kv range: img_range=(14, 304), kv_len=166
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=166
+att_flat:120
+image_token_weights:120
+选取值大于1的token
+图像token位置范围: (15, 135)
+重要stoken数量: 36
+最高注意力权重: 8.1831
+平均注意力权重: 2.8981
+input_ids:torch.Size([1, 1541])
+seq_len:1541
+找到 image token span: img_start=14, img_end=136
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,136)
+匹配成功,correct:63,total:91
+succ:0.6847826086956522
+predicted_cat:Brabancon Griffon, true_cat:Brabancon Griffon
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 39
+最高注意力权重: 4.1719
+平均注意力权重: 2.1916
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.6774193548387096
+predicted_cat:Rhodesian Ridgeback, true_cat:Vizsla
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 35
+最高注意力权重: 6.1266
+平均注意力权重: 1.8534
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:64,total:93
+succ:0.6808510638297872
+predicted_cat:Scottish Deerhound, true_cat:Scottish Deerhound
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 19
+最高注意力权重: 4.3706
+平均注意力权重: 2.0551
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:65,total:94
+succ:0.6842105263157895
+predicted_cat:Collie, true_cat:Collie
+att_shape:[18, 14]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 57
+最高注意力权重: 22.2304
+平均注意力权重: 4.2776
+input_ids:torch.Size([1, 1673])
+seq_len:1673
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,268)
+匹配成功,correct:66,total:95
+succ:0.6875
+predicted_cat:Saint Bernard, true_cat:Saint Bernard
+att_shape:[18, 12]
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 41
+最高注意力权重: 9.0429
+平均注意力权重: 2.4591
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:67,total:96
+succ:0.6907216494845361
+predicted_cat:Border Collie, true_cat:Border Collie
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 29
+最高注意力权重: 5.9496
+平均注意力权重: 2.3234
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:68,total:97
+succ:0.6938775510204082
+predicted_cat:Blenheim Spaniel, true_cat:Blenheim Spaniel
+att_shape:[18, 12]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 57
+最高注意力权重: 24.2774
+平均注意力权重: 3.9380
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.6868686868686869
+predicted_cat:Toy Poodle, true_cat:Lakeland Terrier
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 54
+最高注意力权重: 6.8131
+平均注意力权重: 2.6129
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.68
+predicted_cat:Staffordshire Bullterrier, true_cat:Bull Mastiff
+att_shape:[18, 14]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 38
+最高注意力权重: 5.8018
+平均注意力权重: 2.3156
+input_ids:torch.Size([1, 1673])
+seq_len:1673
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,268)
+匹配成功,correct:69,total:100
+succ:0.6831683168316832
+predicted_cat:Newfoundland, true_cat:Newfoundland
+att_shape:[18, 12]
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 268), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 45
+最高注意力权重: 14.5148
+平均注意力权重: 3.5423
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:70,total:101
+succ:0.6862745098039216
+predicted_cat:Kelpie, true_cat:Kelpie
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 32
+最高注意力权重: 3.4960
+平均注意力权重: 1.5031
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:71,total:102
+succ:0.6893203883495146
+predicted_cat:Malinois, true_cat:Malinois
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 52
+最高注意力权重: 34.9662
+平均注意力权重: 3.9506
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.6826923076923077
+predicted_cat:Maltese Dog, true_cat:West Highland White Terrier
+att_shape:[14, 16]
+att_flat:224
+image_token_weights:224
+选取值大于1的token
+图像token位置范围: (15, 239)
+重要stoken数量: 60
+最高注意力权重: 14.1828
+平均注意力权重: 3.5216
+input_ids:torch.Size([1, 1645])
+seq_len:1645
+找到 image token span: img_start=14, img_end=240
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,240)
+匹配成功,correct:72,total:104
+succ:0.6857142857142857
+predicted_cat:Cocker Spaniel, true_cat:Sussex Spaniel
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 15
+最高注意力权重: 1.8556
+平均注意力权重: 1.3931
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:73,total:105
+succ:0.6886792452830188
+predicted_cat:Boxer, true_cat:Boxer
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 38
+最高注意力权重: 4.3327
+平均注意力权重: 1.9703
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:74,total:106
+succ:0.6915887850467289
+predicted_cat:Chow, true_cat:Chow
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 39
+最高注意力权重: 6.8422
+平均注意力权重: 2.5920
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:75,total:107
+succ:0.6944444444444444
+predicted_cat:West Highland White Terrier, true_cat:Tibetan Terrier
+att_shape:[22, 29]
+att_flat:638
+image_token_weights:638
+选取值大于1的token
+图像token位置范围: (15, 653)
+重要stoken数量: 80
+最高注意力权重: 16.3850
+平均注意力权重: 2.8443
+input_ids:torch.Size([1, 2059])
+seq_len:2059
+找到 image token span: img_start=14, img_end=654
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,654)
+匹配成功,correct:76,total:108
+succ:0.6972477064220184
+predicted_cat:Golden Retriever, true_cat:Golden Retriever
+att_shape:[18, 12]
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+[ATTN] Image tokens out of kv range: img_range=(14, 654), kv_len=262
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=262
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 43
+最高注意力权重: 13.5584
+平均注意力权重: 3.3660
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.6909090909090909
+predicted_cat:Siberian Husky, true_cat:Eskimo Dog
+att_shape:[10, 8]
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+[ATTN] Image tokens out of kv range: img_range=(14, 232), kv_len=126
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=126
+att_flat:80
+image_token_weights:80
+选取值大于1的token
+图像token位置范围: (15, 95)
+重要stoken数量: 9
+最高注意力权重: 6.6869
+平均注意力权重: 2.6410
+input_ids:torch.Size([1, 1501])
+seq_len:1501
+找到 image token span: img_start=14, img_end=96
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,96)
+匹配成功,correct:77,total:110
+succ:0.6936936936936937
+predicted_cat:Japanese Spaniel, true_cat:Japanese Spaniel
+att_shape:[15, 18]
+att_flat:270
+image_token_weights:270
+选取值大于1的token
+图像token位置范围: (15, 285)
+重要stoken数量: 65
+最高注意力权重: 12.4997
+平均注意力权重: 2.7183
+input_ids:torch.Size([1, 1691])
+seq_len:1691
+找到 image token span: img_start=14, img_end=286
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,286)
+匹配成功,correct:78,total:111
+succ:0.6964285714285714
+predicted_cat:Standard Poodle, true_cat:Standard Poodle
+att_shape:[18, 11]
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+[ATTN] Image tokens out of kv range: img_range=(14, 286), kv_len=244
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=244
+att_flat:198
+image_token_weights:198
+选取值大于1的token
+图像token位置范围: (15, 213)
+重要stoken数量: 56
+最高注意力权重: 134.8367
+平均注意力权重: 11.9748
+input_ids:torch.Size([1, 1619])
+seq_len:1619
+找到 image token span: img_start=14, img_end=214
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,214)
+匹配成功,correct:79,total:112
+succ:0.6991150442477876
+predicted_cat:Clumber, true_cat:Clumber
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 43
+最高注意力权重: 5.9170
+平均注意力权重: 2.4051
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+succ:0.6929824561403509
+predicted_cat:Beagle, true_cat:English Foxhound
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 22
+最高注意力权重: 3.2843
+平均注意力权重: 1.6369
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+匹配成功,correct:80,total:114
+succ:0.6956521739130435
+predicted_cat:Leonberg, true_cat:Leonberg
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 40
+最高注意力权重: 5.0088
+平均注意力权重: 2.1137
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:81,total:115
+succ:0.6982758620689655
+predicted_cat:Whippet, true_cat:Whippet
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 59
+最高注意力权重: 7.5827
+平均注意力权重: 2.5440
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:82,total:116
+succ:0.7008547008547008
+predicted_cat:Norfolk Terrier, true_cat:Kerry Blue Terrier
+att_shape:[9, 13]
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+[ATTN] Image tokens out of kv range: img_range=(14, 250), kv_len=163
+[ATTN] Invalid token range: pos_begin=None, pos_end=None, kv_len=163
+att_flat:117
+image_token_weights:117
+选取值大于1的token
+图像token位置范围: (15, 132)
+重要stoken数量: 38
+最高注意力权重: 9.4661
+平均注意力权重: 2.9395
+input_ids:torch.Size([1, 1538])
+seq_len:1538
+找到 image token span: img_start=14, img_end=133
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,133)
+匹配成功,correct:83,total:117
+succ:0.7033898305084746
+predicted_cat:Curly-coated Retriever, true_cat:Curly coater Retriever
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 39
+最高注意力权重: 8.3812
+平均注意力权重: 2.8463
+input_ids:torch.Size([1, 1655])
+seq_len:1655
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+匹配成功,correct:84,total:118
+succ:0.7058823529411765
+predicted_cat:Flat-coated Retriever, true_cat:Flat coated Retriever
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 76
+最高注意力权重: 68.6146
+平均注意力权重: 7.0738
+input_ids:torch.Size([1, 1637])
+seq_len:1637
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,232)
+succ:0.7
+predicted_cat:Bernese Mountain Dog, true_cat:Tibetan Mastiff
+accuracy with direct:0.7

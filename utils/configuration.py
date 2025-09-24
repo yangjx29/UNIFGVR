@@ -11,9 +11,11 @@ from utils.fileios import mkdir_if_missing  # 导入创建目录的工具函数
 def setup_config(config_file_env: str, config_file_expt: str):
     """设置配置函数：合并环境配置和实验配置"""
     with open(config_file_env, 'r') as stream:  # 打开环境配置文件
+    # with open('/data/yjx/MLLM/UniFGVR/configs/env_machine.yml', 'r') as stream:
         config_env = yaml.safe_load(stream) 
 
     with open(config_file_expt, 'r') as stream: 
+    # with open('/data/yjx/MLLM/UniFGVR/configs/expts/dog120_all.yml', 'r') as stream: 
         config_expt = yaml.safe_load(stream) 
 
     cfg_env = EasyDict()  

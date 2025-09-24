@@ -1,0 +1,14 @@
+local_model_path: /home/Dataset/Models/Qwen/Qwen2.5-VL-7B-Instruct
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 78
+最高注意力权重: 45.2255
+平均注意力权重: 4.7413
+input_ids:torch.Size([1, 282])
+seq_len:282
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.2 span=(14,250)
+output_text: ["The dog in the image is a Weimaraner, which is known for its distinctive features including a sleek, short-haired coat with a soft, dense undercoat. Here are some key characteristics to identify this breed:\n\n1. **Physical Appearance**:\n   - **Head Shape**: The head is broad and flat-faced.\n   - **Ears**: The ears are large, triangular, and set high on the head.\n   - **Coat Type**: The coat is short-haired, with a thick, soft, and dense undercoat.\n\n2. **Color and Markings**:\n   - The dog's coat color is typically grayish-brown, but the Weimaraner comes in various colors, including black and tan. The dog in the picture appears to be a Weimaraner.\n\n3. **Distinctive Features**:\n   - **Breed Characteristics**: The dog has a long, narrow head and a short, dense, double-layered coat.\n   - **Body Structure**: The dog has a strong, muscular build with a deep chest and a broad back.\n\nThe Weimaraner is known for its intelligence, loyalty, and even temperament."]

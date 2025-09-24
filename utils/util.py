@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from torch.nn.parameter import Parameter
 from sklearn.manifold import TSNE
 import matplotlib
-matplotlib.use('agg')
+# matplotlib.use('agg')
 from matplotlib import pyplot as plt
 from scipy.optimize import linear_sum_assignment as linear_assignment
 # from sklearn.utils.linear_assignment_ import linear_assignment # LOOK I DON'T HAVE THIS VERSION
@@ -19,7 +19,7 @@ import argparse
 
 import torch
 import numpy as np
-
+from difflib import SequenceMatcher
 
 def shoot_infs(inp_tensor):
     """Replaces inf by maximum of tensor"""
@@ -369,3 +369,378 @@ def interleave(xy, batch):
     for i in range(1, nu + 1):
         xy[0][i], xy[i][i] = xy[i][i], xy[0][i]
     return [torch.cat(v, dim=0) for v in xy]
+
+import torchvision.transforms.functional as TF
+import numpy as np
+import os
+from scipy.ndimage import median_filter
+from skimage.measure import block_reduce
+from qwen_vl_utils import process_vision_info
+from io import BytesIO
+import base64
+
+def encode_base64(image):
+    """
+    Encodes a PIL image to a base64 string.
+    """
+    buffered = BytesIO()
+    image.save(buffered, format="PNG")
+    img_str = base64.b64encode(buffered.getvalue()).decode()
+    return img_str
+
+def prepare_qwen2_5_input(messages, processor):
+
+    """
+    Prepare the input for Qwen2.5VL.
+    """
+
+    text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+    image_inputs, video_inputs = process_vision_info(messages)
+    inputs = processor(text=[text], images=image_inputs, videos=video_inputs, padding=True, return_tensors="pt")
+
+    return inputs
+
+def high_pass_filter(image, resolusion, km=7, kh=3, reduce=True):
+    """
+    Applies a high-pass filter to an image to highlight edges and fine details.
+    
+    This function resizes the image, applies a Gaussian blur to create a low-frequency version,
+    subtracts it from the original to get high-frequency components, and then applies median filtering.
+    
+    Args:
+        image: Input PIL image
+        resolusion: Target resolution to resize the image to
+        km: Kernel size for median filtering (default: 7)
+        kh: Kernel size for Gaussian blur (default: 3)
+        reduce: Whether to reduce the output size using block reduction (default: True)
+        
+    Returns:
+        h_brightness: A 2D numpy array representing the high-frequency components of the image
+    """
+
+    image = TF.resize(image, (resolusion, resolusion))
+    image = TF.to_tensor(image).unsqueeze(0)
+    l = TF.gaussian_blur(image, kernel_size=(kh, kh)).squeeze().detach().cpu().numpy()
+    h = image.squeeze().detach().cpu().numpy() - l
+    h_brightness = np.sqrt(np.square(h).sum(axis=0))
+    h_brightness = median_filter(h_brightness, size=km)
+    if reduce:
+        h_brightness = block_reduce(h_brightness, block_size=(14, 14), func=np.sum)
+
+    return h_brightness
+
+def bbox_from_att_image_adaptive(att_map, image_size, bbox_size=336):
+    """
+    Generates an adaptive bounding box for original image from an attention map.
+    
+    This function finds the region with the highest attention in the attention map
+    and creates a bounding box around it. It tries different crop ratios and selects
+    the one that produces the sharpest attention difference.
+    
+    Args:
+        att_map: A 2D numpy array representing the attention map (e.g., 24x24 for LLaVA or 16x16 for BLIP)
+        image_size: Tuple of (width, height) of the original image
+        bbox_size: Base size for the bounding box (default: 336)
+        
+    Returns:
+        tuple: (x1, y1, x2, y2) coordinates of the bounding box in the original image
+    """
+
+    # the ratios corresponds to the bounding box we are going to crop the image
+    ratios = [1, 1.2, 1.4, 1.6, 1.8, 2]
+
+    max_att_poses = []
+    differences = []
+    block_nums = []
+
+    for ratio in ratios:
+        # perform a bbox_size*r width and bbox_size*r height crop, where bbox_size is the size of the model's original image input resolution. (336 for LLaVA, 224 for BLIP)
+
+        # the size of each block in the attention map, in the original image
+        block_size = image_size[0] / att_map.shape[1], image_size[1] / att_map.shape[0]
+
+        # if I want a bbox_size*r width and bbox_size*r height crop from the original image, the number of blocks I need (x, y)
+        block_num = min(int(bbox_size*ratio/block_size[0]), att_map.shape[1]), min(int(bbox_size*ratio/block_size[1]), att_map.shape[0])
+        if att_map.shape[1]-block_num[0] < 1 and att_map.shape[0]-block_num[1] < 1:
+            if ratio == 1:
+                return 0, 0, image_size[0], image_size[1]
+            else:
+                continue
+        block_nums.append((block_num[0], block_num[1]))
+        
+        # attention aggregation map
+        sliding_att = np.zeros((att_map.shape[0]-block_num[1]+1, att_map.shape[1]-block_num[0]+1))
+        max_att = -np.inf
+        max_att_pos = (0, 0)
+
+        # sliding window to find the block with the highest attention
+        for x in range(att_map.shape[1]-block_num[0]+1): 
+            for y in range(att_map.shape[0]-block_num[1]+1): 
+                att = att_map[y:y+block_num[1], x:x+block_num[0]].sum()
+                sliding_att[y, x] = att
+                if att > max_att:
+                    max_att = att
+                    max_att_pos = (x, y)
+        
+        # we have the position of max attention, we can calculate the difference between the max attention and the average of its adjacent attentions, to see if it is sharp enough, the more difference, the sharper
+        # we choose the best ratio r according to their attention difference
+        adjcent_atts = []
+        if max_att_pos[0] > 0:
+            adjcent_atts.append(sliding_att[max_att_pos[1], max_att_pos[0]-1])
+        if max_att_pos[0] < sliding_att.shape[1]-1:
+            adjcent_atts.append(sliding_att[max_att_pos[1], max_att_pos[0]+1])
+        if max_att_pos[1] > 0:
+            adjcent_atts.append(sliding_att[max_att_pos[1]-1, max_att_pos[0]])
+        if max_att_pos[1] < sliding_att.shape[0]-1:
+            adjcent_atts.append(sliding_att[max_att_pos[1]+1, max_att_pos[0]])
+        difference = (max_att - np.mean(adjcent_atts)) / (block_num[0] * block_num[1])
+        differences.append(difference)
+        max_att_poses.append(max_att_pos)
+    max_att_pos = max_att_poses[np.argmax(differences)]
+    block_num = block_nums[np.argmax(differences)]
+    selected_bbox_size = bbox_size * ratios[np.argmax(differences)]
+    
+    x_center = int(max_att_pos[0] * block_size[0] + block_size[0] * block_num[0] / 2)
+    y_center = int(max_att_pos[1] * block_size[1] + block_size[1] * block_num[1] / 2)
+    
+    x_center = selected_bbox_size//2 if x_center < selected_bbox_size//2 else x_center
+    y_center = selected_bbox_size//2 if y_center < selected_bbox_size//2 else y_center
+    x_center = image_size[0] - selected_bbox_size//2 if x_center > image_size[0] - selected_bbox_size//2 else x_center
+    y_center = image_size[1] - selected_bbox_size//2 if y_center > image_size[1] - selected_bbox_size//2 else y_center
+
+    x1 = max(0, x_center - selected_bbox_size//2)
+    y1 = max(0, y_center - selected_bbox_size//2)
+    x2 = min(image_size[0], x_center + selected_bbox_size//2)
+    y2 = min(image_size[1], y_center + selected_bbox_size//2)
+
+    return x1, y1, x2, y2
+
+def high_res_split_threshold(image, res_threshold=1024):
+    """
+    Splits a high-resolution image into smaller patches.
+    
+    This function divides a large image into smaller patches to process them individually,
+    which is useful for handling high-resolution images that might be too large for direct processing.
+    
+    Args:
+        image: Input PIL image
+        res_threshold: Maximum resolution threshold before splitting (default: 1024)
+        
+    Returns:
+        tuple: (split_images, vertical_split, horizontal_split)
+            - split_images: List of PIL image patches
+            - vertical_split: Number of vertical splits
+            - horizontal_split: Number of horizontal splits
+    """
+
+    vertical_split = int(np.ceil(image.size[1] / res_threshold))
+    horizontal_split = int(vertical_split * image.size[0] / image.size[1])
+
+    split_num = (horizontal_split, vertical_split)
+    split_size = int(np.ceil(image.size[0] / split_num[0])), int(np.ceil(image.size[1] / split_num[1]))
+    
+    split_images = []
+    for j in range(split_num[1]):
+        for i in range(split_num[0]):
+            split_image = image.crop((i*split_size[0], j*split_size[1], (i+1)*split_size[0], (j+1)*split_size[1]))
+            split_images.append(split_image)
+    
+    return split_images, vertical_split, horizontal_split
+
+def high_res(map_func, image, prompt, general_prompt, model, processor):
+    """
+    Applies an attention mapping function to high-resolution images by splitting and recombining.
+    
+    This function splits a high-resolution image into smaller patches, applies the specified
+    attention mapping function to each patch, and then recombines the results into a single
+    attention map.
+    
+    Args:
+        map_func: The attention mapping function to apply to each patch
+        image: Input PIL image
+        prompt: Text prompt for the attention function
+        general_prompt: General text prompt for baseline comparison
+        model: Model instance (LLaVA or BLIP)
+        processor: Processor for the corresponding model
+        
+    Returns:
+        block_att: A 2D numpy array representing the combined attention map for the entire image
+    """
+
+    split_images, num_vertical_split, num_horizontal_split = high_res_split_threshold(image)
+    att_maps = []
+    for split_image in split_images:
+        att_map = map_func(split_image, prompt, general_prompt, model, processor)
+        # att_map = att_map / att_map.mean()
+        att_maps.append(att_map)
+    block_att = np.block([att_maps[j:j+num_horizontal_split] for j in range(0, num_horizontal_split * num_vertical_split, num_horizontal_split)])
+
+    return block_att
+
+def map_attention_to_inputs(att_map, ori_inputs, processor):
+    """
+    Maps attention weights to the corresponding image tokens in the original inputs.
+    
+    This function takes an attention map (2D array) and maps it to the image token positions
+    in the original inputs, creating a weight vector that can be used to identify important
+    image tokens.
+    
+    Args:
+        att_map: 2D numpy array representing attention weights (shape: [h, w])
+        ori_inputs: Original inputs from prepare_qwen2_5_input containing input_ids and image_grid_thw
+        processor: The processor used to prepare the inputs
+        
+    Returns:
+        tuple: (image_token_weights, image_token_positions)
+            - image_token_weights: 1D tensor with attention weights for each image token
+            - image_token_positions: tuple of (start_pos, end_pos) indicating image token range
+    """
+    
+    # Get the shape of the attention map
+    att_h, att_w = att_map.shape
+    
+    # Get vision token IDs
+    vision_start_token_id = processor.tokenizer.convert_tokens_to_ids('<|vision_start|>')
+    vision_end_token_id = processor.tokenizer.convert_tokens_to_ids('<|vision_end|>')
+    
+    # Find the position range of image tokens in input_ids
+    input_ids = ori_inputs['input_ids'].tolist()[0]
+    start_pos = input_ids.index(vision_start_token_id) + 1
+    end_pos = input_ids.index(vision_end_token_id)
+    
+    # Flatten the attention map to match the image token sequence
+    # The attention map is reshaped to match the spatial arrangement of image tokens
+    att_flat = att_map.flatten()  # Shape: [h*w]
+    
+    # Convert numpy array to torch tensor and create image token weights
+    att_tensor = torch.from_numpy(att_flat).float()
+    image_token_weights = torch.zeros(end_pos - start_pos, dtype=torch.float32)
+    
+    print(f'att_flat:{len(att_flat)}\nimage_token_weights:{len(image_token_weights)}')
+    
+    # Map attention weights to image tokens
+    # Note: The mapping depends on how the image tokens are arranged spatially
+    # For Qwen2.5VL, image tokens are typically arranged in row-major order
+    min_length = min(len(att_tensor), len(image_token_weights))
+    image_token_weights[:min_length] = att_tensor[:min_length]
+    
+    return image_token_weights, (start_pos, end_pos)
+
+def get_important_image_tokens(att_map, ori_inputs, processor, threshold=None, top_k=None):
+    """
+    Identifies the most important image tokens based on attention weights.
+    
+    Args:
+        att_map: 2D numpy array representing attention weights
+        ori_inputs: Original inputs from prepare_qwen2_5_input
+        processor: The processor used to prepare the inputs
+        threshold: Optional threshold for filtering tokens (tokens with weight > threshold)
+        top_k: Optional number of top tokens to select (if specified, threshold is ignored)
+        
+    Returns:
+        dict: Contains information about important tokens
+            - 'weights': tensor of attention weights for image tokens
+            - 'positions': tuple of (start_pos, end_pos) for image token range
+            - 'important_indices': indices of important tokens (relative to image token start)
+            - 'important_weights': weights of important tokens
+    """
+    
+    # 将att_map的值映射到image_token_weights
+    image_token_weights, image_positions = map_attention_to_inputs(att_map, ori_inputs, processor)
+    
+    if top_k is not None:
+        # Select top-k tokens
+        top_k = min(top_k, len(image_token_weights))
+        important_indices = torch.topk(image_token_weights, top_k).indices
+        important_weights = image_token_weights[important_indices]
+    elif threshold is not None:
+        # Select tokens above threshold
+        print(f'选取值大于1的token')
+        important_mask = image_token_weights > threshold # bool
+        # 返回所有满足 important_mask 为 True 的元素的索引
+        important_indices = torch.where(important_mask)[0]
+        important_weights = image_token_weights[important_indices]
+    else:
+        # Return all tokens
+        important_indices = torch.arange(len(image_token_weights))
+        important_weights = image_token_weights
+    
+    return {
+        'weights': image_token_weights,
+        'positions': image_positions,
+        'important_indices': important_indices,
+        'important_weights': important_weights
+    }
+
+def create_attention_mask(att_map, ori_inputs, important_tokens_info, processor, threshold=None, top_k=None):
+    """
+    Creates a binary mask for important image tokens based on attention weights.
+    
+    Args:
+        att_map: 2D numpy array representing attention weights
+        ori_inputs: Original inputs from prepare_qwen2_5_input
+        processor: The processor used to prepare the inputs
+        threshold: Optional threshold for filtering tokens
+        top_k: Optional number of top tokens to select
+        
+    Returns:
+        torch.Tensor: Binary mask with 1 for important tokens, 0 for others
+    """
+    
+    # important_tokens_info = get_important_image_tokens(att_map, ori_inputs, processor, threshold, top_k)
+    
+    # Create a mask for the entire input sequence
+    input_length = ori_inputs['input_ids'].shape[1]
+    print(f'input_length:{input_length}')
+    mask = torch.zeros(input_length, dtype=torch.bool)
+    
+    start_pos, end_pos = important_tokens_info['positions']
+    important_indices = important_tokens_info['important_indices']
+    
+    # Set mask to True for important image tokens
+    for idx in important_indices:
+        if start_pos + idx < end_pos:
+            mask[start_pos + idx] = True
+    
+    return mask
+
+def visualize_attention_mapping(att_map, ori_inputs, processor, important_tokens_info,  top_k=None):
+    """
+    Visualizes the mapping between attention map and image tokens.
+    
+    Args:
+        att_map: 2D numpy array representing attention weights
+        ori_inputs: Original inputs from prepare_qwen2_5_input
+        processor: The processor used to prepare the inputs
+        top_k: Number of top tokens to highlight
+        
+    Returns:
+        dict: Visualization information
+    """
+    
+    # important_tokens_info = get_important_image_tokens(att_map, ori_inputs, processor, top_k=top_k)
+    
+    # Get input tokens for visualization
+    input_ids = ori_inputs['input_ids'].tolist()[0]
+    tokens = processor.tokenizer.convert_ids_to_tokens(input_ids)
+    
+    start_pos, end_pos = important_tokens_info['positions']
+    
+    # Create visualization data
+    visualization = {
+        'attention_map_shape': att_map.shape,
+        'image_token_range': (start_pos, end_pos),
+        'total_image_tokens': end_pos - start_pos,
+        'top_k_tokens': top_k,
+        'top_attention_weights': important_tokens_info['important_weights'].tolist(),
+        'top_token_positions': (important_tokens_info['important_indices'] + start_pos).tolist(),
+        'sample_tokens': tokens[start_pos:start_pos+10] if start_pos + 10 <= end_pos else tokens[start_pos:end_pos]
+    }
+    
+    return visualization
+
+def is_similar(str1, str2, threshold=0.7):
+        """判断两个字符串是否语义相似"""
+        
+        similarity = SequenceMatcher(None, str1, str2).ratio()
+        return similarity >= threshold
