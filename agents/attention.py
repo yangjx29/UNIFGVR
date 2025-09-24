@@ -16,7 +16,7 @@ def qwen_new_forward(
     hidden_states: torch.Tensor,
     attention_mask: Optional[torch.Tensor] = None,
     position_ids: Optional[torch.LongTensor] = None,
-    past_key_values: Optional[object] = None,
+    past_key_value: Optional[object] = None,
     output_attentions: bool = False,
     use_cache: bool = False,
     cache_position: Optional[torch.LongTensor] = None,
@@ -25,9 +25,10 @@ def qwen_new_forward(
 ) -> tuple[torch.Tensor, Optional[torch.Tensor], Optional[tuple[torch.Tensor]]]:
     """
     替换后的 forward：手工计算 attention logits，以便在 softmax 之前修改 logits（放大 image token 注意力）。
-    返回 (attn_output, attn_weights, past_key_values)
+    返回 (attn_output, attn_weights, past_key_value)
     """
     bsz, q_len, _ = hidden_states.size()
+    device = hidden_states.device
 
     # Q/K/V 投影（与原实现一致）
     query_states = self.q_proj(hidden_states)
@@ -50,21 +51,24 @@ def qwen_new_forward(
         print(f'cos = sin = None')
     else:
         cos, sin = position_embeddings
+        # 确保与 hidden_states 在同一设备
+        cos = cos.to(device)
+        sin = sin.to(device)
         # 进行位置编码
         query_states, key_states = apply_multimodal_rotary_pos_emb(
             query_states, key_states, cos, sin, getattr(self, "rope_scaling", {}).get("mrope_section", None)
         )
 
-    # past_key_values 更新（与原实现一致）
+    # past_key_value 更新（与原实现一致）
     kv_seq_len = key_states.shape[-2]  # seq len for keys/values
-    if past_key_values is not None:
+    if past_key_value is not None:
         if getattr(self, "layer_idx", None) is None:
             raise ValueError(
                 "If using k/v caching with this attention, ensure attention layer has attribute `layer_idx`."
             )
-        # 如果 past_key_values 提供了 update 接口（与 qwen 实现一致）
+        # 如果 past_key_value 提供了 update 接口（与 qwen 实现一致）
         cache_kwargs = {"sin": sin, "cos": cos, "cache_position": cache_position}
-        key_states, value_states = past_key_values.update(key_states, value_states, self.layer_idx, cache_kwargs)
+        key_states, value_states = past_key_value.update(key_states, value_states, self.layer_idx, cache_kwargs)
         # kv_seq_len 可能已增长，按实际 shape 重新确定
         kv_seq_len = key_states.shape[-2]
 
@@ -83,6 +87,7 @@ def qwen_new_forward(
 
     # attention_mask 应为 (bsz, 1, q_len, kv_seq_len)（与 Qwen 源码一致）
     if attention_mask is not None:
+        attention_mask = attention_mask.to(device)
         # print(f'attention_mask is not None测试')
         if attention_mask.size() != (bsz, 1, q_len, kv_seq_len):
             raise ValueError(
@@ -136,7 +141,7 @@ def qwen_new_forward(
     # 根据 output_attentions 决定是否返回 attn_probs（注意：返回的 attn_probs dtype 与原实现可能不同）
     attn_weights = attn_probs if output_attentions else None
 
-    # 根据 use_cache 决定是否要返回缓存（这里直接返回原 past_key_values）
+    # 根据 use_cache 决定是否要返回缓存（这里直接返回原 past_key_value）
     return attn_output, attn_weights
 
 
@@ -145,7 +150,7 @@ def qwen_new_forward_with_importance(
     hidden_states: torch.Tensor,
     attention_mask: Optional[torch.Tensor] = None,
     position_ids: Optional[torch.LongTensor] = None,
-    past_key_values: Optional[object] = None,
+    past_key_value: Optional[object] = None,
     output_attentions: bool = False,
     use_cache: bool = False,
     cache_position: Optional[torch.LongTensor] = None,
@@ -154,14 +159,17 @@ def qwen_new_forward_with_importance(
 ) -> tuple[torch.Tensor, Optional[torch.Tensor], Optional[tuple[torch.Tensor]]]:
     """
     替换后的 forward：使用注意力重要性权重进行差异化增强。
-    返回 (attn_output, attn_weights, past_key_values)
+    返回 (attn_output, attn_weights, past_key_value)
     """
     # 只有初始的q_len长度大于1,之后都只会保留生成的最后一个token
     bsz, q_len, _ = hidden_states.size()
+    device = hidden_states.device
     print(f"hidden_states:{hidden_states.shape}")
     query_states = self.q_proj(hidden_states)
     key_states = self.k_proj(hidden_states)
     value_states = self.v_proj(hidden_states)
+    print(f'hidden query_states:{query_states.shape}, key_states:{key_states.shape},key_states:{key_states.shape}')
+
 
     # reshape -> (bsz, num_heads, seq, head_dim)
     query_states = query_states.view(bsz, q_len, -1, self.head_dim).transpose(1, 2)
@@ -169,17 +177,22 @@ def qwen_new_forward_with_importance(
     value_states = value_states.view(bsz, q_len, -1, self.head_dim).transpose(1, 2)
     
     cos, sin = position_embeddings
+    # 保证位置编码与 hidden_states 同设备
+    cos = cos.to(device)
+    sin = sin.to(device)
     # 进行位置编码
     query_states, key_states = apply_multimodal_rotary_pos_emb(
         query_states, key_states, cos, sin, self.rope_scaling["mrope_section"]
     )
-
+    # 这里不应该只拿增量,如果是增量阶段，从past_key_value中取出历史记录
     kv_seq_len = key_states.shape[-2]  # seq len for keys/values
-    if past_key_values is not None:
+    if past_key_value is not None:
+        # print(f'past_key_value is not None:{past_key_value.shape}')
         cache_kwargs = {"sin": sin, "cos": cos, "cache_position": cache_position} # Specific to RoPE models
-        key_states, value_states = past_key_values.update(key_states, value_states, self.layer_idx, cache_kwargs)
-        kv_seq_len = key_states.shape[-2]
-
+        key_states, value_states = past_key_value.update(key_states, value_states, self.layer_idx, cache_kwargs)
+        # kv_seq_len = key_states.shape[-2]
+        kv_seq_len = past_key_value[self.layer_idx][0].shape[-2]
+    print(f'取出来的kv_seq_len:{kv_seq_len}')
     # shape: (bsz, num_heads, q_len, kv_seq_len)
     key_states = repeat_kv(key_states, self.num_key_value_groups)
     value_states = repeat_kv(value_states, self.num_key_value_groups)
@@ -187,6 +200,7 @@ def qwen_new_forward_with_importance(
     # attention_mask 应为 (bsz, 1, q_len, kv_seq_len)
     causal_mask = attention_mask
     if attention_mask is not None:
+        attention_mask = attention_mask.to(device)
         causal_mask = attention_mask[:, :, :, : key_states.shape[-2]]
 
 
@@ -197,31 +211,31 @@ def qwen_new_forward_with_importance(
 
     is_causal = True if causal_mask is None and q_len > 1 else False
     # =========== scaled_dot_product_attention源码============
-    scale=None
-    enable_gqa=False
-    dropout_p=self.attention_dropout if self.training else 0.0
+    # scale=None
+    # enable_gqa=False
+    # dropout_p=self.attention_dropout if self.training else 0.0
     
-    L, S = query_states.size(-2), key_states.size(-2)
-    scale_factor = 1 / math.sqrt(query_states.size(-1)) if scale is None else scale
-    attn_bias = torch.zeros(L, S, dtype=query_states.dtype, device=query_states.device)
-    if is_causal:
-        assert causal_mask is None
-        device = query_states.device
-        temp_mask = torch.ones(L, S, dtype=torch.bool, device=device).tril(diagonal=0)
-        attn_bias.masked_fill_(temp_mask.logical_not(), float("-inf"))
-        attn_bias.to(query_states.dtype)
-    if causal_mask is not None:
-        if causal_mask.dtype == torch.bool:
-            attn_bias.masked_fill_(causal_mask.logical_not(), float("-inf"))
-        else:
-            attn_bias = causal_mask + attn_bias
-    if enable_gqa:
-        key_states = key_states.repeat_interleave(query_states.size(-3)//key_states.size(-3), -3)
-        value = value.repeat_interleave(query_states.size(-3)//value.size(-3), -3)
-    attn_weight = query_states @ key_states.transpose(-2, -1) * scale_factor
-    attn_weight += attn_bias
-    attn_weight = torch.softmax(attn_weight, dim=-1)
-    attn_weight = torch.dropout(attn_weight, dropout_p, train=True)
+    # L, S = query_states.size(-2), key_states.size(-2)
+    # scale_factor = 1 / math.sqrt(query_states.size(-1)) if scale is None else scale
+    # attn_bias = torch.zeros(L, S, dtype=query_states.dtype, device=query_states.device)
+    # if is_causal:
+    #     assert causal_mask is None
+    #     device = query_states.device
+    #     temp_mask = torch.ones(L, S, dtype=torch.bool, device=device).tril(diagonal=0)
+    #     attn_bias.masked_fill_(temp_mask.logical_not(), float("-inf"))
+    #     attn_bias.to(query_states.dtype)
+    # if causal_mask is not None:
+    #     if causal_mask.dtype == torch.bool:
+    #         attn_bias.masked_fill_(causal_mask.logical_not(), float("-inf"))
+    #     else:
+    #         attn_bias = causal_mask + attn_bias
+    # if enable_gqa:
+    #     key_states = key_states.repeat_interleave(query_states.size(-3)//key_states.size(-3), -3)
+    #     value = value.repeat_interleave(query_states.size(-3)//value.size(-3), -3)
+    # attn_weight = query_states @ key_states.transpose(-2, -1) * scale_factor
+    # attn_weight += attn_bias
+    # attn_weight = torch.softmax(attn_weight, dim=-1)
+    # attn_weight = torch.dropout(attn_weight, dropout_p, train=True)
     # 进行增强
     # ==========根据重要性权重差异化增强 image token 的 logits ==========
     # use_attn = getattr(self, "use_attn", False)
@@ -278,151 +292,154 @@ def qwen_new_forward_with_importance(
     #         print(f"[ATTN] Invalid image token slice range. kv_pos_begin:{kv_pos_begin},kv_pos_end:{kv_pos_end} attn_weight.shape[-1]:{attn_weight.shape[-1]}")
     # attn_output = attn_weight @ value_states
     # =======源码结束
-    attn_output = attn_output.transpose(1, 2).contiguous()
-    attn_output = attn_output.view(bsz, q_len, self.hidden_size)
+    # attn_output = attn_output.transpose(1, 2).contiguous()
+    # attn_output = attn_output.view(bsz, q_len, self.hidden_size)
 
-    attn_output = self.o_proj(attn_output)
-    return attn_output, None, past_key_values
-    # attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
-    # print(f'attn_weights after matmul:{attn_weights.shape}')
-    # # 校验形状（与原实现的期望一致）
-    # expected_shape = (bsz, self.num_heads, q_len, kv_seq_len)
-    # if attn_weights.size() != expected_shape:
-    #     # 有些实现会把 key/value 按 group 投影。这里我们不做复杂 group 处理，直接报错以便用户注意。
-    #     raise ValueError(f"Unexpected attn_logits shape {attn_weights.size()}, expected {expected_shape}.")
+    # attn_output = self.o_proj(attn_output)
+    # return attn_output, None, past_key_value
+    print(f'matmul前query_states:{query_states.shape}, key_states:{key_states.shape},key_states:{key_states.shape}')
+    attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
+    print(f'attn_weights after matmul:{attn_weights.shape}')
+    # 校验形状（与原实现的期望一致）
+    expected_shape = (bsz, self.num_heads, q_len, kv_seq_len)
+    if attn_weights.size() != expected_shape:
+        raise ValueError(f"Unexpected attn_logits shape {attn_weights.size()}, expected {expected_shape}.")
 
 
-    # if query_states.dtype == torch.float16:
-    #     attn_weights = torch.where(torch.isinf(attn_weights), torch.zeros_like(attn_weights), attn_weights)
+    if query_states.dtype == torch.float32:
+        attn_weights = torch.where(torch.isinf(attn_weights), torch.zeros_like(attn_weights), attn_weights)
 
     # ==========根据重要性权重差异化增强 image token 的 logits ==========
-    # use_attn = getattr(self, "use_attn", False)
-    # use_cfg = getattr(self, "use_cfg", False)
-    # alpha = getattr(self, "alpha", 0.0)
-    # img_start_idx = getattr(self, "img_start_idx", None)
-    # img_end_idx = getattr(self, "img_end_idx", None)
-    # importance_weights = getattr(self, "importance_weights", None)
-    # important_indices = getattr(self, "important_indices", None)
-    # # 注意力增强：根据重要性权重对图像token区域进行差异化增强
-    # if use_attn and (img_start_idx is not None) and (img_end_idx is not None) and (importance_weights is not None):
+    use_attn = getattr(self, "use_attn", False)
+    use_cfg = getattr(self, "use_cfg", False)
+    alpha = getattr(self, "alpha", 0.0)
+    img_start_idx = getattr(self, "img_start_idx", None)
+    img_end_idx = getattr(self, "img_end_idx", None)
+    importance_weights = getattr(self, "importance_weights", None)
+    important_indices = getattr(self, "important_indices", None)
+    # 注意力增强：根据重要性权重对图像token区域进行差异化增强
+    if use_attn and (img_start_idx is not None) and (img_end_idx is not None) and (importance_weights is not None):
+        # 保证重要性权重位于同一设备
+        if isinstance(importance_weights, torch.Tensor) and importance_weights.device != device:
+            importance_weights = importance_weights.to(device)
         # 图像token索引需要相对于kv_seq_len进行调整
         # 因为img_start_idx和img_end_idx是基于原始input_ids计算的，但attn_logits使用的是kv_seq_len
-        # kv_seq_len = attn_logits.shape[-1]
-        # pos_start = img_start_idx
-        # pos_end = img_end_idx
-        # n_img_tokens_input = pos_end - pos_start - 1
-        # input_seq_len = attention_mask.shape[-1] if attention_mask is not None else (bsz and hidden_states.shape[1])
-        # # 修复：当 kv_seq_len > input_seq_len 时，说明是在增量生成阶段
-        # if kv_seq_len > input_seq_len:
-        #     # 在增量生成模式下，图像 tokens 已经存在于 kv cache 中
-        #     # 它们的相对位置不会改变，只在整个序列中的绝对位置变了
-        #     # 所以 kv_pos_begin 和 kv_pos_end 可以直接用
-        #     kv_pos_begin = pos_start + 1
-        #     kv_pos_end = pos_end -1
-        #     print(f'[ATTN] Incremental generation mode. kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}')
-        # # 修复：当 kv_seq_len == input_seq_len 时，是第一次前向传播
-        # else:
-        #     # 原始代码中的比例映射逻辑在增量生成时是错误的，因为它会改变图像 token 的相对位置
-        #     kv_pos_begin = pos_start + 1
-        #     kv_pos_end = pos_end - 1
-        #     print(f'[ATTN] Initial forward pass. kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}')
-        # # 核心修复: 确保索引范围有效
-        # if kv_pos_begin >= kv_pos_end or kv_pos_begin < 0 or kv_pos_end > kv_seq_len:
-        #     print(f"[ATTN] Invalid mapped kv range: kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}, kv_len={kv_seq_len}. Skipping enhancement.")
-        #     pass # 直接跳过增强，使用原始 attn_logits
-        # else:
-        #     # 修复：在进行切片前，打印信息以验证索引是否正确
-        #     print(f'[ATTN] Enhancing logits for tokens from index {kv_pos_begin} to {kv_pos_end}')
-        #     # target_logits 的 shape 为 (bsz, num_heads, img_token_count)
+        kv_seq_len = attn_weights.shape[-1]
+        pos_start = img_start_idx
+        pos_end = img_end_idx
+        n_img_tokens_input = pos_end - pos_start - 1
+        input_seq_len = attention_mask.shape[-1] if attention_mask is not None else (bsz and hidden_states.shape[1])
+        # 修复：当 kv_seq_len > input_seq_len 时，说明是在增量生成阶段
+        if kv_seq_len > input_seq_len:
+            # 在增量生成模式下，图像 tokens 已经存在于 kv cache 中
+            # 它们的相对位置不会改变，只在整个序列中的绝对位置变了
+            # 所以 kv_pos_begin 和 kv_pos_end 可以直接用
+            kv_pos_begin = pos_start + 1
+            kv_pos_end = pos_end -1
+            print(f'[ATTN] Incremental generation mode. kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}')
+        # 修复：当 kv_seq_len == input_seq_len 时，是第一次前向传播
+        else:
+            # 原始代码中的比例映射逻辑在增量生成时是错误的，因为它会改变图像 token 的相对位置
+            kv_pos_begin = pos_start + 1
+            kv_pos_end = pos_end - 1
+            print(f'[ATTN] Initial forward pass. kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}')
+        # 核心修复: 确保索引范围有效
+        if kv_pos_begin >= kv_pos_end or kv_pos_begin < 0 or kv_pos_end > kv_seq_len:
+            print(f"[ATTN] Invalid mapped kv range: kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}, kv_len={kv_seq_len}. Skipping enhancement.")
+            pass # 直接跳过增强，使用原始 attn_logits
+        else:
+            # 修复：在进行切片前，打印信息以验证索引是否正确
+            print(f'[ATTN] Enhancing logits for tokens from index {kv_pos_begin} to {kv_pos_end}')
+            # target_logits 的 shape 为 (bsz, num_heads, img_token_count)
         
         # 获取当前查询 token 的索引
         # 在增量生成中，q_len 始终为 1，查询索引是 -1
         # 在初始前向传播中，q_len > 1，查询索引是所有 token
         # 这里我们只对最后一个查询 token 进行增强
-    #     target_weight = attn_weights[:, :, -1, img_start_idx+1:img_end_idx-1]
-    #     print(f'target_weight:{target_weight.shape}')
-    #     # 修复：重要性权重长度处理
-    #     num_image_tokens = target_weight.shape[-1]
-    #     if len(importance_weights) != num_image_tokens:
-    #         print(f'[ATTN] Weight length mismatch: weights={len(importance_weights)}, tokens={num_image_tokens}. Resizing weights.')
-    #     # 只对重要性权重大于阈值的token进行适度增强
-    #     enhancement_threshold = 1.0
-    #     enhancement_mask = importance_weights > enhancement_threshold
-    #     print(f'enhancement_mask shape:{enhancement_mask.shape}')
-    #     # 确保 importance_weights 的 shape 与 target_logits 匹配
-    #     # 广播 importance_weights 到 (1, 1, num_image_tokens)
-    #     importance_weights_broadcast = importance_weights.view(1, 1, -1)
-    #     if enhancement_mask.any():
-    #         # enhanced_logits = target_logits.clone()
-    #         # for i in range(target_logits.shape[-1]):
-    #         #     importance_factor = min(importance_weights[i].item(), 10)
-    #         #     enhancement = target_logits[:, :, i].abs() * alpha + target_logits[:, :, i]
-    #         #     enhanced_logits[:, :, i] = enhancement
-    #         # # 应用增强后的logits
-    #         # attn_logits[:, :, -1, kv_pos_begin:kv_pos_end] = enhanced_logits
-    #         enhancement = target_weight.abs() * alpha
-    #         enhanced_logits = target_weight + enhancement
+        target_weight = attn_weights[:, :, -1, img_start_idx+1:img_end_idx-1]
+        print(f'target_weight:{target_weight.shape}')
+        # 修复：重要性权重长度处理
+        num_image_tokens = target_weight.shape[-1]
+        if len(importance_weights) != num_image_tokens:
+            print(f'[ATTN] Weight length mismatch: weights={len(importance_weights)}, tokens={num_image_tokens}. Resizing weights.')
+        # 只对重要性权重大于阈值的token进行适度增强
+        enhancement_threshold = 1.0
+        enhancement_mask = importance_weights > enhancement_threshold
+        print(f'enhancement_mask shape:{enhancement_mask.shape}')
+        # 确保 importance_weights 的 shape 与 target_logits 匹配
+        # 广播 importance_weights 到 (1, 1, num_image_tokens)
+        importance_weights_broadcast = importance_weights.view(1, 1, -1)
+        if enhancement_mask.any():
+            # enhanced_logits = target_logits.clone()
+            # for i in range(target_logits.shape[-1]):
+            #     importance_factor = min(importance_weights[i].item(), 10)
+            #     enhancement = target_logits[:, :, i].abs() * alpha + target_logits[:, :, i]
+            #     enhanced_logits[:, :, i] = enhancement
+            # # 应用增强后的logits
+            # attn_logits[:, :, -1, kv_pos_begin:kv_pos_end] = enhanced_logits
+            enhancement = target_weight.abs() * alpha
+            enhanced_logits = target_weight + enhancement
 
-    #         # 使用掩码来应用增强
-    #         # 扩展掩码以匹配 target_logits 的形状
-    #         enhanced_logits = torch.where(
-    #             enhancement_mask.view(1, 1, -1),
-    #             enhanced_logits,
-    #             target_weight
-    #         )
-    #         # 应用增强后的 logits
-    #         attn_weights[:, :, -1, img_start_idx+1:img_end_idx-1] = enhanced_logits
-    #     else:
-    #         print(f'[ATTN] No tokens meet enhancement threshold {enhancement_threshold}')
-    # else:
-    #     print(f'[ATTN] No importance-based enhancement applied')
+            # 使用掩码来应用增强
+            # 扩展掩码以匹配 target_logits 的形状
+            enhanced_logits = torch.where(
+                enhancement_mask.view(1, 1, -1),
+                enhanced_logits,
+                target_weight
+            )
+            # 应用增强后的 logits
+            attn_weights[:, :, -1, img_start_idx+1:img_end_idx-1] = enhanced_logits
+        else:
+            print(f'[ATTN] No tokens meet enhancement threshold {enhancement_threshold}')
+    else:
+        print(f'[ATTN] No importance-based enhancement applied')
     
-    # if torch.isnan(attn_weights).any() or torch.isinf(attn_weights).any():
-    #     print("[ATTN] NaN/Inf detected in attn_logits, applying correction...")
-    #     # 用有限值替换NaN和Inf
-    #     attn_logits = torch.where(
-    #         torch.isnan(attn_weights) | torch.isinf(attn_weights),
-    #         torch.tensor(torch.finfo(attn_weights.dtype).min, device=attn_weights.device),
-    #         attn_weights
-    #     )
+    if torch.isnan(attn_weights).any() or torch.isinf(attn_weights).any():
+        print("[ATTN] NaN/Inf detected in attn_logits, applying correction...")
+        # 用有限值替换NaN和Inf
+        attn_weights = torch.where(
+            torch.isnan(attn_weights) | torch.isinf(attn_weights),
+            torch.tensor(torch.finfo(attn_weights.dtype).min, device=attn_weights.device),
+            attn_weights
+        )
     
-    # # 限制logits的范围以避免数值不稳定
-    # attn_logits = torch.clamp(attn_logits, min=-50.0, max=50.0)
+    # 限制logits的范围以避免数值不稳定
+    attn_weights = torch.clamp(attn_weights, min=-50.0, max=50.0)
     
     
     # 处理softmax后的NaN和Inf
-    # if torch.isnan(attn_probs).any() or torch.isinf(attn_probs).any():
-    #     print("[ATTN] NaN/Inf detected in attn_probs, applying correction...")
-    #     # 用均匀分布替换NaN和Inf
-    #     uniform_probs = torch.ones_like(attn_probs) / attn_probs.shape[-1]
-    #     attn_probs = torch.where(
-    #         torch.isnan(attn_probs) | torch.isinf(attn_probs),
-    #         uniform_probs,
-    #         attn_weights
-    #     )
+    if torch.isnan(attn_weights).any() or torch.isinf(attn_weights).any():
+        print("[ATTN] NaN/Inf detected in attn_probs, applying correction...")
+        # 用均匀分布替换NaN和Inf
+        uniform_probs = torch.ones_like(attn_weights) / attn_weights.shape[-1]
+        attn_weightsattn_probs = torch.where(
+            torch.isnan(attn_weights) | torch.isinf(attn_weights),
+            uniform_probs,
+            attn_weights
+        )
     # attn output = attn_probs @ V
-    # attn_output = torch.matmul(attn_probs, value_states)  # (bsz, num_heads, q_len, head_dim)
+    attn_output = torch.matmul(attn_weights, value_states)  # (bsz, num_heads, q_len, head_dim)
     
     
     # upcast attention to fp32
-    # attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
-    # attn_weights = nn.functional.dropout(attn_weights, p=self.attention_dropout, training=self.training)
-    # attn_output = torch.matmul(attn_weights, value_states)
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query_states.dtype)
+    attn_weights = nn.functional.dropout(attn_weights, p=self.attention_dropout, training=self.training)
+    attn_output = torch.matmul(attn_weights, value_states)
 
-    # if attn_output.size() != (bsz, self.num_heads, q_len, self.head_dim):
-    #     raise ValueError(
-    #         f"`attn_output` should be of size {(bsz, self.num_heads, q_len, self.head_dim)}, but is"
-    #         f" {attn_output.size()}"
-    #     )
-    # # 恢复维度 (bsz, q_len, hidden)
-    # attn_output = attn_output.transpose(1, 2).reshape(bsz, q_len, -1)
-    # attn_output = self.o_proj(attn_output)
+    if attn_output.size() != (bsz, self.num_heads, q_len, self.head_dim):
+        raise ValueError(
+            f"`attn_output` should be of size {(bsz, self.num_heads, q_len, self.head_dim)}, but is"
+            f" {attn_output.size()}"
+        )
+    # 恢复维度 (bsz, q_len, hidden)
+    attn_output = attn_output.transpose(1, 2).reshape(bsz, q_len, -1)
+    attn_output = self.o_proj(attn_output)
 
-    # # 根据 output_attentions 决定是否返回 attn_probs（注意：返回的 attn_probs dtype 与原实现可能不同）
-    # attn_weights = attn_weights if output_attentions else None
+    # 根据 output_attentions 决定是否返回 attn_probs（注意：返回的 attn_probs dtype 与原实现可能不同）
+    attn_weights = attn_weights if output_attentions else None
 
-    # 根据 use_cache 决定是否要返回缓存（这里直接返回原 past_key_values）
-    # return attn_output, attn_weights, past_key_values
+    # 根据 use_cache 决定是否要返回缓存（这里直接返回原 past_key_value）
+    return attn_output, attn_weights, past_key_value
 
 
 def qwen_modify(model, start_layer: int, end_layer: int, use_attn: bool, alpha: float, use_cfg: bool,

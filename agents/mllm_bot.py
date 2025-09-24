@@ -103,6 +103,16 @@ class MLLMBot:
         self.pai_gamma = 1.1           # 阶段二：γ 指导强度
         self.num_map = 0
         
+    def _get_model_device(self):
+        try:
+            return self.qwen2_5.model.embed_tokens.weight.device
+        except Exception:
+            # 退化方案：取第一个参数所在设备或 self.device
+            try:
+                return next(self.qwen2_5.parameters()).device
+            except Exception:
+                return torch.device(self.device)
+
     # # TODO 这里应该需要考虑chunk切分
     # def _resolve_img_token_span(self, messages, inputs):
     #     """返回(img_start_idx, img_end_idx)。
@@ -227,7 +237,8 @@ class MLLMBot:
         #         return_tensors="pt"
         #     ).to(self.device,torch.float16)
         # generated_ids = self.qwen2_5.generate(**inputs, max_new_tokens=128)
-        inputs = prepare_qwen2_5_input(messages, self.qwen2_5_processor).to(self.device, torch.bfloat16)
+        model_device = self._get_model_device()
+        inputs = prepare_qwen2_5_input(messages, self.qwen2_5_processor).to(model_device, torch.float32)
 
         # TODO阶段一 注意力增强
         if self.pai_enable_attn:
@@ -286,7 +297,7 @@ class MLLMBot:
                 else:
                     uncond_inputs = self.qwen2_5_processor(
                         text=[uncond_text], images=None, videos=None, padding=True, return_tensors="pt"
-                    ).to(self.device, torch.float16)
+                    ).to(model_device, torch.float16)
 
                 logits_processors = [
                     CFGLogits(
@@ -400,8 +411,9 @@ class MLLMBot:
 
     def call_llm(self, prompts):
         prompts_temp = self.qwen2_5_processor(None, prompts, return_tensors="pt")
-        input_ids = prompts_temp['input_ids'].to(self.device)
-        attention_mask = prompts_temp['attention_mask'].to(self.device, torch.float16)
+        model_device = self._get_model_device()
+        input_ids = prompts_temp['input_ids'].to(model_device)
+        attention_mask = prompts_temp['attention_mask'].to(model_device, torch.float16)
 
         prompts_embeds = self.qwen2_5.language_model.get_input_embeddings()(input_ids)
 
