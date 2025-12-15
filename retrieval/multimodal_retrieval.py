@@ -6,7 +6,7 @@ if parent_dir not in sys.path:
     sys.path.insert(0, parent_dir)
 
 # 直接导入UniFGVR目录下的utils模块
-sys.path.insert(0, '/data/yjx/MLLM/UniFGVR')
+# sys.path.insert(0, '/data/yjx/MLLM/UniFGVR')
 import numpy as np
 from PIL import Image
 import torch
@@ -42,6 +42,7 @@ class MultimodalRetrieval:
         # Load CLIP for image and text feature extraction (CLIP can handle both)
         self.clip_model = CLIPModel.from_pretrained(image_encoder_name).to(self.device)
         self.clip_processor = CLIPProcessor.from_pretrained(image_encoder_name)
+        blip_load_path='/home/Dataset/Models/blip/blip2-opt-6.7b-coco'
         self.blip_processor = AutoProcessor.from_pretrained("Salesforce/blip-itm-base-coco")
         self.blip_model = BlipForImageTextRetrieval.from_pretrained("Salesforce/blip-itm-base-coco")
         # 确保模型与输入在同一设备，避免 FloatTensor/CudaFloatTensor 不一致
@@ -132,24 +133,29 @@ class MultimodalRetrieval:
         Fuse image and text features.
         
         Args:
-            img_feat (np.ndarray): Image feature.
-            text_feat (np.ndarray): Text feature.
+            img_feat (np.ndarray): Image feature (L2 normalized).
+            text_feat (np.ndarray): Text feature (L2 normalized).
         
         Returns:
-            np.ndarray: Fused multimodal feature.
+            np.ndarray: Fused multimodal feature (L2 normalized).
         """
         if self.fusion_method == "concat":
-            return np.concatenate([img_feat, text_feat])
+            # Concat后需要重新归一化以保持单位向量性质
+            fused = np.concatenate([img_feat, text_feat])
         elif self.fusion_method == "average":
-            return (img_feat + text_feat) / 2
+            # Average后也需要归一化（因为两个单位向量的平均不再是单位向量）
+            fused = (img_feat + text_feat) / 2
         elif self.fusion_method == "weighted":
             alpha = 0.7
-            return alpha * text_feat + (1 - alpha) * img_feat
+            fused = alpha * text_feat + (1 - alpha) * img_feat
         elif self.fusion_method == "cross_atten":
             # 已处理
             raise RuntimeError("blip_cross requires raw image path and text; call extract_multimodal_feat_blip().")
         else:
             raise ValueError("Invalid fusion method. Use 'concat' or 'average'.")
+        
+        # 关键修复：融合后必须重新L2归一化，确保是单位向量
+        return self.l2_normalize(fused)
 
     def l2_normalize(self, x: np.ndarray, eps: float = 1e-12) -> np.ndarray:
         """L2 归一化到单位范数。"""
@@ -179,6 +185,8 @@ class MultimodalRetrieval:
         for cat, value in data.items():
             # 从 list 转为 array
             arr = np.array(value, dtype=np.float32)
+            # 关键修复：加载后重新归一化，确保是单位向量（由于JSON序列化可能有精度损失）
+            arr = self.l2_normalize(arr)
             gallery[cat] = arr
         
         print(f'gallery:{gallery}')
@@ -238,7 +246,9 @@ class MultimodalRetrieval:
             
             # Average features for the category template
             if cat_feats: 
-                gallery[cat] = np.mean(cat_feats, axis=0) # TODO 按行还是列取平均
+                # 关键修复：平均后必须重新归一化，因为多个单位向量的平均不再是单位向量
+                avg_feat = np.mean(cat_feats, axis=0)
+                gallery[cat] = self.l2_normalize(avg_feat)
             else:
                 raise ValueError(f"No features extracted for category {cat}")
             # print(f'种类:{cat}, 对应的gallery[cat]:{gallery[cat]}')
@@ -294,14 +304,14 @@ class MultimodalRetrieval:
         # Extract and fuse query features
         if self.fusion_method == "cross_atten":
             query_feat = self.extract_multimodal_feat_blip(query_image_path, description)
+            # BLIP特征已经归一化，但为了保险再次归一化
+            query_feat = self.l2_normalize(query_feat)
         else:
             img_feat = self.extract_image_feat(query_image_path)
             text_feat = self.extract_text_feat(description)
             query_feat = self.fuse_features(img_feat, text_feat)
-        # 归一化
-        # query_feat = F.normalize(query_feat) 
-        # Normalize query feature
-        # query_feat = self.normalize_feat(query_feat)
+            # fuse_features内部已经归一化，但为了保险再次归一化确保一致性
+            query_feat = self.l2_normalize(query_feat)
         
         # Prepare gallery features as matrix (C, dim)
         gallery_cats = list(gallery.keys())
@@ -309,17 +319,29 @@ class MultimodalRetrieval:
         # Ensure dims align
         if query_feat.shape[-1] != gallery_feats.shape[-1]:
             raise ValueError(f"Dim mismatch: query {query_feat.shape[-1]} vs gallery {gallery_feats.shape[-1]}. Ensure same fusion_method for gallery and query.")
-        # 归一化
-        # gallery_feats = F.normalize(gallery_feats)
+        
+        # 关键修复：确保gallery特征也是归一化的（虽然构建时已归一化，但为了保险再次归一化）
+        gallery_feats = np.array([self.l2_normalize(gallery[cat]) for cat in gallery_cats])
+        
         print(f'构造的gallery_feats矩阵shape:{gallery_feats.shape}')
+        print(f'query_feat shape: {query_feat.shape}, norm: {np.linalg.norm(query_feat):.6f}')
+        print(f'gallery_feats sample norm: {np.linalg.norm(gallery_feats[0]):.6f}')
+        
         # Compute cosine similarities: Fquery * F_gallery^T (1, C)
-        cos_sims = np.dot(query_feat, gallery_feats.T)  # Shape: (C,)
+        # 由于所有特征都是L2归一化的单位向量，点积等于余弦相似度
+        cos_sims = np.dot(gallery_feats, query_feat)  # Shape: (C,) - 修改为正确的矩阵乘法顺序
         # print(f'cos_sims shape: {cos_sims.shape}, cos_sims: {cos_sims}')
         
         # Compute affinities R = exp(-β (1 - cos_sims))
-        # TODO 论文没有给值
-        beta = 0.1
+        # 优化：beta参数影响affinity的锐化程度，通常使用5-20之间
+        # 较小的beta(0.1)会导致affinity差异不明显，这里调整为10以提高区分度
+        beta = 10.0
         affinities = np.exp(-beta * (1 - cos_sims))  # Shape: (C,)
+        
+        # 调试信息：打印top-5相似度和affinity值
+        top5_idx = np.argsort(-cos_sims)[:5]
+        print(f'Top-5 cosine similarities: {cos_sims[top5_idx]}')
+        print(f'Top-5 affinities: {affinities[top5_idx]}')
         # print(f'affinities shape: {affinities.shape}, affinities: {affinities}')
         
         # Create dict of affinity scores
@@ -462,15 +484,16 @@ class MultimodalRetrieval:
 # Example usage (for testing)
 if __name__ == "__main__":
     """
-    CUDA_VISIBLE_DEVICES=1 python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_rag_tok5_concat_add_token_weighted_10_28layer_image_qufen0.2_duibi_newquanzhong.log
+    CUDA_VISIBLE_DEVICES=0 python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_rag_tok5_concat_add_token_weighted_10_28layer_image_new_token1.5.log
     CUDA_VISIBLE_DEVICES=0 nohup python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_rag_tok5_concat_add_token_weighted_10_28layer_image_qufen.log &
     CUDA_VISIBLE_DEVICES=0 python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_mllm_direct_withatten_after.log
+    CUDA_VISIBLE_DEVICES=0 python multimodal_retrieval.py 2>&1 | tee ../logs/interence1_dog_mllm_2_fix.log
     """
     # Initialize modules
     fusion_method="concat"
     captioner = CDVCaptioner()
     retrieval = MultimodalRetrieval(image_encoder_name="/home/Dataset/Models/Clip/clip-vit-base-patch32", text_encoder_name="/home/Dataset/Models/Clip/clip-vit-base-patch32", fusion_method=fusion_method, device="cuda" if torch.cuda.is_available() else "cpu")
-    mllm_bot = MLLMBot(model_tag="Qwen2.5-VL-7B", model_name="Qwen2.5-VL-7B", pai_enable_attn=True, device="cuda" if torch.cuda.is_available() else "cpu")
+    mllm_bot = MLLMBot(model_tag="Qwen2.5-VL-7B", model_name="Qwen2.5-VL-7B", pai_enable_attn=False, device="cuda" if torch.cuda.is_available() else "cpu")
     
     # Dummy train_samples 
     # train_samples = {
@@ -488,11 +511,11 @@ if __name__ == "__main__":
     # predicted = retrieval.fgvc_via_multimodal_retrieval(mllm_bot, query_path, gallery, captioner, "dog")
     # print(f"Predicted category for query: {predicted}")
     # query_path = "/data/yjx/MLLM/UniFGVR/datasets/dogs_120/Images/n02085620-Chihuahua/n02085620_1558.jpg" #chihuahua
-    gallery = retrieval.load_gallery_from_json('/data/yjx/MLLM/UniFGVR/experiments/dog120/gallery/dog120_gallery_concat_old.json') 
+    gallery = retrieval.load_gallery_from_json('/data/yjx/MLLM/UniFGVR/experiments/dog120/gallery/dog120_gallery_complete_fix.json') 
     test_samples = {}
     # 构建test samples
     # img_root = "/data/yjx/MLLM/UniFGVR/datasets/dogs_120/Images"
-    img_root = "/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_1"
+    img_root = "/data/yjx/MLLM/UniFGVR/datasets/dogs_120/images_discovery_all_2"
     class_folders = os.listdir(img_root)
     for i in range(len(class_folders)):
         cat_name = class_folders[i].split('-')[-1].replace('_', ' ')
@@ -507,18 +530,46 @@ if __name__ == "__main__":
             test_samples[cat_name].append(path)
 
     print(f'test sample:{test_samples}')
+
+    accuracy_top1 = retrieval.evaluate_fgvc(mllm_bot, test_samples, gallery, captioner, "dog", use_rag=False)
+    print(f"accuracy with Top-1: {accuracy_top1}")
+
     # 使用RAG进行Top-5候选推理
     accuracy_rag = retrieval.evaluate_fgvc(mllm_bot, test_samples, gallery, captioner, "dog", use_rag=True, topk=5)
     print(f"accuracy with RAG: {accuracy_rag}")
     
     # 对比：使用简单Top-1方法
-    accuracy_top1 = retrieval.evaluate_fgvc(mllm_bot, test_samples, gallery, captioner, "dog", use_rag=False)
-    print(f"accuracy with Top-1: {accuracy_top1}")
+    # accuracy_top1 = retrieval.evaluate_fgvc(mllm_bot, test_samples, gallery, captioner, "dog", use_rag=False)
+    # print(f"accuracy with Top-1: {accuracy_top1}")
     # 直接用MLLM
     # superclass = 'dog'
     # from data import DATA_STATS, PROMPTERS, DATA_DISCOVERY  
     # cname_sheet = DATA_STATS[superclass]['class_names']
     # prompt=f'Look carefully at the dog in the picture and tell me which category it belongs to in {cname_sheet}. The answer only needs the specific category name of {cname_sheet}, no extra explanation is needed.'
+    # prompt_direct = f"""Look closely at the dog in the picture and tell me which category it belongs to. 
+    #     The answer only requires the specific category name with no additional explanation.
+
+    #     On a scale of 1 to 5, how confident are you in this prediction? 
+    #     - 1: Very uncertain, just a guess
+    #     - 2: Somewhat uncertain, not sure
+    #     - 3: Moderately confident, reasonable guess
+    #     - 4: Quite confident, likely correct
+    #     - 5: Very confident, almost certain
+
+    #     Only answer with a number from 1 to 5. 
+    #     Return ONLY the JSON object, with no extra text, brackets, or quotes around it. 
+    #     Example: {{"breed": "Airedale Terrier", "confidence": 4}}
+    #     """
+    # score_stats = {
+    #     1: {'success': 0, 'fail': 0},
+    #     2: {'success': 0, 'fail': 0},
+    #     3: {'success': 0, 'fail': 0},
+    #     4: {'success': 0, 'fail': 0},
+    #     5: {'success': 0, 'fail': 0}
+    # }
+    # prompt_top5=f'Look carefully at the dog in the picture and choose the five most likely categories from {cname_sheet}. The answer only requires the specific category names from {cname_sheet}, separated by commas, without any other instructions.'
+
+    # prompt2 = f"""You are an expert in fine-grained visual recognition. Look carefully at this image and give the most likely category."""
     
     # total=0
     # accuracy_dirct=0
@@ -526,15 +577,79 @@ if __name__ == "__main__":
     # for true_cat, paths in test_samples.items():
     #     for path in paths:
     #         image = Image.open(path).convert("RGB")
-    #         _, predicted_cat = mllm_bot.describe_attribute(image, prompt)
+    #         _, predicted_cat = mllm_bot.describe_attribute(image, prompt2)
+            
+    #         print(f'生成回复:{predicted_cat}')
     #         true_cat=true_cat.split('.')[1]
     #         predicted_cat=predicted_cat[0]
     #         if is_similar(predicted_cat,true_cat, threshold=0.5):
     #             correct += 1
-    #             print(f'匹配成功,correct:{correct},total:{total}')
+    #             print(f'succ, correct:{correct},total:{total}')
+    #         else:
+    #             print(f'failed predicted_cat:{predicted_cat}, true_cat:{true_cat}')
     #         total += 1
-    #         print(f'succ:{correct / total if total > 0 else 0.0}')
-    #         print(f'predicted_cat:{predicted_cat}, true_cat:{true_cat}')
+    #         print(f'acc:{correct / total if total > 0 else 0.0}')
         
     #     accuracy_dirct = correct / total if total > 0 else 0.0
     # print(f'accuracy with direct:{accuracy_dirct}')
+
+    # total=0
+    # accuracy_dirct=0
+    # correct=0
+    # for true_cat, paths in test_samples.items():
+    #     true_cat=true_cat.split('.')[1]
+    #     for path in paths:
+    #         image = Image.open(path).convert("RGB")
+    #         _, reply = mllm_bot.describe_attribute(image, prompt_direct)
+    #         print(f'reply:{reply}')
+    #         if isinstance(reply, list) and len(reply) > 0:
+    #             json_str = reply[0].strip()  # 取列表第一个元素并去除首尾空白
+    #         else:
+    #             json_str = str(reply).strip()
+    #         result = json.loads(json_str)
+    #         predicted_cat = result.get('breed', '').strip()
+    #         score = int(result.get('confidence', 3))
+    #         score = int(score)
+    #         if is_similar(predicted_cat,true_cat, threshold=0.5):
+    #             correct += 1
+    #             print(f'匹配成功,correct:{correct},total:{total},score:{score}')
+    #             print(f'predicted_cat:{predicted_cat}, true_cat:{true_cat}')
+    #             score_stats[score]['success'] += 1
+    #         else:
+    #             print(f'匹配失败,correct:{correct},total:{total},score:{score}')
+    #             print(f'predicted_cat:{predicted_cat}, true_cat:{true_cat}')
+    #             # 文件夹为预测名，图像为正确名
+    #             save_path = f'/data/yjx/MLLM/UniFGVR/experiments/dog120/fail_images/{predicted_cat}'
+    #             os.makedirs(save_path, exist_ok=True)
+    #             import shutil
+    #             shutil.copy(path, save_path)
+    #             score_stats[score]['fail'] += 1
+    #         total += 1
+    #         print(f'succ:{correct / total if total > 0 else 0.0}')
+    # print(f'score_stats:{score_stats}')
+    # print(f'accuracy with direct:{accuracy_dirct}')
+
+    # print(f'==============')
+    # total=0
+    # accuracy_dirct=0
+    # correct=0
+    # for true_cat, paths in test_samples.items():
+    #     for path in paths:
+    #         image = Image.open(path).convert("RGB")
+    #         _, predicted_cats = mllm_bot.describe_attribute(image, prompt_top5)
+    #         true_cat=true_cat.split('.')[1]
+    #         print(f'predicted_cat in top5:{predicted_cats}, true_cat:{true_cat}')
+    #         # predicted_cat=predicted_cat[0]
+    #         for predicted_cat in predicted_cats:
+    #             if is_similar(predicted_cat,true_cat, threshold=0.5):
+    #                 correct += 1
+    #                 print(f'匹配成功 in top5,correct:{correct},total:{total}')
+    #                 print(f'其中一个predicted_cat:{predicted_cat}, true_cat:{true_cat}')
+    #                 print(f'succ top5:{correct / total if total > 0 else 0.0}')
+    #                 break
+    #         total += 1
+    #         print(f'succ top5:{correct / total if total > 0 else 0.0}')
+                
+        
+    #     accuracy_dirct = correct / total if total > 0 else 0.0
+    # print(f'accuracy with direct top-5:{accuracy_dirct}')

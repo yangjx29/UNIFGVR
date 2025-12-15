@@ -82,7 +82,7 @@ class MLLMBot:
         else:
             self.device = 'cuda:{}'.format(device_id)
             self.bit8 = bit8
-            dtype = {'load_in_8bit': True} if self.bit8 else {'torch_dtype': torch.float16}
+            dtype = {'load_in_8bit': True} if self.bit8 else {'torch_dtype': torch.bfloat16}
             # attn_implementation="sdpa"与 output_attentions不兼容
             # self.qwen2_5 = Qwen2_5_VLForConditionalGeneration.from_pretrained(local_model_path,
             #                                                         device_map={'': int(device_id)},
@@ -90,7 +90,7 @@ class MLLMBot:
             self.qwen2_5 = Qwen2_5_VLForConditionalGeneration.from_pretrained(local_model_path,
                                                                     device_map="auto",
                                                                     # attn_implementation="eager",
-                                                                    torch_dtype=torch.float32,
+                                                                    torch_dtype=torch.bfloat16,
                                                                     ).eval()
         # print(f'model:{self.qwen2_5}')
         print(f'local_model_path: {local_model_path}')
@@ -235,10 +235,10 @@ class MLLMBot:
         #         videos=video_inputs,           
         #         padding=True,
         #         return_tensors="pt"
-        #     ).to(self.device,torch.float16)
+        #     ).to(self.device,torch.bfloat16)
         # generated_ids = self.qwen2_5.generate(**inputs, max_new_tokens=128)
         model_device = self._get_model_device()
-        inputs = prepare_qwen2_5_input(messages, self.qwen2_5_processor).to(model_device, torch.float32)
+        inputs = prepare_qwen2_5_input(messages, self.qwen2_5_processor).to(model_device, torch.bfloat16)
 
         # TODO阶段一 注意力增强
         if self.pai_enable_attn:
@@ -250,7 +250,7 @@ class MLLMBot:
             general_prompt = f"<image>\nUSER: {general_question} Answer the question with a concise phrase.\nASSISTANT:"
             att_map = rel_attention_qwen2_5(raw_image[0], formatted_prompt, general_prompt, self.qwen2_5, self.qwen2_5_processor)
             import matplotlib.pyplot as plt
-            path='/data/yjx/MLLM/UniFGVR/maps/'
+            path='/data/yjx/MLLM/UniFGVR/'
             os.makedirs(path, exist_ok=True)
             plt.imshow(att_map, interpolation='none')
             plt.axis('off')
@@ -297,7 +297,7 @@ class MLLMBot:
                 else:
                     uncond_inputs = self.qwen2_5_processor(
                         text=[uncond_text], images=None, videos=None, padding=True, return_tensors="pt"
-                    ).to(model_device, torch.float16)
+                    ).to(model_device, torch.bfloat16)
 
                 logits_processors = [
                     CFGLogits(
@@ -413,7 +413,7 @@ class MLLMBot:
         prompts_temp = self.qwen2_5_processor(None, prompts, return_tensors="pt")
         model_device = self._get_model_device()
         input_ids = prompts_temp['input_ids'].to(model_device)
-        attention_mask = prompts_temp['attention_mask'].to(model_device, torch.float16)
+        attention_mask = prompts_temp['attention_mask'].to(model_device, torch.bfloat16)
 
         prompts_embeds = self.qwen2_5.language_model.get_input_embeddings()(input_ids)
 

@@ -1,0 +1,1906 @@
+[
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/014.Black_and_tan_Coonhound/014.Black_and_tan_Coonhound_n02089078_1275.jpg",
+        "label": "Black-and-tan Coonhound",
+        "label_id": 0,
+        "regions": [
+            "black coat",
+            "long droopy ears",
+            "black nose"
+        ],
+        "descriptions": [
+            "- Smooth, glossy black coat\n- Deep, rich coloration\n- Slightly lighter shading around the muzzle and chest\n- Distinctive tan markings on the cheeks, above the eyes, and on the chest\n- Long, floppy ears\n- Broad head with a slightly wrinkled forehead\n- Strong, muscular build\n- Deep-set eyes with a gentle expression",
+            "The dog's long droopy ears are characterized by their dark coloration, which matches the coat, and they hang down close to the face, framing the eyes and nose. The ears appear soft and slightly floppy, with visible fur texture that suggests a medium-length coat. These features are typical of the Black-and-tan Coonhound breed.",
+            "The black nose of the Black-and-tan Coonhound in the image is smooth, shiny, and has a slightly wet appearance, which is typical for this breed. It is positioned centrally on the face, with a distinct contrast against the tan markings around it. The nose appears firm and well-defined, without any visible wrinkles or folds."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/044.Boston_Bull/044.Boston_Bull_n02096585_9834.jpg",
+        "label": "Boston Bull",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "short and sturdy body",
+            "small pointed ears"
+        ],
+        "descriptions": [
+            "The dog exhibits a classic Boston Bull coloration with predominantly black fur covering its back, ears, and legs, contrasted by white fur on its chest, muzzle, and paws. The white fur on the chest is distinct and contrasts sharply with the black, while the white markings on the muzzle and paws are smaller but still noticeable. The overall pattern is characteristic of the Boston Bull breed, with a clear distinction between the two colors.",
+            "- Compact and muscular build\n- Short, smooth coat with distinct coloration (black and white)\n- Broad head with upright ears\n- Broad chest and short legs\n- Rounded, sturdy paws\n- Broad shoulders and neck\n- Short muzzle\n- Distinctive facial structure with a square jawline\n\nThese attributes collectively define the Boston Bull's short and sturdy body type.",
+            "The dog in the image has small, pointed ears that stand upright, characteristic of the Boston Bull breed. The ears are triangular in shape with a slight curve at the tips, and they appear alert and attentive. The inner ear is visible, showing a pinkish hue, which is typical for this breed. The ears are positioned close together on the head, adding to the distinctive facial structure of the Boston Bull."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/043.Dandi_Dinmont/043.Dandi_Dinmont_n02096437_858.jpg",
+        "label": "Dandi Dinmont",
+        "label_id": 0,
+        "regions": [
+            "gray fur",
+            "long hair",
+            "short legs; black fur"
+        ],
+        "descriptions": [
+            "- Short, dense fur with a slightly wavy texture.\n- Gray coloration covering most of the body.\n- Distinctive facial markings, including a darker patch around the eyes and a lighter muzzle.\n- Tail held high and curled upwards.\n- Compact build with a sturdy frame.\n- Fine, soft fur around the face and ears.",
+            "- Long, shaggy fur covering most of the body.\n- Fluffy, slightly wavy coat texture.\n- Ears covered in thick, soft fur.\n- Tail with a tuft of hair at the tip.\n- Facial hair extending beyond the jawline.\n- Overall appearance giving a fluffy, well-groomed look.",
+            "- Short legs with visible joint structure\n- Black fur on lower legs\n- Dense, fluffy coat covering most of the body\n- Distinctive facial features including a long, slightly droopy face\n- Small, compact body size\n- Tail held high and curled upwards"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/002.Maltese_Dog/002.Maltese_Dog_n02085936_4188.jpg",
+        "label": "Maltese Dog",
+        "label_id": 0,
+        "regions": [
+            "fluffy fur",
+            "small size",
+            "short tail"
+        ],
+        "descriptions": [
+            "- Dense, silky, white fur covering the entire body.\n- Fluffy tail curled over the back.\n- Soft, fine texture visible in the fur.\n- Curly hair around the face and ears.\n- Short, smooth coat overall with slight waviness near the edges.\n- Bright, expressive eyes partially obscured by fur.",
+            "- Compact body\n- Short stature\n- Fluffy coat\n- Small head\n- Tiny ears\n- Miniature size",
+            "The Maltese Dog in the image has a short, fluffy tail that appears slightly curled at the tip, consistent with the breed's characteristic tail shape. The tail is light in color, matching the overall coat, and is positioned towards the back of the dog's body."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/010.Basset_Hound/010.Basset_Hound_n02088238_9025.jpg",
+        "label": "Basset Hound",
+        "label_id": 0,
+        "regions": [
+            "brown and white fur",
+            "long floppy ears",
+            "heart-shaped tag"
+        ],
+        "descriptions": [
+            "The dog exhibits the characteristic long, floppy ears and droopy face typical of a Basset Hound. Its fur is predominantly white with distinct patches of brown, particularly around the eyes, ears, and back. The white fur covers much of its body, contrasting sharply with the brown areas. The dog's coat appears soft and slightly wavy, which is common in Basset Hounds. The heart-shaped tag suggests it is a pet, but this detail does not affect the description of its fur attributes.",
+            "- Long, drooping ears that hang down to the sides.\n- Ears are large in proportion to the head.\n- Ears have a soft, plush texture.\n- The edges of the ears are slightly frayed or ruffled.\n- The inner ear lining appears darker than the outer fur.\n- The ears are positioned close to the head but not touching it.\n- The ears are slightly rounded at the tips.\n- The ears are not pointed or upright.",
+            "The heart-shaped tag on the Basset Hound's collar is red with a white border. It appears to have a small, decorative design or text in the center, though the details are not clearly visible. The tag is attached to a silver chain."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/094.French_Bulldog/094.French_Bulldog_n02108915_2570.jpg",
+        "label": "French Bulldog",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "wrinkled face",
+            "short snout; black and brown fur"
+        ],
+        "descriptions": [
+            "The white fur of the French Bulldog in the image exhibits a smooth texture with distinct wrinkles around the face, particularly noticeable above the eyes and around the nose. The fur appears short and dense, with a slightly lighter shade on the forehead and ears, which are pointed and upright. The muzzle is broad and square, characteristic of the breed, and the fur around the mouth is slightly darker than the rest of the face. The overall coloration is creamy white, consistent with the typical coat color of French Bulldogs.",
+            "The French Bulldog in the image exhibits several distinctive features of its wrinkled face:\n\n1. **Prominent Wrinkles**: The forehead is deeply wrinkled with pronounced furrows.\n2. **Short Snout**: Characteristic of the breed, the snout is short and broad.\n3. **Large Ears**: The ears are large, upright, and slightly pointed, often with a slight fold at the base.\n4. **Folded Skin**: The skin around the eyes and cheeks appears loose and folded, contributing to the wrinkled appearance.\n5. **Small Eyes**: The eyes are small and expressive, often surrounded by wrinkles.\n6. **Smooth Coat**: The visible fur appears smooth and short, typical for this breed.\n\nThese attributes collectively help distinguish a French Bulldog from other dog subclasses.",
+            "- Short, broad muzzle with a flat face\n- Folded skin around the eyes creating a \"bat-eared\" appearance\n- Distinctive facial wrinkles and folds\n- Compact body structure\n- Smooth coat texture\n- Black and brown fur coloration\n- Broad, sturdy build\n- Rounded head shape\n- Small, triangular ears that stand upright or fold over\n\nThese attributes collectively define the French Bulldog breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/009.Afghan_Hound/009.Afghan_Hound_n02088094_4464.jpg",
+        "label": "Afghan Hound",
+        "label_id": 0,
+        "regions": [
+            "long hair",
+            "long ears",
+            "long tail; short hair"
+        ],
+        "descriptions": [
+            "- Long, silky fur\n- Ears that hang down to the shoulders\n- Tail that curls over the back\n- Fine, smooth texture\n- Elongated body with a slender build\n- Pointed muzzle\n- Distinctive facial features including a long snout and large, almond-shaped eyes",
+            "- Long, silky fur\n- Gradually tapering towards the tip\n- Slightly curved upwards at the tips\n- Soft, drooping appearance\n- Largely covering the eyes when relaxed\n- Smooth texture without visible creases or folds\n- Elongated shape extending beyond the head",
+            "- Long, flowing tail with silky texture.\n- Short, smooth coat covering the body.\n- Ears that hang down close to the shoulders.\n- Lean, athletic build.\n- Pointed muzzle.\n- Long, slender legs.\n- Tail held high when alert."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/029.American_Staffordshire_Terrier/029.American_Staffordshire_Terrier_n02093428_1351.jpg",
+        "label": "American Staffordshire Terrier",
+        "label_id": 0,
+        "regions": [
+            "black coat",
+            "short hair",
+            "floppy ears; black coat"
+        ],
+        "descriptions": [
+            "- Short, smooth coat\n- Dark, glossy fur\n- Distinctive facial features including a broad head and short muzzle\n- Ears that may be cropped or natural, depending on breed standards\n- Strong, muscular build\n- Tail that can be docked or left natural, with a curled or straight end",
+            "- Short, dense coat\n- Smooth texture\n- Dark brown coloration with possible lighter markings on the chest\n- Ears that stand upright but slightly folded at the tips\n- Broad head with a strong jawline\n- Compact body build\n- Tail curled upwards",
+            "- Floppy ears with visible inner ear structure.\n- Black coat with a smooth texture.\n- Compact body shape typical of the breed.\n- Broad head with a short muzzle.\n- Distinctive facial features including a strong jawline and alert eyes."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/035.Norwich_Terrier/035.Norwich_Terrier_n02094258_2070.jpg",
+        "label": "Norwich Terrier",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "short hair",
+            "standing on log; brown fur"
+        ],
+        "descriptions": [
+            "The Norwich Terrier in the image exhibits fine-grained, wiry brown fur with a distinctive texture that is coarse and slightly rough to the touch. The fur appears dense and stands up in places, giving it a rugged appearance typical of the breed. The coloration is a rich, warm brown, often with subtle variations in tone across the coat. The fur length is short but not smooth; instead, it has a slightly unkempt look, which is characteristic of the breed's natural coat.",
+            "The dog exhibits short, wiry fur with a distinctive texture that is coarse and slightly rough to the touch. The coat appears dense and stands up in places, giving it a rugged appearance typical of the Norwich Terrier breed. The fur color is a mix of light brown and gray, with a slightly shaggy look around the body and head.",
+            "The dog has short, wiry, tan to light brown fur with a slightly rough texture. The fur appears dense and stands upright in places, especially around the ears and legs, giving it a distinctive look typical of Norwich Terriers. The dog's body is compact and sturdy, with a slightly elongated head and pointed ears. Its tail is short and often carried curled over its back. These features are characteristic of the Norwich Terrier breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/086.Miniature_Pinscher/086.Miniature_Pinscher_n02107312_5567.jpg",
+        "label": "Miniature Pinscher",
+        "label_id": 0,
+        "regions": [
+            "black and brown fur",
+            "short tail",
+            "small size; black and white fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a short, smooth coat with a predominantly black and brown coloration. The fur appears dense and well-groomed, with a noticeable contrast between the black and brown patches. The ears are pointed and stand upright, typical of the breed. The facial markings include a black mask around the eyes and nose, with brown fur on the cheeks and muzzle. The legs have a mix of black and brown, with the front legs showing more brown than black. The tail is not fully visible but seems to be short and possibly curled. These features are characteristic of a Miniature Pinscher.",
+            "The Miniature Pinscher in the image has a short, stubby tail that is characteristic of the breed. The tail appears to be slightly curved upwards at the tip, which is a common feature in Miniature Pinschers. It is relatively small compared to the body size, consistent with the breed standard for this subclass.",
+            "- Small size\n- Black and white fur pattern\n- Pointed ears\n- Compact body\n- Short coat\n- Alert expression\n- Distinctive facial markings"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/118.Dhole/118.Dhole_n02115913_4542.jpg",
+        "label": "Dhole",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "pointed ears",
+            "open mouth with visible teeth"
+        ],
+        "descriptions": [
+            "- Dense, short brown fur covering the body.\n- Rich, warm brown coloration with subtle variations in shade.\n- Smooth texture with no visible undercoat.\n- Ears are pointed and stand upright, with lighter fur inside.\n- Face has a darker brown patch around the eyes and muzzle.\n- Fur appears slightly shaggy around the neck and chest area.\n- Overall uniformity in fur coloration without distinct markings or patterns.",
+            "The Dhole's pointed ears are large, upright, and have a light gray inner coloration with a darker brown outer edge. The tips of the ears are rounded and slightly darker than the rest of the ear.",
+            "The Dhole's open mouth reveals a set of sharp, pointed canines and premolars, with a visible gap between the front teeth. The gums appear pink, and the lower jaw shows a slight overbite. The teeth are well-aligned, and the overall dental structure suggests a carnivorous diet typical of wild dogs."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/072.Schipperke/072.Schipperke_n02104365_1292.jpg",
+        "label": "Schipperke",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "long tongue",
+            "red harness"
+        ],
+        "descriptions": [
+            "- Short, dense, and tightly curled fur\n- Smooth texture with no visible undercoat\n- Uniform black coloration without any white or other markings\n- Small, triangular ears standing upright\n- Compact body shape typical of Schipperkes\n- Alert facial expression with perked-up ears",
+            "The dog's long tongue is pink and appears to be slightly curled at the edges. It is hanging out of its mouth in a relaxed manner, indicating a calm or happy demeanor. The tongue's length and color are distinctive features of the Schipperke breed.",
+            "The red harness worn by the Schipperke has a distinctively snug fit around its chest and shoulders, with visible straps that secure it tightly. The harness appears to have a sturdy construction, likely made of durable material suitable for active dogs. It includes a small, attached tag, possibly for identification. The harness is designed to be both functional and comfortable, allowing the Schipperke to move freely while providing necessary support."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/028.Staffordshire_Bullterrier/028.Staffordshire_Bullterrier_n02093256_4374.jpg",
+        "label": "Staffordshire Bullterrier",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "short fur",
+            "long ears"
+        ],
+        "descriptions": [
+            "- Smooth, short coat\n- Broad head with a strong jawline\n- Broad chest\n- Short muzzle\n- Dark eyes\n- Ears that are typically folded over or hanging down\n- Strong, muscular build\n- Black fur covering the entire body",
+            "The dog exhibits short, dense fur typical of a Staffordshire Bull Terrier, characterized by a smooth texture and a glossy sheen. The fur appears tightly packed around the body, with minimal undercoat, and has a uniform coloration without visible patterns or markings.",
+            "The dog's long ears are floppy and hang down on either side of its head, characteristic of the Staffordshire Bullterrier breed. They appear soft and slightly rounded at the tips, which is typical for this breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/077.Komondor/077.Komondor_n02105505_955.jpg",
+        "label": "Komondor",
+        "label_id": 0,
+        "regions": [
+            "fluffy coat",
+            "long hair",
+            "black fur; fluffy coat"
+        ],
+        "descriptions": [
+            "- Coarse, dense, corded fur\n- White, fluffy texture\n- Uniformly thick coat covering the entire body\n- Fur appears in cords or ropes, not smooth or short\n- No visible undercoat",
+            "- Coarse, dense, curly fur covering the entire body.\n- Fur appears matted and wavy, forming natural cords or ropes.\n- Fur color is predominantly white, with a slightly textured appearance due to the coarseness.\n- Face has a distinctive beard-like texture, with fur hanging down around the mouth area.\n- Overall coat is thick and voluminous, giving the dog a fluffy appearance.",
+            "- Fluffy, corded fur\n- Dense, thick coat\n- Black coloration\n- Curly, rope-like texture\n- Distinctive, mop-like appearance\n- Large, sturdy build"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/079.Shetland_Sheepdog/079.Shetland_Sheepdog_n02105855_13071.jpg",
+        "label": "Shetland Sheepdog",
+        "label_id": 0,
+        "regions": [
+            "brown and white fur",
+            "long fluffy ears",
+            "black nose"
+        ],
+        "descriptions": [
+            "The dog exhibits a Shetland Sheepdog's characteristic coat with a mix of brown and white fur. The brown fur is predominantly found on the head, ears, and back, while the white fur covers the chest and neck area. The fur appears fluffy and well-groomed, typical of the breed. The contrast between the two colors is distinct, highlighting the dog's unique coat pattern.",
+            "- Long, fluffy ears with pointed tips\n- Ears stand upright but slightly curved at the top\n- Dense fur covering the ears\n- Ears are proportionally large in relation to the head\n- Slight curve at the base of the ear, giving it a \"hooked\" appearance\n- Ears are positioned high on the head",
+            "The dog's black nose is smooth, rounded, and slightly moist-looking, typical of Shetland Sheepdogs. It contrasts sharply with the lighter fur around it, enhancing its prominence. The nose appears firm and well-defined, without any visible texture or spots, which is characteristic of this breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/111.Pembroke/111.Pembroke_n02113023_4893.jpg",
+        "label": "Pembroke",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "white chest",
+            "pink tongue"
+        ],
+        "descriptions": [
+            "The brown fur of the Pembroke Welsh Corgi in the image exhibits a rich, warm tone with a slightly lighter shade on the underside, particularly around the chest and belly area. The fur appears short and smooth, with a subtle sheen that highlights its texture. The ears are pointed and stand upright, showcasing a darker brown hue compared to the rest of the body. The tail is short and thick, blending seamlessly into the back of the dog's body. These features are characteristic of the Pembroke Welsh Corgi breed.",
+            "The dog has a distinct white chest patch, which is a characteristic feature of the Pembroke Welsh Corgi breed. The white patch is well-defined and contrasts with the brown fur around it.",
+            "The dog's pink tongue is large, slightly curled at the edges, and appears moist, indicating it is likely a Pembroke Welsh Corgi. The color is a vibrant pink, which is characteristic of this breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/058.Chesapeake_Bay_Retriever/058.Chesapeake_Bay_Retriever_n02099849_2581.jpg",
+        "label": "Chesapeake Bay Retriever",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "short tail",
+            "red collar; brown fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a rich, dark brown coat with a slightly glossy sheen, indicative of its breed's typical fur texture. The fur appears dense and well-maintained, with a subtle variation in tone across the body, suggesting a healthy, natural coloration. The fur around the face is shorter and smoother compared to the body, creating a contrast that is characteristic of the breed. The ears are floppy and covered in the same dark brown fur, blending seamlessly into the overall coat.",
+            "The dog's short tail is dark brown, slightly curved upwards at the tip, and appears to be of medium length relative to its body size. It has a smooth texture with no visible tuft or feathering. The tail is positioned horizontally, indicating a relaxed posture.",
+            "- **Red Collar**: Bright, vibrant red color, likely made of fabric or leather, with visible stitching details.\n- **Brown Fur**: Dark brown coat with a slightly glossy sheen, typical of Chesapeake Bay Retrievers, showing natural variations in fur texture and density.\n\nThese attributes help distinguish the dog as a Chesapeake Bay Retriever."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/003.Pekinese/003.Pekinese_n02086079_869.jpg",
+        "label": "Pekinese",
+        "label_id": 0,
+        "regions": [
+            "fluffy fur",
+            "small size",
+            "black face"
+        ],
+        "descriptions": [
+            "- Dense, silky fur covering the entire body.\n- Fluffy texture with a slightly wavy appearance.\n- Darker fur around the face and ears, contrasting with lighter fur on the body.\n- Short, compact build typical for Pekinese.\n- Soft, plush fur that appears well-groomed and voluminous.",
+            "- Compact body\n- Short fur\n- Small head\n- Tiny paws\n- Rounded ears\n- Dense coat\n- Proportionally large eyes\n- Short muzzle",
+            "- Short, dense fur covering the face.\n- Prominent, dark eyes.\n- Black nose.\n- Small, compact facial structure.\n- Soft, rounded features.\n- Dark markings around the eyes and ears."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/025.Saluki/025.Saluki_n02091831_2232.jpg",
+        "label": "Saluki",
+        "label_id": 0,
+        "regions": [
+            "long hair",
+            "long ears",
+            "slender body"
+        ],
+        "descriptions": [
+            "- Long, silky coat\n- Ears that hang down\n- Tail with long, flowing hair\n- Smooth texture\n- Tapered muzzle\n- Lean body structure\n- Distinctive facial markings",
+            "The Saluki's long ears are characterized by their slender, pointed shape that extends downward from the head, with a slight curve at the tips. They are typically thin and delicate, with a light coloration that contrasts with the darker fur of the rest of the body. The ears are soft and flexible, often drooping slightly when relaxed but can be held erect in alert positions.",
+            "- Long, slender body\n- Lean and athletic build\n- Slightly arched back\n- Long, narrow head\n- Pointed ears\n- Long tail with feathering\n- Smooth, short coat\n- Tapering legs\n- Distinctive facial features including a long muzzle and almond-shaped eyes\n\nThese attributes collectively define the slender body of a Saluki, distinguishing it from other dog subclasses."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/102.Pug/102.Pug_n02110958_12224.jpg",
+        "label": "Pug",
+        "label_id": 0,
+        "regions": [
+            "pug",
+            "pug",
+            "bull mastiff"
+        ],
+        "descriptions": [
+            "- Short, wrinkled face with a pushed-in nose\n- Large, expressive eyes\n- Folded ears that hang down\n- Compact body with a short, smooth coat\n- Broad head relative to body size\n- Distinctive facial wrinkles\n- Small, sturdy legs\n- Broad chest\n- Black nose and lips\n- Tan or fawn-colored fur with a black mask-like marking around the eyes and mouth",
+            "- Short, wrinkled face with a pushed-in nose\n- Large, expressive eyes\n- Folded ears that hang down\n- Compact body with a short, smooth coat\n- Broad head relative to body size\n- Distinctive facial wrinkles and folds\n- Small, sturdy legs\n- Broad chest\n- Black nose and lips\n- Tan or fawn-colored fur with a black mask-like marking around the eyes and mouth",
+            "- Short, wrinkled face with a pushed-in nose\n- Large, round eyes\n- Folded ears that hang down\n- Compact body with a short coat\n- Broad head\n- Black muzzle and lips\n- Distinctive facial wrinkles\n- Small, sturdy build\n- Broad chest\n- Short legs\n\nThese attributes specifically highlight the Pug breed, distinguishing it from other dog subclasses like the Bull Mastiff."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/062.Irish_Setter/062.Irish_Setter_n02100877_2599.jpg",
+        "label": "Irish Setter",
+        "label_id": 0,
+        "regions": [
+            "long fur",
+            "long ears",
+            "brown fur"
+        ],
+        "descriptions": [
+            "- Long, wavy, reddish-brown fur\n- Dense, thick coat covering the entire body\n- Ears that stand erect and slightly forward\n- Smooth texture with a slight sheen\n- Tail curled over the back when at rest\n- Medium to large size with a muscular build",
+            "The long ears of the Irish Setter are characterized by their pointed tips, which stand erect and slightly forward. They are thick and covered with dense, silky fur that matches the coat color, typically a rich, warm red. The ears are large in proportion to the head and extend down the sides of the face, framing the eyes.",
+            "- Smooth, glossy texture\n- Medium length fur\n- Rich, warm reddish-brown coloration\n- Dense coat covering the entire body\n- Ears that stand erect and slightly forward\n- Distinctive facial markings with darker fur around eyes and muzzle\n- Tail carried high and curled over back"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/066.English_Springer_Spaniel/066.English_Springer_Spaniel_n02102040_7895.jpg",
+        "label": "English Springer Spaniel",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "black ears",
+            "red collar"
+        ],
+        "descriptions": [
+            "The dog exhibits the characteristic black and white fur pattern typical of English Springer Spaniels, with a predominantly white face and chest, contrasted by black markings around the eyes, ears, and back. The fur appears smooth and well-groomed, with a distinct black patch over the right eye and ear, and a white blaze running down the center of its face. The legs are primarily white with some black markings near the paws.",
+            "- The ears are floppy and hang down on either side of the head.\n- They appear soft and slightly rounded at the tips.\n- The edges of the ears are darker, almost black, contrasting with the lighter fur on the rest of the face.\n- The inner part of the ear is not visible but can be inferred to have a similar coloration as the outer edge due to the breed's typical ear structure.\n- The ears are positioned close to the head, framing it symmetrically.\n\nThese attributes are characteristic of English Springer Spaniels and help distinguish them from other dog subclasses.",
+            "The red collar worn by the English Springer Spaniel has a patterned design with small white spots or squares, and it appears to be made of a soft material, likely fabric. The collar fits snugly around the dog's neck, indicating it is well-fitted for comfort."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/057.Labrador_Retriever/057.Labrador_Retriever_n02099712_6455.jpg",
+        "label": "Labrador Retriever",
+        "label_id": 0,
+        "regions": [
+            "yellow fur",
+            "short fur",
+            "black nose"
+        ],
+        "descriptions": [
+            "The yellow fur of the Labrador Retriever in the image exhibits smooth, dense, and slightly wavy texture. The fur appears clean and well-maintained, with a uniform coloration ranging from light to medium yellow. The fur around the face is shorter and smoother compared to the body, creating a subtle contrast. The ears are floppy and covered with the same type of fur as the rest of the body. The overall appearance suggests a healthy coat typical of Labradors.",
+            "The dog in the image has short, smooth, and dense fur characteristic of a Labrador Retriever. The fur appears creamy yellow in color, with a slightly glossy sheen, which is typical for this breed. The texture is fine and uniform across the visible areas of the body.",
+            "The Labrador Retriever's black nose is smooth, shiny, and slightly rounded at the tip. It contrasts sharply with the light fur around it, which helps in distinguishing it as a Labrador Retriever. The nose appears moist, indicating good health."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/007.Toy_Terrier/007.Toy_Terrier_n02087046_5407.jpg",
+        "label": "Toy Terrier",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "small size",
+            "bow tie"
+        ],
+        "descriptions": [
+            "The dog exhibits a predominantly black and white coat with distinct markings. The fur appears short and smooth, characteristic of the Toy Terrier breed. The face has a mix of black and white, with a white blaze running down the center and black around the eyes and ears. The body is mostly white with black patches, particularly noticeable on the back and tail. The legs have a combination of white and black fur. The overall pattern is consistent with the typical coloration seen in Toy Terriers.",
+            "- Compact body\n- Short stature\n- Small head\n- Tiny ears\n- Slim build\n- Compact tail",
+            "The bow tie worn by the Toy Terrier is black with a shiny, smooth texture. It has a classic bow shape with two loops tied at the front, and it appears to be made of a material that reflects light, giving it a glossy appearance. The bow tie is neatly tied around the dog's neck, complementing its small size and elegant attire."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/084.German_Shepard/084.German_Shepard_n02106662_8870.jpg",
+        "label": "German Shepard",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "black nose",
+            "red collar"
+        ],
+        "descriptions": [
+            "The dog exhibits a rich, multi-tonal brown fur with a distinct black mask over its eyes and nose, characteristic of a German Shepherd. The fur appears dense and well-groomed, with a lighter shade on the chest and legs, contrasting with the darker tones on the back and sides. The coat has a smooth texture, typical of the breed's medium-length fur.",
+            "The dog's black nose is smooth, shiny, and centrally located on its face. It has a rounded shape with a slight indentation at the tip. The nose appears moist, which is typical for German Shepherds, indicating good health. There are no visible freckles or spots on the nose, maintaining its uniform coloration.",
+            "The red collar has a metallic buckle and appears to be made of leather or a similar material. It is snugly fitted around the dog's neck, with a heart-shaped tag attached to it. The collar's color is vibrant and contrasts sharply with the dog's tan and black fur."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/048.Scotch_Terrier/048.Scotch_Terrier_n02097298_13186.jpg",
+        "label": "Scotch Terrier",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "short hair",
+            "pointy ears"
+        ],
+        "descriptions": [
+            "- Short, dense fur\n- Smooth texture\n- Dark, glossy coat\n- Pointed ears\n- Compact body\n- Short legs\n- Sturdy build\n- Alert expression",
+            "The dog has a short, dense coat with a wiry texture, typical of Scotch Terriers. The fur appears glossy and slightly rough, with a dark coloration that is characteristic of the breed. The ears are erect and pointed, standing upright, which is another distinctive feature of Scotch Terriers.",
+            "The dog's pointy ears are erect and triangular in shape, with a smooth texture and a slight curve at the tips. They stand upright and are positioned symmetrically on either side of the head, characteristic of the Scotch Terrier breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/090.EntleBucher/090.EntleBucher_n02108000_446.jpg",
+        "label": "EntleBucher",
+        "label_id": 0,
+        "regions": [
+            "black and brown fur",
+            "white chest",
+            "black ears"
+        ],
+        "descriptions": [
+            "The dog exhibits the characteristic EntleBucher coat pattern with a predominantly black base color. Brown markings are present on the chest, legs, and face, creating a striking contrast against the black. The white fur on the chest and paws further accentuates these colors.",
+            "The dog's chest displays a distinct patch of white fur, which is characteristic of the EntleBucher breed. This white patch is typically centered on the chest and contrasts sharply with the surrounding darker fur, which includes black, brown, and tan markings. The white chest is symmetrical and well-defined, contributing to the breed's unique appearance.",
+            "The black ears of the EntleBucher are large, triangular, and stand upright, with a slightly rounded tip. They are positioned symmetrically on either side of the head, and their color is a deep, solid black without any white or tan markings. The edges of the ears are smooth and well-defined, contributing to their alert appearance."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/059.German_Short_haired_Pointer/059.German_Short_haired_Pointer_n02100236_1164.jpg",
+        "label": "German Short-haired Pointer",
+        "label_id": 0,
+        "regions": [
+            "brown and white fur",
+            "short and thick fur",
+            "long and pointy ears; black fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a speckled coat pattern with a mix of brown and white fur. The brown fur appears in various shades, including darker patches around the head and lighter areas on the body, creating a mottled effect. The white fur is distributed across the body, contrasting with the brown patches. The fur texture seems smooth and dense, typical of the breed's short-haired coat.",
+            "The dog exhibits short and thick fur with a speckled pattern of dark brown and white, characteristic of the German Short-haired Pointer breed. The fur appears dense and well-groomed, with a slightly textured surface that is typical for this breed.",
+            "- Long, pointy ears\n- Black fur on the ears"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/047.Standard_Schnauzer/047.Standard_Schnauzer_n02097209_1517.jpg",
+        "label": "Standard Schnauzer",
+        "label_id": 0,
+        "regions": [
+            "wet fur",
+            "long fur",
+            "black nose; wet fur"
+        ],
+        "descriptions": [
+            "- Coarse texture\n- Salt-and-pepper coloration\n- Wet, slightly matted appearance\n- Prominent beard and mustache\n- Curled whiskers\n- Shaggy eyebrows\n- Moist sheen",
+            "- Long, wiry fur covering the face and neck.\n- Fur appears slightly matted in some areas.\n- Darker fur around the eyes and ears contrasts with lighter fur on the face.\n- Fur is dense and extends down the sides of the face, partially covering the eyes.\n- The fur texture is coarse and not overly silky or smooth.\n- The beard and mustache are prominent, with fur hanging down over the mouth.\n- The fur coloration is predominantly gray, with some darker shades around the muzzle and ears.",
+            "- **Black Nose**: Smooth, shiny texture, slightly rounded shape.\n- **Wet Fur**: Damp appearance with visible moisture, especially around the muzzle and lower jaw area. Fur appears slightly matted in some areas due to moisture."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/045.Miniature_Schnauzer/045.Miniature_Schnauzer_n02097047_1352.jpg",
+        "label": "Miniature Schnauzer",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "thin straight legs",
+            "short hair"
+        ],
+        "descriptions": [
+            "- Curly fur texture\n- Dense, wiry coat\n- Prominent beard and mustache\n- Short, upright ears\n- Well-groomed appearance\n- Distinctive facial hair pattern\n- Small size",
+            "The Miniature Schnauzer's thin straight legs are characterized by their slender build, with visible tendons and slight curvature at the joints. The fur appears slightly longer and more textured around the lower legs, giving them a fluffy appearance. The paws are small and compact, with fur that extends up the legs, creating a distinct look.",
+            "- Short, wiry coat with a distinctive beard and mustache\n- Curly or slightly wavy fur texture\n- Darker fur around the eyes and ears\n- Lighter fur on the body\n- Well-groomed appearance with a neat, tidy look\n- Small, compact build"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/004.Shih_Tzu/004.Shih_Tzu_n02086240_34.jpg",
+        "label": "Shih-Tzu",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "long hair",
+            "small size; black and brown fur"
+        ],
+        "descriptions": [
+            "The white fur of the Shih-Tzu in the image exhibits fine, soft, and slightly wavy texture. It covers the dog's face, ears, and body uniformly, with a fluffy appearance. The fur around the eyes is particularly dense and gives the dog a distinctive, expressive look. The fur appears well-groomed, highlighting the breed's characteristic silky coat.",
+            "- Long, silky fur covering the entire body.\n- Ears that hang down to the shoulders.\n- A fluffy mane around the neck.\n- A beard-like growth under the chin.\n- A compact, sturdy build with a short muzzle.\n- A distinctive facial expression often described as \"pensive\" or \"wise.\"",
+            "- Small size\n- Black and brown fur\n- Long, silky hair covering most of the body\n- Distinctive facial features including large, expressive eyes and a short muzzle\n- Compact build with a sturdy yet lightweight appearance\n- Ears that hang down close to the face\n- Tail curled over the back"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/064.Brittany/064.Brittany_n02101388_9320.jpg",
+        "label": "Brittany",
+        "label_id": 0,
+        "regions": [
+            "brown and white fur",
+            "short and thick fur",
+            "long and pointed ears; brown and white fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a distinctive coat pattern with patches of brown and white fur. The brown fur appears in irregular spots and patches across its body, contrasting sharply with the white fur which covers most of its body. The transition between brown and white is abrupt, creating a speckled appearance. The dog's ears have a darker brown hue compared to the rest of its body, adding to the unique coloration.",
+            "The dogs in the image exhibit short and thick fur with a distinctive coat pattern characterized by large, irregular patches of white interspersed with reddish-brown markings. The fur appears dense and well-groomed, typical of the Brittany breed.",
+            "- Long and pointed ears\n- Brown and white fur pattern\n- Ears with a slight curve at the tips\n- White fur covering most of the body with distinct brown patches\n- Symmetrical facial markings\n- Alert and attentive posture\n\nThese attributes are characteristic of the Brittany breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/053.Lhasa/053.Lhasa_n02098413_4238.jpg",
+        "label": "Lhasa",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "fluffy fur",
+            "blue rope"
+        ],
+        "descriptions": [
+            "The brown fur of the Lhasa dog in the image exhibits a soft, slightly shaggy texture with a mix of lighter and darker shades, creating a mottled appearance. The fur appears dense and fluffy, particularly around the face and neck area, which is characteristic of the breed's thick coat. The fur has a natural, untrimmed look, typical of Lhasa Apso dogs, without any signs of grooming that would make it appear overly smooth or sleek.",
+            "- Dense, soft, and slightly wavy fur\n- Fluffy texture covering the entire body\n- Medium-length fur with a slightly shaggy appearance\n- Fur coloration in shades of light brown or beige\n- Fine, delicate strands visible in the fur\n- Curly fur around the face and ears\n- Fluffy tail partially visible, matching the body's fur texture\n\n",
+            "The blue rope has a textured surface with visible loops and a slightly frayed end, indicating wear. It appears to be made of a braided material, likely nylon or similar synthetic fiber, which is common for dog toys. The rope's color is a solid, vibrant blue, and it contrasts sharply with the light brown fur of the Lhasa."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/042.Australian_Terrier/042.Australian_Terrier_n02096294_7295.jpg",
+        "label": "Australian Terrier",
+        "label_id": 0,
+        "regions": [
+            "brown and black fur",
+            "small size",
+            "short fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a short, wiry coat with a mix of brown and black fur. The brown fur appears lighter and more golden in some areas, particularly around the face and ears, while the black fur is denser and covers the back and sides. The transition between the two colors is smooth but distinct, creating a characteristic bi-color pattern typical of the Australian Terrier breed.",
+            "- Compact body\n- Short stature\n- Small head relative to body\n- Dense fur covering most of body\n- Proportionally large ears\n- Short legs\n- Rounded snout\n- Small, pointed teeth visible in mouth\n- Dark eyes with expressive look\n- Short tail",
+            "The dog's fur is short, with a mix of light brown and black coloration. The fur appears dense and slightly wavy, typical of the breed. The ears are small and stand upright, characteristic of the Australian Terrier."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/039.Sealyham_Terrier/039.Sealyham_Terrier_n02095889_1476.jpg",
+        "label": "Sealyham Terrier",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "long hair",
+            "short legs; white fur"
+        ],
+        "descriptions": [
+            "- Coarse, slightly wavy texture\n- Dense, fluffy coat\n- Pronounced beard and mustache\n- Curly tail\n- Compact body with a slightly rounded head\n- Short, sturdy legs\n- Distinctive facial markings resembling a \"mustache\" and \"beard\" around the muzzle",
+            "- Wavy fur texture\n- Dense, fluffy coat\n- Long, flowing ears\n- Curly facial hair around mouth and chin\n- Medium-length body with a slightly stocky build\n- Tail curled upwards",
+            "- Short, sturdy legs\n- Dense, curly white fur covering the body\n- Compact build\n- Ears that hang down close to the head\n- Distinctive facial features including a slightly wrinkled forehead and a sturdy muzzle\n\nThese attributes collectively help distinguish a Sealyham Terrier from other dog subclasses."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/067.Welsh_Springer_Spaniel/067.Welsh_Springer_Spaniel_n02102177_2911.jpg",
+        "label": "Welsh Springer Spaniel",
+        "label_id": 0,
+        "regions": [
+            "brown and white fur",
+            "long floppy ears",
+            "brown and white face"
+        ],
+        "descriptions": [
+            "The dog exhibits a predominantly white coat with distinct brown markings. The brown fur is primarily concentrated around the ears, face, and legs, while the body is mostly covered in white fur. The brown patches are well-defined and contrast sharply with the white areas, showcasing the characteristic coloration typical of the Welsh Springer Spaniel breed.",
+            "- Long, floppy ears that hang down on either side of the head.\n- Ears are soft and slightly rounded at the tips.\n- The ears appear to be medium-sized in proportion to the dog's head.\n- They have a natural, relaxed appearance without being overly droopy or stiff.\n- The fur inside the ears appears lighter than the outer coat, possibly white or cream-colored.\n- The ears are well-furred, indicating a thick layer of fur that contributes to their floppy appearance.",
+            "The dog's face exhibits a distinctive pattern characteristic of the Welsh Springer Spaniel breed: a white blaze running down the center of its forehead, with brown fur surrounding it, including around the eyes and ears. The ears are long and floppy, and the overall facial structure is rounded and expressive."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/068.Cocker_Spaniel/068.Cocker_Spaniel_n02102318_11443.jpg",
+        "label": "Cocker Spaniel",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "long floppy ears",
+            "red collar; black and white fur"
+        ],
+        "descriptions": [
+            "- Smooth, glossy texture\n- Dense, medium-length fur\n- Curly or wavy coat pattern\n- Prominent eyebrows\n- Soft, silky appearance\n- Well-defined facial features\n- Ears that hang down\n- Black coloration throughout body",
+            "- Long, floppy ears that hang down to the sides.\n- Soft, silky texture.\n- Moderate size relative to the head.\n- Slightly rounded tips.\n- Ears are not pointed or upright.",
+            "- Red collar with visible stitching.\n- Black fur covering most of the body.\n- White fur on the chest and possibly the muzzle.\n- Long, floppy ears characteristic of Cocker Spaniels.\n- Medium-sized build typical for the breed.\n- Soft, silky coat texture."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/089.Appenzeller/089.Appenzeller_n02107908_5162.jpg",
+        "label": "Appenzeller",
+        "label_id": 0,
+        "regions": [
+            "black and brown fur",
+            "white fur",
+            "black and brown fur"
+        ],
+        "descriptions": [
+            "The dog exhibits Appenzeller characteristics with its predominantly black coat, accented by distinct brown markings. The brown fur is primarily found around the eyes, ears, and legs, creating a striking contrast against the black. The white fur on the muzzle and chest further defines this breed's unique coloration pattern.",
+            "The white fur on the Appenzeller puppy is located primarily on its muzzle, forming a distinct stripe that extends from the bridge of the nose down to the mouth. The fur around the eyes is black, creating a contrast with the white stripe. Additionally, there is a small patch of white fur on the chest area.",
+            "The dog exhibits Appenzeller characteristics with its predominantly black coat, accented by distinct brown markings. The brown fur is primarily found around the eyes, ears, and legs, creating a striking contrast against the black. The white fur on the muzzle and chest further defines this breed's unique coloration pattern."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/017.Redbone/017.Redbone_n02090379_2453.jpg",
+        "label": "Redbone",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "long floppy ears",
+            "black nose"
+        ],
+        "descriptions": [
+            "The dog's fur exhibits a rich, warm brown color with subtle variations in tone, ranging from lighter shades on the face and chest to deeper hues on the back and legs. The fur appears smooth and slightly glossy, with a medium length that is neither too short nor overly long. The texture seems fine and uniform across the body, without visible undercoat or excessive shedding. The ears are floppy and hang down close to the head, adding to the characteristic appearance of the breed.",
+            "- Long, floppy ears that hang down close to the head.\n- Ears are dark brown in color, matching the dog's coat.\n- The edges of the ears appear slightly frayed or ruffled.\n- The ears are positioned low on the head, extending outward and downward.\n- The inner ear lining is not visible due to the angle and fur covering.",
+            "The dog's black nose is smooth, shiny, and centrally located on its snout. It has a rounded shape with subtle texture around the edges, typical of the Redbone breed. The nose appears moist, which is common in dogs, but the specific color and texture are key distinguishing features for this category."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/119.African_Hunting_Dog/119.African_Hunting_Dog_n02116738_6038.jpg",
+        "label": "African Hunting Dog",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "black ears",
+            "black nose"
+        ],
+        "descriptions": [
+            "The African Hunting Dog in the image exhibits a distinctive coat pattern characterized by a mix of black and white fur. The fur appears dense and short, with a notable contrast between the darker and lighter patches. The black fur tends to be more prominent on the back and head, while the white fur is concentrated on the chest and underbelly, creating a striking bi-coloration. This pattern is typical for African Hunting Dogs and helps them blend into their natural habitat.",
+            "- Large, rounded shape\n- Pointed tips\n- Standing upright\n- Smooth texture\n- Dark coloration",
+            "The African Hunting Dog's black nose is smooth, moist, and slightly wrinkled with a distinct, rounded shape. It has a small, dark nostril opening and is surrounded by a thin, dark border. The nose appears firm and resilient, typical of the breed's robust physical characteristics."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/113.Toy_Poodle/113.Toy_Poodle_n02113624_479.jpg",
+        "label": "Toy Poodle",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "curly hair",
+            "small size; black and brown fur"
+        ],
+        "descriptions": [
+            "- Curly texture\n- Dense coat\n- Short stature\n- Fluffy appearance\n- Uniform coloration",
+            "- Curly fur texture\n- Fluffy appearance\n- Dense coat\n- Ears with long, wavy hair\n- Short body with a compact build\n- White fur color",
+            "- Small size\n- Curly, dense coat\n- Black and brown fur pattern\n- Compact body structure\n- Pointed ears\n- Short snout\n- Distinctive facial features typical of Toy Poodles\n\n"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/027.Weimaraner/027.Weimaraner_n02092339_7468.jpg",
+        "label": "Weimaraner",
+        "label_id": 0,
+        "regions": [
+            "gray coat",
+            "long legs",
+            "short tail; brown coat"
+        ],
+        "descriptions": [
+            "- Smooth, short-haired coat\n- Uniform gray coloration\n- Lean and muscular build\n- Broad head with long muzzle\n- Dark eyes and nose\n- Ears that fold forward\n- Distinctive \"weimaraner\" look",
+            "The Weimaraner's long legs are sleek, muscular, and taper slightly towards the paws. They are covered in short, smooth, grayish-brown fur that appears glossy. The legs are proportionally long relative to the body, contributing to the dog's elegant and athletic appearance.",
+            "- Short, slightly curved tail\n- Smooth, short-haired brown coat\n- Lean, athletic build\n- Broad head with long muzzle\n- Dark eyes and nose\n- Ears that fold forward"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/041.Cairn/041.Cairn_n02096177_4734.jpg",
+        "label": "Cairn",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "short fur",
+            "small size; brown fur"
+        ],
+        "descriptions": [
+            "The dog exhibits short, dense, and slightly wavy brown fur with a rich, warm tone. The fur appears slightly textured, with individual strands visible, giving it a natural, unpolished look typical of Cairn Terriers. The fur length is shorter around the face and body, while the ears have longer, more prominent fur, which stands upright. The overall coloration is a consistent shade of brown, without any significant variation or markings.",
+            "The dog in the image has short, dense fur with a golden-brown coloration. The fur appears slightly textured, with individual strands visible, giving it a slightly rough appearance. The fur length is consistent across the body, with no significant variation in thickness or length. The ears are small and stand upright, characteristic of the Cairn Terrier breed. The fur around the face is shorter and more tightly curled, forming a distinctive beard-like appearance. The overall texture suggests a wiry quality typical of Cairn Terriers.",
+            "- Small stature\n- Compact body\n- Short, dense brown fur\n- Pointed ears\n- Energetic expression\n- Stocky build\n- Short muzzle\n- Curly coat texture\n- Alert posture\n\nThese attributes collectively help distinguish a Cairn Terrier from other dog subclasses."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/117.Dingo/117.Dingo_n02115641_6509.jpg",
+        "label": "Dingo",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "pointy ears",
+            "short tail"
+        ],
+        "descriptions": [
+            "The brown fur of the dingo in this image exhibits a rich, warm tone with subtle variations in shading, indicating a thick, dense coat. The fur appears slightly wavy or textured, typical of dingoes, and has a natural, untrimmed look. The coloration transitions smoothly from lighter shades on the underbelly to darker hues on the back, showcasing the characteristic mottled pattern often seen in dingoes.",
+            "The dingo's pointy ears are tall, erect, and triangular in shape, with a slight inward curve at the tips. They stand upright and are positioned symmetrically on either side of its head, contributing to the alert and attentive appearance characteristic of dingoes.",
+            "The dingo's tail is short, with a light brown coloration that matches its coat. It appears slightly curved and tucked close to the body, blending seamlessly into the fur. The tail's tip is not visible in this image, suggesting it may be short or obscured by the dog's position."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/034.Norfolk_Terrier/034.Norfolk_Terrier_n02094114_3248.jpg",
+        "label": "Norfolk Terrier",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "short fur",
+            "small size; black fur"
+        ],
+        "descriptions": [
+            "The brown fur of the Norfolk Terrier in the image exhibits a coarse texture with a mix of short and slightly longer strands, giving it a rugged appearance. The fur appears dense and slightly wiry, characteristic of the breed's distinctive coat. The coloration is predominantly a rich, warm brown, with subtle variations in tone across the body, suggesting a natural, untrimmed look typical of Norfolk Terriers.",
+            "The dog's fur is short, dense, and wiry, with a mix of dark brown and black tones. The texture appears slightly rough and uneven, typical of Norfolk Terriers.",
+            "- Small stature\n- Compact body\n- Short, dense black fur\n- Rounded head with short, upright ears\n- Distinctive facial markings\n- Alert expression\n- Stocky build\n- Short legs\n- Dense coat texture\n\nThese attributes collectively help distinguish a Norfolk Terrier from other dog subclasses based on its small size and black fur characteristics."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/114.Miniature_Poodle/114.Miniature_Poodle_n02113712_5210.jpg",
+        "label": "Miniature Poodle",
+        "label_id": 0,
+        "regions": [
+            "gray fur",
+            "short curly hair",
+            "small size; gray fur"
+        ],
+        "descriptions": [
+            "- Curly texture\n- Dense coat\n- Compact body\n- Short stature\n- Rounded head\n- Small ears\n- Tight curls around muzzle\n- Uniform gray coloration",
+            "- Short, tightly curled fur covering the entire body.\n- Dense, soft texture giving a fluffy appearance.\n- Curly hair covering the ears, with some strands hanging down.\n- Curly hair around the muzzle, forming a beard-like fringe.\n- Curly hair covering the paws, blending seamlessly into the body's coat.\n- Overall uniformity in the curl pattern across the body.",
+            "- Small stature\n- Gray fur texture\n- Curly coat\n- Compact body\n- Short legs\n- Pointy ears\n- Distinctive facial features (e.g., slightly elongated muzzle)"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/085.Doberman/085.Doberman_n02107142_1193.jpg",
+        "label": "Doberman",
+        "label_id": 0,
+        "regions": [
+            "black coat",
+            "short coat",
+            "pointy ears; black coat"
+        ],
+        "descriptions": [
+            "- Smooth, short-haired coat\n- Dark brown markings on face (freckles)\n- Black ears\n- Black nose\n- Black eyes\n- Black tail\n- Black legs\n- Black paws\n- Black undercoat",
+            "The dog's short coat is sleek and shiny, predominantly black with tan markings on the chest, muzzle, and above the eyes, characteristic of a Doberman Pinscher. The coat appears smooth and tightly fitting, typical of the breed's short-haired variety.",
+            "- Pointed ears\n- Black coat\n- Short fur\n- Dark eyes\n- Brown markings on face\n- Collar with tag visible"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/116.Mexican_Hairless/116.Mexican_Hairless_n02113978_3670.jpg",
+        "label": "Mexican Hairless",
+        "label_id": 0,
+        "regions": [
+            "hairless body",
+            "long ears",
+            "thin straight legs; short brown fur"
+        ],
+        "descriptions": [
+            "- Smooth, sleek skin texture\n- Lean, muscular build\n- Distinctive facial features including large, pointed ears and narrow muzzle\n- Tail held high and curved upwards\n- Dark coat coloration with subtle variations in shading\n- Well-defined musculature visible beneath the skin\n- Compact, athletic stance\n- Narrow waistline\n- Short, sturdy legs\n- Broad, flat skull\n- Small, almond-shaped eyes\n- Pointed snout",
+            "The dog's long ears are thin, upright, and slightly pointed at the tips, characteristic of the Mexican Hairless breed. They are positioned symmetrically on either side of the head, extending upwards and outwards. The ears appear delicate and flexible, with a slight curve towards the base.",
+            "- Thin, straight legs with minimal hair\n- Short, smooth, brown fur covering body\n- Lean build\n- Pointed ears\n- Tail held high and curved upwards"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/073.Groenendael/073.Groenendael_n02105056_5855.jpg",
+        "label": "Groenendael",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "long hair",
+            "pointy ears"
+        ],
+        "descriptions": [
+            "- Dense, wavy black fur covering the entire body.\n- Smooth texture with slight sheen.\n- Ears are large, triangular, and stand upright.\n- Face has a broad, square shape with a short muzzle.\n- Eyes are dark and expressive.\n- Tail is thick and curled over the back.\n- Fur appears well-groomed and healthy.",
+            "- Dense, wavy fur covering the entire body.\n- Black coat with a glossy sheen.\n- Long, flowing hair around the face and ears.\n- Ears that stand upright but slightly floppy at the tips.\n- A thick, bushy tail partially visible.\n- Fine texture of the fur, appearing soft and well-groomed.\n- Symmetrical facial features with a broad head.\n- A sturdy build typical of the Groenendael breed.",
+            "The dog's pointy ears are erect, with a slight forward tilt, indicating alertness. The inner ear is visible, showing pinkish hues, which contrasts with the dark fur. The ears are medium-sized, standing upright and pointing forward, characteristic of the Groenendael breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/012.Bloodhound/012.Bloodhound_n02088466_8184.jpg",
+        "label": "Bloodhound",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "long ears",
+            "droopy eyes"
+        ],
+        "descriptions": [
+            "The brown fur of the Bloodhound in the image exhibits deep, rich tones with subtle variations in shading, particularly around the ears which have a slightly darker hue. The fur appears soft and loose, characteristic of the breed's heavy coat. The texture looks dense and slightly wavy, with some areas showing slight ruffling, indicative of the Bloodhound's typical fur quality. The coloration is uniform across the body, with no visible patches or markings, maintaining a consistent brown shade throughout.",
+            "- Long, drooping ears that hang down close to the ground.\n- Ears are thick and have a soft texture.\n- The edges of the ears are slightly frayed or ruffled.\n- The ears are positioned low on the head, extending beyond the jawline.\n- The inner ear appears darker than the outer ear, possibly with a slight pinkish hue near the base.\n- The ears are not pointed but rather rounded at the tips.\n\nThese attributes are characteristic of a Bloodhound's long ears.",
+            "The dog in the image exhibits the characteristic droopy eyes typical of Bloodhounds, including:\n\n- Relaxed, downward-sloping eyelids.\n- Eyes that appear slightly sunken or recessed into the head.\n- A gentle, calm expression with minimal eye movement.\n- The eyes are not bright or alert but rather have a soft, contemplative look.\n\nThese features are indicative of the Bloodhound breed's unique facial structure and eye appearance."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/088.Bernese_Mountain_Dog/088.Bernese_Mountain_Dog_n02107683_6301.jpg",
+        "label": "Bernese Mountain Dog",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "brown eyes",
+            "long ears"
+        ],
+        "descriptions": [
+            "The black fur of the Bernese Mountain Dog in the image exhibits a rich, deep color with subtle variations in tone. It appears smooth and dense, covering the majority of the dog's body. The fur texture seems slightly wavy or curly in places, particularly around the ears and neck area, which is characteristic of this breed. The black fur contrasts sharply with the lighter brown markings on the face and chest, a key distinguishing feature of the Bernese Mountain Dog.",
+            "The dog's brown eyes are expressive and have a slightly almond shape, with visible dark pupils and light brown irises. The eyes appear alert and attentive, characteristic of the breed.",
+            "- Long, floppy ears that hang down on either side of the head.\n- Ears are thick and covered with dense fur, which appears black with brown and white markings.\n- The inner ear is not visible due to the fur covering it.\n- The ears are large in proportion to the head, characteristic of the breed.\n- The ears have a slight curve at the tips, which is typical for Bernese Mountain Dogs."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/095.Great_Dane/095.Great_Dane_n02109047_17629.jpg",
+        "label": "Great Dane",
+        "label_id": 0,
+        "regions": [
+            "dark brown fur",
+            "short and thick fur",
+            "large head"
+        ],
+        "descriptions": [
+            "The dog exhibits smooth, short dark brown fur with a glossy sheen. The coat appears dense and uniform in color, with subtle variations in shading that suggest depth and texture. The fur is free of visible markings or patterns, typical for a Great Dane's solid coat. The ears are medium-sized, slightly folded, and set high on the head, characteristic of the breed. The overall body structure, including the stance and proportions, aligns with the Great Dane's large size and muscular build.",
+            "The dog exhibits short and thick fur with a uniform dark coat, characteristic of a Great Dane. The fur appears dense and closely packed, contributing to a robust and muscular appearance typical of the breed.",
+            "- Broad skull\n- Large, droopy ears\n- Deep-set eyes\n- Short muzzle\n- Prominent brow ridge\n- Strong jawline\n- Large, powerful head structure"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/040.Airedale/040.Airedale_n02096051_2890.jpg",
+        "label": "Airedale",
+        "label_id": 0,
+        "regions": [
+            "black and brown fur",
+            "short fur",
+            "small size; black and brown fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a mix of black and brown fur, with the black fur covering most of its body, including the back and head, while the brown fur is present on the legs and chest. The fur appears short and dense, typical of the Airedale Terrier breed.",
+            "- Short fur with a mix of black and tan coloration.\n- Fine texture, not overly fluffy or long.\n- Darker fur on the back and lighter on the sides and legs.\n- Short, dense coat covering the entire body.\n- No visible shedding in the image provided.\n\nThese attributes are characteristic of Airedale Terrier's short fur.",
+            "- Small size\n- Black and brown fur pattern\n- Long, shaggy coat\n- Pointed ears\n- Compact body structure\n- Short legs\n- Broad head with pointed muzzle\n- Dark eyes\n- Small, sturdy build"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/107.Pomeranian/107.Pomeranian_n02112018_2811.jpg",
+        "label": "Pomeranian",
+        "label_id": 0,
+        "regions": [
+            "fluffy fur",
+            "small pointed ears",
+            "short snout"
+        ],
+        "descriptions": [
+            "The fluffy fur of the Pomeranian in the image exhibits fine-grained, dense, and slightly wavy texture. The fur appears soft and voluminous, with a rich, warm orange-brown coloration. The fur around the face is particularly fluffy, framing the muzzle and giving it a distinctive, rounded appearance characteristic of the breed.",
+            "The small pointed ears of the Pomeranian in the image are characterized by their upright position, with a slight curve at the tips, and a soft, fluffy texture that contrasts with the dog's short fur. The ears are relatively small compared to the dog's head size, which is typical for Pomeranians.",
+            "The Pomeranian's short snout exhibits a compact, rounded shape with a slightly upturned muzzle. The nose is typically dark in color, contrasting with the lighter fur around it. The mouth is small and closed, with a slight curve at the corners. The overall structure is short and broad, characteristic of the breed's distinctive facial features."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/082.Bouvier_des_Flandres/082.Bouvier_des_Flandres_n02106382_1963.jpg",
+        "label": "Bouvier des Flandres",
+        "label_id": 0,
+        "regions": [
+            "fluffy black coat",
+            "short legs",
+            "long tail"
+        ],
+        "descriptions": [
+            "- Dense, curly, and tightly curled fur\n- Dark, almost jet-black coloration\n- Fluffy texture with visible volume\n- Well-defined, sturdy build\n- Broad head with a slightly wrinkled forehead\n- Short, straight, and upright ears\n- Strong, muscular body structure\n- Tail carried low or tucked between legs when at rest\n\nThese attributes collectively contribute to the Bouvier des Flandres' distinctive appearance.",
+            "The Bouvier des Flandres in the image exhibits short legs with dense, black fur covering them completely. The legs appear sturdy and compact, typical of the breed's robust build. The fur texture appears thick and slightly wavy, which is characteristic of the Bouvier des Flandres' coat.",
+            "The long tail of the Bouvier des Flandres in this image appears thick, slightly curved, and ends in a rounded tip. It is covered with dense, curly fur that matches the overall coat texture of the dog. The tail is positioned low on the dog's body, characteristic of the breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/019.Irish_Wolfhound/019.Irish_Wolfhound_n02090721_1026.jpg",
+        "label": "Irish Wolfhound",
+        "label_id": 0,
+        "regions": [
+            "long fur",
+            "thick fur",
+            "long fur"
+        ],
+        "descriptions": [
+            "- Coarse, wiry texture\n- Long, shaggy coat\n- Dense undercoat\n- Tapering towards the body\n- Darker coloration on top, lighter on underside\n- Pronounced beard and mustache\n- Long, floppy ears\n- Broad head with a slightly wrinkled forehead\n- Strong, muscular build",
+            "- Coarse, wiry texture\n- Long, shaggy coat\n- Dense undercoat\n- Dark, rich coloration\n- Pronounced mane around neck\n- Broad, sturdy build\n- Long, drooping ears\n- Broad head with deep muzzle",
+            "- Coarse, wiry texture\n- Long, shaggy coat\n- Dense undercoat\n- Tapering towards the body\n- Darker coloration on top, lighter on underside\n- Pronounced beard and mustache\n- Long, floppy ears\n- Broad head with a slightly wrinkled forehead\n- Strong, muscular build"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/087.Greater_Swiss_Mountain_Dog/087.Greater_Swiss_Mountain_Dog_n02107574_3270.jpg",
+        "label": "Greater Swiss Mountain Dog",
+        "label_id": 0,
+        "regions": [
+            "brown and black coat",
+            "long floppy ears",
+            "white paws"
+        ],
+        "descriptions": [
+            "The dog exhibits the characteristic brown and black coat typical of a Greater Swiss Mountain Dog, with a predominantly brown body and black markings on its face, ears, and legs. The fur appears thick and well-groomed, with a slightly shaggy texture, which is common in this breed.",
+            "- Long, drooping ears that hang down on either side of the head.\n- Ears are thick and have a soft texture.\n- The edges of the ears are slightly rounded and may have some fur inside them.\n- The ears are large in proportion to the head.\n- They appear to be slightly darker in color compared to the rest of the dog's coat.\n- The ears are not pointed or upright but rather relaxed and hanging down.",
+            "The dog's paws are predominantly white with some brown markings near the tips. The paws appear large in proportion to the body, consistent with the breed's size. The fur around the paws is short and smooth, contrasting with the longer, shaggy coat typical of the breed elsewhere on its body."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/099.Siberian_Husky/099.Siberian_Husky_n02110185_13942.jpg",
+        "label": "Siberian Husky",
+        "label_id": 0,
+        "regions": [
+            "snow-covered fur",
+            "thick fur",
+            "snow-covered ground; white fur"
+        ],
+        "descriptions": [
+            "The dog's fur appears thick and fluffy, with individual fur strands visible, indicating a dense coat typical of Siberian Huskies. The fur color is a light tan or cream, which is common for this breed. The texture looks soft and slightly wavy, another characteristic feature of Siberian Huskies.",
+            "- Dense, multi-layered fur\n- Thick undercoat for insulation\n- Long, straight guard hairs\n- Coloration: light tan or white with darker markings (not visible in this image)\n- Ears are triangular and stand upright\n- Eye color typically blue, heterochromia possible\n- Facial features include a broad head and a short muzzle\n- Tail curled over back when at rest\n\nThese attributes collectively help distinguish a Siberian Husky from other dog subclasses based on their thick fur characteristics.",
+            "- Snow-covered ground: Uniformly white, textured with slight variations in light and shadow.\n- White fur: Dense, fluffy texture, with distinct patches of lighter and darker shades, characteristic of Siberian Huskies.\n- Ears: Pointed and erect, typical of the breed.\n- Eyes: Bright, alert, and expressive, often almond-shaped.\n- Muzzle: Short and broad, with a slightly curled lip.\n- Tail: Long, thick, and curled over the back, often with a bushy appearance.\n\nThese attributes collectively help distinguish a Siberian Husky from other dog subclasses based on the provided visual description."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/075.Briard/075.Briard_n02105251_252.jpg",
+        "label": "Briard",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "short fur",
+            "black nose; brown fur"
+        ],
+        "descriptions": [
+            "The dog's fur is thick, wavy, and dense, with a rich, warm brown color. The texture appears coarse and slightly curly, especially around the face and ears. The fur is long and covers the entire body, giving it a shaggy appearance. The coloration is uniform across the visible areas, with no distinct markings or variations in shade.",
+            "The dog in the image has short fur with a slightly wavy texture, which is characteristic of Briards. The fur appears dense and somewhat coarse, with a rich, warm brown coloration. The fur length is relatively short but not smooth; it has a slight waviness or curling at the tips, which is typical for Briards. This fine-grained attribute helps distinguish Briards from other dog subclasses with smoother or longer fur types.",
+            "- **Black Nose**: Smooth, shiny texture, slightly rounded shape.\n- **Brown Fur**: Dense, wavy, medium-length coat with a mix of lighter and darker shades, especially noticeable around the face and ears.\n\nThese attributes are characteristic of Briards and help distinguish them from other dog subclasses."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/033.Irish_Terrier/033.Irish_Terrier_n02093991_4441.jpg",
+        "label": "Irish Terrier",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "long shaggy hair",
+            "short snout; brown fur"
+        ],
+        "descriptions": [
+            "The brown fur of the Irish Terrier in the image exhibits a coarse texture with a mix of straight and slightly wavy strands. The fur appears dense and somewhat wiry, particularly around the ears and face, which is characteristic of the breed. The coloration is a rich, warm brown, with subtle variations in tone that suggest a natural, untrimmed appearance. The fur's length varies, being longer on the back and shorter on the head and legs, contributing to the terrier's distinctive look.",
+            "- Long, shaggy fur covering the entire body.\n- Dense, wiry texture.\n- Ears that are floppy and covered in fur.\n- Facial hair that extends beyond the jawline.\n- A beard-like growth around the muzzle.\n- Fur color typically a rich, reddish-brown or golden hue.\n- Tail covered in thick, shaggy fur.",
+            "- Short, sturdy snout with a slightly upturned tip\n- Dense, wiry coat in shades of brown\n- Ears that are medium-sized, triangular, and stand upright\n- Compact body structure\n- Distinctive facial features including a strong jawline and expressive eyes\n\nThese attributes collectively help distinguish the Irish Terrier from other dog subclasses."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/013.Bluetick/013.Bluetick_n02088632_512.jpg",
+        "label": "Bluetick",
+        "label_id": 0,
+        "regions": [
+            "brown and black fur",
+            "long floppy ears",
+            "short tail"
+        ],
+        "descriptions": [
+            "The dog exhibits a mix of brown and black fur, with the brown fur appearing in various shades ranging from light tan to deep chestnut, often intermingled with darker brown patches. The black fur is present as well, particularly noticeable around the ears, back, and tail, creating a contrast against the lighter brown areas. The coat appears short and smooth, typical of Bluetick Coonhounds.",
+            "- Long, floppy ears that hang down close to the head.\n- Ears appear soft and slightly rounded at the tips.\n- Ears are not pointed or upright but droop naturally.\n- The fur on the ears appears slightly darker than the rest of the coat.\n- Ears are large in proportion to the head.\n\nThese attributes are characteristic of Bluetick Coonhounds.",
+            "The dog in question has a short tail with a slightly curved shape, appearing somewhat stubby and not very long or bushy. The fur coloration around the tail is consistent with the Bluetick pattern, which typically includes a mix of black, brown, and white, but the tail itself is not prominently visible due to its shortness and the angle of the photograph."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/061.English_Setter/061.English_Setter_n02100735_3899.jpg",
+        "label": "English Setter",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "long floppy ears",
+            "brown spots"
+        ],
+        "descriptions": [
+            "The white fur of the English Setter in this image exhibits a speckled pattern with small, irregular spots of darker brown or reddish-brown, creating a distinctive ticked coat. The fur appears soft and silky, with a slightly ruffled texture around the ears and face, characteristic of the breed's long, flowing hair.",
+            "- Long, floppy ears with soft, silky fur.\n- Ears hang down to the sides of the head.\n- Fur appears slightly wavy or curly.\n- Ears are proportionally large in relation to the head.\n- The fur color matches the rest of the dog's coat, which is typically a speckled pattern of white and brown.",
+            "The English Setter in the image has distinct brown spots that are irregularly shaped and distributed across its face and body. These spots are primarily concentrated around the eyes, ears, and neck area, with some extending onto the chest. The spots have a mottled appearance, blending into the lighter fur, which is typical for this breed's coat pattern. The texture of the fur appears soft and slightly wavy, contributing to the overall speckled effect of the brown spots."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/020.Italian_Greyhound/020.Italian_Greyhound_n02091032_11812.jpg",
+        "label": "Italian Greyhound",
+        "label_id": 0,
+        "regions": [
+            "brown and white fur",
+            "long pointed ears",
+            "pink sweater"
+        ],
+        "descriptions": [
+            "The dog exhibits a slender build with a short coat. Its fur is predominantly white with patches of brown, particularly noticeable around the ears, back, and tail. The coat appears smooth and sleek, typical of the Italian Greyhound breed.",
+            "The dog in the image has long, pointed ears that are characteristic of the Italian Greyhound breed. The ears are triangular in shape, standing upright and slightly curved at the tips. They are positioned close together on the head, with the inner ear visible and appearing soft and flexible. The ears are relatively small compared to the dog's head size, which is typical for this breed.",
+            "- Ribbed texture\n- Hooded design\n- Loose fit\n- Bright pink color\n- Elastic neckline\n- Long sleeves\n- Lightweight material"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/112.Cardigan/112.Cardigan_n02113186_2433.jpg",
+        "label": "Cardigan",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "black and brown face",
+            "short legs; black and white fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a Cardigan Welsh Corgi's characteristic black and white fur pattern with distinct features:\n\n- **Black markings**: The dog has a predominantly black coat with patches of white.\n- **White markings**: White fur covers the chest, belly, and paws, contrasting sharply with the black.\n- **Black face**: The face is mostly black, with a white stripe running down the center.\n- **Black ears**: The ears are black, adding to the overall contrast against the white fur.\n\nThese attributes are specific to the Cardigan Welsh Corgi breed and help distinguish it from other dog subclasses.",
+            "- Black and brown facial markings\n- Tri-color coat pattern (black, white, brown)\n- Pointed ears\n- Alert expression\n- Short, smooth fur\n- Energetic posture\n\nThese attributes specifically highlight the Cardigan Welsh Corgi breed's distinctive facial and physical characteristics.",
+            "- Short legs\n- Black and white fur pattern\n- Cardigan breed characteristics"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/063.Gordon_Setter/063.Gordon_Setter_n02101006_4223.jpg",
+        "label": "Gordon Setter",
+        "label_id": 0,
+        "regions": [
+            "black coat with brown markings",
+            "long floppy ears",
+            "long curly tail"
+        ],
+        "descriptions": [
+            "- Long, wavy black coat\n- Brown markings on face, chest, and legs\n- Curly tail\n- Broad head with long, floppy ears\n- Dark eyes\n- Strong, muscular build\n- Smooth, glossy fur texture",
+            "- Long, drooping ears that hang down close to the sides of the head.\n- Soft, silky texture.\n- Moderate length, not too short or too long.\n- Curved shape, slightly rounded at the tips.\n- Dark coloration, blending with the coat.\n- Slightly feathered edges near the base.\n- Symmetrical in appearance.",
+            "The dog's long, curly tail is dark in color with lighter, possibly reddish-brown tips, characteristic of the Gordon Setter breed. The tail appears well-groomed and fluffy, extending beyond the dog's body, which is typical for this breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/083.Rottweiler/083.Rottweiler_n02106550_7003.jpg",
+        "label": "Rottweiler",
+        "label_id": 0,
+        "regions": [
+            "black and brown fur",
+            "pointy ears",
+            "straw hat"
+        ],
+        "descriptions": [
+            "The dog exhibits the characteristic black and brown fur typical of a Rottweiler. The fur is short and dense, with a predominantly black coat that has distinct brown markings. These markings include a broad brown stripe down the center of the face, extending from the forehead to the muzzle, and a brown patch around the mouth. The legs have brown patches, and the chest area shows a lighter, almost white or cream-colored fur. The tail is not visible in this image but would typically be docked and covered in black fur. The overall coloration and pattern are consistent with the breed standard for Rottweilers.",
+            "The Rottweiler's pointy ears are short, triangular, and stand upright, characteristic of the breed. They are typically smooth and lack visible fur inside, which helps in distinguishing them from floppy-eared breeds. The ears are positioned close to the head, with the tips pointing upwards, contributing to the dog's alert and attentive appearance.",
+            "- Straw hat with a wide brim.\n- Hat has a light beige color.\n- Hat appears slightly worn with some discoloration or stains.\n- Hat has a white band around the base.\n- Hat fits snugly on the dog's head, indicating it is likely a small to medium-sized hat.\n- The hat's texture suggests it is made of woven straw material.\n- The hat's shape is rounded and slightly floppy, typical for a straw hat style.\n- The hat does not have any visible decorations or embellishments."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/018.Borzoi/018.Borzoi_n02090622_6894.jpg",
+        "label": "Borzoi",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "long thin legs",
+            "pointy ears; black and white fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a sleek, elongated body with a predominantly white underbelly and legs, contrasted by a black coat covering its back, head, and part of its tail. The fur appears smooth and glossy, with a distinct pattern where the black fur transitions into white along the sides and down the legs. The ears are long and drooping, characteristic of the breed, and the face has a mix of black and white fur, with a white blaze running down the center of the forehead and around the muzzle. The dog's build is slender and athletic, typical of the Borzoi breed.",
+            "- Long, slender forelegs\n- Elongated hind legs\n- Muscular build\n- Graceful posture\n- Lean frame\n- Symmetrical leg structure\n- Toned muscles visible under skin\n- Slight curve in the lower leg (tibia)",
+            "- Pointed ears\n- Black and white fur pattern\n- Long, slender body\n- Lean build\n- Alert expression\n- Long legs\n- Tail held high"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/008.Rhodesian_Ridgeback/008.Rhodesian_Ridgeback_n02087394_7771.jpg",
+        "label": "Rhodesian Ridgeback",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "short tail",
+            "long body"
+        ],
+        "descriptions": [
+            "The dog exhibits a rich, deep brown coat with a smooth texture. The fur appears well-groomed, showcasing a uniform coloration without any visible markings or patterns. The ridge, a distinctive feature of the Rhodesian Ridgeback, is not directly visible in this image but can be inferred from the breed's description. The dog's body is muscular and lean, typical of the breed, with a strong, athletic build. The fur length is short and close to the skin, providing a sleek appearance.",
+            "The Rhodesian Ridgeback's tail is short, often carried low or tucked between the legs when at rest. It is typically straight or slightly curved, with a slight upward curve near the tip. The fur on the tail is usually short and smooth, blending seamlessly into the body's coat. The tail may have a slight ridge or crest along its length, which is characteristic of the breed but not always prominent.",
+            "- Long, muscular body with a lean, athletic build.\n- Slightly arched back.\n- Broad chest.\n- Long, straight legs with strong bone structure.\n- Deep, narrow muzzle.\n- Distinctive ridge of hair running along the spine, typically in a V-shape.\n- Short, smooth coat with a rich, golden-brown coloration.\n- Broad, powerful head with a strong jawline.\n- Ears that are set high and folded forward.\n- Tail that is docked short or carried low."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/050.Silky_Terrier/050.Silky_Terrier_n02097658_4201.jpg",
+        "label": "Silky Terrier",
+        "label_id": 0,
+        "regions": [
+            "long hair",
+            "black fur",
+            "long face"
+        ],
+        "descriptions": [
+            "- Fine, silky texture\n- Long, flowing fur\n- Dense, straight strands\n- Ears covered in long hair\n- Face partially obscured by hair\n- Tail not visible due to hair length\n- Overall smooth appearance with no curls or waves",
+            "The black fur of the Silky Terrier in the image appears silky and smooth, with a fine texture that contrasts sharply against the lighter fur around its face and body. The fur is short but dense, covering the entire body uniformly without any visible undercoat or thickening. The color is a deep, rich black, which is characteristic of this breed.",
+            "- Long, silky fur covering the face\n- Prominent, elongated snout\n- Pointed ears that stand upright\n- Dense, wavy fur texture\n- Dark, expressive eyes\n- Small, compact body size\n- Black fur with lighter, silvery highlights"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/098.Malamute/098.Malamute_n02110063_8977.jpg",
+        "label": "Malamute",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "black nose",
+            "black eyes"
+        ],
+        "descriptions": [
+            "- **Ears**: Pointed and erect, with black fur on the tips.\n- **Face**: Black fur around the eyes and ears, contrasting with lighter fur on the muzzle.\n- **Body**: Black fur covering the back and sides, blending into lighter shades towards the chest and legs.\n- **Tail**: Not fully visible but likely has black fur at the base, transitioning to lighter shades towards the tip.\n- **Muzzle**: Black fur around the mouth area, extending slightly onto the chin.\n- **Legs**: Black fur on the upper parts, fading to lighter shades on the lower legs.\n\nThese attributes are characteristic of a Malamute's coat pattern and coloration.",
+            "The black nose of the Malamute in the image is smooth, rounded, and has a glossy sheen. It is centrally located on the snout, flanked by symmetrical fur that transitions from dark around the eyes to lighter shades on the cheeks. The nose appears firm and well-defined against the surrounding fur, which is characteristic of the breed's thick, dense coat.",
+            "The dog's black eyes are expressive and alert, with a slightly oval shape and a reflective sheen that highlights their depth. The surrounding fur around the eyes is dark, creating a strong contrast that emphasizes the eye color. The eyes appear to be medium-sized relative to the head size, typical for a Malamute. There is no visible white or light reflection in the eyes, suggesting they are fully pigmented."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/070.Irish_Water_Spaniel/070.Irish_Water_Spaniel_n02102973_2226.jpg",
+        "label": "Irish Water Spaniel",
+        "label_id": 0,
+        "regions": [
+            "curly fur",
+            "long tongue",
+            "brown fur"
+        ],
+        "descriptions": [
+            "The Irish Water Spaniel's curly fur is dense, wavy, and tightly curled, covering its entire body. The texture appears soft yet slightly coarse, with individual curls forming distinct loops and waves. The fur color is typically dark, often black or liver brown, which contrasts sharply with lighter areas around the face and legs.",
+            "The long tongue of the Irish Water Spaniel in the image is pink, moist, and appears to be slightly curled at the edges. It is extended outward, likely due to panting or playfulness, and contrasts with the dark fur of its face. The texture seems smooth and slightly glossy, indicative of the breed's typical coat condition.",
+            "The brown fur of the Irish Water Spaniel in the image exhibits a rich, dark hue with a slightly wavy texture. The fur appears dense and has a natural, slightly curly appearance, which is characteristic of the breed. The coat's sheen suggests good health and grooming."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/100.Affenpinscher/100.Affenpinscher_n02110627_13553.jpg",
+        "label": "Affenpinscher",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "short hair",
+            "small size; black fur"
+        ],
+        "descriptions": [
+            "- Short, dense, wiry coat\n- Curly or wavy texture\n- Dark, almost jet-black coloration\n- Fine, soft-looking fur\n- Prominent eyebrows and whiskers\n- Ears that stand upright but may be slightly floppy at the tips\n- Compact body with a sturdy build\n- Distinctive facial features including a short muzzle and expressive eyes\n\nThese attributes collectively help distinguish an Affenpinscher from other dog subclasses.",
+            "The dog in the image exhibits the characteristic short, wiry coat typical of Affenpinschers. The hair appears dense, slightly rough, and stands up in places, giving it a distinctive, bristly appearance. The texture seems coarse and somewhat uneven, which is a key feature distinguishing Affenpinschers from other breeds with shorter coats.",
+            "- Small size: compact body, short stature.\n- Black fur: dense, short, wiry coat covering the entire body.\n- Fine-grained texture: fine, soft fur with a slightly rough feel.\n- Affenpinscher-specific: distinctive facial features, including a short muzzle, upright ears, and a sturdy build."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/078.Old_English_Sheepdog/078.Old_English_Sheepdog_n02105641_3540.jpg",
+        "label": "Old English Sheepdog",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "black and white fur",
+            "short fur; white fur"
+        ],
+        "descriptions": [
+            "- Fluffy texture\n- Dense undercoat\n- Long, wavy fur\n- Distinctive beard-like facial hair\n- Curly tail\n- Broad head with slightly droopy ears\n- White fur covering most of the body\n- Black markings on the back and legs",
+            "The dog exhibits a predominantly white coat with distinct black markings on its back and tail, characteristic of the Old English Sheepdog breed.",
+            "- Short fur texture\n- White coat color\n- Distinctive facial features (e.g., broad head, slightly droopy eyes)\n- Small size relative to its breed\n- Smooth, non-wavy fur appearance"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/106.Samoyed/106.Samoyed_n02111889_789.jpg",
+        "label": "Samoyed",
+        "label_id": 0,
+        "regions": [
+            "fluffy white fur",
+            "long tail",
+            "thick fur around mouth"
+        ],
+        "descriptions": [
+            "- Fluffy white fur covering the entire body.\n- Thick, dense coat giving a plush appearance.\n- Ears covered in abundant fur, standing upright.\n- Tail curled over the back, also covered in white fur.\n- White fur extends to the paws, creating a seamless look.\n- Fur appears soft and well-groomed, with no visible undercoat.\n- Overall, the dog's coat is uniformly white without any darker markings or patterns.",
+            "- Fluffy\n- Curled upwards at the tip\n- White in color\n- Soft texture visible\n- Symmetrical in shape\n- Long and thick",
+            "The Samoyed's thick fur around its mouth is dense, fluffy, and white, covering the area around its muzzle and extending slightly upwards towards the cheeks. The fur appears soft and well-groomed, giving it a rounded and plush appearance."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/022.Ibizian_Hound/022.Ibizian_Hound_n02091244_4669.jpg",
+        "label": "Ibizian Hound",
+        "label_id": 0,
+        "regions": [
+            "brown and white fur",
+            "long pointed ears",
+            "short tail"
+        ],
+        "descriptions": [
+            "The dog exhibits a predominantly brown and white coat with distinct markings: a white stripe running down its back, a white chest, and white paws. The brown fur covers most of its body, including the head, ears, and tail. The contrast between the brown and white fur is sharp, highlighting the breed's characteristic coloration.",
+            "The dog's long pointed ears are tall, standing upright, and slightly rounded at the tips. They are positioned symmetrically on either side of the head, with a slight curve inward towards the base. The ears appear to be of medium length in proportion to the dog's head, and they have a smooth texture without visible fur inside or out.",
+            "The Ibizian Hound in the image has a short tail that is slightly curved upwards at the tip, which is characteristic of this breed. The tail appears to be short and not overly bushy or long, fitting within the typical physical attributes of an Ibizian Hound."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/000.Chihuaha/000.Chihuaha_n02085620_7613.jpg",
+        "label": "Chihuaha",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "small size",
+            "long ears; black and white fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a distinctive coat pattern with a predominantly black face and ears, contrasted by a white muzzle, chest, and part of the neck. The fur appears short and smooth, typical of a Chihuahua's coat.",
+            "- Compact body\n- Small head\n- Tiny ears\n- Short fur length\n- Miniature stature\n- Proportionally large eyes",
+            "- Long, floppy ears with dark edges and lighter inner parts.\n- Black and white fur pattern, predominantly black on top with white markings on the face and chest.\n- Small, expressive eyes.\n- Compact body size characteristic of Chihuahuas.\n- Pointed snout."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/023.Norwegian_Elkhound/023.Norwegian_Elkhound_n02091467_1406.jpg",
+        "label": "Norwegian Elkhound",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "thick curly tail",
+            "purple harness"
+        ],
+        "descriptions": [
+            "The Norwegian Elkhound in the image displays white fur primarily on its chest, belly, and the underside of its tail. The fur appears soft and slightly fluffy, with a distinct contrast against the darker fur on the rest of its body. The white fur is smooth and well-defined, contributing to the breed's characteristic appearance.",
+            "The thick curly tail of the Norwegian Elkhound is short, bushy, and curled upwards at the tip, with a dense coat that gives it a fluffy appearance. The tail is positioned high on the dog's back and appears to be slightly curved, contributing to the dog's alert and energetic demeanor.",
+            "The Norwegian Elkhound in the image is wearing a purple harness with the following distinctive features:\n\n- The harness appears to be made of a soft, flexible material.\n- It has multiple straps and buckles, likely for secure fastening.\n- The harness fits snugly around the dog's chest and shoulders, providing support.\n- There is a visible adjustment mechanism, possibly a buckle or clip, for size customization.\n- The harness is designed to distribute pressure evenly across the dog's body, avoiding pressure points like the neck or back.\n- The color is a vibrant purple, which contrasts with the dog's fur.\n\nThese attributes specifically highlight the purple harness worn by the Norwegian Elkhound in the image."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/036.Yorkshire_Terrier/036.Yorkshire_Terrier_n02094433_5868.jpg",
+        "label": "Yorkshire Terrier",
+        "label_id": 0,
+        "regions": [
+            "long hair",
+            "bow",
+            "small size; long hair"
+        ],
+        "descriptions": [
+            "- Fine, silky texture\n- Long, straight fur\n- Dense, covering most of the face and body\n- Shiny appearance\n- Coloration: mix of light brown and silver-gray\n- Ears are long and hang down\n- Face has a distinctive \"beard\" of longer hair framing the mouth\n- Hair around the eyes is slightly shorter, creating a \"trimmed\" look\n- Overall, the hair is well-groomed and maintains a neat, elegant appearance typical of the breed\n\n",
+            "The bow on the Yorkshire Terrier is small, with a vibrant red color and a shiny, glossy texture. It has a simple, ribbon-like structure without intricate patterns or embellishments. The bow is tied neatly around the dog's head, positioned above the ears, and appears to be made of a smooth fabric material. The bow's size relative to the dog's head suggests it is designed for small breeds.",
+            "- Small size with compact body\n- Long, silky fur covering most of the body\n- Fine, straight fur texture\n- Ears that hang down close to the face\n- Distinctive facial features including a short muzzle and expressive eyes\n- Tail often carried over the back\n- Often groomed with a distinctive \"lion cut\" style\n- Coloration typically includes a blend of steel blue and tan or fawn\n\nThese attributes collectively help distinguish a Yorkshire Terrier from other dog subclasses."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/037.Wirehaired_Fox_Terrier/037.Wirehaired_Fox_Terrier_n02095314_3316.jpg",
+        "label": "Wirehaired Fox Terrier",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "thin straight legs",
+            "short hair"
+        ],
+        "descriptions": [
+            "- Dense, short, and slightly wavy texture\n- Uniformly covering the body, legs, and paws\n- Smooth transition between white and darker fur on the back and tail\n- Clean, well-groomed appearance",
+            "The thin straight legs of the Wirehaired Fox Terrier are characterized by their slender build, with a slight curve at the hock joint, and a consistent coat coloration that includes white fur on the lower legs, transitioning to a darker shade (black or brown) higher up. The legs appear sturdy yet delicate, supporting the dog's compact and agile body structure.",
+            "- Short, wiry coat with a dense undercoat.\n- Hair texture appears coarse and slightly rough.\n- Coloration typically includes a mix of white, black, and tan, often with a distinctive brindle pattern.\n- Face has a distinctive beard-like growth of hair around the muzzle.\n- Ears are small, erect, and covered in short, wiry fur.\n- Tail is short and carried high, often curled over the back.\n- Body is compact and muscular, with a short, smooth coat on the legs and body."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/011.Beagle/011.Beagle_n02088364_14690.jpg",
+        "label": "Beagle",
+        "label_id": 0,
+        "regions": [
+            "brown and white face",
+            "black and white body",
+            "brown and white ears"
+        ],
+        "descriptions": [
+            "The dog's face exhibits the characteristic tricolor pattern typical of Beagles: a predominantly white face with distinct brown markings. The brown coloration is concentrated around the eyes, ears, and the top of the head, while the white fur covers the muzzle, chest, and lower legs. The contrast between the brown and white fur creates a striking facial pattern unique to this breed.",
+            "The dog has a predominantly black and white body with distinct brown markings. The black fur covers the back, shoulders, and part of the legs, while the white fur is present on the chest, neck, and lower legs. The brown patches are located on the cheeks, around the eyes, and on the ears. These color patterns are characteristic of the Beagle breed.",
+            "The dog's ears are predominantly brown with white tips, characteristic of a Beagle breed. The brown coloration is rich and warm, covering most of the ear, while the white tips provide a distinct contrast, enhancing the Beagle's alert and expressive appearance."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/109.Keeshond/109.Keeshond_n02112350_6659.jpg",
+        "label": "Keeshond",
+        "label_id": 0,
+        "regions": [
+            "fluffy fur",
+            "long tail",
+            "short legs; fluffy fur"
+        ],
+        "descriptions": [
+            "- Dense, long, and slightly wavy fur\n- Predominantly gray with white markings on the chest and paws\n- Fluffy tail curled over the back\n- Ears standing upright but slightly rounded at the tips\n- Thick fur around the neck forming a ruff-like collar\n- Overall bushy appearance with a full body coat",
+            "The long tail of the Keeshond in the image is fluffy, with a thick, bushy appearance. It has a predominantly white base color with darker gray or black tips, creating a striking contrast. The tail is held upright and slightly curved, characteristic of the breed's alert posture.",
+            "- Short, sturdy legs\n- Fluffy, dense fur covering body\n- Distinctive facial markings\n- Ears standing upright\n- Tail curled over back\n- Silky texture of fur\n- Symmetrical coat pattern"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/015.Walker_Hound/015.Walker_Hound_n02089867_1786.jpg",
+        "label": "Walker Hound",
+        "label_id": 0,
+        "regions": [
+            "brown and white fur",
+            "long floppy ears",
+            "red bandana"
+        ],
+        "descriptions": [
+            "The dog exhibits a predominantly white coat with distinct brown patches. The brown fur is concentrated around the ears, back, and tail, while the rest of the body is covered in white fur. The transition between the brown and white areas is smooth, with no sharp demarcations. The dog's fur appears well-groomed and healthy.",
+            "The dog in the image has long, floppy ears that are characteristic of the Walker Hound breed. The ears are large, drooping, and extend down past the jawline, covering part of the dog's face. They appear soft and slightly rounded at the tips. The texture seems smooth and possibly slightly wrinkled near the base where they attach to the head. These features are distinct and help distinguish the Walker Hound from other breeds with floppy ears.",
+            "- Bright red color\n- Tied around neck\n- Appears slightly frayed at edges\n- Positioned over the dog's chest\n- Wrinkled texture visible due to wear\n- Sits snugly against the dog's fur"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/101.Basenji/101.Basenji_n02110806_1382.jpg",
+        "label": "Basenji",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "long ears",
+            "black nose"
+        ],
+        "descriptions": [
+            "The dog exhibits a predominantly black coat with distinct white markings on its chest and paws. The fur appears smooth and short, characteristic of the Basenji breed. The ears are erect and pointed, another key feature of this breed.",
+            "The dog's long ears are pointed and stand erect, characteristic of the Basenji breed. They are thin, with a slight curve at the tips, and appear alert and attentive. The ears are positioned high on the head, contributing to the dog's distinctive and alert expression.",
+            "The black nose of the Basenji in the image is smooth, with a glossy sheen, and has a distinct, rounded shape. It lacks visible fur or whiskers around it, which is characteristic of the breed's short-haired coat. The nose appears firm and well-defined against the lighter fur surrounding it."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/105.Great_Pyrenees/105.Great_Pyrenees_n02111500_3052.jpg",
+        "label": "Great Pyrenees",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "thick curly tail",
+            "thick curly fur"
+        ],
+        "descriptions": [
+            "- Fluffy coat\n- Dense underfur\n- Long, straight fur\n- Broad head\n- Large, sturdy build\n- Broad chest\n- Short tail\n- Broad muzzle\n- Thick neck\n- White fur covering most of body",
+            "The thick curly tail of the Great Pyrenees in the image is characterized by its dense, fluffy texture and a natural curling shape that extends outward from the body. The tail appears to be well-groomed, with no signs of thinning or bald spots, indicating a healthy coat. Its size relative to the body suggests a robust build typical of the breed.",
+            "The dog exhibits thick, curly fur with a dense undercoat and a coarser outer coat. The fur appears fluffy and voluminous, characteristic of the breed's protective nature. The coloration is predominantly white, which is typical for Great Pyrenees."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/046.Giant_Schnauzer/046.Giant_Schnauzer_n02097130_582.jpg",
+        "label": "Giant Schnauzer",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "long hair",
+            "short tail; black fur"
+        ],
+        "descriptions": [
+            "- Coarse, wiry texture\n- Prominent beard and mustache\n- Curly whiskers\n- Short, dense coat\n- Broad head with pronounced brow ridge\n- Strong jawline\n- Dark eyes\n- Black nose\n- Medium-sized ears, slightly folded",
+            "- Coarse, wiry fur texture\n- Prominent beard and mustache\n- Thick, bushy eyebrows\n- Long, slightly wavy hair on the ears\n- Dense, shaggy coat covering the body\n- Shorter hair on the muzzle and legs",
+            "- Short, slightly curved tail\n- Black fur covering the entire body\n- Coarse, wiry texture of fur\n- Prominent beard and mustache\n- Broad head with upright ears\n- Strong, muscular build"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/006.Papillon/006.Papillon_n02086910_9355.jpg",
+        "label": "Papillon",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "black ears",
+            "red leash; brown fur"
+        ],
+        "descriptions": [
+            "- Fluffy, long-haired coat\n- Distinctive black markings around eyes and ears\n- Ears are large, erect, and feathered\n- White fur covers most of the body, including the legs and chest\n- Tail is fluffy and curled upwards\n- Overall small size typical for Papillons",
+            "- Large, upright, feathered ears\n- Black coloration with white tips\n- Slightly curved shape\n- Fluffy texture\n- Pointed tips\n- Symmetrical positioning",
+            "- **Red Leash**: Bright, glossy finish, smooth texture, straight line extending from the collar.\n- **Brown Fur**: Small, distinct patches on the face, ears, and possibly the back, contrasting with predominantly white fur.\n\nThese attributes specifically highlight the Papillon breed's unique coloration and the distinctiveness of its red leash."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/024.Otterhound/024.Otterhound_n02091635_2725.jpg",
+        "label": "Otterhound",
+        "label_id": 0,
+        "regions": [
+            "two dogs",
+            "long fur",
+            "standing in water"
+        ],
+        "descriptions": [
+            "- **Dog 1 (Foreground):** \n  - Long, dense fur with a mix of white and golden-brown tones.\n  - Distinctive beard-like facial hair.\n  - Broad head with a slightly wrinkled forehead.\n  - Strong, muscular build typical of Otterhounds.\n\n- **Dog 2 (Background):**\n  - Similar long, dense fur with a mix of white and golden-brown tones.\n  - Beard-like facial hair.\n  - Broad head with a slightly wrinkled forehead.\n  - Strong, muscular build consistent with Otterhounds.",
+            "- Dense, wavy fur covering the entire body.\n- Long fur extending beyond the paws, creating a water-repellent appearance.\n- Fur appears thick and slightly shaggy, especially around the chest and neck area.\n- A distinctive beard-like growth of fur around the muzzle.\n- Fur coloration is a mix of golden and white, with a soft, silky texture visible in the light.",
+            "- Long, dense fur covering body.\n- Ears hanging down, partially submerged.\n- Tail visible, slightly curved upwards.\n- Muscular build with a deep chest.\n- Standing upright in shallow water, legs submerged up to the knee."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/031.Border_Terrier/031.Border_Terrier_n02093754_2425.jpg",
+        "label": "Border Terrier",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "short fur",
+            "small size; brown fur"
+        ],
+        "descriptions": [
+            "The dog's fur exhibits a mix of short, wiry textures with a rich, warm brown coloration. The fur appears dense and slightly rough, characteristic of the Border Terrier breed. The coat has a blend of lighter and darker shades, creating a mottled effect typical in this breed. The fur around the face is shorter and smoother compared to the body, which is covered in a slightly longer, coarser texture.",
+            "The dog's fur is short, dense, and wiry, with a mix of brown and black coloration. The fur appears slightly rough and textured, typical of the Border Terrier breed.",
+            "- Small size\n- Brown fur with mixed shades\n- Compact body structure\n- Short, dense coat\n- Ears that stand upright but slightly folded at the tips\n- Distinctive facial markings: dark eyes, black nose, and light-colored eyebrows\n- Tail curled over back\n- Alert expression\n\nThese attributes collectively help distinguish a Border Terrier from other dog subclasses."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/030.Bedlington_Terrier/030.Bedlington_Terrier_n02093647_1247.jpg",
+        "label": "Bedlington Terrier",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "long curly hair",
+            "short legs; white fur"
+        ],
+        "descriptions": [
+            "- Fine, curly texture\n- Uniform white coloration\n- Ears shaped like lamb's ears\n- Tail curled upwards\n- Distinctive body shape resembling a sheep\n- Short, dense fur",
+            "The dog's long, curly hair is predominantly white, with a slightly textured appearance due to its natural curling. The hair is dense and covers the entire body uniformly, giving it a fluffy, lamb-like look characteristic of the Bedlington Terrier breed. The ears are long and hang down, framing the face, and the tail is short and curls upwards. The coat appears well-groomed, maintaining a consistent texture throughout.",
+            "- Short, sturdy legs\n- White fur covering the entire body\n- Fluffy texture\n- Tail curled upwards\n- Ears hanging down"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/051.Soft_coated_Wheaten_Terrier/051.Soft_coated_Wheaten_Terrier_n02098105_2872.jpg",
+        "label": "Soft-coated Wheaten Terrier",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "long fur",
+            "small size; brown fur"
+        ],
+        "descriptions": [
+            "The brown fur of the Soft-coated Wheaten Terrier in the image exhibits a soft, slightly wavy texture with a rich, warm tone. The fur appears dense and has a natural, untrimmed look, characteristic of the breed's soft coat. The coloration is a uniform shade of wheaten brown, without any white or black markings.",
+            "- Long, soft, and slightly wavy fur.\n- Fur color is a golden or wheaten shade.\n- Fur texture appears dense and slightly shaggy.\n- Ears are floppy and covered in long fur.\n- Face has a soft, expressive look with fur framing the face.\n- Body fur is thick and covers the entire body evenly.",
+            "- Small size\n- Soft, slightly wavy brown fur\n- Curly, dense coat texture\n- Rounded head shape\n- Compact body structure\n- Short, sturdy legs\n- Friendly facial expression with soft eyes"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/071.Kuvasz/071.Kuvasz_n02104029_4492.jpg",
+        "label": "Kuvasz",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "long tail",
+            "thick fur"
+        ],
+        "descriptions": [
+            "- Dense, fluffy coat\n- Long, straight fur\n- White fur covering the entire body\n- Thick neck ruff\n- Pronounced mane around the head\n- Well-defined facial features\n- Broad chest\n- Strong, muscular build\n- Tail curled over the back",
+            "The Kuvasz's long tail is thick, fluffy, and curves slightly upwards, ending in a rounded tip. It appears well-groomed with soft, white fur that blends seamlessly into the body. The tail is proportionate to the dog's size, adding to its majestic appearance.",
+            "- Dense, long, and straight fur covering the entire body.\n- Fur appears fluffy and voluminous, especially around the neck and chest.\n- White coat with a slightly shaggy texture.\n- Fur extends down to the paws, creating a full appearance.\n- No visible undercoat, suggesting a double-layered fur structure.\n- Fur appears well-groomed and maintains a uniform length across the body."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/110.Brabancon_Griffon/110.Brabancon_Griffon_n02112706_1561.jpg",
+        "label": "Brabancon Griffon",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "short fur",
+            "small size; brown fur"
+        ],
+        "descriptions": [
+            "- Short, dense fur with a rich, warm brown coloration.\n- Smooth texture without visible undercoat.\n- Ears are small, triangular, and slightly folded over at the tips.\n- Face has a distinctive brindle pattern with darker brown stripes on a lighter brown base.\n- Body is compact and muscular, typical of the breed's sturdy build.\n- Tail is short and carried low or tucked between legs when relaxed.",
+            "- Short, dense fur covering the entire body.\n- Smooth texture with minimal undercoat.\n- Uniform coloration, typically a rich, reddish-brown.\n- Ears are small, triangular, and folded over at the tips.\n- Face has a distinctive brachycephalic (short-nosed) appearance.\n- Short muzzle with a black nose.\n- Eyes are dark and expressive.\n- Legs are sturdy and proportionate to the body size.\n\nThese attributes collectively define the visual characteristics of a Brabancon Griffon's short fur.",
+            "- Small stature\n- Compact body\n- Short, dense brown fur\n- Pointed ears\n- Distinctive facial structure with a short muzzle\n- Alert expression\n- Stocky build\n- Tight, smooth coat texture\n\nThese attributes collectively help distinguish a Brabancon Griffon from other dog subclasses."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/060.Vizsla/060.Vizsla_n02100583_7904.jpg",
+        "label": "Vizsla",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "long ears",
+            "short tail; brown fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a rich, warm brown coat with a glossy sheen, typical of Vizslas. The fur appears short and dense, with a slightly wavy texture in some areas. The coloration transitions smoothly from a lighter shade on the chest and underside to a deeper brown on the back and legs. The ears are floppy and covered in the same brown fur, which may have a slightly darker hue near the tips. The dog's muzzle has a lighter, almost pinkish tone, contrasting with the darker brown of its eyes and nose.",
+            "The dog's long ears are floppy and hang down close to its head, characteristic of the Vizsla breed. They appear soft and slightly rounded at the tips.",
+            "- Short, slightly curved tail\n- Brown fur with a rich, warm tone\n- Smooth coat texture\n- Lean build typical of Vizsla breed\n- Broad head with expressive eyes\n- Pointed ears that stand erect when alert\n\nThese attributes collectively help distinguish a Vizsla from other dog subclasses."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/026.Scottish_Deerhound/026.Scottish_Deerhound_n02092002_3494.jpg",
+        "label": "Scottish Deerhound",
+        "label_id": 0,
+        "regions": [
+            "long fur",
+            "light brown fur",
+            "long tail"
+        ],
+        "descriptions": [
+            "- Long, straight, and slightly wavy fur covering the entire body.\n- Fur appears dense and thick, especially around the chest and shoulders.\n- Tail is long and feathered with fur extending down to the ground.\n- Fur color is a light golden or cream shade.\n- Ears are long and drooping, blending into the fur texture.\n- Overall coat has a soft, silky appearance.",
+            "The light brown fur of the Scottish Deerhound in the image exhibits a smooth texture with subtle variations in shade, ranging from a lighter cream to a deeper golden hue. The fur appears dense and slightly wavy, particularly noticeable around the neck and shoulders, giving it a distinctive mane-like appearance. The coat is long and flowing, especially along the back and hindquarters, contributing to the breed's elegant and athletic build. The fur is free of any visible markings or patterns, maintaining a uniform coloration across the body.",
+            "The long tail of the Scottish Deerhound in the image is medium-length, tapering towards the tip, and appears slightly curved. It has a light, creamy color consistent with the rest of its coat. The tail is held low and close to the body when at rest but can be raised during movement or excitement."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/081.Border_Collie/081.Border_Collie_n02106166_3996.jpg",
+        "label": "Collie",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "black ears",
+            "white paws; black and white fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a classic Collie pattern with distinct black and white fur. The face is predominantly black with a white stripe running down the center, extending to the chest and legs. The ears are black, contrasting sharply with the white fur around them. The tail appears to be mostly black, though the exact coloration may vary depending on the angle and lighting. The overall coat is smooth and well-groomed, typical of the breed's appearance.",
+            "- Pointed and upright\n- Smooth texture\n- Slightly rounded tips\n- Symmetrical positioning",
+            "- White paws with distinct black markings around them.\n- Black and white fur pattern typical of Border Collies.\n- Ears that stand upright.\n- Alert facial expression with dark eyes and a slightly open mouth showing teeth.\n- Overall body shape consistent with a Collie breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/096.Saint_Bernard/096.Saint_Bernard_n02109525_18371.jpg",
+        "label": "Saint Bernard",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "brown patches",
+            "long tongue"
+        ],
+        "descriptions": [
+            "The white fur of the Saint Bernard in the image is thick, fluffy, and covers most of its body, with a prominent white patch on the face extending from the forehead down to the chest. The fur appears soft and dense, contributing to the breed's characteristic appearance.",
+            "- **Ears**: Large, floppy ears with prominent brown fur.\n- **Face**: Brown markings around the eyes and above the eyebrows, extending towards the cheeks.\n- **Body**: Brown patches on the back and sides, contrasting with the predominantly white coat.\n- **Legs**: Brown patches visible on the upper legs.\n- **Tail**: Not fully visible but likely has brown fur as well.\n\nThese brown patches are characteristic of the Saint Bernard breed, distinguishing it from other dog subclasses.",
+            "The dog's long tongue is pink with a smooth texture and appears slightly glossy, indicating good health. It is positioned prominently in the center of the image, contrasting against the white fur around its mouth. The tongue's size relative to the dog's face suggests it is a large breed, consistent with the Saint Bernard breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/005.Blenheim_Spaniel/005.Blenheim_Spaniel_n02086646_602.jpg",
+        "label": "Blenheim Spaniel",
+        "label_id": 0,
+        "regions": [
+            "brown and white fur",
+            "long floppy ears",
+            "short tail"
+        ],
+        "descriptions": [
+            "The dog exhibits the characteristic Blenheim Spaniel coloration with a predominantly white coat accented by rich, warm brown patches. The brown fur is particularly prominent around the ears, back, and tail, contrasting sharply with the white fur on its face, chest, and legs. The fur appears soft and well-groomed, with a slightly wavy texture in some areas, typical of the breed's coat.",
+            "The Blenheim Spaniel in the image has long, floppy ears that are predominantly brown with white tips, which is characteristic of the breed's coloration. The ears hang down close to the sides of the head, adding to the dog's gentle and affectionate appearance.",
+            "The Blenheim Spaniel in the image has a short tail that is predominantly white with some brown markings near the base. The tail appears to be slightly curled at the end, which is characteristic of this breed. The fur around the tail is short and smooth, contrasting with the longer, silky fur on the rest of its body."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/038.Lakeland_Terrier/038.Lakeland_Terrier_n02095570_315.jpg",
+        "label": "Lakeland Terrier",
+        "label_id": 0,
+        "regions": [
+            "curly fur",
+            "short snout",
+            "black fur; curly fur"
+        ],
+        "descriptions": [
+            "The Lakeland Terrier in the image exhibits curly fur with the following distinctive attributes:\n\n- **Coarse Texture**: The fur appears thick and coarse, typical of Lakeland Terriers.\n- **Dark Coloration**: The fur is predominantly dark, often black or liver-colored, which is characteristic of this breed.\n- **Curly Pattern**: The fur has a tightly curled pattern, giving it a frizzy appearance.\n- **Length and Volume**: The fur is medium-length but voluminous, covering the dog's face and body densely.\n- **Ears**: The ears are floppy and covered in the same curly fur as the rest of the body.\n\nThese features collectively help distinguish the Lakeland Terrier from other terrier breeds with different fur types or patterns.",
+            "- Curly fur covering the entire face and snout.\n- Short, broad snout with a slightly wrinkled texture.\n- Dark, expressive eyes partially obscured by fur.\n- Prominent, rounded ears that hang close to the head.\n- Dark, wet-looking nose.\n- Coarse, wiry coat texture.\n- Slightly upturned mouth line.",
+            "- Dense, curly black fur covering the entire body.\n- Coarse texture with visible individual strands.\n- Curly fur around the face, giving a fluffy appearance.\n- Dark, almost black nose.\n- Ears that are floppy and covered in thick, curly fur.\n- Overall robust build typical of Lakeland Terriers."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/092.Bull_Mastiff/092.Bull_Mastiff_n02108422_2949.jpg",
+        "label": "Bull Mastiff",
+        "label_id": 0,
+        "regions": [
+            "bulldog",
+            "st bernard",
+            "black dog"
+        ],
+        "descriptions": [
+            "- Broad head with a wrinkled forehead\n- Short muzzle\n- Large, droopy jowls\n- Broad chest\n- Short, sturdy legs\n- Muscular build\n- Dark, short coat\n- Broad, strong jawline\n- Folded ears\n- Broad, square-shaped head\n- Strong, powerful body structure\n- Broad, flat skull\n- Short, thick neck\n- Broad, strong shoulders\n- Broad, strong hips\n- Broad, strong thighs\n- Broad, strong hindquarters\n- Broad, strong tail (not visible in this image)\n- Broad, strong paws\n- Broad, strong chest\n- Broad, strong back\n- Broad, strong neck\n- Broad, strong shoulders\n- Broad, strong hips\n- Broad, strong thighs\n- Broad, strong hindquarters\n- Broad, strong tail (not visible in this image)\n- Broad, strong paws\n- Broad, strong chest\n- Broad, strong back\n- Broad, strong neck\n- Broad, strong shoulders\n- Broad, strong hips\n- Broad, strong thighs\n- Broad, strong hindquarters\n- Broad, strong tail (not visible in this image)\n- Broad, strong paws\n- Broad, strong chest\n-",
+            "- Broad head with a wrinkled forehead\n- Large, droopy ears\n- Short, smooth coat\n- Strong, muscular build\n- Broad chest\n- Broad muzzle\n- Dark eyes\n- Black nose\n- Broad jawline\n- Relaxed expression\n\nThese attributes collectively help distinguish a Bull Mastiff from other dog subclasses.",
+            "- Broad head with a wrinkled forehead\n- Large, droopy ears\n- Short, smooth coat\n- Broad muzzle\n- Strong, muscular build\n- Dark eyes\n- Black nose\n- Broad chest\n- Powerful jawline\n- Relaxed posture\n\nThese attributes are characteristic of a Bull Mastiff."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/104.Newfoundland/104.Newfoundland_n02111277_2885.jpg",
+        "label": "Newfoundland",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "curly fur",
+            "long fur"
+        ],
+        "descriptions": [
+            "- Dense, water-repellent coat\n- Curly texture\n- Broad head with short muzzle\n- Large, sturdy build\n- Heavyset body\n- Short legs\n- Broad chest\n- Dark eyes\n- Black nose",
+            "The dog exhibits thick, dense, and tightly curled fur, characteristic of Newfoundlands. The fur appears shiny and has a natural wave or curl, which is typical for this breed. The texture is soft and plush, with a rich black coloration that is common in Newfoundlands.",
+            "- Dense, water-repellent coat\n- Curly texture\n- Long fur covering the entire body\n- Heavy, thick fur around the neck and shoulders\n- Fur appears slightly matted in some areas\n- Dark coloration, possibly black or dark brown"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/076.Kelpie/076.Kelpie_n02105412_2249.jpg",
+        "label": "Kelpie",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "pointy ears",
+            "short tail"
+        ],
+        "descriptions": [
+            "The brown fur of the Kelpie in the image exhibits a rich, warm tone with subtle variations in shading. The fur appears dense and slightly wavy, with a mix of lighter and darker brown patches, particularly noticeable around the face and neck. The texture seems smooth but not overly sleek, typical of the breed's coat. The fur around the ears is slightly longer and more upright, adding to the distinctive look of the Kelpie.",
+            "The dog's pointy ears are medium-sized, standing erect with a slight curve at the tips, indicating alertness. The inner ear is visible, showing a pinkish hue, which is typical for Kelpies. The outer ear has a distinct triangular shape, with the base near the head and tapering towards the tip. The fur inside the ears appears soft and slightly darker than the outer coat. These features are characteristic of the Kelpie breed.",
+            "The dog in the image has a short tail, which is characteristic of the Kelpie breed. The tail appears to be slightly curved upwards at the tip, with a fine, short fur texture that blends seamlessly into the body's coat. The tail is not prominently visible due to the angle and the surrounding grass, but its presence is implied by the overall body structure and posture of the dog."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/074.Malinois/074.Malinois_n02105162_6449.jpg",
+        "label": "Malinois",
+        "label_id": 0,
+        "regions": [
+            "brown fur",
+            "black collar",
+            "red harness; black fur"
+        ],
+        "descriptions": [
+            "The brown fur of the Malinois dog exhibits a rich, deep hue with subtle variations in tone, ranging from a warm chestnut to a darker, almost mahogany shade. The fur appears dense and slightly wavy, with a noticeable sheen that highlights its quality. The texture seems smooth yet slightly coarse, typical of the breed's coat. The fur around the muzzle and legs has a lighter, more reddish-brown tint compared to the body, creating a distinct contrast.",
+            "The black collar worn by the Malinois dog in the image appears smooth, with a simple, solid design. It has no visible patterns or additional embellishments, suggesting a functional style typical for working dogs like Malinois. The collar fits snugly around the dog's neck, indicating it is likely made of durable material suitable for active use.",
+            "- Red harness with visible buckle and straps.\n- Black fur covering the head, ears, and face.\n- Brown fur on the body.\n- Pointed ears standing upright.\n- Alert expression with focused gaze.\n- Short, dense coat texture.\n- Malinois breed-specific facial structure and eye shape."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/052.West_Highland_White_Terrier/052.West_Highland_White_Terrier_n02098286_5979.jpg",
+        "label": "West Highland White Terrier",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "short fur",
+            "small size; white fur"
+        ],
+        "descriptions": [
+            "- Short, dense, and tightly curled fur\n- Ears that stand upright and slightly pointed\n- Distinctive facial markings with a dark muzzle and eyes\n- Compact body structure\n- White fur covering the entire body, including the face, ears, and legs",
+            "- Short, dense, and tightly curled fur covering the entire body.\n- Uniform white coloration with no visible markings or patterns.\n- Fine texture, smooth to the touch.\n- Ears stand upright and are covered in short fur.\n- Face has a distinctive expression with a slightly wrinkled forehead and alert eyes.\n- Body shape is compact and sturdy.\n\nThese attributes collectively help distinguish the West Highland White Terrier from other dog subclasses.",
+            "- Small size\n- White fur\n- Pointed ears\n- Compact body\n- Short, dense coat\n- Alert expression\n- Distinctive facial features\n- Stocky build"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/069.Sussex_Spaniel/069.Sussex_Spaniel_n02102480_6569.jpg",
+        "label": "Sussex Spaniel",
+        "label_id": 0,
+        "regions": [
+            "long hair",
+            "brown fur",
+            "long ears; long hair"
+        ],
+        "descriptions": [
+            "- Long, wavy fur covering the entire body.\n- Dense, rich brown coloration.\n- Ears are long and hang down, partially covering the eyes.\n- Fur appears slightly shaggy around the face and chest area.\n- Tail is not visible in this image but is typically long and feathered.\n- Overall, the coat has a luxurious, full appearance characteristic of the breed.",
+            "- Long, wavy fur covering the entire body.\n- Dense, rich brown coloration.\n- Ears are long and hang down, partially covering the eyes.\n- Fur appears slightly shaggy around the face and chest area.\n- Tail is not visible in this image but typically thick and curled over the back.\n- Overall coat texture looks soft and slightly tousled.",
+            "- Long, floppy ears that hang down to the sides.\n- Dense, wavy fur covering the body and ears.\n- Rich, chocolate brown coat with a slightly shaggy texture.\n- Ears are thick and covered in long, flowing hair.\n- Fur appears slightly tousled, giving a natural, unkempt look.\n- The overall appearance suggests a well-groomed but relaxed demeanor typical of the breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/091.Boxer/091.Boxer_n02108089_11154.jpg",
+        "label": "Boxer",
+        "label_id": 0,
+        "regions": [
+            "brindle coat",
+            "short hair",
+            "thick neck"
+        ],
+        "descriptions": [
+            "The dog exhibits a brindle coat characterized by a mottled pattern of dark and light stripes, with a white chest patch. The stripes are irregular in width and distribution, creating a distinctive and unique appearance typical of the brindle coloration in Boxers.",
+            "The dog exhibits short, smooth fur with a brindle coat pattern, characterized by a mix of dark and light brown stripes. The fur appears dense but not overly thick, typical for a Boxer breed. The face has a distinctive fawn coloration with darker markings around the eyes and ears, which is common in Boxers. The chest area displays a white patch, a trait often seen in certain Boxer color variations. The overall texture of the fur seems fine and close-fitting to the skin.",
+            "The dog exhibits a thick neck with prominent muscle definition, characteristic of the Boxer breed. The neck appears strong and robust, with visible jugular veins and a broad base connecting to the shoulders. The skin around the neck is taut and slightly wrinkled, typical of Boxers. The fur on the neck is short and smooth, maintaining a consistent coloration with the rest of the body."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/108.Chow/108.Chow_n02112137_2220.jpg",
+        "label": "Chow",
+        "label_id": 0,
+        "regions": [
+            "fluffy fur",
+            "brown fur",
+            "long fur"
+        ],
+        "descriptions": [
+            "- Dense, thick fur covering the entire body.\n- Fluffy, ruffled texture around the neck and chest.\n- Ears covered in long, soft fur.\n- Fur appears slightly wavy or curly.\n- Face has a distinctive \"mask\" of shorter fur around the eyes and nose.\n- Tail is bushy and curled over the back.\n- Overall coat color is a rich, warm brown with lighter underbelly fur.",
+            "- Fluffy texture\n- Dense coat\n- Curly fur\n- Broad head\n- Short muzzle\n- Prominent ears\n- Thick neck\n- Rounded body\n- Soft, plush appearance",
+            "- Fluffy coat\n- Dense undercoat\n- Straight, slightly wavy fur\n- Ears covered in fur\n- Face with a beard-like growth\n- Tail curled over back\n- Thick neck fur\n- Soft, plush texture"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/049.Tibetan_Terrier/049.Tibetan_Terrier_n02097474_3976.jpg",
+        "label": "Tibetan Terrier",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "long hair",
+            "black nose"
+        ],
+        "descriptions": [
+            "The Tibetan Terrier in the image exhibits a distinctive coat pattern characterized by:\n\n1. **Black and White Fur**: The dog has a predominantly black coat with white markings.\n2. **White Face Markings**: A prominent white stripe runs down the center of the face, extending from the forehead to the nose.\n3. **White Chest and Paws**: The chest and paws are covered in white fur.\n4. **Black Ears and Back**: The ears and back are primarily black, contrasting sharply with the white fur.\n5. **Fluffy Texture**: The fur appears soft and fluffy, typical of the breed's thick undercoat.\n\nThese attributes collectively help distinguish this Tibetan Terrier from other dog subclasses.",
+            "- Long, shaggy fur covering the entire body.\n- Distinctive facial markings with a white blaze running down the center of the forehead and around the muzzle.\n- Ears are long and hang down, partially obscuring the eyes.\n- The fur appears thick and fluffy, especially around the neck and chest area.\n- A mix of black and white fur, with the black often dominating the back and sides, while white is prominent on the face, chest, and legs.\n- The tail is not visible in this image but is typically long and bushy.\n\nThese attributes collectively help distinguish a Tibetan Terrier from other dog subclasses.",
+            "The Tibetan Terrier's black nose is smooth, shiny, and centrally located, with a slightly rounded shape. It contrasts sharply against the white fur around it, making it a distinctive feature. The nose appears moist, which is typical for this breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/056.Golden_Retriever/056.Golden_Retriever_n02099601_286.jpg",
+        "label": "Golden Retriever",
+        "label_id": 0,
+        "regions": [
+            "golden fur",
+            "medium size",
+            "long tail"
+        ],
+        "descriptions": [
+            "- Dense, medium-length fur with a warm golden hue.\n- Soft, slightly wavy texture.\n- Smooth coat with minimal undercoat.\n- Ears are floppy and hang down close to the head.\n- Tail is bushy and carried high or curled over the back when excited.\n- Muscular build with a broad chest and strong legs.\n- Facial features include a broad head, expressive eyes, and a short muzzle.",
+            "- Medium-sized body\n- Curly golden coat\n- Long tail with slight curl\n- Broad head with floppy ears\n- Strong, muscular build\n- Broad chest\n- Short muzzle\n- Medium-sized eyes\n- Ears that hang down",
+            "The long tail of the Golden Retriever in the image is fluffy, with a light golden color that matches the rest of its coat. It appears to be slightly curved upwards and has a bushy appearance at the tip. The tail is medium-sized relative to the dog's body size, which is characteristic of Golden Retrievers."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/097.Eskimo_Dog/097.Eskimo_Dog_n02109961_1017.jpg",
+        "label": "Eskimo Dog",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "black nose",
+            "black collar"
+        ],
+        "descriptions": [
+            "- Dense, fluffy white fur covering most of the body.\n- White fur on the chest and paws.\n- White fur on the underside of the neck and chin area.\n- White fur on the inner thighs.\n- White fur on the tail tip.\n- Clean, well-maintained white fur with no visible dirt or stains.",
+            "The dog's black nose is smooth, shiny, and centrally located on its snout, with a slightly rounded tip. It contrasts sharply against the lighter fur around it, which helps in distinguishing it as part of the Eskimo Dog breed.",
+            "- Material: Appears to be leather or synthetic fabric.\n- Shape: Collar is fitted snugly around the neck, likely adjustable.\n- Color: Solid black.\n- Buckle: Visible at the front, metallic in appearance.\n- Size: Fits the Eskimo Dog's neck comfortably.\n- Attachment: Has a tag attached, suggesting identification purposes."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/001.Japanese_Spaniel/001.Japanese_Spaniel_n02085782_1284.jpg",
+        "label": "Japanese Spaniel",
+        "label_id": 0,
+        "regions": [
+            "long fur",
+            "black and white fur",
+            "fluffy tail; long fur"
+        ],
+        "descriptions": [
+            "- Long, silky fur covering the entire body.\n- Dense, fluffy coat with a high volume.\n- Black and white coloration, with black fur predominantly on the head and ears, and white fur on the rest of the body.\n- Ears are long and hang down, partially covering the eyes.\n- Tail is bushy and thick, often curled over the back.\n- Fur appears soft and well-groomed, with a lustrous sheen.",
+            "The dog exhibits a predominantly white coat with distinct black markings. The black fur is concentrated around the face, ears, and back, creating a striking contrast against the white fur. The tail appears fluffy and predominantly white, with some black tips. The fur texture looks soft and silky, typical of the Japanese Spaniel breed.",
+            "- Fluffy tail with dense, soft fur\n- Long, flowing fur covering body\n- Black and white coloration\n- Ears hanging down, partially covering eyes\n- Compact body structure\n- Smooth, glossy coat texture\n- Distinctive facial markings"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/115.Standard_Poodle/115.Standard_Poodle_n02113799_1536.jpg",
+        "label": "Standard Poodle",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "curly fur",
+            "long hair"
+        ],
+        "descriptions": [
+            "- Dense, curly texture\n- Smooth, glossy sheen\n- Uniform coloration without patches or variations\n- Well-defined, fluffy coat around face and ears\n- Tight curls around muzzle and neck\n- Symmetrical, full body coverage",
+            "- Curly fur texture\n- Dense coat\n- Well-groomed appearance\n- Fluffy mane around face\n- Tapering tail\n- Symmetrical facial structure\n- Pronounced beard-like growth under chin",
+            "- Fluffy, dense coat\n- Curly texture\n- Long, flowing mane around face\n- Tapered tail\n- Symmetrical grooming style\n- Dense undercoat\n- Smooth, sleek appearance"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/065.Clumber/065.Clumber_n02101556_2517.jpg",
+        "label": "Clumber",
+        "label_id": 0,
+        "regions": [
+            "white fur",
+            "long floppy ears",
+            "short tail"
+        ],
+        "descriptions": [
+            "- Fluffy texture\n- Dense coat\n- Curly fur around ears\n- Broad head\n- Short muzzle\n- Large body size\n- Soft, plush appearance",
+            "The dog's long floppy ears are thick, soft, and slightly curled at the tips. They hang down close to the head, covering part of the eyes and nose, and have a gentle curve inward towards the face. The fur appears fluffy and slightly wavy, adding to their distinctive appearance.",
+            "The Clumber's tail is short, thick, and slightly rounded at the tip, with a soft, fluffy texture. It appears to be tucked close to the body, contributing to the breed's overall stocky build."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/016.English_Foxhound/016.English_Foxhound_n02089973_4084.jpg",
+        "label": "English Foxhound",
+        "label_id": 0,
+        "regions": [
+            "tricolor coat",
+            "long tail",
+            "short legs; tricolor coat"
+        ],
+        "descriptions": [
+            "The dog exhibits the classic tricolor coat pattern characteristic of the English Foxhound breed, featuring a predominantly white base with distinct patches of black and tan. The black coloration is concentrated around the ears, back, and tail tip, while the tan markings are present on the cheeks, chest, and legs. The white fur covers most of the body, creating a striking contrast against the darker areas.",
+            "The long tail of the English Foxhound in the image is predominantly white with a dark brown tip. It appears to be slightly curved upwards at the end, characteristic of the breed's tail shape. The tail is relatively thick near the body and tapers towards the tip.",
+            "- Short legs: The dog exhibits a compact build with relatively short limbs compared to its body size.\n- Tricolor coat: The coat displays a distinctive pattern of white, brown, and black markings, which is characteristic of the English Foxhound breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/103.Leonberg/103.Leonberg_n02111129_593.jpg",
+        "label": "Leonberg",
+        "label_id": 0,
+        "regions": [
+            "long fur",
+            "thick body",
+            "long tail; short fur"
+        ],
+        "descriptions": [
+            "- Dense, shaggy coat\n- Long fur covering the entire body\n- Darker coloration on the back with lighter fur on the underbelly and legs\n- Fluffy tail\n- Broad, muscular build\n- Thick neck fur\n- Well-defined facial features with a broad head and strong jawline",
+            "- Dense, long fur covering the entire body.\n- Broad chest and shoulders.\n- Muscular build with a thick neck.\n- Long, thick tail.\n- Distinctive coat pattern with a dark back and lighter sides.\n- Large, sturdy paws.\n- Broad head with a short muzzle.\n- Prominent ears that stand upright or fold over slightly.",
+            "- Long, thick tail with dense fur\n- Tail appears bushy and well-groomed\n- Short fur on body contrasts with longer fur on tail\n- Tail is held upright and slightly curved\n- Fur coloration: dark brown on top, lighter brown on sides and underside"
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/021.Whippet/021.Whippet_n02091134_18140.jpg",
+        "label": "Whippet",
+        "label_id": 0,
+        "regions": [
+            "black and white fur",
+            "thin straight legs",
+            "long narrow face; black and white fur"
+        ],
+        "descriptions": [
+            "The dog exhibits a sleek, slender build typical of Whippets, with a predominantly black coat featuring distinct white markings. The white fur is primarily concentrated on the chest, belly, and legs, creating a striking contrast against the black. The coat appears smooth and short, characteristic of the breed.",
+            "- Long, slender legs\n- Straight and parallel alignment\n- Elbows close to body\n- Moderate bone structure\n- Minimal muscle definition\n- Slight curve at the hock joint\n- Small paws with elongated toes\n\nThese attributes are characteristic of Whippets and help distinguish them from other dog subclasses.",
+            "- Long, narrow head with a slightly elongated snout\n- Black and white fur pattern, predominantly white with black markings\n- Lean, athletic build typical of Whippets\n- Pointed ears that stand erect\n- Small, dark eyes\n- Long tail, often carried low or tucked between legs when at rest\n\nThese attributes collectively help distinguish this dog as a Whippet."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/032.Kerry_Blue_Terrier/032.Kerry_Blue_Terrier_n02093859_1062.jpg",
+        "label": "Kerry Blue Terrier",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "curly fur",
+            "long tail; black fur"
+        ],
+        "descriptions": [
+            "- Coarse, curly texture\n- Medium-length fur\n- Glossy sheen\n- Dense coat covering body uniformly\n- Slightly wavy fur around face and ears\n- Tail curled upwards",
+            "- Dense, tightly curled fur covering the entire body.\n- Dark blue-gray coloration with a slightly lighter shade on the face and chest.\n- Curly fur appears thick and well-defined, giving the dog a robust appearance.\n- Fur texture is coarse and wavy, not smooth or straight.\n- The tail is short and curls upwards, ending in a tuft of fur.",
+            "- The tail is long and slightly curved upwards.\n- It has a dense coat of black fur with a slightly wavy texture.\n- The fur appears glossy and well-maintained.\n- The tail's color is consistent with the rest of the dog's body, maintaining the characteristic blue-black hue typical of Kerry Blue Terriers."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/055.Curly_coater_Retriever/055.Curly_coater_Retriever_n02099429_2559.jpg",
+        "label": "Curly-coater Retriever",
+        "label_id": 0,
+        "regions": [
+            "black coat",
+            "curly hair",
+            "long tail"
+        ],
+        "descriptions": [
+            "- Dense, curly fur covering the entire body.\n- Black coloration with no visible markings or patterns.\n- Coarse texture of the fur, giving it a slightly rough appearance.\n- Curly hair that appears tightly coiled and wavy.\n- Fur length varies across the body, with some areas appearing longer than others due to the curling nature.\n- Overall uniformity in coat color and texture.",
+            "- Dense, tightly curled fur covering the entire body.\n- Curly hair appears thick and voluminous.\n- Fur texture is wavy and not straight or smooth.\n- Hair length varies but maintains a consistent curl pattern across the coat.\n- Ears have long, floppy, and curly hair.\n- Face has a soft, rounded appearance due to the curls enveloping it.\n- Tail is covered in curly hair, blending seamlessly with the rest of the coat.",
+            "The long tail of the Curly-coated Retriever in the image is characterized by its dense, curly fur which appears dark and glossy. The tail is relatively thick and extends horizontally, slightly curved at the tip, blending seamlessly with the body's coat. Its texture contrasts with the smoother, straighter fur of the rest of the dog's body, making it a distinctive feature of this breed."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/054.Flat_coated_Retriever/054.Flat_coated_Retriever_n02099267_5001.jpg",
+        "label": "Flat-coated Retriever",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "long tongue",
+            "wet fur; black fur"
+        ],
+        "descriptions": [
+            "- Dense, flat coat\n- Smooth texture\n- Medium length\n- Glossy sheen\n- Uniform coloration\n- Ears that hang loosely\n- Broad head with expressive eyes\n- Strong jawline\n- Well-defined muzzle",
+            "The dog's long tongue is pink with visible veins, slightly curled at the edges, and appears moist. It is extended outward, indicating the dog might be panting or excited. The tongue's texture seems smooth and slightly glossy.",
+            "- Wet fur with a glossy sheen.\n- Black fur with a slightly wavy texture.\n- Long, floppy ears.\n- Broad head with a short muzzle.\n- Distinctive facial markings around the eyes and nose.\n- Medium-sized body with a sturdy build.\n- Tail held low or curled over the back."
+        ],
+        "superclass": "dog"
+    },
+    {
+        "img_path": "./datasets/dogs_120/images_discovery_all_3/093.Tibetan_Mastiff/093.Tibetan_Mastiff_n02108551_1968.jpg",
+        "label": "Tibetan Mastiff",
+        "label_id": 0,
+        "regions": [
+            "black fur",
+            "white fur",
+            "short fur"
+        ],
+        "descriptions": [
+            "- Dense, short to medium-length fur\n- Smooth texture\n- Glossy sheen\n- Uniform coloration across body\n- No visible white markings",
+            "The white fur on the Tibetan Mastiff puppy in the image is characterized by its small, distinct patch located on the chest area. This patch is relatively small compared to the overall body size and is surrounded by black fur. The white fur appears soft and fluffy, contrasting with the darker surrounding fur.",
+            "The dog in the image has short fur with a smooth texture, predominantly black in color. The fur appears dense but not overly thick, covering the entire body uniformly. There are no visible long, shaggy hairs or distinct facial tufts characteristic of Tibetan Mastiffs. The fur seems well-groomed and maintains a consistent length across the body."
+        ],
+        "superclass": "dog"
+    }
+]

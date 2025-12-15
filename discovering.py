@@ -331,7 +331,7 @@ def build_gallery(cfg, mllm_bot, captioner, retrieval, kshot=5,region_num=3, sup
 
 if __name__ == "__main__":
     """
-    CUDA_VISIBLE_DEVICES=1 python discovering.py --mode=build_gallery --config_file_env=./configs/env_machine.yml --config_file_expt=./configs/expts/dog120_all.yml --kshot=5 --region_num=3 --superclass=dog  --gallery_out=./experiments/dog120/gallery/dog120_gallery_concat.json --fusion_method=concat 2>&1 | tee ./logs/build_gallery_dog_concat_atten.log
+    CUDA_VISIBLE_DEVICES=1 python discovering.py --mode=build_gallery --config_file_env=./configs/env_machine.yml --config_file_expt=./configs/expts/dog120_all.yml --kshot=5 --region_num=3 --superclass=dog  --gallery_out=./experiments/dog120/gallery/dog120_gallery_concat_atten.json --fusion_method=concat 2>&1 | tee ./logs/build_gallery_dog_concat.log
     """
     parser = argparse.ArgumentParser(description='Discovery', formatter_class=argparse.ArgumentDefaultsHelpFormatter) 
 
@@ -484,11 +484,26 @@ if __name__ == "__main__":
         dump_json(cfg['path_llm_gussed_names'] + expt_id_suffix, gussed_names)  # 保存猜测的名称
     elif args.mode == 'build_gallery':
         """
+        CUDA_VISIBLE_DEVICES=1 python discovering.py --mode=build_gallery --config_file_env=./configs/env_machine.yml --config_file_expt=./configs/expts/dog120_all.yml --kshot=5 --region_num=3 --superclass=dog  --gallery_out=./experiments/dog120/gallery/dog120_gallery_concat_new_update.json --fusion_method=concat 2>&1 | tee ./logs/build_gallery_dog_concatnew_update.log
+
+        CUDA_VISIBLE_DEVICES=2 python discovering.py \
+        --mode=build_gallery \
+        --config_file_env=./configs/env_machine.yml \
+        --config_file_expt=./configs/expts/dog120_all.yml \
+        --kshot=5 --region_num=3 --superclass=dog \
+        --gallery_out=./experiments/dog120/gallery/dog120_gallery_complete_fix.json \
+        --fusion_method=concat 2>&1 | tee ./logs/build_gallery_dog_concatnew_update.log
+
+        # 测试
+        CUDA_VISIBLE_DEVICES=2 python multimodal_retrieval.py 2>&1 | \
+        tee ../logs/inference_complete_fix.log
+        """
+        """
         构建多模态类别模板库(gallery)
         训练样本来源优先级:cfg['path_train_samples']
         """
         if cfg['host'] in ["xiao"]:
-            mllm_bot = MLLMBot(model_tag=cfg['model_size_mllm'], model_name=cfg['model_size_mllm'], pai_enable_attn=True,device='cuda', device_id=cfg['device_id'], bit8=False) 
+            mllm_bot = MLLMBot(model_tag=cfg['model_size_mllm'], model_name=cfg['model_size_mllm'], pai_enable_attn=False,device='cuda', device_id=cfg['device_id'], bit8=False) 
         else: 
             mllm_bot = MLLMBot(model_tag=cfg['model_size_mllm'], model_name=cfg['model_size_mllm'], device='cpu')
 

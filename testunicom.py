@@ -24,12 +24,12 @@
 
 # print(f"Extracted features shape: {features.shape}")
 from difflib import SequenceMatcher
-def is_similar(str1, str2, threshold=0.7):
+def is_similar(str1, str2, threshold=0.3):
         """判断两个字符串是否语义相似"""
         
         similarity = SequenceMatcher(None, str1, str2).ratio()
         return similarity >= threshold
 
-prediction=' Shih-Tzu'
-predicted_category='Shih-Tzu'
+prediction='Dhole (Cuon alpinus)'
+predicted_category='chihuaha'
 print(is_similar(prediction,predicted_category))

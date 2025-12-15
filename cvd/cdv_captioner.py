@@ -123,8 +123,10 @@ class CDVCaptioner:
         # Prompt template from paper (formula 1)
         prompt = (
             f"We provide {t} images from different categories within the {superclass} that share similar visual features, "
-            f"and use them as references to generate {s} discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. "
-            "The first image is the target, followed by the references(if have). Output the regions as a comma-separated list."
+            f"and use them as references to generate {s} discriminative visual regions (e.g., descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. "
+            f"Focus ONLY on the {superclass} itself, ignore background, unrelated objects, and environmental elements. "
+            f"Each region should be a distinctive visual attribute of the {superclass} that helps differentiate it from other subclasses. "
+            "The first image is the target, followed by the references (if have). Output the regions as a comma-separated list."
         )
         
         # Call MLLM (LLaVA supports list of images)
@@ -177,7 +179,10 @@ class CDVCaptioner:
         # Prompt template from paper (formula 1)
         prompt = (
             f"We provide an image from {superclass}, "
-            f"please generate {s} visual regions that are discriminative compared to other subclasses (e.g., descriptive phrases like white fur, thin straight legs) to distinguish the target image's category. Output the regions as a comma-delimited list."
+            f"please generate {s} visual regions that are discriminative compared to other subclasses (e.g., descriptive phrases like white fur, thin straight legs) to distinguish the target image's category. "
+            f"Focus ONLY on the {superclass} itself - ignore background, unrelated objects, and environmental elements. "
+            f"Each region must be a distinctive visual attribute directly related to the {superclass} category. "
+            "Output the regions as a comma-delimited list."
         )
         
         # Call MLLM (LLaVA supports list of images)
@@ -224,9 +229,19 @@ class CDVCaptioner:
         for region in regions:    
             if label is not None:
                 # 构建阶段
-                prompt = f"Given an image, describe the visual attributes of {region} in the given {superclass} category, whose specific category is {label}."
+                prompt = (
+                    f"Given an image, describe ONLY the visual attributes of {region} that belong to the {superclass} itself, "
+                    f"whose specific category is {label}. Focus on fine-grained, discriminative features of {region}. "
+                    f"Ignore background, unrelated objects, and environmental context. "
+                    f"Output concise, category-specific attributes that help distinguish {label} from other {superclass} subclasses."
+                )
             else:
-                prompt = f"Given an image, describe the visual attributes of {region} in the {superclass} category."
+                prompt = (
+                    f"Given an image, describe ONLY the visual attributes of {region} that belong to the {superclass} itself. "
+                    f"Focus on fine-grained, discriminative features of {region}. "
+                    f"Ignore background, unrelated objects, and environmental context. "
+                    f"Output concise, category-specific attributes."
+                )
             reply, output = mllm_bot.describe_attribute(image, prompt)
             description = ", ".join(output)
             descriptions.append(description)
@@ -270,13 +285,17 @@ class CDVCaptioner:
             # 构建流程
             prompt = (
                 f"Summarize the information you get about the {label} from the attribute description:\n{attr_info}\n"
-                f"Output a structured description."
+                f"Focus ONLY on category-discriminative features of the {superclass} itself. "
+                f"Exclude any mentions of background, unrelated objects, or environmental elements. "
+                f"Output a structured, concise description that aggregates fine-grained visual attributes specific to {label}."
             )
         else:
             # 测试流程
             prompt = (
                 f"Summarize the information you get about the {superclass} from the attribute description:\n{attr_info}\n"
-                "Output a concise structured description."
+                f"Focus ONLY on category-discriminative features of the {superclass} itself. "
+                f"Exclude any mentions of background, unrelated objects, or environmental elements. "
+                f"Output a concise, structured description that aggregates fine-grained visual attributes."
             )
         reply, output = mllm_bot.describe_attribute(image, prompt)
         output = ", ".join(output)

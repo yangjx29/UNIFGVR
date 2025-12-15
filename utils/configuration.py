@@ -103,7 +103,7 @@ def setup_config(config_file_env: str, config_file_expt: str):
     cfg_expt['path_regions'] = os.path.join(cfg_expt['expt_dir_gallery'], 
                                             f"{cfg_expt['dataset_name']}_image_regions")
     cfg_expt['path_descriptions'] = os.path.join(cfg_expt['expt_dir_gallery'], 
-                                    f"{cfg_expt['dataset_name']}_image_descriptions")
+                                    f"{cfg_expt['dataset_name']}_image_descriptions_new")
 
 
     # for Stage Grouping evaluation - 为分组评估阶段配置

@@ -1,0 +1,944 @@
+/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: '/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torchvision/image.so: undefined symbol: _ZN3c1017RegisterOperatorsD1Ev'If you don't plan on using image functionality from `torchvision.io`, you can ignore this warning. Otherwise, there might be something wrong with your environment. Did you have `libjpeg` or `libpng` installed before building `torchvision` from source?
+  warn(
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.48, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Namespace(mode='build_gallery', config_file_env='./configs/env_machine.yml', config_file_expt='./configs/expts/dog120_all.yml', num_per_category='3', kshot=5, region_num=3, superclass='dog', gallery_out='./experiments/dog120/gallery/dog120_gallery_concat_atten.json', fusion_method='concat')
+{'setup': 'ours', 'experiment': 5.0, 'dataset_name': 'dog', 'num_classes': 120, 'num_base': 60, 'num_novel': 60, 'seed': 1, 'batch_size': 256, 'clustering_method': 'multi_clip_voting', 'model_size': 'ViT-B/16', 'model_size_vqa': 'OPT6.7B-COCO', 'model_size_mllm': 'Qwen2.5-VL-7B', 'model_type_llm': 'gpt-3.5-turbo', 'image_size': 224, 'verbose': False, 'host': 'xiao', 'num_workers': 16, 'device': 'cuda', 'device_count': '1', 'device_id': '0', 'data_dir': './datasets/dogs_120', 'expt_dir': './experiments/dog120', 'expt_dir_describe': './experiments/dog120/describe', 'path_vqa_questions': './experiments/dog120/describe/dog_vqa_questions_ours', 'path_vqa_answers': './experiments/dog120/describe/dog_attributes_pairs', 'path_llm_prompts': './experiments/dog120/describe/dog_llm_prompts', 'path_identify_answers': './experiments/dog120/identify', 'expt_dir_guess': './experiments/dog120/guess', 'path_llm_replies_raw': './experiments/dog120/guess/dog_llm_replies_raw', 'path_llm_replies_jsoned': './experiments/dog120/guess/dog_llm_replies_jsoned', 'path_llm_gussed_names': './experiments/dog120/guess/dog_llm_gussed_names', 'expt_dir_gallery': './experiments/dog120/gallery', 'path_references': './experiments/dog120/gallery/dog_image_references', 'path_regions': './experiments/dog120/gallery/dog_image_regions', 'path_descriptions': './experiments/dog120/gallery/dog_image_descriptions_attn', 'expt_dir_grouping': './experiments/dog120/grouping'}
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:05<00:23,  5.97s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:11<00:18,  6.00s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:18<00:12,  6.02s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:23<00:05,  5.98s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:25<00:00,  4.43s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:25<00:00,  5.13s/it]
+HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Salesforce/blip-itm-base-coco/bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c/preprocessor_config.json
+Retrying in 1s [Retry 1/5].
+HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Salesforce/blip-itm-base-coco/bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c/preprocessor_config.json
+Retrying in 2s [Retry 2/5].
+HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Salesforce/blip-itm-base-coco/bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c/preprocessor_config.json
+Retrying in 4s [Retry 3/5].
+HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Salesforce/blip-itm-base-coco/bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c/preprocessor_config.json
+Retrying in 8s [Retry 4/5].
+HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Salesforce/blip-itm-base-coco/bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c/preprocessor_config.json
+Retrying in 8s [Retry 5/5].
+HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Salesforce/blip-itm-base-coco/bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c/preprocessor_config.json
+HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Salesforce/blip-itm-base-coco/bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c/preprocessor_config.json
+Retrying in 1s [Retry 1/5].
+HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Salesforce/blip-itm-base-coco/bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c/preprocessor_config.json
+Retrying in 2s [Retry 2/5].
+HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Salesforce/blip-itm-base-coco/bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c/preprocessor_config.json
+Retrying in 4s [Retry 3/5].
+HTTP Error 429 thrown while requesting HEAD https://hf-mirror.com/api/resolve-cache/models/Salesforce/blip-itm-base-coco/bed8ad38cb2d04a5a4bdf2d071b3c3c0a4aa724c/preprocessor_config.json
+Retrying in 8s [Retry 4/5].
+local_model_path: /home/Dataset/Models/Qwen/Qwen2.5-VL-7B-Instruct
+构建发现集,img_root: ./datasets/dogs_120/images_discovery_all_3
+subcat_to_sample: {'Black-and-tan Coonhound': './datasets/dogs_120/images_discovery_all_3/014.Black_and_tan_Coonhound/014.Black_and_tan_Coonhound_n02089078_1275.jpg', 'Boston Bull': './datasets/dogs_120/images_discovery_all_3/044.Boston_Bull/044.Boston_Bull_n02096585_9834.jpg', 'Dandi Dinmont': './datasets/dogs_120/images_discovery_all_3/043.Dandi_Dinmont/043.Dandi_Dinmont_n02096437_858.jpg', 'Maltese Dog': './datasets/dogs_120/images_discovery_all_3/002.Maltese_Dog/002.Maltese_Dog_n02085936_4188.jpg', 'Basset Hound': './datasets/dogs_120/images_discovery_all_3/010.Basset_Hound/010.Basset_Hound_n02088238_9025.jpg', 'French Bulldog': './datasets/dogs_120/images_discovery_all_3/094.French_Bulldog/094.French_Bulldog_n02108915_2570.jpg', 'Afghan Hound': './datasets/dogs_120/images_discovery_all_3/009.Afghan_Hound/009.Afghan_Hound_n02088094_4464.jpg', 'American Staffordshire Terrier': './datasets/dogs_120/images_discovery_all_3/029.American_Staffordshire_Terrier/029.American_Staffordshire_Terrier_n02093428_1351.jpg', 'Norwich Terrier': './datasets/dogs_120/images_discovery_all_3/035.Norwich_Terrier/035.Norwich_Terrier_n02094258_2070.jpg', 'Miniature Pinscher': './datasets/dogs_120/images_discovery_all_3/086.Miniature_Pinscher/086.Miniature_Pinscher_n02107312_5567.jpg', 'Dhole': './datasets/dogs_120/images_discovery_all_3/118.Dhole/118.Dhole_n02115913_4542.jpg', 'Schipperke': './datasets/dogs_120/images_discovery_all_3/072.Schipperke/072.Schipperke_n02104365_1292.jpg', 'Staffordshire Bullterrier': './datasets/dogs_120/images_discovery_all_3/028.Staffordshire_Bullterrier/028.Staffordshire_Bullterrier_n02093256_4374.jpg', 'Komondor': './datasets/dogs_120/images_discovery_all_3/077.Komondor/077.Komondor_n02105505_955.jpg', 'Shetland Sheepdog': './datasets/dogs_120/images_discovery_all_3/079.Shetland_Sheepdog/079.Shetland_Sheepdog_n02105855_13071.jpg', 'Pembroke': './datasets/dogs_120/images_discovery_all_3/111.Pembroke/111.Pembroke_n02113023_4893.jpg', 'Chesapeake Bay Retriever': './datasets/dogs_120/images_discovery_all_3/058.Chesapeake_Bay_Retriever/058.Chesapeake_Bay_Retriever_n02099849_2581.jpg', 'Pekinese': './datasets/dogs_120/images_discovery_all_3/003.Pekinese/003.Pekinese_n02086079_869.jpg', 'Saluki': './datasets/dogs_120/images_discovery_all_3/025.Saluki/025.Saluki_n02091831_2232.jpg', 'Pug': './datasets/dogs_120/images_discovery_all_3/102.Pug/102.Pug_n02110958_12224.jpg', 'Irish Setter': './datasets/dogs_120/images_discovery_all_3/062.Irish_Setter/062.Irish_Setter_n02100877_2599.jpg', 'English Springer Spaniel': './datasets/dogs_120/images_discovery_all_3/066.English_Springer_Spaniel/066.English_Springer_Spaniel_n02102040_7895.jpg', 'Labrador Retriever': './datasets/dogs_120/images_discovery_all_3/057.Labrador_Retriever/057.Labrador_Retriever_n02099712_6455.jpg', 'Toy Terrier': './datasets/dogs_120/images_discovery_all_3/007.Toy_Terrier/007.Toy_Terrier_n02087046_5407.jpg', 'German Shepard': './datasets/dogs_120/images_discovery_all_3/084.German_Shepard/084.German_Shepard_n02106662_8870.jpg', 'Scotch Terrier': './datasets/dogs_120/images_discovery_all_3/048.Scotch_Terrier/048.Scotch_Terrier_n02097298_13186.jpg', 'EntleBucher': './datasets/dogs_120/images_discovery_all_3/090.EntleBucher/090.EntleBucher_n02108000_446.jpg', 'German Short-haired Pointer': './datasets/dogs_120/images_discovery_all_3/059.German_Short_haired_Pointer/059.German_Short_haired_Pointer_n02100236_1164.jpg', 'Standard Schnauzer': './datasets/dogs_120/images_discovery_all_3/047.Standard_Schnauzer/047.Standard_Schnauzer_n02097209_1517.jpg', 'Miniature Schnauzer': './datasets/dogs_120/images_discovery_all_3/045.Miniature_Schnauzer/045.Miniature_Schnauzer_n02097047_1352.jpg', 'Shih-Tzu': './datasets/dogs_120/images_discovery_all_3/004.Shih_Tzu/004.Shih_Tzu_n02086240_34.jpg', 'Brittany': './datasets/dogs_120/images_discovery_all_3/064.Brittany/064.Brittany_n02101388_9320.jpg', 'Lhasa': './datasets/dogs_120/images_discovery_all_3/053.Lhasa/053.Lhasa_n02098413_4238.jpg', 'Australian Terrier': './datasets/dogs_120/images_discovery_all_3/042.Australian_Terrier/042.Australian_Terrier_n02096294_7295.jpg', 'Sealyham Terrier': './datasets/dogs_120/images_discovery_all_3/039.Sealyham_Terrier/039.Sealyham_Terrier_n02095889_1476.jpg', 'Welsh Springer Spaniel': './datasets/dogs_120/images_discovery_all_3/067.Welsh_Springer_Spaniel/067.Welsh_Springer_Spaniel_n02102177_2911.jpg', 'Cocker Spaniel': './datasets/dogs_120/images_discovery_all_3/068.Cocker_Spaniel/068.Cocker_Spaniel_n02102318_11443.jpg', 'Appenzeller': './datasets/dogs_120/images_discovery_all_3/089.Appenzeller/089.Appenzeller_n02107908_5162.jpg', 'Redbone': './datasets/dogs_120/images_discovery_all_3/017.Redbone/017.Redbone_n02090379_2453.jpg', 'African Hunting Dog': './datasets/dogs_120/images_discovery_all_3/119.African_Hunting_Dog/119.African_Hunting_Dog_n02116738_6038.jpg', 'Toy Poodle': './datasets/dogs_120/images_discovery_all_3/113.Toy_Poodle/113.Toy_Poodle_n02113624_479.jpg', 'Weimaraner': './datasets/dogs_120/images_discovery_all_3/027.Weimaraner/027.Weimaraner_n02092339_7468.jpg', 'Cairn': './datasets/dogs_120/images_discovery_all_3/041.Cairn/041.Cairn_n02096177_4734.jpg', 'Dingo': './datasets/dogs_120/images_discovery_all_3/117.Dingo/117.Dingo_n02115641_6509.jpg', 'Norfolk Terrier': './datasets/dogs_120/images_discovery_all_3/034.Norfolk_Terrier/034.Norfolk_Terrier_n02094114_3248.jpg', 'Miniature Poodle': './datasets/dogs_120/images_discovery_all_3/114.Miniature_Poodle/114.Miniature_Poodle_n02113712_5210.jpg', 'Doberman': './datasets/dogs_120/images_discovery_all_3/085.Doberman/085.Doberman_n02107142_1193.jpg', 'Mexican Hairless': './datasets/dogs_120/images_discovery_all_3/116.Mexican_Hairless/116.Mexican_Hairless_n02113978_3670.jpg', 'Groenendael': './datasets/dogs_120/images_discovery_all_3/073.Groenendael/073.Groenendael_n02105056_5855.jpg', 'Bloodhound': './datasets/dogs_120/images_discovery_all_3/012.Bloodhound/012.Bloodhound_n02088466_8184.jpg', 'Bernese Mountain Dog': './datasets/dogs_120/images_discovery_all_3/088.Bernese_Mountain_Dog/088.Bernese_Mountain_Dog_n02107683_6301.jpg', 'Great Dane': './datasets/dogs_120/images_discovery_all_3/095.Great_Dane/095.Great_Dane_n02109047_17629.jpg', 'Airedale': './datasets/dogs_120/images_discovery_all_3/040.Airedale/040.Airedale_n02096051_2890.jpg', 'Pomeranian': './datasets/dogs_120/images_discovery_all_3/107.Pomeranian/107.Pomeranian_n02112018_2811.jpg', 'Bouvier des Flandres': './datasets/dogs_120/images_discovery_all_3/082.Bouvier_des_Flandres/082.Bouvier_des_Flandres_n02106382_1963.jpg', 'Irish Wolfhound': './datasets/dogs_120/images_discovery_all_3/019.Irish_Wolfhound/019.Irish_Wolfhound_n02090721_1026.jpg', 'Greater Swiss Mountain Dog': './datasets/dogs_120/images_discovery_all_3/087.Greater_Swiss_Mountain_Dog/087.Greater_Swiss_Mountain_Dog_n02107574_3270.jpg', 'Siberian Husky': './datasets/dogs_120/images_discovery_all_3/099.Siberian_Husky/099.Siberian_Husky_n02110185_13942.jpg', 'Briard': './datasets/dogs_120/images_discovery_all_3/075.Briard/075.Briard_n02105251_252.jpg', 'Irish Terrier': './datasets/dogs_120/images_discovery_all_3/033.Irish_Terrier/033.Irish_Terrier_n02093991_4441.jpg', 'Bluetick': './datasets/dogs_120/images_discovery_all_3/013.Bluetick/013.Bluetick_n02088632_512.jpg', 'English Setter': './datasets/dogs_120/images_discovery_all_3/061.English_Setter/061.English_Setter_n02100735_3899.jpg', 'Italian Greyhound': './datasets/dogs_120/images_discovery_all_3/020.Italian_Greyhound/020.Italian_Greyhound_n02091032_11812.jpg', 'Cardigan': './datasets/dogs_120/images_discovery_all_3/112.Cardigan/112.Cardigan_n02113186_2433.jpg', 'Gordon Setter': './datasets/dogs_120/images_discovery_all_3/063.Gordon_Setter/063.Gordon_Setter_n02101006_4223.jpg', 'Rottweiler': './datasets/dogs_120/images_discovery_all_3/083.Rottweiler/083.Rottweiler_n02106550_7003.jpg', 'Borzoi': './datasets/dogs_120/images_discovery_all_3/018.Borzoi/018.Borzoi_n02090622_6894.jpg', 'Rhodesian Ridgeback': './datasets/dogs_120/images_discovery_all_3/008.Rhodesian_Ridgeback/008.Rhodesian_Ridgeback_n02087394_7771.jpg', 'Silky Terrier': './datasets/dogs_120/images_discovery_all_3/050.Silky_Terrier/050.Silky_Terrier_n02097658_4201.jpg', 'Malamute': './datasets/dogs_120/images_discovery_all_3/098.Malamute/098.Malamute_n02110063_8977.jpg', 'Irish Water Spaniel': './datasets/dogs_120/images_discovery_all_3/070.Irish_Water_Spaniel/070.Irish_Water_Spaniel_n02102973_2226.jpg', 'Affenpinscher': './datasets/dogs_120/images_discovery_all_3/100.Affenpinscher/100.Affenpinscher_n02110627_13553.jpg', 'Old English Sheepdog': './datasets/dogs_120/images_discovery_all_3/078.Old_English_Sheepdog/078.Old_English_Sheepdog_n02105641_3540.jpg', 'Samoyed': './datasets/dogs_120/images_discovery_all_3/106.Samoyed/106.Samoyed_n02111889_789.jpg', 'Ibizian Hound': './datasets/dogs_120/images_discovery_all_3/022.Ibizian_Hound/022.Ibizian_Hound_n02091244_4669.jpg', 'Chihuaha': './datasets/dogs_120/images_discovery_all_3/000.Chihuaha/000.Chihuaha_n02085620_7613.jpg', 'Norwegian Elkhound': './datasets/dogs_120/images_discovery_all_3/023.Norwegian_Elkhound/023.Norwegian_Elkhound_n02091467_1406.jpg', 'Yorkshire Terrier': './datasets/dogs_120/images_discovery_all_3/036.Yorkshire_Terrier/036.Yorkshire_Terrier_n02094433_5868.jpg', 'Wirehaired Fox Terrier': './datasets/dogs_120/images_discovery_all_3/037.Wirehaired_Fox_Terrier/037.Wirehaired_Fox_Terrier_n02095314_3316.jpg', 'Beagle': './datasets/dogs_120/images_discovery_all_3/011.Beagle/011.Beagle_n02088364_14690.jpg', 'Keeshond': './datasets/dogs_120/images_discovery_all_3/109.Keeshond/109.Keeshond_n02112350_6659.jpg', 'Walker Hound': './datasets/dogs_120/images_discovery_all_3/015.Walker_Hound/015.Walker_Hound_n02089867_1786.jpg', 'Basenji': './datasets/dogs_120/images_discovery_all_3/101.Basenji/101.Basenji_n02110806_1382.jpg', 'Great Pyrenees': './datasets/dogs_120/images_discovery_all_3/105.Great_Pyrenees/105.Great_Pyrenees_n02111500_3052.jpg', 'Giant Schnauzer': './datasets/dogs_120/images_discovery_all_3/046.Giant_Schnauzer/046.Giant_Schnauzer_n02097130_582.jpg', 'Papillon': './datasets/dogs_120/images_discovery_all_3/006.Papillon/006.Papillon_n02086910_9355.jpg', 'Otterhound': './datasets/dogs_120/images_discovery_all_3/024.Otterhound/024.Otterhound_n02091635_2725.jpg', 'Border Terrier': './datasets/dogs_120/images_discovery_all_3/031.Border_Terrier/031.Border_Terrier_n02093754_2425.jpg', 'Bedlington Terrier': './datasets/dogs_120/images_discovery_all_3/030.Bedlington_Terrier/030.Bedlington_Terrier_n02093647_1247.jpg', 'Soft-coated Wheaten Terrier': './datasets/dogs_120/images_discovery_all_3/051.Soft_coated_Wheaten_Terrier/051.Soft_coated_Wheaten_Terrier_n02098105_2872.jpg', 'Kuvasz': './datasets/dogs_120/images_discovery_all_3/071.Kuvasz/071.Kuvasz_n02104029_4492.jpg', 'Brabancon Griffon': './datasets/dogs_120/images_discovery_all_3/110.Brabancon_Griffon/110.Brabancon_Griffon_n02112706_1561.jpg', 'Vizsla': './datasets/dogs_120/images_discovery_all_3/060.Vizsla/060.Vizsla_n02100583_7904.jpg', 'Scottish Deerhound': './datasets/dogs_120/images_discovery_all_3/026.Scottish_Deerhound/026.Scottish_Deerhound_n02092002_3494.jpg', 'Collie': './datasets/dogs_120/images_discovery_all_3/081.Border_Collie/081.Border_Collie_n02106166_3996.jpg', 'Saint Bernard': './datasets/dogs_120/images_discovery_all_3/096.Saint_Bernard/096.Saint_Bernard_n02109525_18371.jpg', 'Blenheim Spaniel': './datasets/dogs_120/images_discovery_all_3/005.Blenheim_Spaniel/005.Blenheim_Spaniel_n02086646_602.jpg', 'Lakeland Terrier': './datasets/dogs_120/images_discovery_all_3/038.Lakeland_Terrier/038.Lakeland_Terrier_n02095570_315.jpg', 'Bull Mastiff': './datasets/dogs_120/images_discovery_all_3/092.Bull_Mastiff/092.Bull_Mastiff_n02108422_2949.jpg', 'Newfoundland': './datasets/dogs_120/images_discovery_all_3/104.Newfoundland/104.Newfoundland_n02111277_2885.jpg', 'Kelpie': './datasets/dogs_120/images_discovery_all_3/076.Kelpie/076.Kelpie_n02105412_2249.jpg', 'Malinois': './datasets/dogs_120/images_discovery_all_3/074.Malinois/074.Malinois_n02105162_6449.jpg', 'West Highland White Terrier': './datasets/dogs_120/images_discovery_all_3/052.West_Highland_White_Terrier/052.West_Highland_White_Terrier_n02098286_5979.jpg', 'Sussex Spaniel': './datasets/dogs_120/images_discovery_all_3/069.Sussex_Spaniel/069.Sussex_Spaniel_n02102480_6569.jpg', 'Boxer': './datasets/dogs_120/images_discovery_all_3/091.Boxer/091.Boxer_n02108089_11154.jpg', 'Chow': './datasets/dogs_120/images_discovery_all_3/108.Chow/108.Chow_n02112137_2220.jpg', 'Tibetan Terrier': './datasets/dogs_120/images_discovery_all_3/049.Tibetan_Terrier/049.Tibetan_Terrier_n02097474_3976.jpg', 'Golden Retriever': './datasets/dogs_120/images_discovery_all_3/056.Golden_Retriever/056.Golden_Retriever_n02099601_286.jpg', 'Eskimo Dog': './datasets/dogs_120/images_discovery_all_3/097.Eskimo_Dog/097.Eskimo_Dog_n02109961_1017.jpg', 'Japanese Spaniel': './datasets/dogs_120/images_discovery_all_3/001.Japanese_Spaniel/001.Japanese_Spaniel_n02085782_1284.jpg', 'Standard Poodle': './datasets/dogs_120/images_discovery_all_3/115.Standard_Poodle/115.Standard_Poodle_n02113799_1536.jpg', 'Clumber': './datasets/dogs_120/images_discovery_all_3/065.Clumber/065.Clumber_n02101556_2517.jpg', 'English Foxhound': './datasets/dogs_120/images_discovery_all_3/016.English_Foxhound/016.English_Foxhound_n02089973_4084.jpg', 'Leonberg': './datasets/dogs_120/images_discovery_all_3/103.Leonberg/103.Leonberg_n02111129_593.jpg', 'Whippet': './datasets/dogs_120/images_discovery_all_3/021.Whippet/021.Whippet_n02091134_18140.jpg', 'Kerry Blue Terrier': './datasets/dogs_120/images_discovery_all_3/032.Kerry_Blue_Terrier/032.Kerry_Blue_Terrier_n02093859_1062.jpg', 'Curly-coater Retriever': './datasets/dogs_120/images_discovery_all_3/055.Curly_coater_Retriever/055.Curly_coater_Retriever_n02099429_2559.jpg', 'Flat-coated Retriever': './datasets/dogs_120/images_discovery_all_3/054.Flat_coated_Retriever/054.Flat_coated_Retriever_n02099267_5001.jpg', 'Tibetan Mastiff': './datasets/dogs_120/images_discovery_all_3/093.Tibetan_Mastiff/093.Tibetan_Mastiff_n02108551_1968.jpg'}
+loaded train samples for 119 classes, kshot=5
+train_samples: defaultdict(<class 'list'>, {'Black-and-tan Coonhound': ['./datasets/dogs_120/images_discovery_all_3/014.Black_and_tan_Coonhound/014.Black_and_tan_Coonhound_n02089078_1275.jpg'], 'Boston Bull': ['./datasets/dogs_120/images_discovery_all_3/044.Boston_Bull/044.Boston_Bull_n02096585_9834.jpg'], 'Dandi Dinmont': ['./datasets/dogs_120/images_discovery_all_3/043.Dandi_Dinmont/043.Dandi_Dinmont_n02096437_858.jpg'], 'Maltese Dog': ['./datasets/dogs_120/images_discovery_all_3/002.Maltese_Dog/002.Maltese_Dog_n02085936_4188.jpg'], 'Basset Hound': ['./datasets/dogs_120/images_discovery_all_3/010.Basset_Hound/010.Basset_Hound_n02088238_9025.jpg'], 'French Bulldog': ['./datasets/dogs_120/images_discovery_all_3/094.French_Bulldog/094.French_Bulldog_n02108915_2570.jpg'], 'Afghan Hound': ['./datasets/dogs_120/images_discovery_all_3/009.Afghan_Hound/009.Afghan_Hound_n02088094_4464.jpg'], 'American Staffordshire Terrier': ['./datasets/dogs_120/images_discovery_all_3/029.American_Staffordshire_Terrier/029.American_Staffordshire_Terrier_n02093428_1351.jpg'], 'Norwich Terrier': ['./datasets/dogs_120/images_discovery_all_3/035.Norwich_Terrier/035.Norwich_Terrier_n02094258_2070.jpg'], 'Miniature Pinscher': ['./datasets/dogs_120/images_discovery_all_3/086.Miniature_Pinscher/086.Miniature_Pinscher_n02107312_5567.jpg'], 'Dhole': ['./datasets/dogs_120/images_discovery_all_3/118.Dhole/118.Dhole_n02115913_4542.jpg'], 'Schipperke': ['./datasets/dogs_120/images_discovery_all_3/072.Schipperke/072.Schipperke_n02104365_1292.jpg'], 'Staffordshire Bullterrier': ['./datasets/dogs_120/images_discovery_all_3/028.Staffordshire_Bullterrier/028.Staffordshire_Bullterrier_n02093256_4374.jpg'], 'Komondor': ['./datasets/dogs_120/images_discovery_all_3/077.Komondor/077.Komondor_n02105505_955.jpg'], 'Shetland Sheepdog': ['./datasets/dogs_120/images_discovery_all_3/079.Shetland_Sheepdog/079.Shetland_Sheepdog_n02105855_13071.jpg'], 'Pembroke': ['./datasets/dogs_120/images_discovery_all_3/111.Pembroke/111.Pembroke_n02113023_4893.jpg'], 'Chesapeake Bay Retriever': ['./datasets/dogs_120/images_discovery_all_3/058.Chesapeake_Bay_Retriever/058.Chesapeake_Bay_Retriever_n02099849_2581.jpg'], 'Pekinese': ['./datasets/dogs_120/images_discovery_all_3/003.Pekinese/003.Pekinese_n02086079_869.jpg'], 'Saluki': ['./datasets/dogs_120/images_discovery_all_3/025.Saluki/025.Saluki_n02091831_2232.jpg'], 'Pug': ['./datasets/dogs_120/images_discovery_all_3/102.Pug/102.Pug_n02110958_12224.jpg'], 'Irish Setter': ['./datasets/dogs_120/images_discovery_all_3/062.Irish_Setter/062.Irish_Setter_n02100877_2599.jpg'], 'English Springer Spaniel': ['./datasets/dogs_120/images_discovery_all_3/066.English_Springer_Spaniel/066.English_Springer_Spaniel_n02102040_7895.jpg'], 'Labrador Retriever': ['./datasets/dogs_120/images_discovery_all_3/057.Labrador_Retriever/057.Labrador_Retriever_n02099712_6455.jpg'], 'Toy Terrier': ['./datasets/dogs_120/images_discovery_all_3/007.Toy_Terrier/007.Toy_Terrier_n02087046_5407.jpg'], 'German Shepard': ['./datasets/dogs_120/images_discovery_all_3/084.German_Shepard/084.German_Shepard_n02106662_8870.jpg'], 'Scotch Terrier': ['./datasets/dogs_120/images_discovery_all_3/048.Scotch_Terrier/048.Scotch_Terrier_n02097298_13186.jpg'], 'EntleBucher': ['./datasets/dogs_120/images_discovery_all_3/090.EntleBucher/090.EntleBucher_n02108000_446.jpg'], 'German Short-haired Pointer': ['./datasets/dogs_120/images_discovery_all_3/059.German_Short_haired_Pointer/059.German_Short_haired_Pointer_n02100236_1164.jpg'], 'Standard Schnauzer': ['./datasets/dogs_120/images_discovery_all_3/047.Standard_Schnauzer/047.Standard_Schnauzer_n02097209_1517.jpg'], 'Miniature Schnauzer': ['./datasets/dogs_120/images_discovery_all_3/045.Miniature_Schnauzer/045.Miniature_Schnauzer_n02097047_1352.jpg'], 'Shih-Tzu': ['./datasets/dogs_120/images_discovery_all_3/004.Shih_Tzu/004.Shih_Tzu_n02086240_34.jpg'], 'Brittany': ['./datasets/dogs_120/images_discovery_all_3/064.Brittany/064.Brittany_n02101388_9320.jpg'], 'Lhasa': ['./datasets/dogs_120/images_discovery_all_3/053.Lhasa/053.Lhasa_n02098413_4238.jpg'], 'Australian Terrier': ['./datasets/dogs_120/images_discovery_all_3/042.Australian_Terrier/042.Australian_Terrier_n02096294_7295.jpg'], 'Sealyham Terrier': ['./datasets/dogs_120/images_discovery_all_3/039.Sealyham_Terrier/039.Sealyham_Terrier_n02095889_1476.jpg'], 'Welsh Springer Spaniel': ['./datasets/dogs_120/images_discovery_all_3/067.Welsh_Springer_Spaniel/067.Welsh_Springer_Spaniel_n02102177_2911.jpg'], 'Cocker Spaniel': ['./datasets/dogs_120/images_discovery_all_3/068.Cocker_Spaniel/068.Cocker_Spaniel_n02102318_11443.jpg'], 'Appenzeller': ['./datasets/dogs_120/images_discovery_all_3/089.Appenzeller/089.Appenzeller_n02107908_5162.jpg'], 'Redbone': ['./datasets/dogs_120/images_discovery_all_3/017.Redbone/017.Redbone_n02090379_2453.jpg'], 'African Hunting Dog': ['./datasets/dogs_120/images_discovery_all_3/119.African_Hunting_Dog/119.African_Hunting_Dog_n02116738_6038.jpg'], 'Toy Poodle': ['./datasets/dogs_120/images_discovery_all_3/113.Toy_Poodle/113.Toy_Poodle_n02113624_479.jpg'], 'Weimaraner': ['./datasets/dogs_120/images_discovery_all_3/027.Weimaraner/027.Weimaraner_n02092339_7468.jpg'], 'Cairn': ['./datasets/dogs_120/images_discovery_all_3/041.Cairn/041.Cairn_n02096177_4734.jpg'], 'Dingo': ['./datasets/dogs_120/images_discovery_all_3/117.Dingo/117.Dingo_n02115641_6509.jpg'], 'Norfolk Terrier': ['./datasets/dogs_120/images_discovery_all_3/034.Norfolk_Terrier/034.Norfolk_Terrier_n02094114_3248.jpg'], 'Miniature Poodle': ['./datasets/dogs_120/images_discovery_all_3/114.Miniature_Poodle/114.Miniature_Poodle_n02113712_5210.jpg'], 'Doberman': ['./datasets/dogs_120/images_discovery_all_3/085.Doberman/085.Doberman_n02107142_1193.jpg'], 'Mexican Hairless': ['./datasets/dogs_120/images_discovery_all_3/116.Mexican_Hairless/116.Mexican_Hairless_n02113978_3670.jpg'], 'Groenendael': ['./datasets/dogs_120/images_discovery_all_3/073.Groenendael/073.Groenendael_n02105056_5855.jpg'], 'Bloodhound': ['./datasets/dogs_120/images_discovery_all_3/012.Bloodhound/012.Bloodhound_n02088466_8184.jpg'], 'Bernese Mountain Dog': ['./datasets/dogs_120/images_discovery_all_3/088.Bernese_Mountain_Dog/088.Bernese_Mountain_Dog_n02107683_6301.jpg'], 'Great Dane': ['./datasets/dogs_120/images_discovery_all_3/095.Great_Dane/095.Great_Dane_n02109047_17629.jpg'], 'Airedale': ['./datasets/dogs_120/images_discovery_all_3/040.Airedale/040.Airedale_n02096051_2890.jpg'], 'Pomeranian': ['./datasets/dogs_120/images_discovery_all_3/107.Pomeranian/107.Pomeranian_n02112018_2811.jpg'], 'Bouvier des Flandres': ['./datasets/dogs_120/images_discovery_all_3/082.Bouvier_des_Flandres/082.Bouvier_des_Flandres_n02106382_1963.jpg'], 'Irish Wolfhound': ['./datasets/dogs_120/images_discovery_all_3/019.Irish_Wolfhound/019.Irish_Wolfhound_n02090721_1026.jpg'], 'Greater Swiss Mountain Dog': ['./datasets/dogs_120/images_discovery_all_3/087.Greater_Swiss_Mountain_Dog/087.Greater_Swiss_Mountain_Dog_n02107574_3270.jpg'], 'Siberian Husky': ['./datasets/dogs_120/images_discovery_all_3/099.Siberian_Husky/099.Siberian_Husky_n02110185_13942.jpg'], 'Briard': ['./datasets/dogs_120/images_discovery_all_3/075.Briard/075.Briard_n02105251_252.jpg'], 'Irish Terrier': ['./datasets/dogs_120/images_discovery_all_3/033.Irish_Terrier/033.Irish_Terrier_n02093991_4441.jpg'], 'Bluetick': ['./datasets/dogs_120/images_discovery_all_3/013.Bluetick/013.Bluetick_n02088632_512.jpg'], 'English Setter': ['./datasets/dogs_120/images_discovery_all_3/061.English_Setter/061.English_Setter_n02100735_3899.jpg'], 'Italian Greyhound': ['./datasets/dogs_120/images_discovery_all_3/020.Italian_Greyhound/020.Italian_Greyhound_n02091032_11812.jpg'], 'Cardigan': ['./datasets/dogs_120/images_discovery_all_3/112.Cardigan/112.Cardigan_n02113186_2433.jpg'], 'Gordon Setter': ['./datasets/dogs_120/images_discovery_all_3/063.Gordon_Setter/063.Gordon_Setter_n02101006_4223.jpg'], 'Rottweiler': ['./datasets/dogs_120/images_discovery_all_3/083.Rottweiler/083.Rottweiler_n02106550_7003.jpg'], 'Borzoi': ['./datasets/dogs_120/images_discovery_all_3/018.Borzoi/018.Borzoi_n02090622_6894.jpg'], 'Rhodesian Ridgeback': ['./datasets/dogs_120/images_discovery_all_3/008.Rhodesian_Ridgeback/008.Rhodesian_Ridgeback_n02087394_7771.jpg'], 'Silky Terrier': ['./datasets/dogs_120/images_discovery_all_3/050.Silky_Terrier/050.Silky_Terrier_n02097658_4201.jpg'], 'Malamute': ['./datasets/dogs_120/images_discovery_all_3/098.Malamute/098.Malamute_n02110063_8977.jpg'], 'Irish Water Spaniel': ['./datasets/dogs_120/images_discovery_all_3/070.Irish_Water_Spaniel/070.Irish_Water_Spaniel_n02102973_2226.jpg'], 'Affenpinscher': ['./datasets/dogs_120/images_discovery_all_3/100.Affenpinscher/100.Affenpinscher_n02110627_13553.jpg'], 'Old English Sheepdog': ['./datasets/dogs_120/images_discovery_all_3/078.Old_English_Sheepdog/078.Old_English_Sheepdog_n02105641_3540.jpg'], 'Samoyed': ['./datasets/dogs_120/images_discovery_all_3/106.Samoyed/106.Samoyed_n02111889_789.jpg'], 'Ibizian Hound': ['./datasets/dogs_120/images_discovery_all_3/022.Ibizian_Hound/022.Ibizian_Hound_n02091244_4669.jpg'], 'Chihuaha': ['./datasets/dogs_120/images_discovery_all_3/000.Chihuaha/000.Chihuaha_n02085620_7613.jpg'], 'Norwegian Elkhound': ['./datasets/dogs_120/images_discovery_all_3/023.Norwegian_Elkhound/023.Norwegian_Elkhound_n02091467_1406.jpg'], 'Yorkshire Terrier': ['./datasets/dogs_120/images_discovery_all_3/036.Yorkshire_Terrier/036.Yorkshire_Terrier_n02094433_5868.jpg'], 'Wirehaired Fox Terrier': ['./datasets/dogs_120/images_discovery_all_3/037.Wirehaired_Fox_Terrier/037.Wirehaired_Fox_Terrier_n02095314_3316.jpg'], 'Beagle': ['./datasets/dogs_120/images_discovery_all_3/011.Beagle/011.Beagle_n02088364_14690.jpg'], 'Keeshond': ['./datasets/dogs_120/images_discovery_all_3/109.Keeshond/109.Keeshond_n02112350_6659.jpg'], 'Walker Hound': ['./datasets/dogs_120/images_discovery_all_3/015.Walker_Hound/015.Walker_Hound_n02089867_1786.jpg'], 'Basenji': ['./datasets/dogs_120/images_discovery_all_3/101.Basenji/101.Basenji_n02110806_1382.jpg'], 'Great Pyrenees': ['./datasets/dogs_120/images_discovery_all_3/105.Great_Pyrenees/105.Great_Pyrenees_n02111500_3052.jpg'], 'Giant Schnauzer': ['./datasets/dogs_120/images_discovery_all_3/046.Giant_Schnauzer/046.Giant_Schnauzer_n02097130_582.jpg'], 'Papillon': ['./datasets/dogs_120/images_discovery_all_3/006.Papillon/006.Papillon_n02086910_9355.jpg'], 'Otterhound': ['./datasets/dogs_120/images_discovery_all_3/024.Otterhound/024.Otterhound_n02091635_2725.jpg'], 'Border Terrier': ['./datasets/dogs_120/images_discovery_all_3/031.Border_Terrier/031.Border_Terrier_n02093754_2425.jpg'], 'Bedlington Terrier': ['./datasets/dogs_120/images_discovery_all_3/030.Bedlington_Terrier/030.Bedlington_Terrier_n02093647_1247.jpg'], 'Soft-coated Wheaten Terrier': ['./datasets/dogs_120/images_discovery_all_3/051.Soft_coated_Wheaten_Terrier/051.Soft_coated_Wheaten_Terrier_n02098105_2872.jpg'], 'Kuvasz': ['./datasets/dogs_120/images_discovery_all_3/071.Kuvasz/071.Kuvasz_n02104029_4492.jpg'], 'Brabancon Griffon': ['./datasets/dogs_120/images_discovery_all_3/110.Brabancon_Griffon/110.Brabancon_Griffon_n02112706_1561.jpg'], 'Vizsla': ['./datasets/dogs_120/images_discovery_all_3/060.Vizsla/060.Vizsla_n02100583_7904.jpg'], 'Scottish Deerhound': ['./datasets/dogs_120/images_discovery_all_3/026.Scottish_Deerhound/026.Scottish_Deerhound_n02092002_3494.jpg'], 'Collie': ['./datasets/dogs_120/images_discovery_all_3/081.Border_Collie/081.Border_Collie_n02106166_3996.jpg'], 'Saint Bernard': ['./datasets/dogs_120/images_discovery_all_3/096.Saint_Bernard/096.Saint_Bernard_n02109525_18371.jpg'], 'Blenheim Spaniel': ['./datasets/dogs_120/images_discovery_all_3/005.Blenheim_Spaniel/005.Blenheim_Spaniel_n02086646_602.jpg'], 'Lakeland Terrier': ['./datasets/dogs_120/images_discovery_all_3/038.Lakeland_Terrier/038.Lakeland_Terrier_n02095570_315.jpg'], 'Bull Mastiff': ['./datasets/dogs_120/images_discovery_all_3/092.Bull_Mastiff/092.Bull_Mastiff_n02108422_2949.jpg'], 'Newfoundland': ['./datasets/dogs_120/images_discovery_all_3/104.Newfoundland/104.Newfoundland_n02111277_2885.jpg'], 'Kelpie': ['./datasets/dogs_120/images_discovery_all_3/076.Kelpie/076.Kelpie_n02105412_2249.jpg'], 'Malinois': ['./datasets/dogs_120/images_discovery_all_3/074.Malinois/074.Malinois_n02105162_6449.jpg'], 'West Highland White Terrier': ['./datasets/dogs_120/images_discovery_all_3/052.West_Highland_White_Terrier/052.West_Highland_White_Terrier_n02098286_5979.jpg'], 'Sussex Spaniel': ['./datasets/dogs_120/images_discovery_all_3/069.Sussex_Spaniel/069.Sussex_Spaniel_n02102480_6569.jpg'], 'Boxer': ['./datasets/dogs_120/images_discovery_all_3/091.Boxer/091.Boxer_n02108089_11154.jpg'], 'Chow': ['./datasets/dogs_120/images_discovery_all_3/108.Chow/108.Chow_n02112137_2220.jpg'], 'Tibetan Terrier': ['./datasets/dogs_120/images_discovery_all_3/049.Tibetan_Terrier/049.Tibetan_Terrier_n02097474_3976.jpg'], 'Golden Retriever': ['./datasets/dogs_120/images_discovery_all_3/056.Golden_Retriever/056.Golden_Retriever_n02099601_286.jpg'], 'Eskimo Dog': ['./datasets/dogs_120/images_discovery_all_3/097.Eskimo_Dog/097.Eskimo_Dog_n02109961_1017.jpg'], 'Japanese Spaniel': ['./datasets/dogs_120/images_discovery_all_3/001.Japanese_Spaniel/001.Japanese_Spaniel_n02085782_1284.jpg'], 'Standard Poodle': ['./datasets/dogs_120/images_discovery_all_3/115.Standard_Poodle/115.Standard_Poodle_n02113799_1536.jpg'], 'Clumber': ['./datasets/dogs_120/images_discovery_all_3/065.Clumber/065.Clumber_n02101556_2517.jpg'], 'English Foxhound': ['./datasets/dogs_120/images_discovery_all_3/016.English_Foxhound/016.English_Foxhound_n02089973_4084.jpg'], 'Leonberg': ['./datasets/dogs_120/images_discovery_all_3/103.Leonberg/103.Leonberg_n02111129_593.jpg'], 'Whippet': ['./datasets/dogs_120/images_discovery_all_3/021.Whippet/021.Whippet_n02091134_18140.jpg'], 'Kerry Blue Terrier': ['./datasets/dogs_120/images_discovery_all_3/032.Kerry_Blue_Terrier/032.Kerry_Blue_Terrier_n02093859_1062.jpg'], 'Curly-coater Retriever': ['./datasets/dogs_120/images_discovery_all_3/055.Curly_coater_Retriever/055.Curly_coater_Retriever_n02099429_2559.jpg'], 'Flat-coated Retriever': ['./datasets/dogs_120/images_discovery_all_3/054.Flat_coated_Retriever/054.Flat_coated_Retriever_n02099267_5001.jpg'], 'Tibetan Mastiff': ['./datasets/dogs_120/images_discovery_all_3/093.Tibetan_Mastiff/093.Tibetan_Mastiff_n02108551_1968.jpg']})Qwen2_5_VLModel is using Qwen2_5_VLSdpaAttention, but `torch.nn.functional.scaled_dot_product_attention` does not support `output_attentions=True`. Falling back to the manual attention implementation, but specifying the manual implementation will be required from Transformers version v5.0.0 onwards. This warning can be removed using the argument `attn_implementation="eager"` when loading the model.
+
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/014.Black_and_tan_Coonhound/014.Black_and_tan_Coonhound_n02089078_1275.jpg', './datasets/dogs_120/images_discovery_all_3/010.Basset_Hound/010.Basset_Hound_n02088238_9025.jpg', './datasets/dogs_120/images_discovery_all_3/017.Redbone/017.Redbone_n02090379_2453.jpg', './datasets/dogs_120/images_discovery_all_3/092.Bull_Mastiff/092.Bull_Mastiff_n02108422_2949.jpg', './datasets/dogs_120/images_discovery_all_3/069.Sussex_Spaniel/069.Sussex_Spaniel_n02102480_6569.jpg']
+len ref path: 5
+att_shape:[10, 13]
+att_flat:130
+image_token_weights:130
+选取值大于1的token
+图像token位置范围: (15, 145)
+重要stoken数量: 93
+最高注意力权重: 12.5933
+平均注意力权重: 2.5021
+input_ids:torch.Size([1, 1397])
+seq_len:1397
+找到 image token span: img_start=14, img_end=146
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,146)
+prompt in discover regions:We provide 5 images from different categories within the dog that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+discover_regions: ['black coat, black coat, black coat, black coat, black coat; short coat, short coat, short coat, short coat']
+att_shape:[10, 13]
+att_flat:130
+image_token_weights:130
+选取值大于1的token
+图像token位置范围: (15, 145)
+重要stoken数量: 13
+最高注意力权重: 4.4091
+平均注意力权重: 2.1219
+input_ids:torch.Size([1, 180])
+seq_len:180
+找到 image token span: img_start=14, img_end=146
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,146)
+prompt: Given an image, describe the visual attributes of black coat in the given dog category, whose specific category is Black-and-tan Coonhound. 
+ description: The dog in the picture appears to be a Black-and-tan Coonhound, characterized by its distinctive black and tan coloration. The dog has a sleek, muscular build typical of the breed, with a deep chest and a broad head. Its coat is short and smooth, which is consistent with the grooming standards for this breed. The dog's ears are long and drooping, and it has a friendly, alert expression. The overall appearance suggests that this is a healthy adult dog, likely well-cared for.
+att_shape:[10, 13]
+att_flat:130
+image_token_weights:130
+选取值大于1的token
+图像token位置范围: (15, 145)
+重要stoken数量: 63
+最高注意力权重: 9.8628
+平均注意力权重: 2.0592
+input_ids:torch.Size([1, 180])
+seq_len:180
+找到 image token span: img_start=14, img_end=146
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,146)
+prompt: Given an image, describe the visual attributes of black coat in the given dog category, whose specific category is Black-and-tan Coonhound. 
+ description: The dog in the picture appears to be a Black-and-tan Coonhound, characterized by its sleek, dark brown or black coat with tan markings on the face and ears. The dog has a robust build, typical of hound breeds, with long, floppy ears and a muscular body structure. Its expression seems somewhat tired or disheveled, possibly due to the angle and quality of the photograph. The tan markings on the face, which include a distinctive blaze down the center of the forehead and around the muzzle, are a key identifying feature of this breed. The dog's posture and the bone it is holding suggest it might be engaged in a playful or restorative activity, though the overall context of the image is unclear.
+att_shape:[10, 13]
+att_flat:130
+image_token_weights:130
+选取值大于1的token
+图像token位置范围: (15, 145)
+重要stoken数量: 23
+最高注意力权重: 2.4655
+平均注意力权重: 1.4546
+input_ids:torch.Size([1, 180])
+seq_len:180
+找到 image token span: img_start=14, img_end=146
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,146)
+prompt: Given an image, describe the visual attributes of black coat in the given dog category, whose specific category is Black-and-tan Coonhound. 
+ description: The dog in the picture appears to be a Black-and-tan Coonhound, identifiable by its distinctive coat coloration and physical traits. The coat is predominantly black with tan markings, which is characteristic of this breed. The dog has a medium to large build, with a deep chest and a muscular, athletic body structure. Its ears are long and drooping, and it has a friendly, alert expression. The dog's tail is docked, which is common for this breed. The overall appearance suggests that the dog is engaged in a typical activity, possibly chewing on something, as indicated by the object in its mouth.
+att_shape:[10, 13]
+att_flat:130
+image_token_weights:130
+选取值大于1的token
+图像token位置范围: (15, 145)
+重要stoken数量: 0
+input_ids:torch.Size([1, 576])
+seq_len:576
+找到 image token span: img_start=14, img_end=146
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,146)
+Saved descriptions to: ./experiments/dog120/gallery/dog_image_descriptions_attn
+summarize_attributes: the dog in the picture is identified as a black-and-tan coonhound based on several key characteristics:
+
+1. **coat coloration**: the dog has a predominantly black coat with tan markings, particularly noticeable on the face, ears, and legs. this is a hallmark of the black-and-tan coonhound breed.
+
+2. **physical traits**:
+   - **build**: the dog exhibits a robust, muscular build typical of the breed, with a deep chest and a broad head.
+   - **ears**: the ears are long and drooping, which is a distinctive feature of the coonhound.
+   - **tail**: the tail is docked, which is a common practice for this breed.
+
+3. **expression and activity**:
+   - the dog's expression appears friendly and alert, consistent with the breed's temperament.
+   - the dog is holding an object in its mouth, suggesting it may be chewing on a toy or bone, a common behavior for dogs of this breed.
+
+4. **contextual clues**:
+   - the setting appears to be indoors, with a carpeted floor and some furniture visible in the background.
+   - the dog's posture and the object in its mouth indicate it might be engaged in a playful or
+种类:Black-and-tan Coonhound
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/044.Boston_Bull/044.Boston_Bull_n02096585_9834.jpg', './datasets/dogs_120/images_discovery_all_3/029.American_Staffordshire_Terrier/029.American_Staffordshire_Terrier_n02093428_1351.jpg', './datasets/dogs_120/images_discovery_all_3/007.Toy_Terrier/007.Toy_Terrier_n02087046_5407.jpg', './datasets/dogs_120/images_discovery_all_3/110.Brabancon_Griffon/110.Brabancon_Griffon_n02112706_1561.jpg', './datasets/dogs_120/images_discovery_all_3/111.Pembroke/111.Pembroke_n02113023_4893.jpg']
+len ref path: 5
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 156
+最高注意力权重: 46.9708
+平均注意力权重: 3.0108
+input_ids:torch.Size([1, 1473])
+seq_len:1473
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt in discover regions:We provide 5 images from different categories within the dog that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+discover_regions: ['Boston Terrier, French Bulldog, Corgi, Labrador, Collie']
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 38
+最高注意力权重: 13.5896
+平均注意力权重: 3.0629
+input_ids:torch.Size([1, 281])
+seq_len:281
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt: Given an image, describe the visual attributes of boston terrier in the given dog category, whose specific category is Boston Bull. 
+ description: The dog in the picture appears to be a Boston Terrier, characterized by its compact and muscular build, short coat, and distinctive facial features. The Boston Terrier in the image has a predominantly black and white coat with a white blaze down the center of its face, which is typical for this breed. It also has a white chest and paws, adding to its clean-cut appearance. The dog is wearing a harness, which suggests it might be out for a walk or some activity. Boston Terriers are known for their friendly and energetic personalities, making them popular companions.
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 36
+最高注意力权重: 4.1146
+平均注意力权重: 1.4623
+input_ids:torch.Size([1, 280])
+seq_len:280
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt: Given an image, describe the visual attributes of french bulldog in the given dog category, whose specific category is Boston Bull. 
+ description: The dog in the picture appears to be a Boston Terrier, which is a breed known for its distinctive black and white coat pattern. This particular Boston Terrier has a predominantly white face with some black markings around the eyes, ears, and muzzle. The dog also has a white stripe down the center of its forehead and a white blaze on its chest. Its body is mostly black with a white patch on its chest and a white stripe along its spine. The Boston Terrier is wearing a harness, which suggests it might be out for a walk or engaging in some outdoor activity. The background indicates that the photo was taken near a body of water, possibly a lake or river, as there is a calm water surface visible behind the dog.
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 39
+最高注意力权重: 9.5470
+平均注意力权重: 1.9308
+input_ids:torch.Size([1, 280])
+seq_len:280
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt: Given an image, describe the visual attributes of corgi in the given dog category, whose specific category is Boston Bull. 
+ description: The image shows a Boston Terrier, which is a breed known for its distinctive black and white coat pattern, compact build, and alert, intelligent expression. This particular Boston Terrier has a predominantly white face with some black markings, including a black spot on the forehead and a small patch of black fur above each eye. The dog's ears are perked up, indicating attentiveness or curiosity. It is wearing a harness with a label that reads "Boston Bull," suggesting it might be a Boston Terrier mix or a Boston Bull. The background features a rocky shoreline and a body of water, possibly a lake or river, adding to the scenic setting.
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 14
+最高注意力权重: 7.7518
+平均注意力权重: 2.1729
+input_ids:torch.Size([1, 698])
+seq_len:698
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+Saved descriptions to: ./experiments/dog120/gallery/dog_image_descriptions_attn
+summarize_attributes: the image depicts a boston terrier standing outdoors near a body of water. the dog has a predominantly black and white coat with a white blaze down the center of its face, white chest, and white legs. it is wearing a harness and appears to be looking upwards, possibly at something in the sky or the water. the background includes a rocky shoreline and a calm water surface, suggesting a peaceful, natural setting.
+种类:Boston Bull
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/043.Dandi_Dinmont/043.Dandi_Dinmont_n02096437_858.jpg', './datasets/dogs_120/images_discovery_all_3/049.Tibetan_Terrier/049.Tibetan_Terrier_n02097474_3976.jpg', './datasets/dogs_120/images_discovery_all_3/050.Silky_Terrier/050.Silky_Terrier_n02097658_4201.jpg', './datasets/dogs_120/images_discovery_all_3/069.Sussex_Spaniel/069.Sussex_Spaniel_n02102480_6569.jpg', './datasets/dogs_120/images_discovery_all_3/114.Miniature_Poodle/114.Miniature_Poodle_n02113712_5210.jpg']
+len ref path: 5
+att_shape:[14, 18]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 59
+最高注意力权重: 8.3948
+平均注意力权重: 2.0807
+input_ids:torch.Size([1, 1623])
+seq_len:1623
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+prompt in discover regions:We provide 5 images from different categories within the dog that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+discover_regions: ['wire-haired dachshund; wire-haired dachshund; wire-haired dachshund; wire-haired dachshund; wire-haired dachshund']
+att_shape:[14, 18]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 55
+最高注意力权重: 9.0686
+平均注意力权重: 1.9694
+input_ids:torch.Size([1, 331])
+seq_len:331
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+prompt: Given an image, describe the visual attributes of wire-haired dachshund; wire-haired dachshund; wire-haired dachshund; wire-haired dachshund; wire-haired dachshund in the given dog category, whose specific category is Dandi Dinmont. 
+ description: The image shows a Dandie Dinmont Terrier, a breed known for its distinctive appearance and personality. Here are some key visual attributes of this particular Dandie Dinmont:
+
+1. **Coat**: The dog has a wiry, rough coat that is typically short to medium-length. The texture appears thick and slightly curly or wavy.
+
+2. **Coloration**: This Dandie Dinmont has a mix of colors, including shades of gray, white, and brown. The fur on the body is predominantly gray with a white underbelly, while the legs and parts of the face have lighter, almost white fur.
+
+3. **Ears and Face**: The ears are small and drop down close to the head, and the face has a long, narrow shape with a beard-like growth of hair around the mouth.
+
+4. **Expression**: The dog's expression is often described as grumpy or serious due to the shape of its face and the way it carries its head.
+
+5. **Size and Build**: The Dandie Dinmont is a small to medium-sized dog with a sturdy build. It has a compact body and a short back.
+
+This Dandie Dinmont Terrier exemplifies the breed's typical characteristics, such as the wire
+att_shape:[14, 18]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 0
+input_ids:torch.Size([1, 593])
+seq_len:593
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+Saved descriptions to: ./experiments/dog120/gallery/dog_image_descriptions_attn
+summarize_attributes: the image depicts a dandie dinmont terrier, a breed known for its distinctive appearance and personality. here are the key visual attributes observed in this particular dandie dinmont:
+
+1. **coat texture and length**: the dog has a wiry, rough coat that is typically short to medium-length. the texture of the fur in the image appears thick and slightly curly or wavy, consistent with the breed's standard.
+
+2. **coloration**: the coat coloration includes shades of gray, white, and brown. the body fur is predominantly gray with a white underbelly, while the legs and parts of the face display lighter, almost white fur.
+
+3. **ears and face**: the ears are small and drop down closely to the head, and the face has a long, narrow shape with a beard-like growth of hair around the mouth. the eyes appear dark and expressive, adding to the breed's characteristic grumpy or serious demeanor.
+
+4. **expression**: the dog's expression is consistent with the breed's reputation, often described as grumpy or serious due to the shape of its face and the way it carries its head.
+
+5. **size and build**: the dandie dinmont is a small to medium-sized dog with a
+种类:Dandi Dinmont
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/002.Maltese_Dog/002.Maltese_Dog_n02085936_4188.jpg', './datasets/dogs_120/images_discovery_all_3/040.Airedale/040.Airedale_n02096051_2890.jpg', './datasets/dogs_120/images_discovery_all_3/053.Lhasa/053.Lhasa_n02098413_4238.jpg', './datasets/dogs_120/images_discovery_all_3/034.Norfolk_Terrier/034.Norfolk_Terrier_n02094114_3248.jpg', './datasets/dogs_120/images_discovery_all_3/065.Clumber/065.Clumber_n02101556_2517.jpg']
+len ref path: 5
+att_shape:[12, 18]
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+ERROR Invalid mapped kv range: kv_pos_begin=15, kv_pos_end=267, kv_len=262. Skipping enhancement.
+Warning Weight length mismatch: weights=252, tokens=247. Resizing weights.
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 127
+最高注意力权重: 8.3204
+平均注意力权重: 2.0524
+input_ids:torch.Size([1, 1455])
+seq_len:1455
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt in discover regions:We provide 5 images from different categories within the dog that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+discover_regions: ['white fluffy coat, black nose, lying on the floor, , white fluffy coat, black nose, lying on the floor, , brown short hair, lying on the floor, , light brown fluffy coat, lying on the floor, , white fluffy coat, black nose, lying on the floor']
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 18
+最高注意力权重: 1.8253
+平均注意力权重: 1.2433
+input_ids:torch.Size([1, 264])
+seq_len:264
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt: Given an image, describe the visual attributes of white fluffy coat in the given dog category, whose specific category is Maltese Dog. 
+ description: The dog in the picture appears to be a small, fluffy breed with a predominantly white or cream-colored coat. It has a soft, silky texture and a slightly wavy or curly appearance, which is characteristic of certain toy breeds. The dog's fur looks well-groomed, and it has a playful and relaxed demeanor as it lies on its back on a textured carpet. The overall appearance suggests that this could be a Maltese dog, known for its distinctive features such as a compact body, expressive eyes, and a thick, flowing mane around the neck.
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 25
+最高注意力权重: 9.5740
+平均注意力权重: 1.8365
+input_ids:torch.Size([1, 263])
+seq_len:263
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt: Given an image, describe the visual attributes of black nose in the given dog category, whose specific category is Maltese Dog. 
+ description: The dog in the picture appears to be a small, fluffy breed with a predominantly white coat and a black nose. The dog's fur looks soft and well-groomed, and it has a friendly expression as it lies on its back on a textured carpet. The black nose stands out against the white fur, and the dog's eyes have a gentle, expressive look. While the exact breed cannot be definitively identified from the image alone, the features—such as the size, coat texture, and facial structure—are consistent with those of a Maltese dog.
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 27
+最高注意力权重: 2.8330
+平均注意力权重: 1.4078
+input_ids:torch.Size([1, 265])
+seq_len:265
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt: Given an image, describe the visual attributes of lying on the floor in the given dog category, whose specific category is Maltese Dog. 
+ description: The image shows a small, fluffy white dog lying on its back on a textured carpet. The dog appears relaxed and is looking up at the camera with a calm expression. Its fur is thick and well-groomed, characteristic of a breed that might be a Maltese or a similar small, long-haired breed. The lighting in the photo is soft, suggesting it was taken indoors under natural light.
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 0
+input_ids:torch.Size([1, 594])
+seq_len:594
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+Saved descriptions to: ./experiments/dog120/gallery/dog_image_descriptions_attn
+summarize_attributes: the image depicts a small, fluffy white dog lying on its back on a textured carpet. the dog has a thick, well-groomed coat with a soft, silky texture that is slightly wavy or curly, typical of certain toy breeds. its black nose contrasts sharply with the white fur, and the dog's eyes appear expressive and alert. the dog's relaxed posture and upward gaze suggest a calm and friendly demeanor. the lighting is soft, indicating an indoor setting with natural light. based on these characteristics, the dog resembles a breed like a maltese, known for its white coat, compact body, and expressive eyes.
+种类:Maltese Dog
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/010.Basset_Hound/010.Basset_Hound_n02088238_9025.jpg', './datasets/dogs_120/images_discovery_all_3/014.Black_and_tan_Coonhound/014.Black_and_tan_Coonhound_n02089078_1275.jpg', './datasets/dogs_120/images_discovery_all_3/011.Beagle/011.Beagle_n02088364_14690.jpg', './datasets/dogs_120/images_discovery_all_3/017.Redbone/017.Redbone_n02090379_2453.jpg', './datasets/dogs_120/images_discovery_all_3/061.English_Setter/061.English_Setter_n02100735_3899.jpg']
+len ref path: 5
+att_shape:[18, 14]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 163
+最高注意力权重: 16.0228
+平均注意力权重: 2.8312
+input_ids:torch.Size([1, 1441])
+seq_len:1441
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+prompt in discover regions:We provide 5 images from different categories within the dog that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+discover_regions: ['brown and white ears, brown and white legs, brown and white body, brown and white face, brown and white neck, brown and white chest, brown and white belly, brown and white paws, brown and white tail, brown and white back, brown and white side, brown and white front, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white, brown and white']
+att_shape:[18, 14]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 33
+最高注意力权重: 8.9443
+平均注意力权重: 1.9197
+input_ids:torch.Size([1, 301])
+seq_len:301
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+prompt: Given an image, describe the visual attributes of brown and white ears in the given dog category, whose specific category is Basset Hound. 
+ description: The dog in the picture is a Basset Hound, identifiable by its long, floppy ears that hang down to the sides of its face, giving it a distinctive and endearing appearance. The coat coloration typically includes shades of brown, white, and black, with the brown and white ears being particularly prominent. The Basset Hound's face often has a white blaze running down the center, which can extend from the forehead to the chest. The dog's expression appears calm and slightly sad, which is characteristic of this breed. The overall body structure, including the short legs and sturdy build, also aligns with the typical features of a Basset Hound.
+att_shape:[18, 14]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 117
+最高注意力权重: 37.4021
+平均注意力权重: 3.7978
+input_ids:torch.Size([1, 301])
+seq_len:301
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+prompt: Given an image, describe the visual attributes of brown and white legs in the given dog category, whose specific category is Basset Hound. 
+ description: The dog in the picture is a Basset Hound, characterized by its long, droopy ears and a distinctive tricolor coat pattern of brown, black, and white. The coat has a predominantly white underbelly with patches of brown and black, and the face features a white blaze running down the center between the eyes to the nose, with brown and black markings around it. The dog's front paws are white with some brown and black spots, while the back legs have more prominent brown and black markings. The Basset Hound's expression appears somewhat sad or contemplative, with its large, expressive eyes and slightly floppy ears. The dog is wearing a red heart-shaped tag on its collar.
+att_shape:[18, 14]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 38
+最高注意力权重: 6.7090
+平均注意力权重: 1.9622
+input_ids:torch.Size([1, 301])
+seq_len:301
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+prompt: Given an image, describe the visual attributes of brown and white body in the given dog category, whose specific category is Basset Hound. 
+ description: The dog in the picture is a Basset Hound, identifiable by its long, droopy ears and distinctive facial features. The coat coloration includes a mix of brown, white, and black, with the brown being more prominent on the face and ears, while the white is noticeable on the chest and paws. The Basset Hound's expression appears calm and slightly curious, with its large, expressive eyes looking directly at the camera. The dog also has a heart-shaped tag around its neck, adding a personal touch to its appearance.
+att_shape:[18, 14]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 3
+最高注意力权重: 2.4618
+平均注意力权重: 1.8561
+input_ids:torch.Size([1, 711])
+seq_len:711
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+Saved descriptions to: ./experiments/dog120/gallery/dog_image_descriptions_attn
+summarize_attributes: the dog in the picture is a basset hound, characterized by:
+
+- **ears**: long, floppy, and brown and white in color.
+- **coat coloration**: predominantly brown and white, with a tricolor pattern of brown, black, and white.
+- **facial features**: a white blaze runs down the center of the face, extending from the forehead to the chest, with brown and black markings around it. the basset hound's face is expressive, with large, expressive eyes and a calm demeanor.
+- **body structure**: the dog has a short-legged, sturdy build typical of basset hounds, with a calm and slightly sad expression.
+- **additional details**: the dog is wearing a red heart-shaped tag on its collar, adding a personal and endearing touch to its appearance.
+
+this description highlights the key identifying features of a basset hound, including its long, floppy ears, tricolor coat, and calm, expressive expression.
+种类:Basset Hound
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/094.French_Bulldog/094.French_Bulldog_n02108915_2570.jpg', './datasets/dogs_120/images_discovery_all_3/011.Beagle/011.Beagle_n02088364_14690.jpg', './datasets/dogs_120/images_discovery_all_3/101.Basenji/101.Basenji_n02110806_1382.jpg', './datasets/dogs_120/images_discovery_all_3/092.Bull_Mastiff/092.Bull_Mastiff_n02108422_2949.jpg', './datasets/dogs_120/images_discovery_all_3/004.Shih_Tzu/004.Shih_Tzu_n02086240_34.jpg']
+len ref path: 5
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 153
+最高注意力权重: 53.7518
+平均注意力权重: 2.9177
+input_ids:torch.Size([1, 1509])
+seq_len:1509
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt in discover regions:We provide 5 images from different categories within the dog that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+discover_regions: ['white coat, black nose, brown eyes, short hair, wrinkled face; white, black, brown']
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 70
+最高注意力权重: 5.0654
+平均注意力权重: 1.4804
+input_ids:torch.Size([1, 280])
+seq_len:280
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt: Given an image, describe the visual attributes of white coat in the given dog category, whose specific category is French Bulldog. 
+ description: The image shows a French Bulldog with a predominantly cream or light beige coat. Its face has distinct wrinkled skin and a broad, square-shaped head, which are characteristic features of this breed. The dog's eyes are dark brown, and its nose is a darker shade, possibly black or very dark brown. The French Bulldog appears to be resting on a pile of crumpled newspapers and various items, including colorful dog collars and leashes.
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 97
+最高注意力权重: 140.0469
+平均注意力权重: 4.4693
+input_ids:torch.Size([1, 280])
+seq_len:280
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt: Given an image, describe the visual attributes of black nose in the given dog category, whose specific category is French Bulldog. 
+ description: The image shows a French Bulldog with a light-colored coat and a darker face, resting on what appears to be a pile of papers, advertisements, and printed materials. The dog's expression looks somewhat tired or unimpressed. Its eyes are dark and expressive, and its ears are perked up. The dog has a short muzzle, which is characteristic of the breed. The background includes various items such as dog collars and tags, suggesting that it might be in a pet supply store or a similar setting where such items are displayed.
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 64
+最高注意力权重: 37.7769
+平均注意力权重: 2.4002
+input_ids:torch.Size([1, 280])
+seq_len:280
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt: Given an image, describe the visual attributes of brown eyes in the given dog category, whose specific category is French Bulldog. 
+ description: The image shows a French Bulldog with distinct features characteristic of the breed. The dog has a compact body, a short muzzle, and large, bat-like ears that stand upright. Its coat is predominantly white, with a smooth texture, and it appears to have some darker markings around its eyes and on its face. The dog's expression looks somewhat serious or contemplative. Additionally, there are visible elements like printed materials and colorful items scattered around, suggesting the photo might have been taken indoors near various pet-related products.
+att_shape:[18, 13]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 17
+最高注意力权重: 5.8430
+平均注意力权重: 1.4790
+input_ids:torch.Size([1, 603])
+seq_len:603
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+Saved descriptions to: ./experiments/dog120/gallery/dog_image_descriptions_attn
+summarize_attributes: the image depicts a french bulldog with the following attributes:
+
+- **coat color and texture**: the dog has a predominantly white coat with a smooth texture. it appears to be a cream or fawn-colored french bulldog.
+
+- **facial features**: 
+  - the dog has a broad, square-shaped head typical of the breed.
+  - its face exhibits distinct wrinkles and a short muzzle.
+  - the eyes are dark brown, giving the dog an expressive look.
+  - the nose is also a darker shade, matching the eyes, and is slightly wet-looking.
+
+- **ears and expression**: 
+  - the ears are small and stand upright, which is characteristic of the french bulldog breed.
+  - the dog’s expression seems calm but slightly tired or unimpressed, as if it is resting on a pile of items.
+
+- **background and setting**: 
+  - the dog is lying on a surface covered with crumpled newspapers, advertisements, and various pet-related items such as colorful dog collars and leashes.
+  - the setting suggests an indoor environment, possibly a home or a pet supply store.
+
+- **additional details**: 
+  - there are printed materials and promotional items visible, including text and logos, indicating the presence of pet
+种类:French Bulldog
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/009.Afghan_Hound/009.Afghan_Hound_n02088094_4464.jpg', './datasets/dogs_120/images_discovery_all_3/008.Rhodesian_Ridgeback/008.Rhodesian_Ridgeback_n02087394_7771.jpg', './datasets/dogs_120/images_discovery_all_3/026.Scottish_Deerhound/026.Scottish_Deerhound_n02092002_3494.jpg', './datasets/dogs_120/images_discovery_all_3/103.Leonberg/103.Leonberg_n02111129_593.jpg', './datasets/dogs_120/images_discovery_all_3/030.Bedlington_Terrier/030.Bedlington_Terrier_n02093647_1247.jpg']
+len ref path: 5
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 90
+最高注意力权重: 45.5389
+平均注意力权重: 4.2801
+input_ids:torch.Size([1, 3047])
+seq_len:3047
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt in discover regions:We provide 5 images from different categories within the dog that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+discover_regions: ['long hair, long hair, long hair, long hair, long hair; short hair, short hair, short hair, short hair, short hair; short hair, short hair, short hair, short hair, short hair; short hair, short hair, short hair, short hair, short hair; short hair, short hair']
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 40
+最高注意力权重: 28.5772
+平均注意力权重: 4.9726
+input_ids:torch.Size([1, 262])
+seq_len:262
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt: Given an image, describe the visual attributes of long hair in the given dog category, whose specific category is Afghan Hound. 
+ description: The image shows Afghan Hounds at what appears to be a dog show. The dogs have long, flowing coats with distinctively slender and elegant builds. Their fur is predominantly cream or fawn-colored, with some white markings on their faces, chests, and legs. The coat texture is silky and smooth, which is characteristic of the breed. The dogs' ears are large, triangular, and hang down gracefully, adding to their refined appearance. The overall presentation suggests that these are well-groomed and possibly champion-quality specimens, as they are being shown on leashes by handlers who guide them into position for judging.
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 42
+最高注意力权重: 22.2048
+平均注意力权重: 4.0254
+input_ids:torch.Size([1, 262])
+seq_len:262
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt: Given an image, describe the visual attributes of long hair in the given dog category, whose specific category is Afghan Hound. 
+ description: The image shows Afghan Hounds at what appears to be a dog show or exhibition. The dogs have long, flowing coats with distinct features such as slender bodies, elongated heads, and erect ears. Their fur is predominantly smooth and silky, with a mix of cream, light brown, and black coloration. The dogs' tails are carried high, and their posture is elegant, reflecting their breed's characteristic gait. The setting includes handlers guiding the dogs, and the environment suggests a formal competition or display event.
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 34
+最高注意力权重: 64.6000
+平均注意力权重: 10.4274
+input_ids:torch.Size([1, 262])
+seq_len:262
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt: Given an image, describe the visual attributes of long hair in the given dog category, whose specific category is Afghan Hound. 
+ description: The image shows two Afghan Hounds at what appears to be a dog show or exhibition. The dogs have long, flowing coats with distinct features typical of their breed:
+
+1. **Color and Coat Texture**: 
+   - One Afghan Hound has predominantly white fur with some darker markings on its face and ears.
+   - The other Afghan Hound has a golden coat with darker markings on its face and ears.
+
+2. **Ears and Face Features**:
+   - Both dogs have large, bat-like ears that hang down gracefully from the sides of their heads.
+   - Their faces are narrow, with long, slender muzzles and almond-shaped eyes.
+
+3. **Body Structure**:
+   - The dogs exhibit a lean, athletic build with long legs and a deep chest.
+   - Their tails are carried high and curved gracefully over their backs.
+
+4. **Coat Characteristics**:
+   - The coat is long and silky, flowing freely around the dogs' bodies.
+   - The coloration ranges from cream to light brown, with some dogs having darker markings on their faces and ears.
+
+These physical traits align with the standard appearance of Afghan Hounds, which are known for their elegant, slender builds and distinctive facial features.
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 4
+最高注意力权重: 2.1519
+平均注意力权重: 1.6257
+input_ids:torch.Size([1, 756])
+seq_len:756
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+Saved descriptions to: ./experiments/dog120/gallery/dog_image_descriptions_attn
+summarize_attributes: the image depicts afghan hounds at a dog show or exhibition. here’s a detailed summary based on the provided descriptions:
+
+### breed identification:
+- **breed**: afghan hound
+- **characteristics**: long, flowing coats, slender bodies, elongated heads, large triangular ears, and elegant postures.
+
+### color variations:
+- **primary colors**: cream, light brown, and white.
+- **markings**: darker markings on the face and ears, especially noticeable in the second dog (cream-colored).
+
+### coat description:
+- **texture**: silky and smooth.
+- **length**: long, flowing, and abundant.
+- **flowing movement**: the coat flows freely, enhancing the dogs' elegant appearance.
+
+### ears and face features:
+- **ears**: large, triangular, and hang down gracefully.
+- **face**: narrow, with almond-shaped eyes and long, slender muzzles.
+- **expression**: the dogs appear calm and poised, typical of their breed.
+
+### body structure:
+- **build**: lean, athletic, with deep chests and long legs.
+- **posture**: the dogs stand gracefully, showcasing their elegant gait.
+- **tail**: carried high and curved gracefully over their backs.
+
+### setting:
+- **
+种类:Afghan Hound
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/029.American_Staffordshire_Terrier/029.American_Staffordshire_Terrier_n02093428_1351.jpg', './datasets/dogs_120/images_discovery_all_3/044.Boston_Bull/044.Boston_Bull_n02096585_9834.jpg', './datasets/dogs_120/images_discovery_all_3/054.Flat_coated_Retriever/054.Flat_coated_Retriever_n02099267_5001.jpg', './datasets/dogs_120/images_discovery_all_3/007.Toy_Terrier/007.Toy_Terrier_n02087046_5407.jpg', './datasets/dogs_120/images_discovery_all_3/111.Pembroke/111.Pembroke_n02113023_4893.jpg']
+len ref path: 5
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 107
+最高注意力权重: 9.5640
+平均注意力权重: 2.0329
+input_ids:torch.Size([1, 1473])
+seq_len:1473
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt in discover regions:We provide 5 images from different categories within the dog that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+discover_regions: ['black and brown fur, black nose, pink tongue, black eyes, black and brown ears, black and brown face, black and brown body, black and brown tail, black and brown legs, black and brown paws, black and brown chest, black and brown neck, black and brown mouth, black and brown teeth, black and brown tongue, black and brown lips, black and brown teeth, black and brown gums, black and brown palate, black and brown throat, black and brown chin, black and brown jaw, black and brown cheek, black and brown whiskers, black and brown eye, black and brown eyebrow, black and brown eyelid, black and brown eyelash, black and brown eyeball, black and brown cornea, black and brown iris, black and brown pupil, black and brown iris, black and brown sclera, black and brown conjunctiva, black and brown ciliary body, black and brown choroid, black and brown retina, black and brown optic disc, black and brown macula, black and brown fovea, black and brown lens, black and brown iris, black and brown choroid, black and brown ciliary body, black and brown choroid, black and brown ciliary body, black and brown choroid']
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 15
+最高注意力权重: 14.6135
+平均注意力权重: 3.3049
+input_ids:torch.Size([1, 266])
+seq_len:266
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt: Given an image, describe the visual attributes of black and brown fur in the given dog category, whose specific category is American Staffordshire Terrier. 
+ description: The image shows a dog lying on grass, with predominantly dark-colored fur that has some lighter or brownish tones around the muzzle, cheeks, and possibly the chest area. The dog appears to be resting comfortably on a patch of green grass under bright sunlight. Its ears are perked up, and it looks attentive but relaxed. The overall appearance suggests it could be an American Staffordshire Terrier (AmStaff), which often has a muscular build and can display a variety of coat colors, including brindle, fawn, and black-and-tan.
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 50
+最高注意力权重: 17.0322
+平均注意力权重: 2.5584
+input_ids:torch.Size([1, 264])
+seq_len:264
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt: Given an image, describe the visual attributes of black nose in the given dog category, whose specific category is American Staffordshire Terrier. 
+ description: The dog in the picture appears to be an American Staffordshire Terrier (AmStaff). It has a muscular build with a short, smooth coat that is predominantly dark brown or black with some lighter markings on its chest and muzzle. The AmStaff is lying on a grassy lawn, looking directly at the camera with a calm and alert expression. Its ears are perked up, and it seems to be enjoying the sunny weather.
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 41
+最高注意力权重: 23.7956
+平均注意力权重: 2.5049
+input_ids:torch.Size([1, 264])
+seq_len:264
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+prompt: Given an image, describe the visual attributes of pink tongue in the given dog category, whose specific category is American Staffordshire Terrier. 
+ description: The image shows an American Staffordshire Terrier (AmStaff) lying on a grassy lawn. The dog has a muscular build with a short, smooth coat that appears to be predominantly black or dark brown with some lighter shading around its muzzle and ears. Its ears are cropped, which is characteristic of this breed. The AmStaff's tongue is slightly extended outward, giving it a relaxed and content expression. The background consists of a mix of green and dry grass, suggesting a sunny day outdoors. The dog is positioned centrally in the frame, facing slightly towards the camera, allowing for a clear view of its profile and posture.
+att_shape:[12, 18]
+att_flat:216
+image_token_weights:216
+选取值大于1的token
+图像token位置范围: (15, 231)
+重要stoken数量: 6
+最高注意力权重: 11.5320
+平均注意力权重: 2.9435
+input_ids:torch.Size([1, 608])
+seq_len:608
+找到 image token span: img_start=14, img_end=232
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,232)
+Saved descriptions to: ./experiments/dog120/gallery/dog_image_descriptions_attn
+summarize_attributes: the image depicts an american staffordshire terrier (amstaff) lying on a grassy lawn. the dog has a muscular build with a short, smooth coat that is predominantly dark brown or black with some lighter shading around its muzzle and ears. its ears are cropped, which is characteristic of the breed. the amstaff's tongue is slightly extended outward, giving it a relaxed and content expression. the background consists of a mix of green and dry grass, suggesting a sunny day outdoors. the dog is positioned centrally in the frame, facing slightly towards the camera, allowing for a clear view of its profile and posture.
+种类:American Staffordshire Terrier
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/035.Norwich_Terrier/035.Norwich_Terrier_n02094258_2070.jpg', './datasets/dogs_120/images_discovery_all_3/043.Dandi_Dinmont/043.Dandi_Dinmont_n02096437_858.jpg', './datasets/dogs_120/images_discovery_all_3/052.West_Highland_White_Terrier/052.West_Highland_White_Terrier_n02098286_5979.jpg', './datasets/dogs_120/images_discovery_all_3/062.Irish_Setter/062.Irish_Setter_n02100877_2599.jpg', './datasets/dogs_120/images_discovery_all_3/019.Irish_Wolfhound/019.Irish_Wolfhound_n02090721_1026.jpg']
+len ref path: 5
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 196
+最高注意力权重: 20.4343
+平均注意力权重: 3.9388
+input_ids:torch.Size([1, 1635])
+seq_len:1635
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt in discover regions:We provide 5 images from different categories within the dog that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+discover_regions: ['brown fur, small ears, short legs, brown eyes, standing on wood, brown nose, brown mouth']
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 148
+最高注意力权重: 27.4224
+平均注意力权重: 4.4891
+input_ids:torch.Size([1, 280])
+seq_len:280
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt: Given an image, describe the visual attributes of brown fur in the given dog category, whose specific category is Norwich Terrier. 
+ description: The image shows a Norwich Terrier standing on a log near a beach setting. The dog has a wiry, short coat that is predominantly light brown or tan in color. Its fur appears slightly shaggy and well-suited for outdoor activities. The Norwich Terrier's ears are small and erect, and its tail is short and bushy. The background includes driftwood logs scattered across a gravelly beach with patches of grass, suggesting a natural, possibly coastal environment.
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 95
+最高注意力权重: 24.4459
+平均注意力权重: 4.0733
+input_ids:torch.Size([1, 280])
+seq_len:280
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt: Given an image, describe the visual attributes of small ears in the given dog category, whose specific category is Norwich Terrier. 
+ description: The dog in the picture appears to be a Norwich Terrier, identifiable by its wiry coat and compact body structure. Norwich Terriers typically have a sturdy build with a short, smooth head, a strong muzzle, and erect, triangular ears that stand upright. The dog's fur is short and harsh, which is characteristic of this breed, and it has a lively, alert expression. The setting suggests a natural, outdoor environment, possibly a beach or a park with logs and gravel.
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 75
+最高注意力权重: 42.2477
+平均注意力权重: 3.9573
+input_ids:torch.Size([1, 280])
+seq_len:280
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+prompt: Given an image, describe the visual attributes of short legs in the given dog category, whose specific category is Norwich Terrier. 
+ description: The dog in the picture appears to be a Norwich Terrier, identifiable by its wiry coat and sturdy build. The visual attributes that suggest it is a Norwich Terrier include:
+
+1. **Coat Texture**: The dog has a rough, wiry coat, which is characteristic of the Norwich Terrier breed.
+2. **Body Structure**: It has a compact, muscular body with short legs, which is typical for this breed.
+3. **Ears and Face Shape**: The dog's ears are small and erect, and its face is expressive and alert, fitting the Norwich Terrier's appearance.
+
+The dog's short legs are indeed noticeable, contributing to its overall sturdy and active demeanor.
+att_shape:[13, 18]
+att_flat:234
+image_token_weights:234
+选取值大于1的token
+图像token位置范围: (15, 249)
+重要stoken数量: 11
+最高注意力权重: 2.6124
+平均注意力权重: 1.4648
+input_ids:torch.Size([1, 632])
+seq_len:632
+找到 image token span: img_start=14, img_end=250
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,250)
+Saved descriptions to: ./experiments/dog120/gallery/dog_image_descriptions_attn
+summarize_attributes: the image depicts a norwich terrier standing on a log near a beach setting. the dog has a wiry, short coat that is predominantly light brown or tan in color, consistent with the brown fur characteristic of the breed. its fur appears slightly shaggy and well-suited for outdoor activities. the norwich terrier's small, erect ears and short, sturdy legs are also visible, further confirming its identity as a norwich terrier. the background includes driftwood logs scattered across a gravelly beach with patches of grass, suggesting a natural, possibly coastal environment.
+种类:Norwich Terrier
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/086.Miniature_Pinscher/086.Miniature_Pinscher_n02107312_5567.jpg', './datasets/dogs_120/images_discovery_all_3/101.Basenji/101.Basenji_n02110806_1382.jpg', './datasets/dogs_120/images_discovery_all_3/073.Groenendael/073.Groenendael_n02105056_5855.jpg', './datasets/dogs_120/images_discovery_all_3/034.Norfolk_Terrier/034.Norfolk_Terrier_n02094114_3248.jpg', './datasets/dogs_120/images_discovery_all_3/040.Airedale/040.Airedale_n02096051_2890.jpg']
+len ref path: 5
+att_shape:[14, 18]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 182
+最高注意力权重: 1397.5255
+平均注意力权重: 15.9074
+input_ids:torch.Size([1, 1563])
+seq_len:1563
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+prompt in discover regions:We provide 5 images from different categories within the dog that share similar visual features, and use them as references to generate 3 discriminative visual regions(eg,. descriptive phrases like white fur, thin straight legs) for distinguishing the target image's category. The first image is the target, followed by the references(if have). Output the regions as a comma-separated list.
+discover_regions: ['black and brown dog, black and brown dog, black and brown dog, black and brown dog, black and brown dog; black and brown dog, black and brown dog, black and brown dog, black and brown dog, black and brown dog']
+att_shape:[14, 18]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 73
+最高注意力权重: 15.0252
+平均注意力权重: 2.5324
+input_ids:torch.Size([1, 301])
+seq_len:301
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+prompt: Given an image, describe the visual attributes of black and brown dog in the given dog category, whose specific category is Miniature Pinscher. 
+ description: The dog in the picture appears to be a Miniature Pinscher, which is a breed known for its small size and distinctive coat pattern. This particular dog has a sleek, short-haired coat with a mix of black and tan fur, which is characteristic of the breed. The dog is lying down on a plaid blanket, looking relaxed and comfortable. Its ears are perked up, and it seems attentive or curious. The Miniature Pinscher's body is compact, and it has a confident, alert expression. The breed is often described as intelligent, energetic, and loyal.
+att_shape:[14, 18]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 49
+最高注意力权重: 4.0671
+平均注意力权重: 1.7235
+input_ids:torch.Size([1, 301])
+seq_len:301
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+prompt: Given an image, describe the visual attributes of black and brown dog in the given dog category, whose specific category is Miniature Pinscher. 
+ description: The image shows a small dog lying on a plaid blanket indoors. The dog appears to be a Miniature Pinscher, characterized by its short, smooth coat, alert ears, and compact body structure. It has a predominantly black coat with some lighter fur around the muzzle and possibly on the chest area. The dog is resting comfortably on a checkered blanket that provides a cozy and warm environment.
+att_shape:[14, 18]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 86
+最高注意力权重: 6.3675
+平均注意力权重: 1.6941
+input_ids:torch.Size([1, 301])
+seq_len:301
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+prompt: Given an image, describe the visual attributes of black and brown dog in the given dog category, whose specific category is Miniature Pinscher. 
+ description: The image shows a small dog lying on a plaid blanket indoors. The dog appears to be a Miniature Pinscher, characterized by its short coat, alert ears, and compact body structure. It has a predominantly black and tan coat with some white markings, which is typical for this breed. The Miniature Pinscher in the picture is resting comfortably on a checkered blanket, looking relaxed and content.
+att_shape:[14, 18]
+att_flat:252
+image_token_weights:252
+选取值大于1的token
+图像token位置范围: (15, 267)
+重要stoken数量: 28
+最高注意力权重: 13.1365
+平均注意力权重: 2.6091
+input_ids:torch.Size([1, 602])
+seq_len:602
+找到 image token span: img_start=14, img_end=268
+[ATTN] inject Qwen attention layers with importance weights (10, 28) alpha=0.5 span=(14,268)
+Saved descriptions to: ./experiments/dog120/gallery/dog_image_descriptions_attn
+summarize_attributes: the image depicts a miniature pinscher lying on a checkered blanket indoors. the dog has a short, sleek coat primarily in shades of black and brown, with some lighter fur around the muzzle and possibly on the chest area. its coat is smooth and well-groomed, showcasing the breed's distinctive appearance. the miniature pinscher's ears are perked up, giving it an alert and attentive look. the dog is resting comfortably on a plaid blanket, which adds a cozy and warm element to the scene. the overall impression is one of relaxation and contentment, with the miniature pinscher appearing calm and at ease in its environment.
+种类:Miniature Pinscher
+save_path_references: ./experiments/dog120/gallery/dog_image_references5
+
+ref_path: ['./datasets/dogs_120/images_discovery_all_3/118.Dhole/118.Dhole_n02115913_4542.jpg', './datasets/dogs_120/images_discovery_all_3/117.Dingo/117.Dingo_n02115641_6509.jpg', './datasets/dogs_120/images_discovery_all_3/016.English_Foxhound/016.English_Foxhound_n02089973_4084.jpg', './datasets/dogs_120/images_discovery_all_3/108.Chow/108.Chow_n02112137_2220.jpg', './datasets/dogs_120/images_discovery_all_3/076.Kelpie/076.Kelpie_n02105412_2249.jpg']
+len ref path: 5
+att_shape:[62, 82]
+Traceback (most recent call last):
+  File "/data/yjx/MLLM/UniFGVR/discovering.py", line 503, in <module>
+    gallery = build_gallery(cfg, mllm_bot, captioner, retrieval, kshot=args.kshot, region_num=args.region_num, superclass=args.superclass, data_discovery=data_discovery)
+  File "/data/yjx/MLLM/UniFGVR/discovering.py", line 328, in build_gallery
+    gallery = retrieval.build_template_gallery(mllm_bot, train_samples, captioner, superclass, kshot, region_num)
+  File "/data/yjx/MLLM/UniFGVR/retrieval/multimodal_retrieval.py", line 227, in build_template_gallery
+    description = cdv_captioner.generate_description(mllm_bot, path, train_samples, superclass, kshot, region_num, label=cat, label_id=i)
+  File "/data/yjx/MLLM/UniFGVR/cvd/cdv_captioner.py", line 334, in generate_description
+    regions = self.discover_regions(mllm_bot, target_image_path, ref_paths, superclass, s)
+  File "/data/yjx/MLLM/UniFGVR/cvd/cdv_captioner.py", line 134, in discover_regions
+    reply, trimmed_reply = mllm_bot.describe_attribute(images, prompt)
+  File "/data/yjx/MLLM/UniFGVR/agents/mllm_bot.py", line 357, in describe_attribute
+    reply = self.__call_qwen2_5(raw_image, attr_prompt)
+  File "/data/yjx/MLLM/UniFGVR/agents/mllm_bot.py", line 251, in __call_qwen2_5
+    att_map = rel_attention_qwen2_5(raw_image[0], formatted_prompt, general_prompt, self.qwen2_5, self.qwen2_5_processor)
+  File "/data/yjx/MLLM/UniFGVR/agents/qwen2_5_methods.py", line 44, in rel_attention_qwen2_5
+    outputs = model(**inputs, output_attentions=True, return_dict=True)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 1799, in forward
+    image_embeds = self.visual(pixel_values, grid_thw=image_grid_thw)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 558, in forward
+    hidden_states = blk(hidden_states, cu_seqlens=cu_seqlens_now, position_embeddings=position_embeddings)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 351, in forward
+    hidden_states = hidden_states + self.attn(
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/finer/lib/python3.9/site-packages/transformers/models/qwen2_5_vl/modeling_qwen2_5_vl.py", line 320, in forward
+    attn_output = F.scaled_dot_product_attention(q, k, v, attention_mask, dropout_p=0.0)
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 24.65 GiB. GPU 0 has a total capacity of 79.25 GiB of which 17.50 GiB is free. Including non-PyTorch memory, this process has 61.74 GiB memory in use. Of the allocated memory 60.82 GiB is allocated by PyTorch, and 445.06 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

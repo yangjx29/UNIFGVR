@@ -164,11 +164,11 @@ def qwen_new_forward_with_importance(
     # 只有初始的q_len长度大于1,之后都只会保留生成的最后一个token
     bsz, q_len, _ = hidden_states.size()
     device = hidden_states.device
-    print(f"hidden_states:{hidden_states.shape}")
+    # print(f"hidden_states:{hidden_states.shape}")
     query_states = self.q_proj(hidden_states)
     key_states = self.k_proj(hidden_states)
     value_states = self.v_proj(hidden_states)
-    print(f'hidden query_states:{query_states.shape}, key_states:{key_states.shape},key_states:{key_states.shape}')
+    # print(f'hidden query_states:{query_states.shape}, key_states:{key_states.shape},key_states:{key_states.shape}')
 
 
     # reshape -> (bsz, num_heads, seq, head_dim)
@@ -192,7 +192,7 @@ def qwen_new_forward_with_importance(
         key_states, value_states = past_key_value.update(key_states, value_states, self.layer_idx, cache_kwargs)
         # kv_seq_len = key_states.shape[-2]
         kv_seq_len = past_key_value[self.layer_idx][0].shape[-2]
-    print(f'取出来的kv_seq_len:{kv_seq_len}')
+    # print(f'取出来的kv_seq_len:{kv_seq_len}')
     # shape: (bsz, num_heads, q_len, kv_seq_len)
     key_states = repeat_kv(key_states, self.num_key_value_groups)
     value_states = repeat_kv(value_states, self.num_key_value_groups)
@@ -297,9 +297,9 @@ def qwen_new_forward_with_importance(
 
     # attn_output = self.o_proj(attn_output)
     # return attn_output, None, past_key_value
-    print(f'matmul前query_states:{query_states.shape}, key_states:{key_states.shape},key_states:{key_states.shape}')
+    # print(f'matmul前query_states:{query_states.shape}, key_states:{key_states.shape},key_states:{key_states.shape}')
     attn_weights = torch.matmul(query_states, key_states.transpose(2, 3)) / math.sqrt(self.head_dim)
-    print(f'attn_weights after matmul:{attn_weights.shape}')
+    # print(f'attn_weights after matmul:{attn_weights.shape}')
     # 校验形状（与原实现的期望一致）
     expected_shape = (bsz, self.num_heads, q_len, kv_seq_len)
     if attn_weights.size() != expected_shape:
@@ -336,20 +336,20 @@ def qwen_new_forward_with_importance(
             # 所以 kv_pos_begin 和 kv_pos_end 可以直接用
             kv_pos_begin = pos_start + 1
             kv_pos_end = pos_end -1
-            print(f'[ATTN] Incremental generation mode. kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}')
+            # print(f'[ATTN] Incremental generation mode. kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}')
         # 修复：当 kv_seq_len == input_seq_len 时，是第一次前向传播
         else:
             # 原始代码中的比例映射逻辑在增量生成时是错误的，因为它会改变图像 token 的相对位置
             kv_pos_begin = pos_start + 1
             kv_pos_end = pos_end - 1
-            print(f'[ATTN] Initial forward pass. kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}')
+            # print(f'[ATTN] Initial forward pass. kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}')
         # 核心修复: 确保索引范围有效
         if kv_pos_begin >= kv_pos_end or kv_pos_begin < 0 or kv_pos_end > kv_seq_len:
-            print(f"[ATTN] Invalid mapped kv range: kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}, kv_len={kv_seq_len}. Skipping enhancement.")
+            print(f"ERROR Invalid mapped kv range: kv_pos_begin={kv_pos_begin}, kv_pos_end={kv_pos_end}, kv_len={kv_seq_len}. Skipping enhancement.")
             pass # 直接跳过增强，使用原始 attn_logits
-        else:
+        # else:
             # 修复：在进行切片前，打印信息以验证索引是否正确
-            print(f'[ATTN] Enhancing logits for tokens from index {kv_pos_begin} to {kv_pos_end}')
+            # print(f'[ATTN] Enhancing logits for tokens from index {kv_pos_begin} to {kv_pos_end}')
             # target_logits 的 shape 为 (bsz, num_heads, img_token_count)
         
         # 获取当前查询 token 的索引
@@ -357,42 +357,48 @@ def qwen_new_forward_with_importance(
         # 在初始前向传播中，q_len > 1，查询索引是所有 token
         # 这里我们只对最后一个查询 token 进行增强
         target_weight = attn_weights[:, :, -1, img_start_idx+1:img_end_idx-1]
-        print(f'target_weight:{target_weight.shape}')
+        # print(f'target_weight:{target_weight.shape}')
         # 修复：重要性权重长度处理
         num_image_tokens = target_weight.shape[-1]
         if len(importance_weights) != num_image_tokens:
-            print(f'[ATTN] Weight length mismatch: weights={len(importance_weights)}, tokens={num_image_tokens}. Resizing weights.')
-        # 只对重要性权重大于阈值的token进行适度增强
-        enhancement_threshold = 1.0
-        enhancement_mask = importance_weights > enhancement_threshold
-        print(f'enhancement_mask shape:{enhancement_mask.shape}')
-        # 确保 importance_weights 的 shape 与 target_logits 匹配
-        # 广播 importance_weights 到 (1, 1, num_image_tokens)
-        importance_weights_broadcast = importance_weights.view(1, 1, -1)
-        if enhancement_mask.any():
-            # enhanced_logits = target_logits.clone()
-            # for i in range(target_logits.shape[-1]):
-            #     importance_factor = min(importance_weights[i].item(), 10)
-            #     enhancement = target_logits[:, :, i].abs() * alpha + target_logits[:, :, i]
-            #     enhanced_logits[:, :, i] = enhancement
-            # # 应用增强后的logits
-            # attn_logits[:, :, -1, kv_pos_begin:kv_pos_end] = enhanced_logits
-            enhancement = target_weight.abs() * alpha
-            enhanced_logits = target_weight + enhancement
-
-            # 使用掩码来应用增强
-            # 扩展掩码以匹配 target_logits 的形状
-            enhanced_logits = torch.where(
-                enhancement_mask.view(1, 1, -1),
-                enhanced_logits,
-                target_weight
-            )
-            # 应用增强后的 logits
-            attn_weights[:, :, -1, img_start_idx+1:img_end_idx-1] = enhanced_logits
+            print(f'Warning Weight length mismatch: weights={len(importance_weights)}, tokens={num_image_tokens}. Resizing weights.')
         else:
-            print(f'[ATTN] No tokens meet enhancement threshold {enhancement_threshold}')
+            # 只对重要性权重大于阈值的token进行适度增强
+            enhancement_threshold = 1.0
+            enhancement_mask = importance_weights > enhancement_threshold
+            # print(f'enhancement_mask shape:{enhancement_mask.shape}')
+            # 确保 importance_weights 的 shape 与 target_logits 匹配
+            # 广播 importance_weights 到 (1, 1, num_image_tokens)
+            importance_weights_broadcast = importance_weights.view(1, 1, -1).to(device)
+            scaling_factors = torch.clamp(importance_weights_broadcast, min=1.0)
+            max_factor = 1.1
+            scaling_factors = torch.clamp(scaling_factors, max=max_factor)
+            enhanced_logits = target_weight * scaling_factors
+            attn_weights[:, :, -1, img_start_idx+1:img_end_idx-1] = enhanced_logits
+            # if enhancement_mask.any():
+            #     # enhanced_logits = target_logits.clone()
+            #     # for i in range(target_logits.shape[-1]):
+            #     #     importance_factor = min(importance_weights[i].item(), 10)
+            #     #     enhancement = target_logits[:, :, i].abs() * alpha + target_logits[:, :, i]
+            #     #     enhanced_logits[:, :, i] = enhancement
+            #     # # 应用增强后的logits
+            #     # attn_logits[:, :, -1, kv_pos_begin:kv_pos_end] = enhanced_logits
+            #     enhancement = target_weight.abs() * alpha
+            #     enhanced_logits = target_weight + enhancement
+
+            #     # 使用掩码来应用增强
+            #     # 扩展掩码以匹配 target_logits 的形状
+            #     enhanced_logits = torch.where(
+            #         enhancement_mask.view(1, 1, -1),
+            #         enhanced_logits,
+            #         target_weight
+            #     )
+                # # 应用增强后的 logits
+                # attn_weights[:, :, -1, img_start_idx+1:img_end_idx-1] = enhanced_logits
+            # else:
+            #     print(f'Warning No tokens meet enhancement threshold {enhancement_threshold}')
     else:
-        print(f'[ATTN] No importance-based enhancement applied')
+        print(f'Warning No importance-based enhancement applied')
     
     if torch.isnan(attn_weights).any() or torch.isinf(attn_weights).any():
         print("[ATTN] NaN/Inf detected in attn_logits, applying correction...")
@@ -466,7 +472,7 @@ def qwen_modify_with_importance(model, start_layer: int, end_layer: int, use_att
     在 model 指定层范围内注入注意力干预参数并替换 forward，使用重要性权重。
     """
     for i in range(start_layer, end_layer):
-        attn = model.model.layers[i].self_attn
+        attn = model.model.language_model.layers[i].self_attn
         attn.use_attn = use_attn
         attn.alpha = alpha
         attn.use_cfg = use_cfg
